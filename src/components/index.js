@@ -1,5 +1,5 @@
 import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
-import Hero from './Hero';
+import Main from './Main';
 import Navbar from './Navbar';
 import About from './About';
 import Skills from './Skills';
@@ -8,7 +8,7 @@ import Projects from './Projects';
 import Contact from './Contact';
 
 export {
-  Hero,
+  Main,
   Navbar,
   About,
   Skills,

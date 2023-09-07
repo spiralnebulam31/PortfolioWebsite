@@ -2,32 +2,36 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles.js";
 import { navLinks } from "../constants/constants";
-import { logoBracketsNameLight, menu, close } from "../assets";
+import { logoBracketsLight, menu, close } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [mobile, setMobile] = useState(false);
 
   return (
-    <nav className={styles.paddingX + " sticky top-0 z-50"}>
-      <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+    <nav className={styles.paddingX + " sticky top-0 z-50 bg-purple-950 shadow-xl"}>
+    <div className="flex w-full mx-auto justify-between gap-20"> {/* beginning of flex div */}
+      <div className="flex items-center justify-start"> {/* beginning of left side div */}
         <Link
           to="/"
           className="flex items-center gap-2"
           onClick={() => {
-            setActive(""); // close the menu when clicked on logo
-            window.scrollTo(0, 0); // scroll to top when clicked on logo
+            setActive("");
+            window.scrollTo(0, 0);
           }}
         >
           <img
-            src={logoBracketsNameLight}
+            src={logoBracketsLight}
             alt="logo"
-            className="w-20 md:w-40 h-auto"
+            className="w-20 md:w-30 h-auto"
           />
           <p className="text-purple-200 text-[18px] font-bold cursor-pointer md:block hidden">
-            Full-Stack Developer
+            Anastasia | Full-Stack Developer
           </p>
         </Link>
+      </div>  {/* end of left side div */}
+
+      <div className="flex items-center justify-end"> {/* beginning of right side div */}
         <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
@@ -56,13 +60,13 @@ const Navbar = () => {
             alt="menu"
             className="w-10 h-auto cursor-pointer object-contain"
             onClick={() => setMobile(!mobile)}
-          />
+          /> {/* mobile menu button */}
           <div
             className={`${!mobile ? "hidden" : "flex"}
                         absolute right-0 top-20 p-6 min-w-[140px] mx-4 my-2
                         z-10 rounded-xl flex-col justify-center
                         items-center gap-10 bg-purple-950`}
-          >
+          > {/* mobile menu */}
             <ul className="list-none flex flex-col justify-end items-start gap-4">
               {navLinks.map((link) => (
                 <li
@@ -82,9 +86,13 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </div>
+          </div> {/* end of mobile menu */}
+
+        </div> {/* end of mobile menu button */}
+      </div> {/* end of right side */}
+
+    </div> {/* end of flex div */}
+
     </nav>
   );
 };
