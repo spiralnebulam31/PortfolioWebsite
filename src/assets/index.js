@@ -1,4 +1,13 @@
 import logo from "./logo.svg";
+import logoLight from "./logoLight.png";
+import logoDark from "./logoDark.png";
+import logoLetterLight from "./logoLetterLight.png";
+import logoLetterDark from "./logoLetterDark.png";
+import logoAltLight from "./logoAltLight.png";
+import logoBracketsLight from "./logoBracketsLight.png";
+import logoBracketsDark from "./logoBracketsDark.png";
+import logoBracketsNameLight from "./logoBracketsNameLight.png";
+import logoBracketsNameDark from "./logoBracketsNameDark.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -32,6 +41,15 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
+  logoLight,
+  logoDark,
+  logoLetterLight,
+  logoLetterDark,
+  logoAltLight,
+  logoBracketsLight,
+  logoBracketsDark,
+  logoBracketsNameLight,
+  logoBracketsNameDark,
   backend,
   creator,
   mobile,

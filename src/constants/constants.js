@@ -31,8 +31,16 @@ import {
       title: "About",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "skills",
+      title: "Skills",
+    },
+    {
+      id: "projects",
+      title: "Projects",
+    },
+    {
+      id: "experience",
+      title: "Experience",
     },
     {
       id: "contact",
@@ -42,19 +50,15 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "Full-Stack Developer",
       icon: web,
-    },
-    {
-      title: "React Native Developer",
-      icon: mobile,
     },
     {
       title: "Backend Developer",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Frontend Developer",
       icon: creator,
     },
   ];
