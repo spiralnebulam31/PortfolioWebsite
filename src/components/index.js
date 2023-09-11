@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
+import { EarthCanvas, BallCanvas, GalaxyCanvas, StarsCanvas } from './canvas';
 import Main from './Main';
 import Navbar from './Navbar';
 import About from './About';
@@ -6,6 +6,7 @@ import Skills from './Skills';
 import Experience from './Experience';
 import Projects from './Projects';
 import Contact from './Contact';
+import CanvasLoader from './Loader';
 
 export {
   Main,
@@ -15,8 +16,9 @@ export {
   Projects,
   Experience,
   Contact,
+  CanvasLoader,
   EarthCanvas, 
   BallCanvas, 
-  ComputersCanvas, 
+  GalaxyCanvas, 
   StarsCanvas
-}
+};
