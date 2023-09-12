@@ -9,7 +9,7 @@ const Navbar = () => {
   const [mobile, setMobile] = useState(false);
 
   return (
-    <nav className={styles.paddingX + " sticky top-0 z-50 bg-purple-950 shadow-xl"}>
+    <nav className={styles.paddingX + " sticky top-0 z-50 bg-background shadow-xl"}>
     <div className="flex w-full mx-auto justify-between gap-20"> {/* beginning of flex div */}
       <div className="flex items-center justify-start"> {/* beginning of left side div */}
         <Link
@@ -25,7 +25,7 @@ const Navbar = () => {
             alt="logo"
             className="w-20 md:w-30 h-auto"
           />
-          <p className="text-purple-200 text-[18px] font-bold cursor-pointer md:block hidden">
+          <p className="text-primary text-[18px] font-bold cursor-pointer md:block hidden">
             Anastasia | Full-Stack Developer
           </p>
         </Link>
@@ -38,9 +38,9 @@ const Navbar = () => {
               key={link.id}
               className={`${
                 active === link.title
-                  ? "text-purple-300 underline"
-                  : "text-teal-200"
-              } hover:text-purple-300
+                  ? "text-primary underline"
+                  : "text-secondary"
+              } hover:text-primary
                     text-[18px]
                     font-bold
                     cursor-pointer`}
@@ -65,7 +65,7 @@ const Navbar = () => {
             className={`${!mobile ? "hidden" : "flex"}
                         absolute right-0 top-20 p-6 min-w-[140px] mx-4 my-2
                         z-10 rounded-xl flex-col justify-center
-                        items-center gap-10 bg-purple-950`}
+                        items-center gap-10 bg-background`}
           > {/* mobile menu */}
             <ul className="list-none flex flex-col justify-end items-start gap-4">
               {navLinks.map((link) => (
@@ -73,8 +73,8 @@ const Navbar = () => {
                   key={link.id}
                   className={`${
                     active === link.title
-                      ? "text-purple-300 underline"
-                      : "text-teal-200"
+                      ? "text-primary underline"
+                      : "text-secondary"
                   } hover:text-purple-300 text-[16px] font-medium cursor-pointer`}
                   onClick={() => {
                     setMobile(!mobile);
