@@ -1,12 +1,36 @@
 import React from 'react';
-// import Tilt from 'react-tilt';
+import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import { services } from '../constants/constants.js';
+import { profilePhotos } from '../constants/constants.js';
 import { fadeIn, textVariant } from '../utils/motion.js';
-// import { profilePhoto1, profilePhoto2, profilePhoto3 } from '../assets';
+import { SectionWrapper } from '../hoc';
+
+const PhotoCard = ({ index, alt, image }) => {
+  return (
+    <Tilt className="xs:w-[350px] w-full">
+      <motion.div
+        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        className="green-pink-gradient p-[1px] rounded-2xl shadow-card"
+      >
+      <div
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450
+        }}
+        className="bg-background rounded-2xl 
+                  flex justify-evenly items-center flex-col"
+      >
+        <img src={image} alt={alt} className="w-full h-full rounded-2xl" />
+      </div>
+      </motion.div>
+    </Tilt>
+  )
+}
 
 const About = () => {
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -18,15 +42,15 @@ const About = () => {
         </h2>
       </motion.div>
 
-      <div className="flex items-center justify-center mt-2">
-
-      <div classname="mt-2">
-
+      <div className="flex flex-wrap px-5 space-x-6 mt-10">
+        {profilePhotos.map((photo, index) => (
+          <PhotoCard key={index} {...photo} />
+        ))}
       </div>
 
       <motion.div
         variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
-        className={styles.padding + "text-white text-[17px] max-w-7xl leading-[30px] mt-2"}
+        className={styles.padding + "text-white text-[17px] max-w-7xl leading-[30px]"}
         >
         I'm a full-stack developer, with experience in TypeScript and JavaScript, and expertise in frameworks like React and Node.js. 
         Having recently graduated from School of Code and armed with a BSc in Mathematics from the University of Ioannina, my skills have been enriched to accomodate innovating problem solving. 
@@ -52,9 +76,8 @@ const About = () => {
         <br /><br />
         I am here to bring a positive influence to the tech industry. Carrying an analytical and a creative mindset, coupled with a deep sense of compassion, I am on a mission to make a difference! 
       </motion.div>
-      </div>
     </>
   )
 }
 
-export default About;
+export default SectionWrapper(About, "about");
