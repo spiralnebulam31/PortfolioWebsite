@@ -32,7 +32,8 @@ const PhotoCard = ({ index, alt, image }) => {
 const About = () => {
 
   return (
-    <>
+    <div className='bg-background2 relative bg-cover w-full  top-0 left-0 right-0 bottom-0'>
+    <div className="mx-auto px-5">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText + styles.paddingX}>
           Introduction
@@ -76,7 +77,8 @@ const About = () => {
         <br /><br />
         I am here to bring a positive influence to the tech industry. Carrying an analytical and a creative mindset, coupled with a deep sense of compassion, I am on a mission to make a difference! 
       </motion.div>
-    </>
+    </div>
+    </div>
   )
 }
 

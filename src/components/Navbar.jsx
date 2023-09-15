@@ -9,7 +9,7 @@ const Navbar = () => {
   const [mobile, setMobile] = useState(false);
 
   return (
-    <nav className={styles.paddingX + " sticky top-0 z-50 bg-background shadow-xl"}>
+    <nav className={styles.paddingX + " sticky top-0 z-50 bg-background1 shadow-xl"}>
     <div className="flex w-full mx-auto justify-between gap-20"> {/* beginning of flex div */}
       <div className="flex items-center justify-start"> {/* beginning of left side div */}
         <Link
