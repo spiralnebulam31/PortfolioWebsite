@@ -23,7 +23,7 @@ const Navbar = () => {
           <img
             src={logoBracketsLight}
             alt="logo"
-            className="w-20 md:w-30 h-auto"
+            className="w-20 md:w-[70px] h-auto"
           />
           <p className="text-primary text-[18px] font-bold cursor-pointer md:block hidden">
             Anastasia | Full-Stack Developer

@@ -1,10 +1,8 @@
-import React from 'react';
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { profilePhotos } from '../constants/constants.js';
 import { fadeIn, textVariant } from '../utils/motion.js';
-import { SectionWrapper } from '../hoc';
 
 const PhotoCard = ({ index, alt, image }) => {
   return (
@@ -82,4 +80,4 @@ const About = () => {
   )
 }
 
-export default SectionWrapper(About, "about");
+export default About;

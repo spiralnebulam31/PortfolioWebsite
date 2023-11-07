@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles.js';
-import { GalaxyCanvas } from './canvas';
 import { sideStar, singleStarPurple } from '../assets';
 
 const Main = () => {
@@ -20,8 +19,6 @@ const Main = () => {
           </p>
         </div>
       </div>
-
-      <GalaxyCanvas />
 
       <div className="absolute xs:bottom-10 bottom-60 w-full flex justify-center items-center">
         <a href="#about">

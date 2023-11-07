@@ -1,8 +1,7 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
+    profilePhoto1,
+    profilePhoto2,
+    // profilePhoto3,
     javascript,
     typescript,
     html,
@@ -48,19 +47,22 @@ import {
     },
   ];
   
-  const services = [
+  const profilePhotos = [
     {
-      title: "Full-Stack Developer",
-      icon: web,
+      index: 0,
+      alt: "profile photo 1",
+      image: profilePhoto1,
     },
     {
-      title: "Backend Developer",
-      icon: backend,
+      index: 1,
+      alt: "profile photo 2",
+      image: profilePhoto2,
     },
-    {
-      title: "Frontend Developer",
-      icon: creator,
-    },
+    // {
+    //   index: 2,
+    //   alt: "profile photo 3",
+    //   image: profilePhoto3,
+    // }
   ];
   
   const technologies = [
@@ -266,4 +268,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { profilePhotos, technologies, experiences, testimonials, projects };

@@ -1,20 +1,16 @@
 import logo from "./logo.svg";
-import logoLight from "./logoLight.png";
-import logoDark from "./logoDark.png";
-import logoLetterLight from "./logoLetterLight.png";
-import logoLetterDark from "./logoLetterDark.png";
-import logoAltLight from "./logoAltLight.png";
 import logoBracketsLight from "./logoBracketsLight.png";
-import logoBracketsDark from "./logoBracketsDark.png";
-import logoBracketsNameLight from "./logoBracketsNameLight.png";
-import logoBracketsNameDark from "./logoBracketsNameDark.png";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+
+import sideStar from "./sideStar.png";
+import singleStarPurple from "./singleStarPurple.png";
+import singleStarLightTeal from "./singleStarLightTeal.png";
+
+import profilePhoto1 from "./profilePhoto1.jpg";
+import profilePhoto2 from "./profilePhoto2.jpg";
+import profilePhoto3 from "./profilePhoto3.jpg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -41,22 +37,16 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
-  logoLight,
-  logoDark,
-  logoLetterLight,
-  logoLetterDark,
-  logoAltLight,
   logoBracketsLight,
-  logoBracketsDark,
-  logoBracketsNameLight,
-  logoBracketsNameDark,
-  backend,
-  creator,
-  mobile,
-  web,
   github,
   menu,
   close,
+  sideStar,
+  singleStarPurple,
+  singleStarLightTeal,
+  profilePhoto1,
+  profilePhoto2,
+  profilePhoto3,
   css,
   docker,
   figma,
