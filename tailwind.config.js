@@ -7,8 +7,8 @@ export default {
       colors: {
         background1: "#3b0764",
         background2: "#ab07b8",
-        primary:  "#d8b4fe",
-        secondary: "#99f6e4",
+        primary:  "#CCB2FF",
+        secondary: "#83F8F5",
         tertiary: "#2B96B1",
         details: "#a855f7",
         "black-100": "#100d25",
