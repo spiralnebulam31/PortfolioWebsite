@@ -26,7 +26,7 @@ const Navbar = () => {
             className="w-20 md:w-[70px] h-auto"
           />
           <p className="text-primary text-[18px] font-bold cursor-pointer md:block hidden">
-            Anastasia | Full-Stack Developer
+            Anastasia Adamoudi | Full-Stack Developer
           </p>
         </Link>
       </div>  {/* end of left side div */}

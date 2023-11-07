@@ -30,7 +30,8 @@ const PhotoCard = ({ index, alt, image }) => {
 const About = () => {
 
   return (
-    <div className='bg-background2 relative bg-cover w-full  top-0 left-0 right-0 bottom-0'>
+    <section id="about">
+    <div className='bg-background1 relative bg-cover w-full  top-0 left-0 right-0 bottom-0'>
     <div className="mx-auto px-5">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText + styles.paddingX}>
@@ -57,7 +58,6 @@ const About = () => {
         My journey has been a diverse and rewarding one, taking me through various experiences such as customer service, private tutoring and volunteering. 
         Theses experiences have given me the opportunity to develop my communication, teamwork and organisation skills. 
         My coding journey started with a programming highschool class, where I was introduced to the basics of algorithmic thinking. 
-        See more about my coding journey in the <a href="#journey" className="text-[#FFD369] hover:text-[#FFD369] inline">Journey</a> section. 
         Due to involvement in online communities about things I enjoy, I mastered using Graphic Design software like Photoshop and InDesing. 
         Now that knowledge has been expanded to include Figma and Canva, which I use to create mockups and prototypes for my projects. 
         <br /><br />
@@ -77,6 +77,7 @@ const About = () => {
       </motion.div>
     </div>
     </div>
+    </section>
   )
 }
 

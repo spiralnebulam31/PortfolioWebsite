@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles.js';
-import { sideStar, singleStarPurple } from '../assets';
+import { singleStarLilac, threeStars, github, github2, linkedin, linkedin2, resume, resume2 } from '../assets';
 
 const Main = () => {
   return (
     <section className='bg-background1 relative w-full h-screen mx-auto'>
       <div className={styles.paddingX + " absolute inset-0 top-[100px] max-w-7xl mx-40 flex flex-row items-start gap-5"}>
-        <div className="h-[300px] w-auto flex justify-center items-center">
-          <img src={sideStar} alt="side star" className="h-[300px] w-auto" />
-        </div>
-        <div>
+      <div className="flex flex-col justify-center items-center">
           <h1 className={styles.mainHeadText + "text-white"}>
             Hi, I'm <span className="text-secondary">Anastasia</span>
           </h1>
@@ -17,7 +14,18 @@ const Main = () => {
           I create full-stack websites with a blend of creativity,
           compassion and an analytical mindset.
           </p>
-        </div>
+          <div className="flex flex-row justify-center items-center gap-5">
+          <a href="https://github.com/AnastasiaAdamoudi" target="_blank" rel="noreferrer">
+            <img src={github} alt="github" className="w-[40px] h-[40px] object-contain" />
+          </a>
+          <a href="https://www.linkedin.com/in/anastasiaadamoudi89" target="_blank" rel="noreferrer">
+            <img src={linkedin} alt="linkedin" className="w-[40px] h-[40px] object-contain" />
+          </a>
+          <a href="/AnastasiaAdamoudiCV.pdf" download="AnastasiaAdamoudiCV.pdf" target="_blank" rel="noreferrer">
+            <img src={resume} alt="resume" className="w-[40px] h-[40px] object-contain" />
+          </a>
+          </div>
+          </div>
       </div>
 
       <div className="absolute xs:bottom-10 bottom-60 w-full flex justify-center items-center">
@@ -33,7 +41,7 @@ const Main = () => {
                 }
               }}
              >
-            <img src={singleStarPurple} alt="arrow star" className="w-[60px] h-[60px] object-contain" />
+            <img src={singleStarLilac} alt="arrow star" className="w-[60px] h-[60px] object-contain" />
           </motion.div>
           </div>
         </a>

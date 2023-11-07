@@ -1,12 +1,19 @@
 import logo from "./logo.svg";
 import logoBracketsLight from "./logoBracketsLight.png";
-import github from "./github.png";
+import github from "./github.svg";
+import github2 from "./github2.svg";
+import linkedin from "./linkedin.svg";
+import linkedin2 from "./linkedin2.svg";
+import resume from "./resume.svg";
+import resume2 from "./resume2.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
 import sideStar from "./sideStar.png";
 import singleStarPurple from "./singleStarPurple.png";
 import singleStarLightTeal from "./singleStarLightTeal.png";
+import singleStarLilac from "./singleStarLilac.png";
+import threeStars from "./threeStars.png";
 
 import profilePhoto1 from "./profilePhoto1.jpg";
 import profilePhoto2 from "./profilePhoto2.jpg";
@@ -39,11 +46,18 @@ export {
   logo,
   logoBracketsLight,
   github,
+  github2,
+  linkedin,
+  linkedin2,
+  resume,
+  resume2,
   menu,
   close,
   sideStar,
   singleStarPurple,
   singleStarLightTeal,
+  singleStarLilac,
+  threeStars,
   profilePhoto1,
   profilePhoto2,
   profilePhoto3,

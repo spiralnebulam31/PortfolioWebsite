@@ -30,16 +30,16 @@ import {
       title: "About",
     },
     {
+      id: "journey",
+      title: "Journey",
+    },
+    {
       id: "skills",
       title: "Skills",
     },
     {
       id: "projects",
       title: "Projects",
-    },
-    {
-      id: "experience",
-      title: "Experience",
     },
     {
       id: "contact",
