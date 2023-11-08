@@ -288,13 +288,13 @@ import {
         summary: "I had the privilege of participating in an amazing hackathon by Women Who Code. For nine days, my fantastic team of designers, developers and content creators, took the challenge to plan and create a project for the Hackathon for Social Good 2023!",
         challenge: "Conventional period tracking apps are often saturated with medical jargon, creating an overwhelming experience for young girls.",
         solution: "A friendly, easily understood and engaging web app, designed specifically for pre-teens and teenagers to educate themselves about their periods in a straightforward and enjoyable manner.",
-        learnings: {
-          one: "When I joined the team, the initial planning had already taken place. The team was in need of a backend developer, so I eagerly took the role.",
-          two: "My first step was to familiarize myself with EJS, a technology I hadn't previously explored. It brilliantly combines HTML with embedded JavaScript templates and I quickly recognized the practicality of this choice for the frontend developers of the team.",
-          three: "My next step was implementing Passage into our app, a passwordless authentication solution that simplifies the registration and login process. Embracing new tools always comes with a learning curve, and I found this experience both interesting and beneficial.",
-          four: "Once the backend functionality had been added by one of my team members and me, I ensured that our server's code was organized and transparent. This was crucial to make it easily comprehensible for every team member, enabling effective collaboration and progress.",
-          five: "Last but not least, I helped the team adhere to web accessibility standards. We wanted to ensure that our app was not only informative but also inclusive and user-friendly for everyone."
-        }
+        learnings: [
+          "When I joined the team, the initial planning had already taken place. The team was in need of a backend developer, so I eagerly took the role.",
+          "My first step was to familiarize myself with EJS, a technology I hadn't previously explored. It brilliantly combines HTML with embedded JavaScript templates and I quickly recognized the practicality of this choice for the frontend developers of the team.",
+          "My next step was implementing Passage into our app, a passwordless authentication solution that simplifies the registration and login process. Embracing new tools always comes with a learning curve, and I found this experience both interesting and beneficial.",
+          "Once the backend functionality had been added by one of my team members and me, I ensured that our server's code was organized and transparent. This was crucial to make it easily comprehensible for every team member, enabling effective collaboration and progress.",
+          "Last but not least, I helped the team adhere to web accessibility standards. We wanted to ensure that our app was not only informative but also inclusive and user-friendly for everyone."
+        ]
       },
       date: "October 2023 - Present",
       techStack: ["HTML", "EJS", "JavaScript", "CSS", "Bootstrap", "Node.js", "Express.js", "MongoDB", "Passage", "GitHub", "Figma", "Canva"],
@@ -312,11 +312,11 @@ import {
         summary: "I was asked to create an employee rostering app to assist a new manager with organising shifts.",
         challenge: "Create an app that generates weekly shifts depending on each week's shift requirements and employee details.",
         solution: "A responsive and accessible web app that offers two paths: Login and Guest. The guest path collects data about the employees and the shifts in a form and generates shifts on form submission. The authentication path gives the user the ability to save, update and delete employee and shift data for easy access, and choose the data they need each week in order to generate the shifts.",
-        learnings: {
-          one: "Embarking on a solo full-stack project has been an incredibly rewarding journey. It's a dynamic process where I've had the chance to delve into new technologies while practicing my skills with familiar tools.",
-          two: "As I'm gradually crafting this project from start to finish, I'm not only gaining a deeper understanding of the entire development process but also learning how to independently troubleshoot and innovate along the way."
-        }
-      },
+        learnings: [
+          "Embarking on a solo full-stack project has been an incredibly rewarding journey. It's a dynamic process where I've had the chance to delve into new technologies while practicing my skills with familiar tools.",
+          "As I'm gradually crafting this project from start to finish, I'm not only gaining a deeper understanding of the entire development process but also learning how to independently troubleshoot and innovate along the way."
+        ]
+        },
       date: "September 2023 - Present",
       techStack: ["React.js", "React Router", "Email.js", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "GitHub", "Canva"],
       repoLink: "https://github.com/AnastasiaAdamoudi/ShiftMagic",
@@ -333,12 +333,12 @@ import {
         summary: "This website is my portfolio, where you can find information about me, my skills and my projects.",
         challenge: "Create a digital space that reflects my personality and showcases my skills and projects.",
         solution: "A responsive and accessible website that offers a smooth user experience.",
-        learnings: {
-          one: "I wanted to make sure that my personal website was a true reflection of my personality and skills. Along the way, I learned how to use React Chrono, Framer Motion and React Tilt. I also gained a deeper understanding of TailwindCSS.",
-          two: "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it.",
-        }
-      },
-      date: "August 2023 - Present",
+        learnings: [
+          "I wanted to make sure that my personal website was a true reflection of my personality and skills. Along the way, I learned how to use React Chrono, Framer Motion and React Tilt. I also gained a deeper understanding of TailwindCSS.",
+          "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it."
+        ]
+        },
+      date: "Started August 2023",
       techStack: ["React.js", "React Chrono", "Email.js", "TailwindCSS", "Framer Motion", "React Tilt", "GitHub", "Canva"],
       repoLink: "https://github.com/AnastasiaAdamoudi/PortfolioWebsite",
       websiteLink: "https://anastasiaadamoudi.com/",
@@ -354,10 +354,10 @@ import {
         summary: "During our final full stack project at the School of Code, my team of six and I had the opportunity to address a real-world problem and plan, design and develop a full-stack web app.",
         challenge: "Simplify gardening for individuals, addressing the common barriers that often deter people from starting their gardening journey.",
         solution: "An app that delivers personalised plant recommendations based on user preferences. On the frontend, we harnessed the power of React for its code reusability, state management, and seamless deployment, to create a high-functionint frontend. For the backend, we efficiently managed plant data using Node, Express, and MongoDB in a non-relational database.",
-        learnings: {
-          one: "This project allowed me to recognize the immense value of diverse viewpoints within our team. The mosaic of perspectives fostered mutual learning, creating an environment of open dialogue and collaboration. This dynamic synergy was instrumental in shaping my approach to planning, managing, and successfully delivering a Minimum Viable Product (MVP) within a team.",
-          two: "I contributed to the project by participating in the entire planning and design journey, then worked on the structure and functionality of the React frontend. I also made sure the team followed web accessibility standards throughout the app development."
-        }
+        learnings: [
+          "This project allowed me to recognize the immense value of diverse viewpoints within our team. The mosaic of perspectives fostered mutual learning, creating an environment of open dialogue and collaboration. This dynamic synergy was instrumental in shaping my approach to planning, managing, and successfully delivering a Minimum Viable Product (MVP) within a team.",
+          "I contributed to the project by participating in the entire planning and design journey, then worked on the structure and functionality of the React frontend. I also made sure the team followed web accessibility standards throughout the app development."
+        ]
       },
       date: "June 2023 - July 2023",
       techStack: ["React.js", "React Router", "CSS", "Bootstrap", "Node.js", "Express.js", "MongoDB", "GitHub", "Testing Library", "Figma", "Canva"],
@@ -376,10 +376,10 @@ import {
     //     summary: "During my time at the School of Code bootcamp, I had the opportunity to address a common challenge faced by bootcampers and, in collaboration with my team, we came up with an innovative solution.",
     //     challenge: "Bootcampers often found it challenging to access and categorize the plethora of learning and tech resources available to them.",
     //     solution: "An app that streamlines these resources, categorizing them for easy access. We chose React to ensure code maintainability and reusability, while delving into MaterialUI to enhance the user experience and learn the application of a new library. Importantly, we prioritized web accessibility standards to ensure inclusivity.",
-    //     learnings: {
-    //       one: "This project marked my first experience in team web development, teaching me essential skills in collaboration, project planning and Agile methodology.",
-    //       two: "I contributed by creating React components and helping the team develop the app's functionality. I made sure we prioritised web accessibility, ensuring inclusivity in our app."
-    //     }
+    //     learnings: [
+    //       "This project marked my first experience in team web development, teaching me essential skills in collaboration, project planning and Agile methodology.",
+    //       "I contributed by creating React components and helping the team develop the app's functionality. I made sure we prioritised web accessibility, ensuring inclusivity in our app."
+    //   ]
     //   },
     //   date: "April 2023",
     //   techStack: ["React.js", "MaterialUI", "CSS", "GitHub", "Figma"],
