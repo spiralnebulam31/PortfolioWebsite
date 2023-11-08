@@ -5,6 +5,7 @@ import Skills from './Skills';
 import Journey from './Journey';
 import Projects from './Projects';
 import Contact from './Contact';
+import Footer from './Footer';
 
 export {
   Main,
@@ -13,5 +14,6 @@ export {
   Skills,
   Projects,
   Journey,
-  Contact
+  Contact,
+  Footer
 };
