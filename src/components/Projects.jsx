@@ -25,6 +25,32 @@ const ProjectCard = ({ index, image, name, description, date, techStack, repoLin
             {name}
           </div>
           <br />
+          <div className="text-background1 text-center text-[14px] max-w-[350px] leading-[30px] flex justify-evenly gap-2">
+            <p><strong>Links:</strong></p>
+
+            {repoLink && (
+              <div className="underline">
+                <a href={repoLink} alt="code" target="_blank" rel="noopener noreferrer">
+                Code
+                </a>
+              </div>
+            )}
+            {repoLink2 && (
+              <div className="underline">
+                <a href={repoLink2} alt="more code" target="_blank" rel="noopener noreferrer">
+                More Code
+                </a>
+              </div>
+            )}
+            {websiteLink && (
+              <div className="underline">
+                <a href={websiteLink} alt="website" target="_blank" rel="noopener noreferrer">
+                 Website
+                </a>
+                </div>
+            )}
+          </div>
+          <br />
           <div className="text-background1 text-center text-[14px] max-w-[350px] leading-[30px]">
             <p><strong>Date:</strong> {date}</p>
             <br />
