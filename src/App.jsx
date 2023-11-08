@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { About, Contact, Experience, Main, Navbar, Skills, Projects } from './components';
+import { Main, Navbar, About, Skills, Projects, Journey, Contact, Footer } from './components';
 
 const App = () => {
 
@@ -13,13 +13,14 @@ const App = () => {
         <About />
         <Skills />
         <Projects />
-        <Experience />
+        <Journey />
       <div className='relative z-0'>
           <Contact />
         </div>
       {/* </div> */}
+      <Footer />
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;

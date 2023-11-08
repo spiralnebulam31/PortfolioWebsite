@@ -1,70 +1,95 @@
 import logo from "./logo.svg";
 import logoBracketsLight from "./logoBracketsLight.png";
-import github from "./github.png";
+import github from "./github.svg";
+import github2 from "./github2.svg";
+import linkedin from "./linkedin.svg";
+import linkedin2 from "./linkedin2.svg";
+import resume from "./resume.svg";
+import resume2 from "./resume2.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
 import sideStar from "./sideStar.png";
 import singleStarPurple from "./singleStarPurple.png";
 import singleStarLightTeal from "./singleStarLightTeal.png";
+import singleStarLilac from "./singleStarLilac.png";
+import threeStars from "./threeStars.png";
 
-import profilePhoto1 from "./profilePhoto1.jpg";
-import profilePhoto2 from "./profilePhoto2.jpg";
-import profilePhoto3 from "./profilePhoto3.jpg";
+import profilePhoto1 from "./photos/profilePhoto1.jpg";
+import profilePhoto2 from "./photos/profilePhoto2.jpg";
+import profilePhoto3 from "./photos/profilePhoto3.jpg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
+import typescript from "./tech/typescript.svg";
 import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import html from "./tech/html.svg";
+import css from "./tech/css.svg";
+import react from "./tech/react.png";
+import reactRouter from "./tech/reactRouter.svg";
+import tailwind from "./tech/tailwind.svg";
+import bootstrap from "./tech/bootstrap.svg";
+import framerMotion from "./tech/framerMotion.svg";
+import node from "./tech/node.svg";
+import express from "./tech/express.svg";
+import mongodb from "./tech/mongodb.svg";
+import postgresql from "./tech/postgresql.png";
+import supabase from "./tech/supabase.svg";
+import jest from "./tech/jest.svg";
+import playwright from "./tech/playwright.svg";
+import testingLibrary from "./tech/testingLibrary.svg";
+import git from "./tech/git.svg";
+import figma from "./tech/figma.png";
+import canva from "./tech/canva.png";
+import photoshop from "./tech/photoshop.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import portfolio from "./projects/portfolio.png";
+import onni from "./projects/onni.png";
+import shiftMagic from "./projects/shiftMagic.png";
+import gardenGenie from "./projects/gardenGenie.png";
+import bootcampersTreasureChest from "./projects/bootcampersTreasureChest.png";
 
 export {
   logo,
   logoBracketsLight,
   github,
+  github2,
+  linkedin,
+  linkedin2,
+  resume,
+  resume2,
   menu,
   close,
   sideStar,
   singleStarPurple,
   singleStarLightTeal,
+  singleStarLilac,
+  threeStars,
   profilePhoto1,
   profilePhoto2,
   profilePhoto3,
-  css,
-  docker,
-  figma,
-  git,
-  html,
-  javascript,
-  mongodb,
-  nodejs,
-  reactjs,
-  redux,
-  tailwind,
   typescript,
-  threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+    javascript,
+    react,
+    reactRouter,
+    html,
+    css,
+    tailwind,
+    bootstrap,
+    framerMotion,
+    node,
+    express,
+    mongodb,
+    postgresql,
+    supabase,
+    jest,
+    playwright,
+    testingLibrary,
+    git,
+    figma,
+    canva,
+    photoshop,
+    portfolio,
+  onni,
+  shiftMagic,
+  gardenGenie,
+  bootcampersTreasureChest
 };
