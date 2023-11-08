@@ -23,12 +23,12 @@ import {
     figma,
     canva,
     photoshop,
-    portfolio,
-    onni,
-    shiftMagic,
-    gardenGenie,
-    bootcampersTreasureChest
-  } from "../assets";
+  portfolio,
+  onni,
+  shiftMagic,
+  gardenGenie,
+  bootcampersTreasureChest
+} from "../assets";
   
   export const navLinks = [
     {
