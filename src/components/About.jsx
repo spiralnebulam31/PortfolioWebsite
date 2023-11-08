@@ -6,10 +6,10 @@ import { fadeIn, textVariant } from '../utils/motion.js';
 
 const PhotoCard = ({ index, alt, image }) => {
   return (
-    <Tilt className="xs:w-[350px] w-full">
+    <Tilt className="w-[250px]">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="green-pink-gradient p-[1px] rounded-2xl shadow-card"
+        className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-card"
       >
       <div
         options={{
@@ -31,53 +31,59 @@ const About = () => {
 
   return (
     <section id="about">
-    <div className='bg-background1 relative bg-cover w-full  top-0 left-0 right-0 bottom-0'>
+  <div className="bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-10">
     <div className="mx-auto px-5">
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText + styles.paddingX}>
-          Introduction
-        </p>
-        <h2 className={styles.sectionHeadText + styles.paddingX}>
-          About Me
-        </h2>
+        <p className={styles.sectionSubText + styles.paddingX}>Introduction</p>
+        <h2 className={styles.sectionHeadText + styles.paddingX}>About Me</h2>
       </motion.div>
 
-      <div className="flex flex-wrap px-5 space-x-6 mt-10">
-        {profilePhotos.map((photo, index) => (
-          <PhotoCard key={index} {...photo} />
-        ))}
-      </div>
-
+      <div className="flex flex-wrap px-5 space-x-6 justify-center">
       <motion.div
-        variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
-        className={styles.padding + "text-white text-[17px] max-w-7xl leading-[30px]"}
-        >
-        I'm a full-stack developer, with experience in TypeScript and JavaScript, and expertise in frameworks like React and Node.js. 
-        Having recently graduated from School of Code and armed with a BSc in Mathematics from the University of Ioannina, my skills have been enriched to accomodate innovating problem solving. 
+            variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
+            className={styles.padding + "text-white text-[14px] max-w-6xl leading-[30px]"}
+          >
+
+      <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
+        <div className="flex-1 xs:mx-auto sm:mx-auto md:mx-auto xs:pb-10 sm:pb-10 md:pb-10 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-0 xl:pt-0">
+          {profilePhotos.map((photo, index) => (
+            <PhotoCard key={index} {...photo} />
+          ))}
+        </div>
+
+        <div className="flex-2 lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full">
+            I'm a full-stack developer with a passion for creating meaningful and accessible web applications.
+        I enjoy working with React.js, Node.js and MongoDB, and I'm curious and eager to learn new technologies.
+        I use my imagination and creativity everywhere in my life and I'm always looking for new ways to express myself.
+        Crafting beautiful and functional websites is one of my favorite ways to do so. 
         <br /><br />
-        My journey has been a diverse and rewarding one, taking me through various experiences such as customer service, private tutoring and volunteering. 
-        Theses experiences have given me the opportunity to develop my communication, teamwork and organisation skills. 
-        My coding journey started with a programming highschool class, where I was introduced to the basics of algorithmic thinking. 
-        Due to involvement in online communities about things I enjoy, I mastered using Graphic Design software like Photoshop and InDesing. 
-        Now that knowledge has been expanded to include Figma and Canva, which I use to create mockups and prototypes for my projects. 
-        <br /><br />
-        One of the most profound experiences in my journey has been my time as a caregiver for vulnerable adults, which illuminated my innate desire to help others. 
-        It has also helped me develop my empathy and compassion, which I now bring to my work as a developer by following a people-first approach. 
-        <br /><br />
+        My journey has been a diverse and rewarding one, taking me through various experiences such as studying mathematics, working at customer service, engaging in private tutoring and volunteering. 
+        My coding journey started with a highschool programming class, where I was introduced to the basics of algorithmic thinking.
+        One of my most profound experiences has been my time as a caregiver for vulnerable adults, which illuminated my innate desire to help others. 
+        It has also helped me develop my empathy and compassion; I now bring those qualities to my projects by following a people-first approach. 
+        </div>
+      </div>
+        <div className="flex w-full mx-auto">
+        <br />
         Beyond my work, I enjoy exploring new places, as well as gazing up at the night sky. 
-        My insatiable curiosity about the world drives me to delve into local history, appreciate architectural wonders, and indulge in amateur astronomy. 
+        I like delving into local history, I appreciate architectural wonders and indulge in amateur astronomy. 
         I've found immense joy and fulfillment in my long-standing involvement in choirs, seeking out new vocal ensembles in every place I call home. 
-        Additionally, my transformative journey into yoga, has had a profound impact on both my mind and body. 
-        The positive energy I derive from choir singing and yoga serves as a healing force, enriching my life further. 
+        Additionally, my transformative journey into yoga has had a profound impact on both my mind and body. 
+        The positive energy I derive from choir singing and yoga serves as a healing force, enriching my life further.
+        <br /><br />
         Nature, in all its beauty, feels like a second home to me. 
         Whether I'm following mountain trails or tending to my beloved flower and vegetable garden, I relish every moment spent outdoors. 
-        These pursuits, whether enjoyed in the company of others or as solo endeavors, remain integral to my life, ensuring that I always make time for the things that bring me joy and peace. 
         <br /><br />
-        I am here to bring a positive influence to the tech industry. Carrying an analytical and a creative mindset, coupled with a deep sense of compassion, I am on a mission to make a difference! 
-      </motion.div>
+        As a web developer, I'm aiming to keep helping people and organisations fulfill significant goals, as well as promote accessibility and sustainability,
+        as I believe such causes make the world more inclusive and our planet healthier.
+        </div>
+          </motion.div>
+        </div>
+        
+      </div>
     </div>
-    </div>
-    </section>
+</section>
+
   )
 }
 
