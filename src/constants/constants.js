@@ -1,5 +1,5 @@
 import {
-    profilePhoto1,
+    // profilePhoto1,
     profilePhoto2,
     // profilePhoto3,
     typescript,
@@ -27,7 +27,7 @@ import {
   onni,
   shiftMagic,
   gardenGenie,
-  bootcampersTreasureChest
+  // bootcampersTreasureChest
 } from "../assets";
   
   export const navLinks = [
@@ -54,14 +54,14 @@ import {
   ];
   
   const profilePhotos = [
-    {
-      index: 0,
-      alt: "profile photo 1",
-      image: profilePhoto1,
-    },
+    // {
+    //   index: 0,
+    //   alt: "profile photo 1",
+    //   image: profilePhoto1,
+    // },
     {
       index: 1,
-      alt: "profile photo 2",
+      alt: "profile photo",
       image: profilePhoto2,
     },
     // {
@@ -75,86 +75,107 @@ import {
     {
       name: "TypeScript",
       icon: typescript,
+      alt: "TypeScript icon",
     },
     {
       name: "JavaScript",
       icon: javascript,
+      alt: "JavaScript icon",
     },
     {
       name: "React.js",
       icon: react,
+      alt: "React.js icon",
     },
     {
       name: "React Router",
       icon: reactRouter,
+      alt: "React Router icon",
     },
     {
       name: "HTML",
       icon: html,
+      alt: "HTML icon",
     },
     {
       name: "CSS",
       icon: css,
+      alt: "CSS icon",
     },
     {
       name: "Tailwind CSS",
       icon: tailwind,
+      alt: "Tailwind CSS icon",
     },
     {
       name: "Bootstrap",
       icon: bootstrap,
+      alt: "Bootstrap icon",
     },
     {
       name: "Framer Motion",
       icon: framerMotion,
+      alt: "Framer Motion icon",
     },
     {
       name: "Node.js",
       icon: node,
+      alt: "Node.js icon",
     },
     {
       name: "Express.js",
       icon: express,
+      alt: "Express.js icon",
     },
     {
       name: "MongoDB",
       icon: mongodb,
+      alt: "MongoDB icon",
     },
     {
       name: "PostreSQL",
       icon: postgresql,
+      alt: "PostreSQL icon",
     },
     {
       name: "Supabase",
       icon: supabase,
+      alt: "Supabase icon",
     },
     {
       name: "Jest",
       icon: jest,
+      alt: "Jest icon",
     },
     {
       name: "Playwright",
       icon: playwright,
+      alt: "Playwright icon",
     },
     {
       name: "Testing Library",
       icon: testingLibrary,
+      alt: "Testing Library icon",
     },
     {
       name: "Git",
       icon: git,
+      alt: "Git icon",
     },
     {
       name: "Figma",
       icon: figma,
+      alt: "Figma icon",
     },
     {
       name: "Canva",
       icon: canva,
+      alt: "Canva icon",
     },
     {
       name: "Photoshop",
       icon: photoshop,
+      alt: "Photoshop icon",
     }
   ];
   
@@ -258,26 +279,11 @@ import {
   
   const projects = [
     {
-      name: "Portfolio Website",
-      image: portfolio,
-      description: {
-        summary: "This website is my portfolio, where you can find information about me, my skills and my projects.",
-        challenge: "Create a digital space that reflects my personality and showcases my skills and projects.",
-        solution: "A responsive and accessible website that offers a smooth user experience.",
-        learnings: {
-          one: "I wanted to make sure that my personal website was a true reflection of my personality and skills. Along the way, I learned how to use React Chrono, Framer Motion and React Tilt. I also gained a deeper understanding of TailwindCSS.",
-          two: "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it.",
-        }
-      },
-      date: "August 2023 - Present",
-      techStack: ["React.js", "React Chrono", "Email.js", "TailwindCSS", "Framer Motion", "React Tilt", "GitHub", "Canva"],
-      repoLink: "https://github.com/AnastasiaAdamoudi/PortfolioWebsite",
-      websiteLink: "https://anastasiaadamoudi.com/",
-      status: "Always in progress",
-    },
-    {
       name: "onni.",
-      image: onni,
+      image: {
+        src: onni,
+        alt: "onni. Period App for Teens",
+      },
       description: {
         summary: "I had the privilege of participating in an amazing hackathon by Women Who Code. For nine days, my fantastic team of designers, developers and content creators, took the challenge to plan and create a project for the Hackathon for Social Good 2023!",
         challenge: "Conventional period tracking apps are often saturated with medical jargon, creating an overwhelming experience for young girls.",
@@ -298,7 +304,10 @@ import {
     },
     {
       name: "Shift Magic",
-      image: shiftMagic,
+      image: {
+        src: shiftMagic,
+        alt: "Shift Magic",
+      },
       description: {
         summary: "I was asked to create an employee rostering app to assist a new manager with organising shifts.",
         challenge: "Create an app that generates weekly shifts depending on each week's shift requirements and employee details.",
@@ -315,8 +324,32 @@ import {
       status: "In progress",
     },
     {
+      name: "Portfolio Website",
+      image: {
+        src: portfolio,
+        alt: "Portfolio Website",
+      },
+      description: {
+        summary: "This website is my portfolio, where you can find information about me, my skills and my projects.",
+        challenge: "Create a digital space that reflects my personality and showcases my skills and projects.",
+        solution: "A responsive and accessible website that offers a smooth user experience.",
+        learnings: {
+          one: "I wanted to make sure that my personal website was a true reflection of my personality and skills. Along the way, I learned how to use React Chrono, Framer Motion and React Tilt. I also gained a deeper understanding of TailwindCSS.",
+          two: "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it.",
+        }
+      },
+      date: "August 2023 - Present",
+      techStack: ["React.js", "React Chrono", "Email.js", "TailwindCSS", "Framer Motion", "React Tilt", "GitHub", "Canva"],
+      repoLink: "https://github.com/AnastasiaAdamoudi/PortfolioWebsite",
+      websiteLink: "https://anastasiaadamoudi.com/",
+      status: "Always in progress",
+    },
+    {
       name: "Garden Genie",
-      image: gardenGenie,
+      image: {
+        src: gardenGenie,
+        alt: "Garden Genie",
+      },
       description: {
         summary: "During our final full stack project at the School of Code, my team of six and I had the opportunity to address a real-world problem and plan, design and develop a full-stack web app.",
         challenge: "Simplify gardening for individuals, addressing the common barriers that often deter people from starting their gardening journey.",
@@ -333,24 +366,27 @@ import {
       websiteLink: "https://garden-genie.netlify.app/",
       status: "Complete",
     },
-    {
-      name: "Bootcampers Treasure Chest",
-      image: bootcampersTreasureChest,
-      description: {
-        summary: "During my time at the School of Code bootcamp, I had the opportunity to address a common challenge faced by bootcampers and, in collaboration with my team, we came up with an innovative solution.",
-        challenge: "Bootcampers often found it challenging to access and categorize the plethora of learning and tech resources available to them.",
-        solution: "An app that streamlines these resources, categorizing them for easy access. We chose React to ensure code maintainability and reusability, while delving into MaterialUI to enhance the user experience and learn the application of a new library. Importantly, we prioritized web accessibility standards to ensure inclusivity.",
-        learnings: {
-          one: "This project marked my first experience in team web development, teaching me essential skills in collaboration, project planning and Agile methodology.",
-          two: "I contributed by creating React components and helping the team develop the app's functionality. I made sure we prioritised web accessibility, ensuring inclusivity in our app."
-        }
-      },
-      date: "April 2023",
-      techStack: ["React.js", "MaterialUI", "CSS", "GitHub", "Figma"],
-      repoLink: "https://github.com/AnastasiaAdamoudi/BootcampersTreasureChest",
-      websiteLink: "https://anastasiaadamoudi.github.io/BootcampersTreasureChest/",
-      status: "Complete",
-    },
+    // {
+    //   name: "Bootcampers Treasure Chest",
+    //   image: {
+    //     src: bootcampersTreasureChest,
+    //     alt: "Bootcampers Treasure Chest"
+    //   },
+    //   description: {
+    //     summary: "During my time at the School of Code bootcamp, I had the opportunity to address a common challenge faced by bootcampers and, in collaboration with my team, we came up with an innovative solution.",
+    //     challenge: "Bootcampers often found it challenging to access and categorize the plethora of learning and tech resources available to them.",
+    //     solution: "An app that streamlines these resources, categorizing them for easy access. We chose React to ensure code maintainability and reusability, while delving into MaterialUI to enhance the user experience and learn the application of a new library. Importantly, we prioritized web accessibility standards to ensure inclusivity.",
+    //     learnings: {
+    //       one: "This project marked my first experience in team web development, teaching me essential skills in collaboration, project planning and Agile methodology.",
+    //       two: "I contributed by creating React components and helping the team develop the app's functionality. I made sure we prioritised web accessibility, ensuring inclusivity in our app."
+    //     }
+    //   },
+    //   date: "April 2023",
+    //   techStack: ["React.js", "MaterialUI", "CSS", "GitHub", "Figma"],
+    //   repoLink: "https://github.com/AnastasiaAdamoudi/BootcampersTreasureChest",
+    //   websiteLink: "https://anastasiaadamoudi.github.io/BootcampersTreasureChest/",
+    //   status: "Complete",
+    // },
   ];
   
   export { profilePhotos, techStack, timelineItems, projects };
