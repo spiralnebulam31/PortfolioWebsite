@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion.js';
 import emailjs from "@emailjs/browser"
-import linkedin from '../assets/linkedin.svg';
-import linkedin2 from '../assets/linkedin2.svg';
-import github from '../assets/github.svg';
-import github2 from '../assets/github2.svg';
-import spaceship from '../assets/spaceship.png';
+import { linkedin, linkedin2, github, github2 } from '../assets';
+import mountains from '../assets/space-mountains.png';
+import planet1 from '../assets/planet1.png';
+import planet2 from '../assets/planet2.png';
 
 const Contact = () => {
 
@@ -53,7 +52,8 @@ const Contact = () => {
 
   return (
     <section id="contact">
-  <div className="bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-10">
+  <div className="bg-gradient-to-b from-background1 to-orange-400 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-10">
+    
     <div className="mx-auto px-5">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText + styles.paddingX}>Ways to</p>
@@ -117,7 +117,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="align-top text-center mx-auto">
-          <img src={spaceship} alt="spaceshi[" className="w-[200px] mx-auto" />
+          {/* <img src={spaceship} alt="spaceshi[" className="w-[200px] mx-auto" /> */}
           <p className="text-primary font-body font-bold text-lg max-w-[80%] xl:max-w-[60%] mx-auto mt-5">
             If you’ve had a positive and smooth experience using the app, I
             would greatly appreciate it if you could consider leaving a
@@ -150,6 +150,16 @@ const Contact = () => {
             </a>
           </div>
           </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+            <img src={mountains} alt="mountains" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+            <img src={planet1} alt="planet1" className="w-[300px] h-[300px] object-contain" />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+            <img src={planet2} alt="planet2" className="w-[300px] h-[300px] object-contain" />
         </div>
 
     </div>

@@ -4,13 +4,13 @@ import { singleStarLilac, threeStars, github, github2, linkedin, linkedin2, resu
 
 const Main = () => {
   return (
-    <section className='bg-background1 relative w-full h-screen mx-auto'>
-      <div className={styles.paddingX + " absolute inset-0 top-[100px] max-w-7xl mx-40 flex flex-row items-start gap-5"}>
-      <div className="flex flex-col justify-center items-center">
-          <h1 className={styles.mainHeadText + "text-white"}>
+    <section className='bg-gradient-to-b from-background1 via-cyan-800 to-background1 relative w-full h-screen mx-auto'>
+      <div className={styles.paddingX + " absolute inset-0 top-[100px] max-w-7xl mx-auto flex flex-row items-start gap-5"}>
+      <div className="flex flex-col justify-center items-center mx-auto">
+          <h1 className={styles.mainHeadText + "text-white [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)]"}>
             Hi, I'm <span className="text-secondary">Anastasia</span>
           </h1>
-          <p className={styles.mainSubText + "text-white-100 max-w-md md:max-w-2xl"}>
+          <p className={styles.mainSubText + "text-white-100 max-w-md md:max-w-2xl [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)]"}>
           I create full-stack websites with a blend of creativity,
           compassion and an analytical mindset.
           </p>
@@ -19,14 +19,15 @@ const Main = () => {
             <img src={github} alt="github" className="w-[40px] h-[40px] object-contain" />
           </a>
           <a href="https://www.linkedin.com/in/anastasiaadamoudi89" target="_blank" rel="noreferrer">
-            <img src={linkedin} alt="linkedin" className="w-[40px] h-[40px] object-contain" />
+            <img src={linkedin} alt="linkedin" className="w-[40px] h-[40px] object-contain shadow-lg " />
           </a>
           <a href="/AnastasiaAdamoudiCV.pdf" download="AnastasiaAdamoudiCV.pdf" target="_blank" rel="noreferrer">
-            <img src={resume} alt="resume" className="w-[40px] h-[40px] object-contain" />
+            <img src={resume} alt="resume" className="w-[40px] h-[40px] object-contain shadow-lg " />
           </a>
           </div>
           </div>
       </div>
+
 
       <div className="absolute xs:bottom-10 bottom-60 w-full flex justify-center items-center">
         <a href="#about">
