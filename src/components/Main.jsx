@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles.js';
 import { singleStarLilac, threeStars, github, github2, linkedin, linkedin2, resume, resume2 } from '../assets';
 
-const Main = () => {
+const Main = ({ githubIsHovered, handleGithubMouseEnter, handleGithubMouseLeave, linkedinIsHovered, handleLinkedinMouseEnter, handleLinkedinMouseLeave, resumeIsHovered, handleResumeMouseEnter, handleResumeMouseLeave }) => {
+
   return (
     <section className='bg-gradient-to-b from-background1 via-cyan-800 to-background1 relative w-full h-screen mx-auto'>
       <div className={styles.paddingX + " absolute inset-0 top-[100px] max-w-7xl mx-auto flex flex-row items-start gap-5"}>
@@ -14,17 +15,21 @@ const Main = () => {
           I create full-stack websites with a blend of creativity,
           compassion and an analytical mindset.
           </p>
+     
           <div className="flex flex-row justify-center items-center gap-5">
-          <a href="https://github.com/AnastasiaAdamoudi" target="_blank" rel="noreferrer">
-            <img src={github} alt="github" className="w-[40px] h-[40px] object-contain" />
-          </a>
-          <a href="https://www.linkedin.com/in/anastasiaadamoudi89" target="_blank" rel="noreferrer">
-            <img src={linkedin} alt="linkedin" className="w-[40px] h-[40px] object-contain shadow-lg " />
-          </a>
-          <a href="/AnastasiaAdamoudiCV.pdf" download="AnastasiaAdamoudiCV.pdf" target="_blank" rel="noreferrer">
-            <img src={resume} alt="resume" className="w-[40px] h-[40px] object-contain shadow-lg " />
-          </a>
-          </div>
+      <a href="https://github.com/AnastasiaAdamoudi" target="_blank" rel="noreferrer" onMouseEnter={handleGithubMouseEnter} onMouseLeave={handleGithubMouseLeave}>
+        <img src={githubIsHovered ? github2 : github} alt="clickable GitHub logo" className="w-[40px] h-[40px] object-contain mt-4" />
+      </a>
+
+      <a href="https://www.linkedin.com/in/anastasiaadamoudi89/" target="_blank" rel="noreferrer" onMouseEnter={handleLinkedinMouseEnter} onMouseLeave={handleLinkedinMouseLeave}>
+        <img src={linkedinIsHovered ? linkedin2 : linkedin} alt="clickable LinkedIn logo" className="w-[40px] h-[40px] object-contain mt-4" />
+      </a>
+
+      <a href="/AnastasiaAdamoudiCV.pdf" download="AnastasiaAdamoudiCV.pdf" target="_blank" rel="noreferrer" onMouseEnter={handleResumeMouseEnter} onMouseLeave={handleResumeMouseLeave}>
+        <img src={resumeIsHovered ? resume2 : resume} alt="resume" className="w-[40px] h-[40px] object-contain shadow-lg mt-4" />
+      </a>
+    </div>
+
           </div>
       </div>
 
