@@ -198,7 +198,7 @@ const Contact = ({
                 <div className="mb-4">
                   <button
                     type="submit"
-                    className="bg-secondary hover:bg-primary mt-2 mr-5 font-links font-bold uppercase
+                    className="bg-secondary hover:bg-primary mt-1 font-links font-bold uppercase
                             text-sm sm:text-md md:text-l lg:text-xl text-background1 py-2 px-4 rounded-md items-center mx-auto"
                   >
                     Send
