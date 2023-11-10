@@ -6,10 +6,18 @@ import { techStack } from '../constants/constants.js';
 
 const SkillCard = ({ index, name, icon, alt }) => {
   return (
-    <Tilt className="w-[250px]">
+    <Tilt
+     className="w-[250px]"
+     style={{
+          transformStyle: 'preserve-3d',
+        }}
+      >
       <motion.div
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] m-3 w-[100px] rounded-2xl shadow-card"
+        style={{
+          transform: 'translateZ(60px)',
+        }}
       >
         <div
           options={{

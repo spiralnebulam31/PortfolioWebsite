@@ -39,7 +39,7 @@ const Journey = () => {
                 primary: "#2B96B1",
                 secondary: "#a855f7",
                 cardBgColor: "#CCB2FF",
-                cardTitleColor: "#2B96B1",
+                cardTitleColor: "#3b0764",
                 cardDetailsColor: "#3b0764",
                 iconBackgroundColor: "#CCB2FF",
                 titleColorActive: "#83F8F5",
