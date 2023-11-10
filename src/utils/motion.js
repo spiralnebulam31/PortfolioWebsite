@@ -87,7 +87,21 @@ export const textVariant = (delay) => {
     };
   };
 
-  export const toggleButtonVariants = {
-    open:
-    closed:
+  export const mobileMenuVariants = {
+    open: {
+      clipPath: "circle(1000px at 50px 50px)",
+      transition: {
+        type: "spring", 
+        stiffness: 30,
+      },
+    },
+    closed: {
+      clipPath: "circle(30px at 50px 50px)",
+      transition: {
+        delay: 0.5, // delay the animation for 0.5 seconds
+        type: "spring", // spring animationm that will bounce back and forth when it reaches the end of its animation
+        stiffness: 700, // how stiff the spring is (higher number = stiffer spring)
+        damping: 40, // how much the spring will bounce back and forth (higher number = less bounce)
+      },
+    }
   }

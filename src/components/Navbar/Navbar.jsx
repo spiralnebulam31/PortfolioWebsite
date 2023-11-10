@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { styles } from "../../styles.js";
 import { navLinks } from "../../constants/constants.js";
 import { logoBracketsLight, menu, close } from "../../assets/index.js";
+import { mobileMenuVariants } from "../../utils/motion.js";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -63,12 +65,16 @@ const Navbar = () => {
           />
           
           {/* mobile menu button */}
-          <div
-            className={`${!mobile ? "hidden" : "flex"}
-                        absolute right-0 top-20 p-2 w-[240px] mx-0 my-0
-                        z-10 rounded-xl flex-col justify-center
-                        items-center gap-10 bg-gradient-to-b from-cyan-500 to-purple-300 shadow-lg`}
-          > {/* mobile menu */}
+          <motion.div
+  className={`${!mobile ? "hidden" : "flex"}
+              absolute right-0 top-20 p-2 w-[240px] mx-0 my-0
+              z-10 rounded-xl flex-col justify-center
+              items-center gap-10 bg-gradient-to-b from-cyan-500 to-purple-300 shadow-lg`}
+  variants={mobileMenuVariants}
+  initial={mobile ? "open" : "closed"}
+  animate={mobile ? "open" : "closed"}
+>
+ {/* mobile menu */}
             <ul className="list-none flex flex-col justify-end items-start gap-4 bg-background1 px-16 py-12 mx-1 my-2 rounded-xl">
               {navLinks.map((link) => (
                 <li
@@ -77,7 +83,7 @@ const Navbar = () => {
                     active === link.title
                       ? "text-primary underline"
                       : "text-secondary"
-                  } hover:text-purple-300 text-[20px] font-medium cursor-pointer leading-7`}
+                  } hover:text-purple-300 text-[20px] hover:text-[24px] font-medium cursor-pointer leading-7 w-[86px]`}
                   onClick={() => {
                     setMobile(!mobile);
                     setActive(link.title);
@@ -88,7 +94,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </div> {/* end of mobile menu */}
+          </motion.div> {/* end of mobile menu */}
 
         </div> {/* end of mobile menu button */}
       </div> {/* end of right side */}
