@@ -16,6 +16,24 @@ export const textVariant = (delay) => {
     };
   };
 
+  export const fadeIn = (direction, type, delay, duration) => {
+    return {
+      hidden: {
+        x: direction === "left" ? -50 : 50,
+        opacity: 0,
+      },
+      show: {
+        x: 0,
+        opacity: 1,
+        transition: {
+          type: type,
+          duration: duration,
+          delay: delay,
+        },
+      },
+    };
+  };
+
   export const heroVariant = {
     initial: {
       y:-500,
@@ -46,7 +64,51 @@ export const textVariant = (delay) => {
     },
   }
 
-  export const heroPlanet1Variant = {
+  export const starryHeroVariant1 = {
+    initial: {
+      x: -500,
+      opacity: 0,
+    },
+  animate: {
+        x: 0,
+        opacity : 0.4,
+    transition: {
+      duration: 2.5,
+      delay: 0.5,
+      type: "spring",
+    },
+  }}
+
+  export const starryHeroVariant2 = {
+    initial: {
+      x: 500,
+      opacity: 0,
+    },
+  animate: {
+        x: 0,
+        opacity : 0.4,
+    transition: {
+      duration: 2.5,
+      delay: 0.5,
+      type: "spring",
+    },
+  }}
+
+
+  export const starSliderVariant = {
+    initial: {
+      x: 0
+    },
+  animate: {
+        y: [0, 20, 0],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      repeatType: "loop",
+    },
+  }}
+
+  export const planet1Variant = {
     initial: {
       x:-500,
       opacity: 0,
@@ -62,7 +124,7 @@ export const textVariant = (delay) => {
     },
   }
 
-  export const heroPlanet2Variant = {
+  export const planet2Variant = {
     initial: {
       x:500,
       opacity: 0,

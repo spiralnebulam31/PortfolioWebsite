@@ -4,9 +4,7 @@ import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion.js";
 import emailjs from "@emailjs/browser";
 import { linkedin, linkedin2, github, github2, email, email2 } from "../assets";
-import mountains from "../assets/space-mountains.png";
-import planet1 from "../assets/planet1.png";
-import planet2 from "../assets/planet2.png";
+import { mountains, planet1, planet2, starrySky1 } from "../assets";
 
 const Contact = ({
   linkedinIsHovered,

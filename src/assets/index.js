@@ -16,6 +16,12 @@ import singleStarPurple from "./singleStarPurple.png";
 import singleStarLightTeal from "./singleStarLightTeal.png";
 import singleStarLilac from "./singleStarLilac.png";
 import threeStars from "./threeStars.png";
+import starrySky from "./starrySky.svg";
+import starrySky1 from "./starrySky1.svg";
+import starrySky2 from "./starrySky2.svg";
+import mountains from "./space-mountains.png";
+import planet1 from "./planet1.png";
+import planet2 from "./planet2.png";
 
 import profilePhoto1 from "./photos/profilePhoto1.jpg";
 import profilePhoto2 from "./photos/profilePhoto2.jpg";
@@ -67,6 +73,12 @@ export {
   singleStarLightTeal,
   singleStarLilac,
   threeStars,
+  starrySky,
+  starrySky1,
+  starrySky2,
+  mountains,
+  planet1,
+  planet2,
   profilePhoto1,
   profilePhoto2,
   profilePhoto3,
