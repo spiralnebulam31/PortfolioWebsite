@@ -38,10 +38,10 @@ const About = () => {
         <h2 className={styles.sectionHeadText + styles.paddingX}>About Me</h2>
       </motion.div>
 
-      <div className="flex flex-wrap px-5 space-x-6 justify-center">
+      <div className="flex flex-wrap px-5 pt-10 space-x-6 justify-center">
       <motion.div
             variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
-            className={styles.padding + "text-white text-[14px] max-w-6xl leading-[30px]"}
+            className="text-background1 text-[14px] font-bold max-w-6xl leading-[30px] bg-gradient-to-b from-cyan-500 to-purple-300 p-10 rounded-2xl"
           >
 
       <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
@@ -64,7 +64,6 @@ const About = () => {
         </div>
       </div>
         <div className="flex w-full mx-auto">
-        <br />
         Beyond my work, I enjoy exploring new places, as well as gazing up at the night sky. 
         I like delving into local history, I appreciate architectural wonders and indulge in amateur astronomy. 
         I've found immense joy and fulfillment in my long-standing involvement in choirs, seeking out new vocal ensembles in every place I call home. 

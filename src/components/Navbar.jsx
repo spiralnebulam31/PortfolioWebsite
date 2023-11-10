@@ -23,16 +23,16 @@ const Navbar = () => {
           <img
             src={logoBracketsLight}
             alt="logo"
-            className="w-20 md:w-[70px] h-auto"
+            className="w-20 lg:w-[70px] h-auto"
           />
-          <p className="text-primary text-[18px] font-bold cursor-pointer md:block hidden">
+          <p className="text-primary text-[18px] font-bold cursor-pointer lg:block hidden">
             Anastasia Adamoudi | Full-Stack Developer
           </p>
         </Link>
       </div>  {/* end of left side div */}
 
       <div className="flex items-center justify-end"> {/* beginning of right side div */}
-        <ul className="list-none hidden md:flex flex-row gap-10">
+        <ul className="list-none hidden lg:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -54,7 +54,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="md:hidden flex flex-1 justify-end items-center gap-2">
+        <div className="lg:hidden flex flex-1 justify-end items-center gap-2">
           <img
             src={mobile ? close : menu}
             alt="menu"
