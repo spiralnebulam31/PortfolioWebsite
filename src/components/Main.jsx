@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { heroVariant, heroStarVariant } from "../utils/motion.js";
 import { styles } from "../styles.js";
 import {
   singleStarLilac,
@@ -27,19 +28,26 @@ const Main = ({
       <div
         className={
           styles.paddingX +
-          " absolute inset-0 top-[100px] max-w-7xl mx-auto flex flex-row items-start gap-5"
+          " absolute inset-0 top-[200px] max-w-7xl mx-auto flex flex-row items-start gap-5"
         }
       >
-        <div className="flex flex-col justify-center items-center mx-auto">
-          <h1
+        <motion.div
+        className="flex flex-col justify-center items-center mx-auto"
+        variants={heroVariant}
+        initial="initial"
+        animate="animate"
+        >
+          <motion.h1
+          variants={heroVariant}
             className={
               styles.mainHeadText +
               "text-white [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)]"
             }
           >
             Hi, I'm <span className="text-secondary">Anastasia</span>
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
+          variants={heroVariant}
             className={
               styles.mainSubText +
               "text-white-100 max-w-md md:max-w-2xl [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)]"
@@ -47,9 +55,11 @@ const Main = ({
           >
             I create full-stack websites with a blend of creativity, compassion
             and an analytical mindset.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-row justify-center items-center gap-5">
+          <motion.div
+          variants={heroVariant}
+          className="flex flex-row justify-center items-center gap-5">
             <a
               href="https://github.com/AnastasiaAdamoudi"
               target="_blank"
@@ -92,13 +102,19 @@ const Main = ({
                 className="w-[40px] h-[40px] object-contain shadow-lg mt-4"
               />
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className="absolute xs:bottom-10 bottom-60 w-full flex justify-center items-center">
+      <motion.div
+      variants={heroStarVariant}
+      initial="initial"
+      animate="animate"
+      className="absolute xs:bottom-10 bottom-60 w-full flex justify-center items-center">
         <a href="#about">
-          <div className="w-[35px] h-[75px] rounded-3xl border-4 border-secondary flex justify-center items-start">
+          <motion.div
+          variants={heroStarVariant}
+          className="w-[35px] h-[75px] rounded-3xl border-4 border-secondary flex justify-center items-start">
             <motion.div
               animate={{
                 y: [0, 20, 0],
@@ -115,9 +131,9 @@ const Main = ({
                 className="w-[60px] h-[60px] object-contain"
               />
             </motion.div>
-          </div>
+          </motion.div>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };
