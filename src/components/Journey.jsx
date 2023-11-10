@@ -24,7 +24,7 @@ const Journey = () => {
             }
           >
 
-<div className="flex flex-wrap justify-center h-[85vh]">
+<div className="flex flex-wrap justify-center h-[85vh] bg-gradient-to-b from-cyan-500 to-purple-300  rounded-xl shadow-card">
             <Chrono
               items={timelineItems}
               mode="VERTICAL_ALTERNATING"
@@ -36,14 +36,14 @@ const Journey = () => {
               focusActiveItemOnLoad
               scrollable
               theme={{
-                primary: "#2B96B1",
+                primary: "#3b0764",
                 secondary: "#a855f7",
                 cardBgColor: "#CCB2FF",
                 cardTitleColor: "#3b0764",
                 cardDetailsColor: "#3b0764",
                 iconBackgroundColor: "#CCB2FF",
                 titleColorActive: "#83F8F5",
-                titleColor: "#83F8F5",
+                titleColor: "#3b0764",
               }}
             />
           </div>
