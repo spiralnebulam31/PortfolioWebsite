@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { logoBracketsLight } from "../assets";
 import Popup from "reactjs-popup";
+// import { Link } from "react-router-dom";
+// import { logoBracketsLight } from "../assets";
 
 const Footer = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
@@ -12,7 +12,8 @@ const Footer = () => {
 
   return (
     <div className="bg-background1 flex flex-col items-center justify-center bottom-0 w-full">
-      <div className="mx-auto mb-0.1 mt-0.1">
+    
+      {/* <div className="mx-auto mb-0.1 mt-0.1">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -23,9 +24,9 @@ const Footer = () => {
         >
           <img src={logoBracketsLight} alt="logo" className="w-[100px]" />
         </Link>
-      </div>
+      </div> */}
 
-      <div className="mx-auto mb-0.1 mt-0.1">
+      <div className="mx-auto mb-0.1 mt-3">
         <p className="text-white font-body font-bold text-md mb-1">
           Copyright
           <span className="text-secondary font-links font-bold text-md mx-2">

@@ -86,3 +86,8 @@ export const textVariant = (delay) => {
       },
     };
   };
+
+  export const toggleButtonVariants = {
+    open:
+    closed:
+  }

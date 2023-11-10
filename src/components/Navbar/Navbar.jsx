@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { styles } from "../styles.js";
-import { navLinks } from "../constants/constants";
-import { logoBracketsLight, menu, close } from "../assets";
+import { styles } from "../../styles.js";
+import { navLinks } from "../../constants/constants.js";
+import { logoBracketsLight, menu, close } from "../../assets/index.js";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [mobile, setMobile] = useState(false);
 
   return (
-    <nav className={styles.paddingX + " sticky top-0 z-50 bg-background1 shadow-xl"}>
+    <nav className={styles.paddingX + " fixed w-full top-0 z-50 bg-background1 shadow-xl"}>
     <div className="flex w-full mx-auto justify-between gap-20"> {/* beginning of flex div */}
       <div className="flex items-center justify-start"> {/* beginning of left side div */}
         <Link
@@ -60,14 +60,16 @@ const Navbar = () => {
             alt="menu"
             className="w-10 h-auto cursor-pointer object-contain"
             onClick={() => setMobile(!mobile)}
-          /> {/* mobile menu button */}
+          />
+          
+          {/* mobile menu button */}
           <div
             className={`${!mobile ? "hidden" : "flex"}
-                        absolute right-0 top-20 p-6 min-w-[140px] mx-4 my-2
+                        absolute right-0 top-20 p-2 w-[240px] mx-0 my-0
                         z-10 rounded-xl flex-col justify-center
-                        items-center gap-10 bg-background`}
+                        items-center gap-10 bg-gradient-to-b from-cyan-500 to-purple-300 shadow-lg`}
           > {/* mobile menu */}
-            <ul className="list-none flex flex-col justify-end items-start gap-4">
+            <ul className="list-none flex flex-col justify-end items-start gap-4 bg-background1 px-16 py-12 mx-1 my-2 rounded-xl">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
@@ -75,7 +77,7 @@ const Navbar = () => {
                     active === link.title
                       ? "text-primary underline"
                       : "text-secondary"
-                  } hover:text-purple-300 text-[16px] font-medium cursor-pointer`}
+                  } hover:text-purple-300 text-[20px] font-medium cursor-pointer leading-7`}
                   onClick={() => {
                     setMobile(!mobile);
                     setActive(link.title);

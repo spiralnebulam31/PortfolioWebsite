@@ -2,7 +2,6 @@ import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import {
   Main,
-  Navbar,
   About,
   Skills,
   Projects,
@@ -10,6 +9,7 @@ import {
   Contact,
   Footer,
 } from "./components";
+import Navbar from "./components/Navbar/Navbar"
 
 const App = () => {
   const [githubIsHovered, setGithubIsHovered] = useState(false);
