@@ -212,7 +212,7 @@ const Contact = ({
 
 
         {/* Parallax images */}
-        {/* <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0">
             <img src={mountains} alt="mountains" className="w-full h-full object-cover" />
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -220,7 +220,7 @@ const Contact = ({
         </div>
         <div className="absolute bottom-0 left-0 right-0">
             <img src={planet2} alt="planet2" className="w-[300px] h-[300px] object-contain" />
-        </div> */}
+        </div>
 
       </div>
       

@@ -75,16 +75,29 @@ export const textVariant = (delay) => {
     };
   };
   
-  export const staggerContainer = (staggerChildren, delayChildren) => {
-    return {
-      hidden: {},
-      show: {
-        transition: {
-          staggerChildren: staggerChildren,
-          delayChildren: delayChildren || 0,
-        },
+  export const staggerContainer = {
+    open: {
+      transition: {
+        staggerChildren: 0.1,
       },
-    };
+    },
+    closed: {
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+  }
+
+  export const mobileItemVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+   },
+    closed: {
+        y: 50,
+        opacity: 0,
+    }
   };
 
   export const mobileMenuVariants = {

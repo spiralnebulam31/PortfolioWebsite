@@ -1,5 +1,5 @@
 import Main from './Main';
-import Navbar from './Navbar/Navbar';
+import Navbar from './Navbar';
 import About from './About';
 import Skills from './Skills';
 import Journey from './Journey';
