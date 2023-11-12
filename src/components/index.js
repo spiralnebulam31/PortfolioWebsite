@@ -4,6 +4,7 @@ import About from './About';
 import Skills from './Skills';
 import Journey from './Journey';
 import Projects from './Projects';
+import Parallax from './Parallax';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -14,6 +15,7 @@ export {
   Skills,
   Projects,
   Journey,
+  Parallax,
   Contact,
   Footer
 };

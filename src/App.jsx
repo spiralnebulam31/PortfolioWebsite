@@ -7,6 +7,7 @@ import {
   Skills,
   Projects,
   Journey,
+  Parallax,
   Contact,
   Footer,
 } from "./components";
@@ -70,6 +71,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Journey />
+      <Parallax />
       <Contact
         githubIsHovered={githubIsHovered}
         handleGithubMouseEnter={handleGithubMouseEnter}
