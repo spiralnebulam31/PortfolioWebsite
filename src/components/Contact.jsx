@@ -49,33 +49,35 @@ const Contact = ({
 
   return (
 <section id="contact">
-      {/* Title */}
+
       <div className="bg-gradient-to-b from-orange-700 to-purple-800 relative bg-cover w-full left-0 right-0 bottom-0 top-0 py-10"> 
+
+      {/* Title */}
         <div className="mx-auto px-5">
-          <motion.div variants={textVariant()}>
+          <div>
             <p className={styles.sectionSubText + styles.paddingX}>Ways to</p>
             <h2 className={styles.sectionHeadText + styles.paddingX}>
               Contact Me
             </h2>
-          </motion.div>
+          </div>
+        </div>
+      {/* End of title */}
+
 
           {/* Content text */}
-          <div className="flex flex-col justify-center items-center gap-5 mx-auto">
-            <div className="flex flex-col justify-center items-center gap-5 mb-2 text-center max-w-full xl:max-w-[70%] mx-auto">
-              <motion.div
-                variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
-                className={
-                  "text-white font-body text-lg max-w-full xl:max-w-6xl sm:px-16 px-6 py-8 leading-[30px]"
-                }
+              <div
+                className="text-white font-body text-lg max-w-full sm:px-16 px-6 py-8 leading-[30px]"
               >
                 <p className="mt-4">Feel free to reach out to me:</p>
+              </div>
 
                 {/* Contact info */}
                 <div
-                  className="flex flex-col justify-center items-center gap-5
-                   bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-lg shadow-card text-center mt-4 w-full xl:w-[80%] mx-auto"
+                  className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-lg shadow-card text-center"
                 >
-                  <div className="bg-background1 w-full rounded-lg border pb-3 pt-3 mx-auto">
+                  <div className="bg-background1 w-full rounded-lg border pb-3 pt-3">
+
+                    {/* Contact links */}
                     <div className="flex justify-center items-center gap-5 pb-3">
                       <a
                         href="mailto:anastasiaadamoudi@gmail.com"
@@ -83,7 +85,7 @@ const Contact = ({
                         onMouseLeave={handleEmailMouseLeave}
                         alt="email address"
                         className="text-secondary hover:text-primary flex items-center whitespace-nowrap
-                        text-sm sm:text-sm md:text-md lg:text-md xl:text-xl max-w-lg xl:max-w-6xl"
+                        text-sm sm:text-sm md:text-md lg:text-md xl:text-xl"
                       >
                         <img
                           src={emailIsHovered ? email2 : email}
@@ -103,7 +105,7 @@ const Contact = ({
                         onMouseLeave={handleGithubMouseLeave}
                         alt="GitHub profile"
                         className="text-secondary hover:text-primary flex items-center whitespace-nowrap
-                        text-sm sm:text-sm md:text-md lg:text-md xl:text-xl max-w-lg xl:max-w-6xl"
+                        text-sm sm:text-sm md:text-md lg:text-md xl:text-xl"
                       >
                         <img
                           src={githubIsHovered ? github2 : github}
@@ -123,7 +125,7 @@ const Contact = ({
                         onMouseLeave={handleLinkedinMouseLeave}
                         alt="LinkedIn profile"
                         className="text-secondary hover:text-primary flex items-center whitespace-nowrap
-                        text-sm sm:text-sm md:text-md lg:text-md xl:text-xl max-w-lg xl:max-w-6xl"
+                        text-sm sm:text-sm md:text-md lg:text-md xl:text-xl"
                       >
                         <img
                           src={linkedinIsHovered ? linkedin2 : linkedin}
@@ -134,15 +136,13 @@ const Contact = ({
                           linkedin.com/in/anastasiaadamoudi89
                         </p>
                       </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                    </div> {/* End of contact links */}
+
+                  </div> {/* End of contact info */}
+                </div> {/* End of contact info container */}
 
             {/* Contact form */}
-            <motion.div
-              variants={fadeIn("", "", 0.1, 1)}
+            <div
               className="text-center w-[60%] md:w-[40%] mx-auto"
             >
               <p
@@ -198,13 +198,9 @@ const Contact = ({
                   </button>
                 </div>
               </form>
-            </motion.div>
+            </div>
 
           </div>
-        </div>
-
-      </div>
-
     </section>
   );
 };
