@@ -4,10 +4,6 @@ import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion.js";
 import emailjs from "@emailjs/browser";
 import { linkedin, linkedin2, github, github2, email, email2 } from "../assets";
-import { mountains, planet1, planet2, starrySky1 } from "../assets";
-import Parallax from "./Parallax";
-
-// ... (imports)
 
 const Contact = ({
   linkedinIsHovered,
@@ -60,11 +56,11 @@ const Contact = ({
         </div>
         {/* End of title */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-1">
           {/* Contact Information */}
-          <div className="mb-2 text-center max-w-[80%] xl:max-w-[60%] mx-auto">
-            <div className="text-white font-body text-lg max-w-full sm:px-16 px-6 py-8 leading-[30px]">
-              <p className="mt-4">Feel free to reach out to me:</p>
+          <div className="mb-6 text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto">
+            <div className="text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-5 leading-[30px]">
+              <p>Feel free to reach out to me:</p>
             </div>
 
             {/* Contact Info Container */}
@@ -72,7 +68,7 @@ const Contact = ({
               <div className="bg-background1 w-full rounded-lg border pb-3 pt-3">
 
                 {/* Contact Links */}
-                <div className="flex flex-col gap-5 pb-3">
+                <div className="flex flex-col gap-5 py-3">
                   <ContactLink
                     href="mailto:anastasiaadamoudi@gmail.com"
                     onMouseEnter={handleEmailMouseEnter}
@@ -109,8 +105,8 @@ const Contact = ({
           {/* End of Contact Information */}
 
           {/* Contact Form */}
-          <div className="text-center w-[60%] md:w-[40%] mx-auto">
-            <p className="text-white font-body text-lg max-w-lg xl:max-w-6xl pb-5">
+          <div className="text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto pt-8 mb-5">
+            <p className="text-white font-body text-lg max-w-lg xl:max-w-6xl pb-5 mx-auto">
               Or send me a message below:
             </p>
 
@@ -121,10 +117,10 @@ const Contact = ({
               <ContactInput type="textarea" placeholder="Your message" name="message" />
 
               {/* Submit Button */}
-              <div className="mb-4">
+              <div className="mb-1 =">
                 <button
                   type="submit"
-                  className="bg-secondary hover:bg-primary mt-1 font-links font-bold uppercase text-sm sm:text-md md:text-l lg:text-xl text-background1 py-2 px-4 rounded-md items-center mx-auto"
+                  className="bg-secondary hover:bg-primary mt-1 font-links font-bold uppercase text-md md:text-xl text-background1 py-2 px-4 rounded-md items-center mx-auto"
                 >
                   Send
                 </button>
@@ -147,7 +143,7 @@ const ContactLink = ({ href, onMouseEnter, onMouseLeave, icon, text }) => (
       onMouseLeave={onMouseLeave}
       target="_blank"
       rel="noreferrer"
-      className="text-secondary hover:text-primary flex items-center whitespace-nowrap text-sm sm:text-sm md:text-md lg:text-md xl:text-xl"
+      className="text-secondary hover:text-primary flex items-center whitespace-nowrap text-md lg:text-lg lg:text-xl"
     >
       <img src={icon} alt={`${text} icon`} className="w-[20px] h-[20px] object-contain" />
       <p className="ml-2">{text}</p>
