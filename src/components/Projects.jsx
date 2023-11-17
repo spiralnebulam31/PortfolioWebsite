@@ -119,7 +119,7 @@ const Projects = () => {
             </h2>
           </motion.div>
           <div className="flex flex-col text-center mx-auto text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-1 leading-[30px]">
-              <p>Unlock the full project story! Click on the project card to expand or collapse and discover more details:</p>
+              <p>Click on the project card to expand or collapse and discover more details:</p>
             </div>
           <div className="flex flex-wrap px-5 space-x-6 justify-center">
             <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10">
