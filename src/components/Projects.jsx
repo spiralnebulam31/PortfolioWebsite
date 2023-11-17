@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { styles } from '../styles';
 import { projects } from '../constants/constants.js';
-import { fadeIn, textVariant } from '../utils/motion.js';
+import { fadeIn, textVariant, floatFromRightVariant } from '../utils/motion.js';
 
 const ProjectCard = ({ index, image, name, description, date, techStack, repoLink, repoLink2, websiteLink, status, isOpen, toggleOpen }) => {
   return (
@@ -19,13 +19,16 @@ const ProjectCard = ({ index, image, name, description, date, techStack, repoLin
         className={`cursor-pointer w-full xs:w-[350px] sm:w-[350px] md:w-[450px] lg:w-[450px] xl:w-[450px] card bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-card`}
         onClick={toggleOpen}
       >
-        <div className="bg-background rounded-2xl flex justify-evenly items-center flex-col">
+        <motion.div
+        className="bg-background rounded-2xl flex justify-evenly items-center flex-col"
+        variants={fadeIn('left', 'spring', 0.5, 1.25)}
+        >
           <img src={image.src} alt={image.alt} className="w-full h-full rounded-2xl" />
           <br />
           <div className="text-background1 text-center text-[20px] max-w-[350px] leading-[30px] font-bold">
             {name}
           </div>
-        </div>
+        </motion.div>
         <br />
         <AnimatePresence>
           {isOpen && (
@@ -99,26 +102,35 @@ const ProjectCard = ({ index, image, name, description, date, techStack, repoLin
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(Array(projects.length).fill(false));
-
   const toggleOpen = (index) => {
     setIsOpen((prev) =>
       prev.map((value, i) => (i === index ? !value : false))
     );
   };
 
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
-    <section id="about">
+    <section id="projects" className="overflow-hidden">
       <div className='bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-10 pb-[120px]'>
         <div className="mx-auto px-5">
-          <motion.div variants={textVariant()}>
             <p className={styles.sectionSubText + styles.paddingX}>
               A look at
             </p>
             <h2 className={styles.sectionHeadText + styles.paddingX}>
               My Projects
             </h2>
-          </motion.div>
-          <div className="flex flex-wrap px-5 space-x-6 justify-center">
+
+          <motion.div
+          className="flex flex-col text-center mx-auto text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-1 leading-[30px]"
+          variants={textVariant} initial="hidden" ref={ref} animate={isInView ? "show" : "hidden"}
+          >
+              <p>Click on the project card to expand or collapse and discover more details:</p>
+            </motion.div>
+          <motion.div className="flex flex-wrap px-5 space-x-6 justify-center"
+         variants={floatFromRightVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
+          >
             <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10">
               {projects.map((project, index) => (
                 <ProjectCard
@@ -130,7 +142,7 @@ const Projects = () => {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

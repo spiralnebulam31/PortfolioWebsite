@@ -6,6 +6,8 @@ import linkedin from "./linkedin.svg";
 import linkedin2 from "./linkedin2.svg";
 import resume from "./resume.svg";
 import resume2 from "./resume2.svg";
+import email from "./email.svg";
+import email2 from "./email2.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -14,6 +16,12 @@ import singleStarPurple from "./singleStarPurple.png";
 import singleStarLightTeal from "./singleStarLightTeal.png";
 import singleStarLilac from "./singleStarLilac.png";
 import threeStars from "./threeStars.png";
+import starrySky from "./starrySky.svg";
+import starrySky1 from "./starrySky1.svg";
+import starrySky2 from "./starrySky2.svg";
+import mountain from "./mountain.svg";
+import planet1 from "./planet1.png";
+import planet2 from "./planet2.png";
 
 import profilePhoto1 from "./photos/profilePhoto1.jpg";
 import profilePhoto2 from "./photos/profilePhoto2.jpg";
@@ -56,6 +64,8 @@ export {
   linkedin2,
   resume,
   resume2,
+  email,
+  email2,
   menu,
   close,
   sideStar,
@@ -63,33 +73,39 @@ export {
   singleStarLightTeal,
   singleStarLilac,
   threeStars,
+  starrySky,
+  starrySky1,
+  starrySky2,
+  mountain,
+  planet1,
+  planet2,
   profilePhoto1,
   profilePhoto2,
   profilePhoto3,
   typescript,
-    javascript,
-    react,
-    reactRouter,
-    html,
-    css,
-    tailwind,
-    bootstrap,
-    framerMotion,
-    node,
-    express,
-    mongodb,
-    postgresql,
-    supabase,
-    jest,
-    playwright,
-    testingLibrary,
-    git,
-    figma,
-    canva,
-    photoshop,
-    portfolio,
+  javascript,
+  react,
+  reactRouter,
+  html,
+  css,
+  tailwind,
+  bootstrap,
+  framerMotion,
+  node,
+  express,
+  mongodb,
+  postgresql,
+  supabase,
+  jest,
+  playwright,
+  testingLibrary,
+  git,
+  figma,
+  canva,
+  photoshop,
+  portfolio,
   onni,
   shiftMagic,
   gardenGenie,
-  bootcampersTreasureChest
+  bootcampersTreasureChest,
 };
