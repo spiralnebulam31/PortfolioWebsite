@@ -8,7 +8,7 @@ const Journey = () => {
 
   return (
     <section id="journey" className="overflow-hidden">
-      <div className="bg-background1 relative z-1 bg-cover w-full top-0 left-0 right-0 bottom-0 pt-10 pb-10">
+      <div className="bg-background1 relative z-1 bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-24 sm:pb-20">
         <div className="mx-auto px-5">
           <motion.div variants={textVariant()}>
             <p className={styles.sectionSubText + styles.paddingX}>My coding</p>
@@ -17,7 +17,7 @@ const Journey = () => {
             </h2>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center w-full">
+          <div className="flex flex-wrap justify-center w-full mt-10 sm:mt-0">
           <motion.div
             variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
             className={
@@ -25,7 +25,7 @@ const Journey = () => {
             }
           >
 
-<div className="flex flex-wrap justify-center h-[85vh] bg-gradient-to-b from-cyan-500 to-purple-300  rounded-xl shadow-card">
+<div className="flex flex-wrap justify-center h-[85vh] bg-gradient-to-b from-cyan-500 to-purple-300 rounded-xl shadow-card">
             <Chrono
               items={timelineItems}
               mode="VERTICAL_ALTERNATING"
