@@ -53,7 +53,7 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* <div className='relative z-0 bg-background1'> */}
-      <div className="bg-cover bg-n-repeat bg-center">
+      <div className="bg-cover bg-n-repeat bg-center overflow-x-hidden">
         <Navbar />
         <Main
           githubIsHovered={githubIsHovered}

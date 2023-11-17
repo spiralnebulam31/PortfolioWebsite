@@ -107,7 +107,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" className="overflow-hidden">
       <div className='bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-10 pb-[120px]'>
         <div className="mx-auto px-5">
           <motion.div variants={textVariant()}>

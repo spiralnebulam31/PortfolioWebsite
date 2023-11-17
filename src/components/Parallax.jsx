@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { fadeIn } from "../utils/motion.js";
-import { mountains, planet1, planet2, starrySky1, starrySky2, mountain } from "../assets";
+import { planet1, planet2, starrySky1, starrySky2, mountain } from "../assets";
 
 const Parallax = () => {
 
@@ -21,9 +21,9 @@ const Parallax = () => {
     <section
       id="parallax"
       ref={ref}
-      className="bg-gradient-to-b from-background1 to-orange-700 relative bg-cover w-full max-w-screen h-screen left-0 right-0 bottom-0 top-0 py-10 min-h-screen overflow-hidden"
+      className="bg-gradient-to-b from-background1 to-orange-700 relative bg-cover max-w-screen h-screen left-0 right-0 bottom-0 top-0 py-10 min-h-screen overflow-hidden"
     >
-      <div className="flex flex-col justify-center mb-2 text-center w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[50%] xl:max-w-[40%] mx-auto">
+      <div className="flex flex-col justify-center mb-2 text-center w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[50%] xl:max-w-[40%] mx-auto overflow-hiddenflow">
         <motion.p
           style={{ y: yText }}
           className="flex flex-col justify-center text-center mx-auto text-white font-body
@@ -53,7 +53,7 @@ const Parallax = () => {
       <motion.img
         src={mountain}
         alt="mountains"
-        className="absolute w-full h-auto object-cover z-40 top-100% left-0 bottom-0 right-0"
+        className="absolute w-full h-auto object-cover z-40 top-100% left-0 bottom-0 right-0 overflow-hidden"
       />
 
       <div className="grid grid-cols-2">

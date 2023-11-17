@@ -19,7 +19,6 @@ import threeStars from "./threeStars.png";
 import starrySky from "./starrySky.svg";
 import starrySky1 from "./starrySky1.svg";
 import starrySky2 from "./starrySky2.svg";
-import mountains from "./space-mountains.png";
 import mountain from "./mountain.svg";
 import planet1 from "./planet1.png";
 import planet2 from "./planet2.png";
@@ -77,7 +76,6 @@ export {
   starrySky,
   starrySky1,
   starrySky2,
-  mountains,
   mountain,
   planet1,
   planet2,

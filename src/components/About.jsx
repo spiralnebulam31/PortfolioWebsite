@@ -37,7 +37,7 @@ const PhotoCard = ({ index, alt, image }) => {
 
 const About = () => {
   return (
-    <section id="about">
+    <section id="about" className="overflow-hidden">
       <div className="bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-10">
         <div className="mx-auto px-5">
           <motion.div variants={textVariant()}>

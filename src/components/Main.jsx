@@ -32,7 +32,7 @@ const Main = ({
   handleResumeMouseLeave,
 }) => {
   return (
-    <section className="bg-gradient-to-b from-background1 via-cyan-900 to-background1 relative w-full h-screen mx-auto">
+    <section className="bg-gradient-to-b from-background1 via-cyan-900 to-background1 relative w-full h-screen mx-auto overflow-hidden">
       <div
         className={
           styles.paddingX +
@@ -50,7 +50,7 @@ const Main = ({
             variants={heroVariant}
             className={
               styles.mainHeadText +
-              "text-white z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)]"
+              "text-white z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] flex flex-wrap justify-center items-center gap-1 md:gap-4"
             }
           >
             Hi, I'm <span className="text-secondary">Anastasia</span>
@@ -143,7 +143,7 @@ const Main = ({
         variants={heroStarVariant}
         initial="initial"
         animate="animate"
-        className="absolute xs:bottom-10 bottom-60 w-full flex justify-center items-center z-40"
+        className="absolute bottom-5 md:bottom-70 w-full flex justify-center items-center z-40"
       >
         <a href="#about">
           <motion.div

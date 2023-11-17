@@ -7,7 +7,7 @@ import { timelineItems } from "../constants/constants.js";
 const Journey = () => {
 
   return (
-    <section id="journey">
+    <section id="journey" className="overflow-hidden">
       <div className="bg-background1 relative z-1 bg-cover w-full top-0 left-0 right-0 bottom-0 pt-10 pb-10">
         <div className="mx-auto px-5">
           <motion.div variants={textVariant()}>

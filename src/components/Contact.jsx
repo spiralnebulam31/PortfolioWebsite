@@ -45,7 +45,7 @@ const Contact = ({
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className="overflow-hidden">
       <div className="bg-gradient-to-b from-orange-700 to-purple-800 relative bg-cover w-full left-0 right-0 bottom-0 top-0 pb-10 pt-14">
         {/* Title */}
         <div className="mx-auto px-5">
