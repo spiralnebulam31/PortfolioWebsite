@@ -61,7 +61,7 @@ const Parallax = () => {
             src={planet1}
             alt="planet1"
             style={{ y: yPlanet1 }}
-            className="absolute w-[130px] h-[130px] md:w-[150px] lg:h-[170px] lg:w-[170px] lx:h-[180px] xl:w-[180px] md:h-[150px] object-contain z-10 overflow-hidden"
+            className="absolute w-[100px] h-[120px] md:w-[150px] lg:h-[170px] lg:w-[170px] lx:h-[180px] xl:w-[180px] md:h-[150px] object-contain z-10 overflow-hidden"
           />
         </motion.div>
 
@@ -70,7 +70,7 @@ const Parallax = () => {
             src={planet2}
             alt="planet2"
             style={{ y: yPlanet2 }}
-            className="absolute w-[60px] h-[60px] md:w-[70px] md:h-[70px] lg:w-[75px] lg:h-[75px] xl:w-[80px] xl:h-[80px] object-contain z-10 overflow-hidden"
+            className="absolute w-[40px] h-[55px] md:w-[70px] md:h-[70px] lg:w-[75px] lg:h-[75px] xl:w-[80px] xl:h-[80px] object-contain z-10 overflow-hidden"
           />
         </motion.div>
       </div>

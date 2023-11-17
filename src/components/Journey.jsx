@@ -19,7 +19,7 @@ const Journey = () => {
               Journey
             </h2>
 
-          <div className="flex flex-wrap justify-center w-full mt-10 sm:mt-0">
+          <div className="flex flex-wrap justify-center w-[90%] md:w-full mx-auto mt-10 sm:mt-0">
 
 <motion.div className="flex flex-wrap justify-center h-[85vh] bg-gradient-to-b from-cyan-500 to-purple-300 rounded-xl shadow-card"
 variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
@@ -31,7 +31,7 @@ variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? 
               itemWidth={400}
               itemHeight={500}
               cardWidth={550}
-              cardHeight={150}
+              cardHeight={200}
               focusActiveItemOnLoad
               scrollable
               theme={{
