@@ -1,10 +1,14 @@
+import { useRef } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
 import { profilePhotos } from "../constants/constants.js";
-import { fadeIn, textVariant } from "../utils/motion.js";
+import { fadeIn } from "../utils/motion.js";
 
 const PhotoCard = ({ index, alt, image }) => {
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-50px" });
+
   return (
     <Tilt
       className="w-[250px]"
@@ -13,7 +17,8 @@ const PhotoCard = ({ index, alt, image }) => {
       }}
     >
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        variants={fadeIn("", "spring", 0.25, 0.1, 0)}
+                ref={ref} animate={isInView ? "show" : "hidden"}
         className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-card"
         style={{
           transform: "translateZ(20px)",
@@ -36,22 +41,22 @@ const PhotoCard = ({ index, alt, image }) => {
 };
 
 const About = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <section id="about" className="overflow-hidden">
       <div className="bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-10">
         <div className="mx-auto px-5">
-          <motion.div variants={textVariant()}>
             <p className={styles.sectionSubText + styles.paddingX}>
               Introduction
             </p>
             <h2 className={styles.sectionHeadText + styles.paddingX}>
               About Me
             </h2>
-          </motion.div>
 
           <div className="flex flex-wrap px-5 pt-10 space-x-6 justify-center">
             <motion.div
-              variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
               className="text-background1 text-[14px] font-bold max-w-6xl leading-[30px] bg-gradient-to-b from-cyan-500 to-purple-300 p-10 rounded-2xl"
             >
               <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
@@ -61,7 +66,11 @@ const About = () => {
                   ))}
                 </div>
 
-                <div className="flex-2 lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full">
+                <motion.div
+                className="flex-2 lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full"
+                variants={fadeIn("", "spring", 0.1, 0.1, 0)}
+                ref={ref} animate={isInView ? "show" : "hidden"}
+                >
                   I'm a full-stack developer with a passion for creating
                   meaningful and accessible web applications. I enjoy working
                   with React.js, Node.js and MongoDB, and I'm curious and eager
@@ -81,9 +90,12 @@ const About = () => {
                   illuminated my innate desire to help others. It has also
                   helped me develop my empathy and compassion; I now bring those
                   qualities to my projects by following a people-first approach.
-                </div>
+                </motion.div>
               </div>
-              <div className="flex w-full mx-auto">
+              <motion.div className="flex w-full mx-auto"
+              variants={fadeIn("", "spring", 0.1, 0.1, 0)}
+                ref={ref} animate={isInView ? "show" : "hidden"}
+              >
                 Beyond my work, I enjoy exploring new places, as well as gazing
                 up at the night sky. I like delving into local history, I
                 appreciate architectural wonders and indulge in amateur
@@ -106,7 +118,7 @@ const About = () => {
                 organisations fulfill significant goals, as well as promote
                 accessibility and sustainability, as I believe such causes make
                 the world more inclusive and our planet healthier.
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>

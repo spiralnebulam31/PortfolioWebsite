@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { fadeIn } from "../utils/motion.js";
 import { planet1, planet2, starrySky1, starrySky2, mountain } from "../assets";
 
 const Parallax = () => {

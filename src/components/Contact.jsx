@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
-import { fadeIn, textVariant } from "../utils/motion.js";
+import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../utils/motion.js";
 import emailjs from "@emailjs/browser";
 import { linkedin, linkedin2, github, github2, email, email2 } from "../assets";
 
@@ -44,6 +44,9 @@ const Contact = ({
       );
   };
 
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <section id="contact" className="overflow-hidden">
       <div className="bg-gradient-to-b from-orange-700 to-purple-800 relative bg-cover w-full left-0 right-0 bottom-0 top-0 pb-10 pt-14">
@@ -58,7 +61,10 @@ const Contact = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-1">
           {/* Contact Information */}
-          <div className="mb-6 text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto">
+          <motion.div
+          className="mb-6 text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto"
+          variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
+          >
             <div className="text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-5 leading-[30px]">
               <p>Feel free to reach out to me:</p>
             </div>
@@ -101,11 +107,14 @@ const Contact = ({
               {/* End of Contact Info */}
             </div>
             {/* End of Contact Info Container */}
-          </div>
+          </motion.div>
           {/* End of Contact Information */}
 
           {/* Contact Form */}
-          <div className="text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto pt-8 mb-5">
+          <motion.div
+          className="text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto pt-8 mb-5"
+          variants={floatFromRightVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
+          >
             <p className="text-white font-body text-lg max-w-lg xl:max-w-6xl pb-5 mx-auto">
               Or send me a message below:
             </p>
@@ -126,7 +135,7 @@ const Contact = ({
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
           {/* End of Contact Form */}
         </div>
       </div>

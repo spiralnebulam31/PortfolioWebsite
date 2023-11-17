@@ -9,7 +9,7 @@ export const textVariant = (delay) => {
         opacity: 1,
         transition: {
           type: "spring",
-          duration: 1.25,
+          duration: 1,
           staggerChildren: 0.1,
         },
       },
@@ -19,7 +19,6 @@ export const textVariant = (delay) => {
   export const fadeIn = (direction, type, delay, duration) => {
     return {
       hidden: {
-        x: direction === "left" ? -50 : 50,
         opacity: 0,
       },
       show: {
@@ -29,6 +28,7 @@ export const textVariant = (delay) => {
           type: type,
           duration: duration,
           delay: delay,
+          staggerChildren: 0.1,
         },
       },
     };
@@ -51,7 +51,7 @@ export const textVariant = (delay) => {
 
   export const heroStarVariant = {
     initial: {
-      y:500,
+      y: 500,
       opacity: 0,
     },
     animate: {
@@ -184,3 +184,37 @@ export const textVariant = (delay) => {
       },
     }
   }
+
+  export const floatFromLeftVariant = {
+    initial: {
+      x: -200,
+      y: 100,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+    }
+
+    export const floatFromRightVariant = {
+      initial: {
+        x: +200,
+        y: 100,
+        opacity: 0,
+      },
+      animate: {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 1,
+          staggerChildren: 0.1,
+        },
+      },
+      }
