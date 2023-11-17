@@ -73,20 +73,20 @@ const About = () => {
                 </div>
 
                 <motion.div
-                  className="flex-2 lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full"
+                  className="lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full"
                   variants={fadeIn('right', 'spring', 0.5, 1.25)}
                 >
-                  <div className="flex w-full mx-auto">
+                  <div className="flex-2 items-center justify-center w-full mx-auto">
                     {/* First Paragraph */}
                     {aboutMeText[0]}
                     <br />
                     <br />
                   </div>
 
-                  {isSmallScreen && (
+                  {isSmallScreen && !isOpen && (
                     /* Read More Link */
-                    <div>
-                      <p className="text-background1 underline text-[14px] cursor-pointer" onClick={toggleOpen}>
+                    <div className="flex w-full mx-auto">
+                      <p className="text-background1 underline font-light text-[14px] cursor-pointer" onClick={toggleOpen} alt="click to read more">
                         read more
                       </p>
                     </div>
@@ -106,7 +106,7 @@ const About = () => {
                         }}
                       >
                         {/* Rest of the expanded content */}
-                        <motion.div className="flex w-full mx-auto"
+                        <motion.div className="flex flex-col w-full mx-auto"
                           variants={fadeIn('right', 'spring', 0.5, 1.25)}
                         >
                           {aboutMeText.slice(1).map((text, index) => (
@@ -122,11 +122,26 @@ const About = () => {
                   </AnimatePresence>
 
                   {!isSmallScreen && (
-                    <motion.div className="flex w-full mx-auto"
+                    <motion.div className="flex flex-col w-full mx-auto"
                       variants={fadeIn('right', 'spring', 0.5, 1.25)}
                     >
-                      {aboutMeText.slice(1).map((text, index) => (
-                        <div key={index}>
+                    <div className="flex flex-2 w-full mx-auto">
+                    {aboutMeText[1]}
+                    <br />
+                          <br />
+                    </div>
+                    </motion.div>
+                  )}
+                  </motion.div>
+</div>
+
+                  {!isSmallScreen && (
+                    <motion.div className="flex flex-col items-center justify-center w-full mx-auto"
+                      variants={fadeIn('right', 'spring', 0.5, 1.25)}
+                    >
+                      {aboutMeText.slice(2).map((text, index) => (
+                        <div
+                         key={index}>
                           {text}
                           <br />
                           <br />
@@ -134,9 +149,9 @@ const About = () => {
                       ))}
                     </motion.div>
                   )}
+
                 </motion.div>
-              </div>
-            </motion.div>
+              
           </div>
         </div>
       </div>
