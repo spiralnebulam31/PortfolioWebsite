@@ -11,12 +11,10 @@ import email2 from "./email2.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import sideStar from "./sideStar.png";
 import singleStarPurple from "./singleStarPurple.png";
 import singleStarLightTeal from "./singleStarLightTeal.png";
 import singleStarLilac from "./singleStarLilac.png";
 import threeStars from "./threeStars.png";
-import starrySky from "./starrySky.svg";
 import starrySky1 from "./starrySky1.svg";
 import starrySky2 from "./starrySky2.svg";
 import mountain from "./mountain.svg";
@@ -68,12 +66,10 @@ export {
   email2,
   menu,
   close,
-  sideStar,
   singleStarPurple,
   singleStarLightTeal,
   singleStarLilac,
   threeStars,
-  starrySky,
   starrySky1,
   starrySky2,
   mountain,

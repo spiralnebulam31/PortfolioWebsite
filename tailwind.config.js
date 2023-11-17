@@ -19,7 +19,11 @@ export default {
         card: "0px 35px 120px -15px #211e35",
       },
       screens: {
-        xs: "390px",
+        'xs': '390px',
+        'sm': '540px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px'
       },
       backgroundImage: {
         "astronomy-background": "url('/src/assets/astronomy-background.jpg')",
