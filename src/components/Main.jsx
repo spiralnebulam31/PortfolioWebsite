@@ -36,7 +36,7 @@ const Main = ({
       <div
         className={
           styles.paddingX +
-          " absolute inset-0 top-[200px] max-w-7xl mx-auto flex flex-row items-start gap-5"
+          " absolute inset-0 top-[180px] max-w-7xl mx-auto flex flex-row items-start gap-5"
         }
       >
         {/* Hero text */}
@@ -59,7 +59,7 @@ const Main = ({
             variants={heroVariant}
             className={
               styles.mainSubText +
-              "text-white-100 max-w-md md:max-w-2xl z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)]"
+              "text-white-100 max-w-md md:max-w-2xl z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-center"
             }
           >
             I create full-stack websites with a blend of creativity, compassion
@@ -69,7 +69,7 @@ const Main = ({
           {/* Hero links */}
           <motion.div
             variants={heroVariant}
-            className="flex flex-row justify-center items-center gap-5 z-40"
+            className="flex flex-row justify-center items-center gap-5 z-40 mt-5"
           >
             <a
               href="https://github.com/AnastasiaAdamoudi"
