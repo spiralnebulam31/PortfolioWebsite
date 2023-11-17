@@ -1,31 +1,29 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
-import { fadeIn, textVariant } from "../utils/motion.js";
+import { fadeIn, textVariant, floatFromLeftVariant } from "../utils/motion.js";
 import { Chrono } from "react-chrono";
 import { timelineItems } from "../constants/constants.js";
 
 const Journey = () => {
 
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <section id="journey" className="overflow-hidden">
       <div className="bg-background1 relative z-1 bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-24 sm:pb-20">
         <div className="mx-auto px-5">
-          <motion.div variants={textVariant()}>
             <p className={styles.sectionSubText + styles.paddingX}>My coding</p>
             <h2 className={styles.sectionHeadText + styles.paddingX}>
               Journey
             </h2>
-          </motion.div>
 
           <div className="flex flex-wrap justify-center w-full mt-10 sm:mt-0">
-          <motion.div
-            variants={fadeIn("", "", 0.1, 1)} //direction, type, delay, duration
-            className={
-              styles.padding + "text-white text-[17px] max-w-7xl leading-[30px]"
-            }
-          >
 
-<div className="flex flex-wrap justify-center h-[85vh] bg-gradient-to-b from-cyan-500 to-purple-300 rounded-xl shadow-card">
+<motion.div className="flex flex-wrap justify-center h-[85vh] bg-gradient-to-b from-cyan-500 to-purple-300 rounded-xl shadow-card"
+variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
+>
             <Chrono
               items={timelineItems}
               mode="VERTICAL_ALTERNATING"
@@ -47,9 +45,8 @@ const Journey = () => {
                 titleColor: "#3b0764",
               }}
             />
-          </div>
-
           </motion.div>
+
           </div>
           
         </div>

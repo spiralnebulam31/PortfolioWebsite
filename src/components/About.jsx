@@ -3,11 +3,9 @@ import { Tilt } from "react-tilt";
 import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
 import { profilePhotos } from "../constants/constants.js";
-import { fadeIn } from "../utils/motion.js";
+import { fadeIn, floatFromRightVariant } from "../utils/motion.js";
 
 const PhotoCard = ({ index, alt, image }) => {
-  const ref = useRef();
-  const isInView = useInView(ref, { margin: "-50px" });
 
   return (
     <Tilt
@@ -17,8 +15,7 @@ const PhotoCard = ({ index, alt, image }) => {
       }}
     >
       <motion.div
-        variants={fadeIn("", "spring", 0.25, 0.1, 0)}
-                ref={ref} animate={isInView ? "show" : "hidden"}
+        variants={fadeIn('right', 'spring', 0.5, 1.25)}
         className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-card"
         style={{
           transform: "translateZ(20px)",
@@ -41,6 +38,7 @@ const PhotoCard = ({ index, alt, image }) => {
 };
 
 const About = () => {
+  
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -58,6 +56,7 @@ const About = () => {
           <div className="flex flex-wrap px-5 pt-10 space-x-6 justify-center">
             <motion.div
               className="text-background1 text-[14px] font-bold max-w-6xl leading-[30px] bg-gradient-to-b from-cyan-500 to-purple-300 p-10 rounded-2xl"
+              variants={floatFromRightVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
             >
               <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
                 <div className="flex-1 xs:mx-auto sm:mx-auto md:mx-auto xs:pb-10 sm:pb-10 md:pb-10 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-0 xl:pt-0">
@@ -68,8 +67,7 @@ const About = () => {
 
                 <motion.div
                 className="flex-2 lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full"
-                variants={fadeIn("", "spring", 0.1, 0.1, 0)}
-                ref={ref} animate={isInView ? "show" : "hidden"}
+                variants={fadeIn('right', 'spring', 0.5, 1.25)}
                 >
                   I'm a full-stack developer with a passion for creating
                   meaningful and accessible web applications. I enjoy working
@@ -93,8 +91,7 @@ const About = () => {
                 </motion.div>
               </div>
               <motion.div className="flex w-full mx-auto"
-              variants={fadeIn("", "spring", 0.1, 0.1, 0)}
-                ref={ref} animate={isInView ? "show" : "hidden"}
+              variants={fadeIn('right', 'spring', 0.5, 1.25)}
               >
                 Beyond my work, I enjoy exploring new places, as well as gazing
                 up at the night sky. I like delving into local history, I

@@ -13,6 +13,7 @@ import {
 } from "./components";
 
 const App = () => {
+  
   const [githubIsHovered, setGithubIsHovered] = useState(false);
   const [linkedinIsHovered, setLinkedinIsHovered] = useState(false);
   const [resumeIsHovered, setResumeIsHovered] = useState(false);
