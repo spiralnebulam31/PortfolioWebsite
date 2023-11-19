@@ -4,6 +4,8 @@ import { styles } from "../styles";
 import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../utils/motion.js";
 import emailjs from "@emailjs/browser";
 import { linkedin, linkedin2, github, github2, email, email2 } from "../assets";
+import dotenv from "dotenv";
+dotenv.config();
 
 const Contact = ({
   linkedinIsHovered,
@@ -22,15 +24,20 @@ const Contact = ({
     alert("Email Sent!");
   };
 
+  const templateCode = process.env.EMAILJS_TEMPLATE_CODE;
+  const serviceCode = process.env.EMAILJS_SERVICE_CODE;
+  const userID = process.env.EMAILJS_USER_ID;
+  
+
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_dokf8mn",
-        "template_f443ai4",
+        serviceCode,
+        templateCode,
         form.current,
-        "eLRFDbpH-SkWvxaZ3"
+        userID
       )
       .then(
         (result) => {
