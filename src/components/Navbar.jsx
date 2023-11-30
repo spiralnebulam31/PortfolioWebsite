@@ -51,6 +51,7 @@ const Navbar = () => {
             ))}
           </ul>
 
+{/* mobile menu button */}
         <div className="lg:hidden flex flex-1 justify-end items-center gap-2">
           <img
             src={mobile ? close : menu}
@@ -59,7 +60,7 @@ const Navbar = () => {
             onClick={() => setMobile(!mobile)}
           />
           
-          {/* mobile menu button */}
+          {/* mobile menu */}
           <motion.div
   className={`${!mobile ? "hidden" : "flex"}
               absolute right-0 top-20 p-2 w-[240px] mx-0 my-0
@@ -69,7 +70,7 @@ const Navbar = () => {
   initial={mobile ? "open" : "closed"}
   animate={mobile ? "open" : "closed"}
 >
- {/* mobile menu */}
+ 
  <motion.div variants={staggerContainer}> 
             <ul className="list-none flex flex-col justify-end items-start gap-4 bg-background1 px-16 py-12 mx-1 my-2 rounded-xl">
             {navLinks.map((link) => (
