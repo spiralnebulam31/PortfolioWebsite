@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
 import { fadeIn, textVariant, floatFromLeftVariant } from "../utils/motion.js";
 import { Chrono } from "react-chrono";
-import { timelineItems } from "../constants/constants.js";
+import { timelineItems } from "../constants/timeline.js";
 
 const Journey = () => {
 

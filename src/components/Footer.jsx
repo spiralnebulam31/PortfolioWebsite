@@ -34,6 +34,7 @@ const Footer = () => {
           </span>
           2023 Anastasia Adamoudi
         </p>
+        {/* <p>Created with React.js, TailwindCSS, Framer Motion and love</p> */}
       </div>
 
       <div className="mx-auto mb-0.1 mt-0.1">

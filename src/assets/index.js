@@ -47,6 +47,7 @@ import figma from "./tech/figma.png";
 import canva from "./tech/canva.png";
 import photoshop from "./tech/photoshop.png";
 
+import lifeGoats from "./projects/lifeGoats.png";
 import portfolio from "./projects/portfolio.png";
 import onni from "./projects/onni.png";
 import shiftMagic from "./projects/shiftMagic.png";
@@ -99,6 +100,7 @@ export {
   figma,
   canva,
   photoshop,
+  lifeGoats,
   portfolio,
   onni,
   shiftMagic,

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { styles } from '../styles';
-import { projects } from '../constants/constants.js';
+import { projects } from '../constants/projects.js';
 import { fadeIn, textVariant, floatFromRightVariant } from '../utils/motion.js';
 
 const ProjectCard = ({ index, image, name, description, date, techStack, repoLink, repoLink2, websiteLink, status, isOpen, toggleOpen }) => {
@@ -98,6 +98,16 @@ const ProjectCard = ({ index, image, name, description, date, techStack, repoLin
                   {description.learnings.map((learning, idx) => (
                     <li key={idx}>★ {learning}</li>
                   ))}
+                </ul>
+                <br />
+                <p><strong>Roadmap:</strong></p>
+                <ul>
+                  {description.roadmap && (
+                    description.roadmap.map((roadmap, idx) => (
+                      <li key={idx}>★ {roadmap}</li>
+                    ))
+                  )
+                    }
                 </ul>
                 <br />
                 <p><strong>Technologies used:</strong></p>
