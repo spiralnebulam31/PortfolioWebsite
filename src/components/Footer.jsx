@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
-// import { Link } from "react-router-dom";
-// import { logoBracketsLight } from "../assets";
 
 const Footer = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
@@ -13,20 +11,37 @@ const Footer = () => {
   return (
     <div className="bg-background1 flex flex-col items-center justify-center bottom-0 w-full">
     
-      {/* <div className="mx-auto mb-0.1 mt-0.1">
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
-          alt="home"
-        >
-          <img src={logoBracketsLight} alt="logo" className="w-[100px]" />
-        </Link>
-      </div> */}
-
-      <div className="mx-auto mb-0.1 mt-3">
+    <div className="mx-auto flex flex-col justify-center items-center w-[95%] text-center" >
+      <div className="mx-auto mb-2 mt-6 flex flex-row items-center">
+      <span className="text-primary font-links font-bold text-lg mx-2">
+      &#123;
+          </span>
+      <p className="text-white font-body text-sm">Created with React.js, TailwindCSS, Framer Motion and love.</p>
+      <span className="text-primary font-links font-bold text-lg mx-2">
+      &#125;
+          </span>
+      </div>
+      <div className="mx-auto mb-2 mt-5 flex flex-row items-center">
+      <span className="text-primary font-links font-bold text-lg mx-2">
+      &#123;
+          </span>
+        <p className="text-white font-body text-sm">I'm truly aiming to promote sustainability and I'm planning to transform this website into a green one. I'm currently researching the best ways to do that.</p>
+        <span className="text-primary font-links font-bold text-lg mx-2">
+      &#125;
+          </span>
+      </div>
+      <div className="mx-auto mb-4 mt-5 flex flex-row items-center">
+        <span className="text-primary font-links font-bold text-lg mx-2">
+      &#123;
+          </span>
+          <p className="text-white font-body text-sm">Why the space theme? Someone once said I should be called Ana-star-sia! During global astonomy year 2009, I discover my passion for amateur observational astronomy and since then it's been a theme that shows up in my life regularly.</p>
+          <span className="text-primary font-links font-bold text-lg mx-2">
+      &#125;
+          </span>
+      </div>
+      </div>
+        <hr className="border-secondary border-2 w-2/3 my-2" />
+        <div className="mx-auto mb-0.1 mt-4">
         <p className="text-white font-body font-bold text-md mb-1">
           Copyright
           <span className="text-secondary font-links font-bold text-md mx-2">
@@ -34,10 +49,9 @@ const Footer = () => {
           </span>
           2023 Anastasia Adamoudi
         </p>
-        {/* <p>Created with React.js, TailwindCSS, Framer Motion and love</p> */}
       </div>
 
-      <div className="mx-auto mb-0.1 mt-0.1">
+      <div className="mx-auto mb-1 mt-0.1">
         <div className="flex flex-row gap-2 ">
           <button
             type="button"
