@@ -9,10 +9,10 @@ const Footer = () => {
   const closeAccessibilityModal = () => setAccessibilityOpen(false);
 
   return (
-    <div className="bg-background1 flex flex-col items-center justify-center bottom-0 w-full">
+    <footer className="bg-background1 items-center justify-center bottom-0 w-full">
     
-    <div className="mx-auto flex flex-col justify-center items-center w-[95%] text-center" >
-      <div className="mx-auto mb-2 mt-6 flex flex-row items-center">
+    <footer className="mx-auto mb-2 flex flex-col lg:flex-row lg:gap-20 justify-center items-center w-[95%] text-center" >
+      <div className="mx-auto mb-2 mt-6 flex flex-row items-center md:[50%] lg:w-[60%]">
       <span className="text-primary font-links font-bold text-lg mx-2">
       &#123;
           </span>
@@ -21,7 +21,16 @@ const Footer = () => {
       &#125;
           </span>
       </div>
-      <div className="mx-auto mb-2 mt-5 flex flex-row items-center">
+      <div className="mx-auto mb-4 mt-5 flex flex-row items-center md:[50%] lg:w-[60%]">
+        <span className="text-primary font-links font-bold text-lg mx-2">
+      &#123;
+          </span>
+          <p className="text-white font-body text-sm">Why the space theme? Someone once said I should be called Ana-star-sia! Since global astonomy year 2009, amateur observational astronomy has been one of my passions.</p>
+          <span className="text-primary font-links font-bold text-lg mx-2">
+      &#125;
+          </span>
+      </div>
+      <div className="mx-auto mb-2 mt-5 flex flex-row items-center md:[50%] lg:w-[60%]">
       <span className="text-primary font-links font-bold text-lg mx-2">
       &#123;
           </span>
@@ -30,29 +39,22 @@ const Footer = () => {
       &#125;
           </span>
       </div>
-      <div className="mx-auto mb-4 mt-5 flex flex-row items-center">
-        <span className="text-primary font-links font-bold text-lg mx-2">
-      &#123;
-          </span>
-          <p className="text-white font-body text-sm">Why the space theme? Someone once said I should be called Ana-star-sia! During global astonomy year 2009, I discover my passion for amateur observational astronomy and since then it's been a theme that shows up in my life regularly.</p>
-          <span className="text-primary font-links font-bold text-lg mx-2">
-      &#125;
-          </span>
-      </div>
-      </div>
-        <hr className="border-secondary border-2 w-2/3 my-2" />
-        <div className="mx-auto mb-0.1 mt-4">
-        <p className="text-white font-body font-bold text-md mb-1">
+      </footer>
+
+        <div className="flex flex-row justify-center items-center">
+        <hr className="border-secondary border-2 w-2/3 lg:w-[97%] my-2" />
+        </div>
+
+        <footer className="flex flex-col lg:flex-row lg:items-center mt-4 pb-2 lg:full items-center">
+        <p className="text-white font-body font-bold text-sm mb-1 lg:mr-auto lg:ml-4">
           Copyright
-          <span className="text-secondary font-links font-bold text-md mx-2">
+          <span className="text-secondary font-links font-bold text-sm mx-2">
             ©
           </span>
           2023 Anastasia Adamoudi
         </p>
-      </div>
 
-      <div className="mx-auto mb-1 mt-0.1">
-        <div className="flex flex-row gap-2 ">
+        <div className="flex flex-row gap-2 lg:ml-auto lg:mr-4">
           <button
             type="button"
             onClick={() => setPrivacyOpen((o) => !o)}
@@ -117,8 +119,8 @@ const Footer = () => {
             </div>
           </Popup>
         </div>
-      </div>
-    </div>
+      </footer>
+    </footer>
   );
 };
 
