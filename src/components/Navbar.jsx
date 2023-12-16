@@ -11,9 +11,9 @@ const Navbar = () => {
   const [mobile, setMobile] = useState(false);
 
   return (
-    <nav className={styles.paddingX + " fixed w-full top-0 z-50 bg-background1 shadow-xl"}>
-    <div className="flex w-full mx-auto justify-between gap-20"> {/* beginning of flex div */}
-      <div className="flex items-center justify-start"> {/* beginning of left side div */}
+    <nav className={"fixed w-full top-0 z-50 bg-background1 shadow-xl"}>
+    <div className="flex w-full mx-auto"> {/* beginning of flex div */}
+      <div className="mr-auto ml-5"> {/* beginning of left side div */}
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -33,7 +33,7 @@ const Navbar = () => {
         </Link>
       </div>  {/* end of left side div */}
 
-      <div className="flex items-center justify-end"> {/* beginning of right side div */}
+      <div className="flex items-center ml-auto mr-5"> {/* beginning of right side div */}
       <ul className="list-none hidden lg:flex flex-row gap-10">
             {navLinks.map((link) => (
               <li

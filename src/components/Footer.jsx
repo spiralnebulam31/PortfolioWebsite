@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
 
         <footer className="flex flex-col lg:flex-row lg:items-center mt-4 pb-2 lg:full items-center">
-        <p className="text-white font-body font-bold text-sm mb-1 lg:mr-auto lg:ml-4">
+        <p className="text-white font-body font-bold text-sm mb-1 lg:mr-auto lg:ml-5">
           Copyright
           <span className="text-secondary font-links font-bold text-sm mx-2">
             ©
@@ -54,7 +54,7 @@ const Footer = () => {
           2023 Anastasia Adamoudi
         </p>
 
-        <div className="flex flex-row gap-2 lg:ml-auto lg:mr-4">
+        <div className="flex flex-row gap-2 lg:ml-auto lg:mr-5">
           <button
             type="button"
             onClick={() => setPrivacyOpen((o) => !o)}
