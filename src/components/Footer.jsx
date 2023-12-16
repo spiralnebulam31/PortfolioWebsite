@@ -16,7 +16,7 @@ const Footer = () => {
       <span className="text-primary font-links font-bold text-lg mx-2">
       &#123;
           </span>
-      <p className="text-white font-body text-sm">Created with React.js, TailwindCSS, Framer Motion and love.</p>
+      <p className="text-white font-body text-sm">Created with React.js, TailwindCSS, Framer Motion and love. Graphics created on Canva.</p>
       <span className="text-primary font-links font-bold text-lg mx-2">
       &#125;
           </span>
