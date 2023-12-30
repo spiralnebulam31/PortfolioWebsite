@@ -19,7 +19,7 @@ const Contact = ({
   const form = useRef();
 
   const openPopup = () => {
-    alert("Email Sent! Maria will reply to you as soon as possible.");
+    alert("Email Sent! I will reply to you as soon as possible.");
   };
 
   const templateCode = import.meta.env.VITE_EMAILJS_TEMPLATE_CODE;
