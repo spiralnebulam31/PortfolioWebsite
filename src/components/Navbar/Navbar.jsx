@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { styles } from "../styles.js";
-import { navLinks } from "../constants/constants.js";
-import { logoBracketsLight, menu, close } from "../assets/index.js";
-import { mobileMenuVariants, staggerContainer, mobileItemVariants } from "../utils/motion.js";
+import { styles } from "../../styles.js";
+import { navLinks } from "../../constants/constants.js";
+import { logoBracketsLight, menu, close } from "../../assets/index.js";
+import { mobileMenuVariants, staggerContainer, mobileItemVariants } from "../../utils/motion.js";
 
 const Navbar = () => {
   const [active, setActive] = useState("");

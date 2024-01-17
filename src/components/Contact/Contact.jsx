@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { styles } from "../styles";
-import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../utils/motion.js";
+import { styles } from "../../styles.js";
+import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../../utils/motion.js";
 import emailjs from "@emailjs/browser";
-import { linkedin, linkedin2, github, github2, email, email2 } from "../assets";
+import { linkedin, linkedin2, github, github2, email, email2 } from "../../assets/index.js";
 
 const Contact = ({
   linkedinIsHovered,

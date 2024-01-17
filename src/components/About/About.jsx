@@ -2,9 +2,9 @@ import { useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Tilt } from "react-tilt";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { styles } from "../styles";
-import { profilePhotos, aboutMeText } from "../constants/constants.js";
-import { fadeIn, floatFromRightVariant } from "../utils/motion.js";
+import { styles } from "../../styles.js";
+import { profilePhotos, aboutMeText } from "../../constants/constants.js";
+import { fadeIn, floatFromRightVariant } from "../../utils/motion.js";
 
 const PhotoCard = ({ index, alt, image, toggleOpen }) => {
   return (

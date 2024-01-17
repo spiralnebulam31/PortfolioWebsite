@@ -51,7 +51,7 @@ const Footer = () => {
           <span className="text-secondary font-links font-bold text-sm mx-2">
             ©
           </span>
-          2023 Anastasia Adamoudi
+          2023-2024 Anastasia Adamoudi
         </p>
 
         <div className="flex flex-row gap-2 lg:ml-auto lg:mr-5">

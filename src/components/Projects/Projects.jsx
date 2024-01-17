@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { styles } from '../styles';
-import { projects } from '../constants/projects.js';
-import { fadeIn, textVariant, floatFromRightVariant } from '../utils/motion.js';
+import { styles } from '../../styles.js';
+import { projects } from '../../constants/projects.js';
+import { fadeIn, textVariant, floatFromRightVariant } from '../../utils/motion.js';
 
 const ProjectCard = ({ index, image, name, description, date, techStack, repoLink, repoLink2, websiteLink, status, isOpen, toggleOpen }) => {
   return (

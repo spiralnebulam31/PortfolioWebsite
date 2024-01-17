@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Tilt } from 'react-tilt';
-import { styles } from '../styles';
-import { fadeIn, textVariant, floatFromLeftVariant } from '../utils/motion.js';
-import { techStack } from '../constants/constants.js';
+import { styles } from '../../styles.js';
+import { fadeIn, textVariant, floatFromLeftVariant } from '../../utils/motion.js';
+import { techStack } from '../../constants/constants.js';
 
 const SkillCard = ({ index, name, icon, alt }) => {
   return (
