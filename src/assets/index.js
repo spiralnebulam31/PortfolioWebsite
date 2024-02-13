@@ -33,7 +33,9 @@ import react from "./tech/react.png";
 import reactRouter from "./tech/reactRouter.svg";
 import tailwind from "./tech/tailwind.svg";
 import bootstrap from "./tech/bootstrap.svg";
+import mui from "./tech/mui.png";
 import framerMotion from "./tech/framerMotion.svg";
+import vite from "./tech/vite.svg";
 import node from "./tech/node.svg";
 import express from "./tech/express.svg";
 import mongodb from "./tech/mongodb.svg";
@@ -87,7 +89,9 @@ export {
   css,
   tailwind,
   bootstrap,
+  mui,
   framerMotion,
+  vite,
   node,
   express,
   mongodb,

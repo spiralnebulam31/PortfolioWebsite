@@ -10,7 +10,9 @@ import {
   css,
   tailwind,
   bootstrap,
+  mui,
   framerMotion,
+  vite,
   node,
   express,
   mongodb,
@@ -66,7 +68,7 @@ const profilePhotos = [
 ];
 
 const aboutMeText = [
-  "I'm a full-stack developer with a passion for creating meaningful and accessible web applications. I enjoy working with React.js, Node.js and MongoDB, and I'm curious and eager to learn new technologies. I use my imagination and creativity everywhere in my life and I'm always looking for new ways to express myself. Crafting beautiful and functional websites is one of my favorite ways to do so.",
+  "I'm a full-stack developer with a passion for creating meaningful and accessible web applications. I enjoy working with React.js, Framer Motion, Node.js and MongoDB, and I'm curious and eager to learn new technologies. I use my imagination and creativity everywhere in my life and I'm always looking for new ways to express myself. Crafting beautiful and functional websites is one of my favorite ways to do so.",
   "My journey has been a diverse and rewarding one, taking me through various experiences such as studying mathematics, working at customer service, engaging in private tutoring and volunteering. My coding journey started with a highschool programming class, where I was introduced to the basics of algorithmic thinking. One of my most profound experiences has been my time as a caregiver for vulnerable adults, which illuminated my innate desire to help others. It has also helped me develop my empathy and compassion; I now bring those qualities to my projects by following a people-first approach.",
   "Beyond my work, I enjoy exploring new places, as well as gazing up at the night sky. I like delving into local history, I appreciate architectural wonders and indulge in amateur astronomy. I've found immense joy and fulfillment in my long-standing involvement in choirs, seeking out new vocal ensembles in every place I call home. Additionally, my transformative journey into yoga has had a profound impact on both my mind and body. The positive energy I derive from choir singing and yoga serves as a healing force, enriching my life further.",
   "Nature, in all its beauty, feels like a second home to me. Whether I'm following mountain trails or tending to my beloved flower and vegetable garden, I relish every moment spent outdoors.",
@@ -93,6 +95,11 @@ const techStack = [
     name: "React Router",
     icon: reactRouter,
     alt: "React Router icon",
+  },
+  {
+    name: "Vite",
+    icon: vite,
+    alt: "Vite icon",
   },
   {
     name: "Node.js",
@@ -138,6 +145,11 @@ const techStack = [
     name: "Bootstrap",
     icon: bootstrap,
     alt: "Bootstrap icon",
+  },
+  {
+    name: "MaterialUI",
+    icon: mui,
+    alt: "Material-UI icon",
   },
   {
     name: "Framer Motion",

@@ -1,16 +1,16 @@
-import Main from './Main';
-import Navbar from './Navbar';
-import About from './About';
-import Skills from './Skills';
-import Journey from './Journey';
-import Projects from './Projects';
-import Parallax from './Parallax';
-import Contact from './Contact';
-import Footer from './Footer';
+import Navbar from './Navbar/Navbar';
+import Hero from './Hero/Hero';
+import About from './About/About';
+import Skills from './Skills/Skills';
+import Journey from './Journey/Journey';
+import Projects from './Projects/Projects';
+import Parallax from './Parallax/Parallax';
+import Contact from './Contact/Contact';
+import Footer from './Footer/Footer';
 
 export {
-  Main,
   Navbar,
+  Hero,
   About,
   Skills,
   Projects,

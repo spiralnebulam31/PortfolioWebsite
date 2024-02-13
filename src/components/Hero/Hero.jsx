@@ -20,7 +20,7 @@ import {
   resume2,
 } from "../../assets/index.js";
 
-const Main = ({
+const Hero = ({
   githubIsHovered,
   handleGithubMouseEnter,
   handleGithubMouseLeave,
@@ -164,4 +164,4 @@ const Main = ({
   );
 };
 
-export default Main;
+export default Hero;
