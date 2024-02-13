@@ -37,11 +37,13 @@ const projects = [
       techStack: [
         "React.js",
         "React Router",
+        "Vite",
         "Email.js",
         "TailwindCSS",
         "Framer Motion",
         "React Leaflet",
         "React Tilt",
+        "Chart.js",
         "GitHub",
         "Canva",
       ],
