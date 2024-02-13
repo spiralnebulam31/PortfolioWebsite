@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Tilt } from 'react-tilt';
-import { styles } from '../styles';
-import { fadeIn, textVariant, floatFromLeftVariant } from '../utils/motion.js';
-import { techStack } from '../constants/constants.js';
+import { styles } from '../../styles.js';
+import { fadeIn, textVariant, floatFromLeftVariant } from '../../utils/motion.js';
+import { techStack } from '../../constants/constants.js';
 
 const SkillCard = ({ index, name, icon, alt }) => {
   return (
@@ -59,8 +59,8 @@ const Skills = () => {
           </motion.div>
           
           <motion.div variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}>
-          <motion.div className="flex flex-wrap px-9 space-x-6 justify-center w-full lg:w-[90%] mx-auto">
-            <motion.div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-10 gap-2 mt-10 mb-10">
+          <motion.div className="flex flex-wrap px-9 justify-center w-full lg:w-[80%] mx-auto">
+            <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 mt-10 mb-10">
               {techStack.map((tech, index) => (
                 <SkillCard key={index} {...tech}  />
               ))}

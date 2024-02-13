@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { styles } from "../styles";
-import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../utils/motion.js";
+import { styles } from "../../styles.js";
+import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../../utils/motion.js";
 import emailjs from "@emailjs/browser";
-import { linkedin, linkedin2, github, github2, email, email2 } from "../assets";
+import { linkedin, linkedin2, github, github2, email, email2 } from "../../assets/index.js";
 
 const Contact = ({
   linkedinIsHovered,
@@ -19,7 +19,7 @@ const Contact = ({
   const form = useRef();
 
   const openPopup = () => {
-    alert("Email Sent! Maria will reply to you as soon as possible.");
+    alert("Email Sent! I will reply to you as soon as possible.");
   };
 
   const templateCode = import.meta.env.VITE_EMAILJS_TEMPLATE_CODE;

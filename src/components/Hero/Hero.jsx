@@ -5,8 +5,8 @@ import {
   starryHeroVariant1,
   starryHeroVariant2,
   starSliderVariant,
-} from "../utils/motion.js";
-import { styles } from "../styles.js";
+} from "../../utils/motion.js";
+import { styles } from "../../styles.js";
 import {
   singleStarLilac,
   threeStars,
@@ -18,9 +18,9 @@ import {
   linkedin2,
   resume,
   resume2,
-} from "../assets";
+} from "../../assets/index.js";
 
-const Main = ({
+const Hero = ({
   githubIsHovered,
   handleGithubMouseEnter,
   handleGithubMouseLeave,
@@ -164,4 +164,4 @@ const Main = ({
   );
 };
 
-export default Main;
+export default Hero;

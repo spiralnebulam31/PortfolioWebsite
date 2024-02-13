@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import {
-  Main,
+  Hero,
   Navbar,
   About,
   Skills,
@@ -56,7 +56,7 @@ const App = () => {
       {/* <div className='relative z-0 bg-background1'> */}
       <div className="bg-cover bg-n-repeat bg-center overflow-x-hidden">
         <Navbar />
-        <Main
+        <Hero
           githubIsHovered={githubIsHovered}
           handleGithubMouseEnter={handleGithubMouseEnter}
           handleGithubMouseLeave={handleGithubMouseLeave}
