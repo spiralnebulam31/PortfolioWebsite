@@ -25,7 +25,7 @@ const projects = [
           "I wanted to create a website that would capture the essence of the retreat, so I made sure to include a variety of images that would showcase the location's beauty and serenity.",
           "I aim to continue refining and enhancing certain elements for a more seamless and engaging user experience.",
           "Thorough exploration of map options (including Google APIs, React Simple Maps, and map design options like Snazzy Maps and Mapbox) to ultimately opt for React Leaflet to create an interactive map showcasing key locations.",
-          "After reseraching various libraries and tools, I decided to use the React useState hook and the Framer Motion animation library to create components like dropdown menus, an image carousel, a dynamic 'tab schedule' and expandable 'pricing cards'."
+          "After reseraching various libraries and tools, I decided to use the React useState hook and the Framer Motion animation library to create components like dropdown menus, an image carousel, a dynamic 'tab schedule' and expandable 'pricing cards'.",
           "Prioritising accessibility and responsiveness at every stage of development.",
           "Anticipating future growth, the app has been structured for effortless scalability, ensuring a seamless extension of its capabilities as the scale evolves."
         ],
