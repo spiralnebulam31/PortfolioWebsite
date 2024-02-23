@@ -110,9 +110,18 @@ const timelineItems = [
     {
       title: "October 2023",
       cardTitle: "A science festival & a global hackathon",
-      cardDetailedText:
-        "Volunteering as a STEM Ambassador at the Chelmsford Science Festival was an exhilarating experience. Alongside remarkable individuals from Southend Tech, our mission was to once again ignite children's passion for coding. We delved into Scratch, Frontend Development, Python, and Microbits, witnessing the kids' creativity shine through in their fantastic projects. The weekend was a whirlwind of science-fueled fun, and being part of initiatives like this that make a real impact on our community was an absolute honor. Participating in the Women Who Code hackathon was an incredible journey filled with learning and collaboration. Joining forces with an exceptional team of designers, developers, and content creators, we took on the challenge to create a project for the Hackathon for Social Good 2023. My role as a backend developer involved integrating Passage for passwordless authentication, ensuring organized server code, and promoting web accessibility standards. It was a rewarding experience that showcased the power of teamwork and innovation in the realm of social impact technology.",
+      cardDetailedText: "Volunteering as a STEM Ambassador at the Chelmsford Science Festival was an exhilarating experience. Alongside remarkable individuals from Southend Tech, our mission was to once again ignite children's passion for coding. We delved into Scratch, Frontend Development, Python, and Microbits, witnessing the kids' creativity shine through in their fantastic projects. The weekend was a whirlwind of science-fueled fun, and being part of initiatives like this that make a real impact on our community was an absolute honor. Participating in the Women Who Code hackathon was an incredible journey filled with learning and collaboration. Joining forces with an exceptional team of designers, developers, and content creators, we took on the challenge to create a project for the Hackathon for Social Good 2023. My role as a backend developer involved integrating Passage for passwordless authentication, ensuring organized server code, and promoting web accessibility standards. It was a rewarding experience that showcased the power of teamwork and innovation in the realm of social impact technology.",
     },
+    {
+      title: "November 2023",
+      cardTitle: "First freelance volunteer project",
+      cardDetailedText: "I had the opportunity to create a website for an upcoming retreat, a project of a person who means a lot to me and who is starting something new. The timing was right as it was the perfect opportunity to put my skills to the test and help someone I care about."
+    },
+    {
+      title: "February 2024",
+      cardTitle: "Organising an online hackathon for a local tech festival",
+      cardDetailedText: "My local tech group Southend Tech participated in the Basildon Creative Tech Fest 2024 with the Social Impact Hackathon event run by me with the support of the group. It was an interesting experience to organise an event and see it through, and it was a great opportunity to meet new people and learn from them."
+    }
   ];
 
 export { timelineItems };

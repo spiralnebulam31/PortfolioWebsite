@@ -33,7 +33,7 @@ export const projects = [
           "Develop a server to facilitate user authentication, enabling a streamlined process for individuals to secure their spot at future events."
         ],
       },
-      date: "October 2023 - Present",
+      date: "November 2023 - Present",
       techStack: [
         "React.js",
         "React Router",
