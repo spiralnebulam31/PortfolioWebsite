@@ -3,11 +3,12 @@ import {
     onni,
     portfolio,
     gardenGenie,
-    // shiftMagic,
     // bootcampersTreasureChest,
+    lightABeacon,
+    compassOfCare,
 } from "../assets/index.js";
 
-const projects = [
+export const projects = [
     {
       name: "LifeGoats",
       image: {
@@ -23,7 +24,6 @@ const projects = [
           "A responsive and accessible website that not only highlights the distinctive features of the location but also offers users a sneak peek into the promises and experiences awaiting them at the retreat.",
         learnings: [
           "I wanted to create a website that would capture the essence of the retreat, so I made sure to include a variety of images that would showcase the location's beauty and serenity.",
-          "I aim to continue refining and enhancing certain elements for a more seamless and engaging user experience.",
           "Thorough exploration of map options (including Google APIs, React Simple Maps, and map design options like Snazzy Maps and Mapbox) to ultimately opt for React Leaflet to create an interactive map showcasing key locations.",
           "After reseraching various libraries and tools, I decided to use the React useState hook and the Framer Motion animation library to create components like dropdown menus, an image carousel, a dynamic 'tab schedule' and expandable 'pricing cards'.",
           "Prioritising accessibility and responsiveness at every stage of development.",
@@ -49,7 +49,7 @@ const projects = [
       ],
       repoLink: "https://github.com/AnastasiaAdamoudi/LifeGoats",
       websiteLink: "https://lifegoats.com/",
-      status: "In progress",
+      status: "MVP complete, more features in progress",
     },
     {
       name: "onni.",
@@ -76,7 +76,7 @@ const projects = [
           "Implement a feature that tracks users' learning progress and enable saving of articles to favorites for a more personalized experience."
         ],
       },
-      date: "October 2023 - Present",
+      date: "October 2023",
       techStack: [
         "HTML",
         "EJS",
@@ -93,7 +93,7 @@ const projects = [
       ],
       repoLink: "https://github.com/AnastasiaAdamoudi/onni.-PeriodAppForTeens",
       websiteLink: "https://onni.vercel.app/",
-      status: "MVP complete, roadmap in progress",
+      status: "MVP complete, roadmap currently paused",
     },
     {
       name: "Portfolio Website",
@@ -115,7 +115,6 @@ const projects = [
         roadmap: [
           "Revisit the structure of the project, aiming to make it more scalable and easier to maintain.",
           "Turn the project section into pop up cards, allowing users to delve deeper into each project's details more smoothly.",
-          "SEO optimization.",
         ],
       },
       date: "Started August 2023",
@@ -171,40 +170,6 @@ const projects = [
       status: "Complete",
     },
     // {
-    //   name: "Shift Magic",
-    //   image: {
-    //     src: shiftMagic,
-    //     alt: "Shift Magic",
-    //   },
-    //   description: {
-    //     summary:
-    //       "I was asked to create an employee rostering app to assist a new manager with organising shifts.",
-    //     challenge:
-    //       "Create an app that generates weekly shifts depending on each week's shift requirements and employee details.",
-    //     solution:
-    //       "A responsive and accessible web app that offers two paths: Login and Guest. The guest path collects data about the employees and the shifts in a form and generates shifts on form submission. The authentication path gives the user the ability to save, update and delete employee and shift data for easy access, and choose the data they need each week in order to generate the shifts.",
-    //     learnings: [
-    //       "Embarking on a solo full-stack project has been an incredibly rewarding journey. It's a dynamic process where I've had the chance to delve into new technologies while practicing my skills with familiar tools.",
-    //       "As I'm gradually crafting this project from start to finish, I'm not only gaining a deeper understanding of the entire development process but also learning how to independently troubleshoot and innovate along the way.",
-    //     ],
-    //   },
-    //   date: "September 2023 - Present",
-    //   techStack: [
-    //     "React.js",
-    //     "React Router",
-    //     "Email.js",
-    //     "TailwindCSS",
-    //     "Node.js",
-    //     "Express.js",
-    //     "MongoDB",
-    //     "GitHub",
-    //     "Canva",
-    //   ],
-    //   repoLink: "https://github.com/AnastasiaAdamoudi/ShiftMagic",
-    //   websiteLink: "",
-    //   status: "In progress",
-    // },
-    // {
     //   name: "Bootcampers Treasure Chest",
     //   image: {
     //     src: bootcampersTreasureChest,
@@ -227,4 +192,23 @@ const projects = [
     // },
   ];
 
-  export { projects };
+  export const ongoingProjects = [
+    {
+      id: 1,
+      name: "CompassOfCare",
+      image: {
+        src: compassOfCare,
+        alt: "Compass of Care",
+      },
+      description: "Creating a full-stack app to help a new care manager keep track of their clients, their employees and their documentation."
+    },
+    {
+      id: 2,
+      name: "LightABeacon",
+      image: {
+        src: lightABeacon,
+        alt: "Light a Beacon",
+      },
+      description: "Working on the frontend of a Drupal website created for a mighty network community."
+    }
+  ];

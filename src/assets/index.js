@@ -49,12 +49,13 @@ import figma from "./tech/figma.png";
 import canva from "./tech/canva.png";
 import photoshop from "./tech/photoshop.png";
 
-import lifeGoats from "./projects/lifeGoats.png";
+import lifeGoats from "./projects/LifeGoats.png";
 import portfolio from "./projects/portfolio.png";
 import onni from "./projects/onni.png";
-import shiftMagic from "./projects/shiftMagic.png";
-import gardenGenie from "./projects/gardenGenie.png";
-import bootcampersTreasureChest from "./projects/bootcampersTreasureChest.png";
+import gardenGenie from "./projects/GardenGenie.png";
+import bootcampersTreasureChest from "./projects/BootcampersTreasureChest.png";
+import lightABeacon from "./projects/LightABeacon.png";
+import compassOfCare from "./projects/CompassOfCare.png";
 
 export {
   logo,
@@ -107,7 +108,8 @@ export {
   lifeGoats,
   portfolio,
   onni,
-  shiftMagic,
   gardenGenie,
   bootcampersTreasureChest,
+  lightABeacon,
+  compassOfCare,
 };
