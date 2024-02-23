@@ -9,7 +9,6 @@ import {
 import { styles } from "../../styles.js";
 import {
   singleStarLilac,
-  threeStars,
   starrySky1,
   starrySky2,
   github,
