@@ -10,7 +10,7 @@ import {
 
 export const projects = [
     {
-      name: "LifeGoats",
+      name: "Life Goats",
       image: {
         src: lifeGoats,
         alt: "Life Goats",
@@ -195,7 +195,7 @@ export const projects = [
   export const ongoingProjects = [
     {
       id: 1,
-      name: "CompassOfCare",
+      name: "Compass Of Care",
       image: {
         src: compassOfCare,
         alt: "Compass of Care",
@@ -204,7 +204,7 @@ export const projects = [
     },
     {
       id: 2,
-      name: "LightABeacon",
+      name: "Light A Beacon",
       image: {
         src: lightABeacon,
         alt: "Light a Beacon",
