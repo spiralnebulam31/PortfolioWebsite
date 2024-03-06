@@ -33,7 +33,7 @@ export const projects = [
           "Develop a server to facilitate user authentication, enabling a streamlined process for individuals to secure their spot at future events."
         ],
       },
-      date: "November 2023 - Present",
+      date: "October 2023",
       techStack: [
         "React.js",
         "React Router",
@@ -49,7 +49,7 @@ export const projects = [
       ],
       repoLink: "https://github.com/AnastasiaAdamoudi/LifeGoats",
       websiteLink: "https://lifegoats.com/",
-      status: "MVP complete, more features in progress",
+      status: "MVP complete, roadmap currently paused",
     },
     {
       name: "onni.",
