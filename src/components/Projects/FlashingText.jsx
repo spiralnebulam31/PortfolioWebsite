@@ -12,6 +12,8 @@ const FlashingText = () => {
     return () => clearInterval(interval);
   }, []); // Run effect only once
 
+  //testing
+
   return (
     <AnimatePresence>
       {isVisible && (
