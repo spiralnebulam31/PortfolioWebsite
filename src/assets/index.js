@@ -53,7 +53,6 @@ import lifeGoats from "./projects/LifeGoats.png";
 import portfolio from "./projects/portfolio.png";
 import onni from "./projects/onni.png";
 import gardenGenie from "./projects/GardenGenie.png";
-//test comment
 import bootcampersTreasureChest from "./projects/BootcampersTreasureChest.png";
 import lightABeacon from "./projects/LightABeacon.png";
 import compassOfCare from "./projects/CompassOfCare.png";

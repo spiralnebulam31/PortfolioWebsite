@@ -52,7 +52,7 @@ const Hero = ({
               "text-white z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] flex flex-wrap justify-center items-center gap-1 md:gap-4"
             }
           >
-            Hi, I'm <span className="text-secondary">Anastasia</span>
+            Hi, I'm <span className="text-secondary">not Anastasia</span>
           </motion.h1>
           <motion.p
             variants={heroVariant}
