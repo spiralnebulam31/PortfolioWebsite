@@ -7,7 +7,6 @@ import { profilePhotos, aboutMeText } from "../../constants/constants.js";
 import { fadeIn, floatFromRightVariant } from "../../utils/motion.js";
 
 const PhotoCard = ({ index, alt, image, toggleOpen }) => {
-  //testing github action
   return (
     <Tilt
       className="w-[250px]"
