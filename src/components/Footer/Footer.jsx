@@ -47,7 +47,6 @@ const Footer = () => {
 
         <footer className="flex flex-col lg:flex-row lg:items-center mt-4 pb-2 lg:full items-center">
         <p className="text-white font-body font-bold text-sm mb-1 lg:mr-auto lg:ml-5">
-          Copyright
           <span className="text-secondary font-links font-bold text-sm mx-2">
             ©
           </span>

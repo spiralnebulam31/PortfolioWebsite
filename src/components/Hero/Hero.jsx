@@ -52,7 +52,7 @@ const Hero = ({
               "text-white z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] flex flex-wrap justify-center items-center gap-1 md:gap-4"
             }
           >
-            Hi, I'm <span className="text-secondary">not Anastasia</span>
+            Hi, I'm <span className="text-secondary">Anastasia</span>
           </motion.h1>
           <motion.p
             variants={heroVariant}
@@ -61,7 +61,7 @@ const Hero = ({
               "text-white-100 max-w-md md:max-w-2xl z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-center"
             }
           >
-            I create full-stack websites with a blend of creativity, compassion
+            I create websites with a blend of creativity, compassion
             and an analytical mindset.
           </motion.p>
 
@@ -99,8 +99,8 @@ const Hero = ({
             </a>
 
             <a
-              href="/AnastasiaAdamoudiCV.pdf"
-              download="AnastasiaAdamoudiCV.pdf"
+              href="/AnastasiaAdamoudiCV_FrontendDeveloper.pdf"
+              download="AnastasiaAdamoudiCV_FrontendDeveloper.pdf"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={handleResumeMouseEnter}
