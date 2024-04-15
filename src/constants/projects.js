@@ -200,7 +200,7 @@ export const projects = [
         src: compassOfCare,
         alt: "Compass of Care",
       },
-      description: "Creating a full-stack app to help a new care manager keep track of their clients, their employees and their documentation."
+      description: "Creating a web app to help a new care manager keep track of their clients, their employees and their documentation."
     },
     {
       id: 2,
@@ -209,6 +209,6 @@ export const projects = [
         src: lightABeacon,
         alt: "Light a Beacon",
       },
-      description: "Working on the frontend of a Drupal website created for a mighty network community."
+      description: "Working on the frontend of an interractive map that will be connected to a Drupal backend, created for the Campfire Convention."
     }
   ];

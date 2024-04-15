@@ -7,6 +7,7 @@ import { profilePhotos, aboutMeText } from "../../constants/constants.js";
 import { fadeIn, floatFromRightVariant } from "../../utils/motion.js";
 
 const PhotoCard = ({ index, alt, image, toggleOpen }) => {
+
   return (
     <Tilt
       className="w-[250px]"
@@ -48,7 +49,7 @@ const About = () => {
 
   return (
     <section id="about" className="overflow-hidden">
-      <div className="bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-10">
+      <div className="bg-background1 relative bg-cover w-full h-auto top-0 left-0 right-0 bottom-0 pt-5 pb-10">
         <div className="mx-auto px-5">
           <p className={styles.sectionSubText + styles.paddingX}>
             Introduction
@@ -63,15 +64,15 @@ const About = () => {
               ref={ref}
               animate={isInView ? "animate" : "initial"}
             >
-              <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
-                <div className="flex-1 xs:mx-auto sm:mx-auto md:mx-auto xs:pb-10 sm:pb-10 md:pb-10 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-0 xl:pt-0">
+              <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
+                <div className="flex-1 mx-auto sm:mx-auto md:mx-auto pb-10 sm:pb-10 md:pb-10 xs:pt-10 sm:pt-10 md:pt-10 lg:pt-0 xl:pt-0">
                   {profilePhotos.map((photo, index) => (
                     <PhotoCard key={index} {...photo} toggleOpen={toggleOpen} />
                   ))}
                 </div>
 
                 <motion.div
-                  className="lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto xs:w-full sm:w-full md:w-full"
+                  className="lg:ml-10 xl:ml-10 xs:mx-auto sm:mx-auto md:mx-auto w-full sm:w-full md:w-full lg:w-[70%]"
                   variants={fadeIn("right", "spring", 0.5, 1.25)}
                 >
                   <div className="flex-2 items-center justify-center w-full mx-auto">
@@ -141,7 +142,7 @@ const About = () => {
 
               {!isSmallScreen && (
                 <motion.div
-                  className="flex flex-col items-center justify-center w-full mx-auto"
+                  className="flex flex-col items-center justify-center lg:w-full mx-auto"
                   variants={fadeIn("right", "spring", 0.5, 1.25)}
                 >
                   {aboutMeText.slice(2).map((text, index) => (

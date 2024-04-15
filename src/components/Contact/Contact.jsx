@@ -67,7 +67,7 @@ const Contact = ({
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-1">
           {/* Contact Information */}
           <motion.div
-          className="mb-6 text-center w-[90%] md:w-[75%] xl:w-[70%] mx-auto"
+          className="mb-6 text-center w-[95%] md:w-[75%] xl:w-[70%] mx-auto"
           variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
           >
             <div className="text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-5 leading-[30px]">
