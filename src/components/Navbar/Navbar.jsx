@@ -63,7 +63,7 @@ const Navbar = () => {
           {/* mobile menu */}
           <motion.div
   className={`${!mobile ? "hidden" : "flex"}
-              absolute right-0 top-20 p-2 w-[240px] mx-0 my-0
+              absolute right-0 top-20 p-2 w-[260px] mx-0 my-0
               z-10 rounded-xl flex-col justify-center
               items-center gap-10 bg-gradient-to-b from-cyan-500 to-purple-300 shadow-lg`}
   variants={mobileMenuVariants}
@@ -81,7 +81,7 @@ const Navbar = () => {
         active === link.title
           ? "text-primary underline"
           : "text-secondary"
-      } hover:text-purple-300 text-[20px] hover:text-[24px] font-medium cursor-pointer leading-7 w-[86px]`}
+      } hover:text-purple-300 text-[20px] hover:text-[24px] font-medium cursor-pointer leading-7 w-[100px]`}
       onClick={() => {
         setMobile(!mobile);
         setActive(link.title);

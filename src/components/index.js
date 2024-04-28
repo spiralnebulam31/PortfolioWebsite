@@ -3,6 +3,7 @@ import Hero from './Hero/Hero';
 import About from './About/About';
 import Skills from './Skills/Skills';
 import Journey from './Journey/Journey';
+import AstroPic from './AstroPic/AstroPic';
 import Projects from './Projects/Projects';
 import Parallax from './Parallax/Parallax';
 import Contact from './Contact/Contact';
@@ -15,6 +16,7 @@ export {
   Skills,
   Projects,
   Journey,
+  AstroPic,
   Parallax,
   Contact,
   Footer

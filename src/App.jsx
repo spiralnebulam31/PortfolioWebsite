@@ -7,6 +7,7 @@ import {
   Skills,
   Projects,
   Journey,
+  AstroPic,
   Parallax,
   Contact,
   Footer,
@@ -72,6 +73,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Journey />
+      <AstroPic />
       <Parallax />
       <Contact
         githubIsHovered={githubIsHovered}
