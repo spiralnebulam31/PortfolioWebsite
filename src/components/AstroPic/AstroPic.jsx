@@ -17,8 +17,11 @@ const AstroPic = () => {
   useEffect(() => {
     const getAstroPic = async () => {
       try {
+        // const response = await Axios.get(
+        //   "http://localhost:3001/astro-pic"
+        // );
         const response = await Axios.get(
-          "http://localhost:3001/astro-pic"
+          "https://portfoliowebsite-31rf.onrender.com/astro-pic"
         );
         console.log(response.data);
         setAstroPicData(response.data);
