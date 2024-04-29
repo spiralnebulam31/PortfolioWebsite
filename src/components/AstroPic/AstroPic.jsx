@@ -12,14 +12,13 @@ const AstroPic = () => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-100px" });
 
-  const nasaApiKey = import.meta.env.VITE_NASA_API_KEY;
   const [astroPicData, setAstroPicData] = useState(null);
 
   useEffect(() => {
     const getAstroPic = async () => {
       try {
         const response = await Axios.get(
-          `https://api.nasa.gov/planetary/apod?api_key=${nasaApiKey}`
+          "http://localhost:3001/astro-pic"
         );
         console.log(response.data);
         setAstroPicData(response.data);
