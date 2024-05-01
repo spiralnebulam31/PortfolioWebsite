@@ -31,6 +31,7 @@ const AstroPicSchema = new mongoose.Schema({
   url: String,
   hdurl: String,
   explanation: String,
+  copyright: String,
   date: Date,
   created_at: { type: Date, default: Date.now },
 });
