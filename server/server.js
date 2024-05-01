@@ -32,8 +32,6 @@ const AstroPicSchema = new mongoose.Schema({
   hdurl: String,
   explanation: String,
   copyright: String,
-  date: Date,
-  created_at: { type: Date, default: Date.now },
 });
 
 const AstroPic = mongoose.model("AstroPic", AstroPicSchema);
@@ -53,7 +51,6 @@ const fetchLatestAstroPic = async () => {
       hdurl: data.hdurl,
       explanation: data.explanation,
       copyright: data.copyright,
-      date: new Date(data.date),
     });
 
     // Check if there is already a picture for today, if yes, update it, else save new one
