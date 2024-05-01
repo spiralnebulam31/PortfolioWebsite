@@ -56,14 +56,29 @@ const fetchLatestAstroPic = async () => {
     // Check if there is already a picture for today, if yes, update it, else save new one
     const existingPic = await AstroPic.findOne({ date: astroPic.date });
     if (existingPic) {
-      await AstroPic.findByIdAndUpdate(existingPic._id, astroPic);
+      await AstroPic.findOneAndUpdate(
+        { _id: existingPic._id },
+        {
+          $set: {
+            title: astroPic.title,
+            url: astroPic.url,
+            hdurl: astroPic.hdurl,
+            explanation: astroPic.explanation,
+            copyright: astroPic.copyright,
+          },
+        },
+        { new: true }
+      );
       console.log("Updated Astronomy Picture of the Day:", astroPic);
     } else {
       await astroPic.save();
       console.log("Astronomy Picture of the Day saved:", astroPic);
     }
   } catch (error) {
-    console.error("Error fetching and saving Astronomy Picture of the Day:", error);
+    console.error(
+      "Error fetching and saving Astronomy Picture of the Day:",
+      error
+    );
   }
 };
 
