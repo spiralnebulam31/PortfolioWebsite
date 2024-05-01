@@ -48,6 +48,7 @@ const AstroPic = () => {
             ref={ref}
             animate={isInView ? "animate" : "initial"}
           >
+          <p className="text-center text-secondary"><span className="underline">Note:</span> If you can't see the astro pic of the day, please give it a minute to complete its stellar journey to your screen!</p>
             {astroPicData && (
               <div className="flex flex-col items-center text-center justify-center mx-auto">
                 <h2 className="text-primary text-2xl font-bold p-5  uppercase text-center">
@@ -69,7 +70,7 @@ const AstroPic = () => {
                 <div className="w-full md:w-[60%] mx-auto text-white p-2">
                   <p className="pt-5 px-2 pb-2">{astroPicData.explanation}</p>
                   <p className="p-2">
-                    <span className="font-bold">Copyright: </span>{" "}
+                    <span className="font-bold">Copyright:</span>{" "}
                     {astroPicData.copyright}
                   </p>
                   <p className="p-2">
@@ -80,7 +81,7 @@ const AstroPic = () => {
                       href="https://apod.nasa.gov/apod/astropix.html"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-secondary hover:text-primary cursor-pointer"
+                      className="text-secondary hover:text-primary cursor-pointer underline"
                     >
                       click here
                     </a>

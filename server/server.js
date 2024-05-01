@@ -51,6 +51,7 @@ const fetchLatestAstroPic = async () => {
       url: data.url,
       hdurl: data.hdurl,
       explanation: data.explanation,
+      copyright: data.copyright,
       date: new Date(data.date),
     });
 
