@@ -4,6 +4,7 @@ import {
     portfolio,
     gardenGenie,
     // bootcampersTreasureChest,
+    goldenKeys,
     lightABeacon,
     compassOfCare,
 } from "../assets/index.js";
@@ -17,23 +18,24 @@ export const projects = [
       },
       description: {
         summary:
-          "I was asked to create a website to introduce an upcoming retreat, to capture its unique characteristics and offerings.",
+          "Initially created to introduce an upcoming retreat, it has evolved into a platform that offers a variety of retreats and outdoor events, all designed to help individuals connect, and find balance and peace in their lives.",
         challenge:
-          "Create a captivating website that elegantly presents the details of the retreat - date, location and other essential information - providing users with a visually appealing and engaging experience.",
+          "Create a captivating website that elegantly presents the details of the Life Goats community, as well as the retreats and events they offer.",
         solution:
           "A responsive and accessible website that not only highlights the distinctive features of the location but also offers users a sneak peek into the promises and experiences awaiting them at the retreat.",
         learnings: [
           "I wanted to create a website that would capture the essence of the retreat, so I made sure to include a variety of images that would showcase the location's beauty and serenity.",
           "Thorough exploration of map options (including Google APIs, React Simple Maps, and map design options like Snazzy Maps and Mapbox) to ultimately opt for React Leaflet to create an interactive map showcasing key locations.",
-          "After reseraching various libraries and tools, I decided to use the React useState hook and the Framer Motion animation library to create components like dropdown menus, an image carousel, a dynamic 'tab schedule' and expandable 'pricing cards'.",
+          "After reseraching various libraries and tools, I decided to use the React useState hook and the Framer Motion animation library to create components like dropdown menus, a dynamic 'tab schedule' and expandable 'pricing cards'.",
           "Prioritising accessibility and responsiveness at every stage of development.",
           "Anticipating future growth, the app has been structured for effortless scalability, ensuring a seamless extension of its capabilities as the scale evolves."
         ],
         roadmap: [
-          "Develop a server to facilitate user authentication, enabling a streamlined process for individuals to secure their spot at future events."
+          "Develop a server to facilitate user authentication, enabling a streamlined process for individuals to secure their spot at future events.",
+          "Organise the photos and videos of the retreats and events in a database, allowing users to explore the experiences and memories of past events with ease.",
         ],
       },
-      date: "October 2023",
+      date: "October 2023 - Present",
       techStack: [
         "React.js",
         "React Router",
@@ -42,14 +44,14 @@ export const projects = [
         "TailwindCSS",
         "Framer Motion",
         "React Leaflet",
-        "React Tilt",
+        "Galleria",
         "Chart.js",
         "GitHub",
         "Canva",
       ],
       repoLink: "https://github.com/AnastasiaAdamoudi/LifeGoats",
-      websiteLink: "https://lifegoats.com/",
-      status: "MVP complete, roadmap currently paused",
+      websiteLink: "https://www.lifegoats.com/",
+      status: "Complete, roadmap for future updates in progress",
     },
     {
       name: "onni.",
@@ -93,7 +95,7 @@ export const projects = [
       ],
       repoLink: "https://github.com/AnastasiaAdamoudi/onni.-PeriodAppForTeens",
       websiteLink: "https://onni.vercel.app/",
-      status: "MVP complete, roadmap currently paused",
+      status: "Complete",
     },
     {
       name: "Portfolio Website",
@@ -113,7 +115,6 @@ export const projects = [
           "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it.",
         ],
         roadmap: [
-          "Revisit the structure of the project, aiming to make it more scalable and easier to maintain.",
           "Turn the project section into pop up cards, allowing users to delve deeper into each project's details more smoothly.",
         ],
       },
@@ -127,9 +128,13 @@ export const projects = [
         "React Tilt",
         "GitHub",
         "Canva",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "NASA API",
       ],
       repoLink: "https://github.com/AnastasiaAdamoudi/PortfolioWebsite",
-      websiteLink: "https://anastasiaadamoudi.com/",
+      websiteLink: "https://www.anastasiaadamoudi.com/",
       status: "Always in progress",
     },
     {
@@ -193,14 +198,23 @@ export const projects = [
   ];
 
   export const ongoingProjects = [
+    // {
+    //   id: 1,
+    //   name: "Compass Of Care",
+    //   image: {
+    //     src: compassOfCare,
+    //     alt: "Compass of Care",
+    //   },
+    //   description: "Creating a web app to help a new care manager keep track of their clients, their employees and their documentation."
+    // },
     {
       id: 1,
-      name: "Compass Of Care",
+      name: "The Golden Keys",
       image: {
-        src: compassOfCare,
-        alt: "Compass of Care",
+        src: goldenKeys,
+        alt: "The Golden Keys",
       },
-      description: "Creating a web app to help a new care manager keep track of their clients, their employees and their documentation."
+      description: "Frontend development of a website that showcases the work, services, location and contact details of a locksmith business in Greece."
     },
     {
       id: 2,
@@ -209,6 +223,6 @@ export const projects = [
         src: lightABeacon,
         alt: "Light a Beacon",
       },
-      description: "Working on the frontend of an interractive map that will be connected to a Drupal backend, created for the Campfire Convention."
+      description: "A full-stack interactive map app that allows the users to create and join local communities. Being created for Campfire Convention."
     }
   ];

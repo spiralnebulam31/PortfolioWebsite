@@ -21,9 +21,7 @@ import mountain from "./mountain.svg";
 import planet1 from "./planet1.png";
 import planet2 from "./planet2.png";
 
-import profilePhoto1 from "./photos/profilePhoto1.jpg";
-import profilePhoto2 from "./photos/profilePhoto2.jpg";
-import profilePhoto3 from "./photos/profilePhoto3.jpg";
+import profilePhoto from "./photos/profilePhoto.svg";
 
 import typescript from "./tech/typescript.svg";
 import javascript from "./tech/javascript.png";
@@ -55,6 +53,7 @@ import onni from "./projects/onni.png";
 import gardenGenie from "./projects/GardenGenie.png";
 import bootcampersTreasureChest from "./projects/BootcampersTreasureChest.png";
 import lightABeacon from "./projects/LightABeacon.png";
+import goldenKeys from "./projects/GoldenKeys.png";
 import compassOfCare from "./projects/CompassOfCare.png";
 
 export {
@@ -79,9 +78,7 @@ export {
   mountain,
   planet1,
   planet2,
-  profilePhoto1,
-  profilePhoto2,
-  profilePhoto3,
+  profilePhoto,
   typescript,
   javascript,
   react,
@@ -110,6 +107,7 @@ export {
   onni,
   gardenGenie,
   bootcampersTreasureChest,
+  goldenKeys,
   lightABeacon,
   compassOfCare,
 };

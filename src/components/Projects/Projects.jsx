@@ -30,7 +30,7 @@ const Projects = () => {
               My Projects
             </h2>
 
-          <motion.div className="flex flex-wrap px-5 space-x-6 justify-center"
+          <motion.div className="flex flex-wrap px-5 space-x-6 justify-center text-center mx-auto"
          variants={floatFromRightVariant} initial="initial" ref={ref} animate="animate"
           >
             <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10">

@@ -16,7 +16,7 @@ const Footer = () => {
       <span className="text-primary font-links font-bold text-lg mx-2">
       &#123;
           </span>
-      <p className="text-white font-body text-sm">Created with React.js, TailwindCSS, Framer Motion and love. Graphics created on Canva.</p>
+      <p className="text-white font-body text-sm">Created with React.js, TailwindCSS, Framer Motion and love.</p>
       <span className="text-primary font-links font-bold text-lg mx-2">
       &#125;
           </span>
@@ -25,17 +25,8 @@ const Footer = () => {
         <span className="text-primary font-links font-bold text-lg mx-2">
       &#123;
           </span>
-          <p className="text-white font-body text-sm">Why the space theme? Someone once said I should be called Ana-star-sia! Since global astonomy year 2009, amateur observational astronomy has been one of my passions.</p>
+          <p className="text-white font-body text-sm">Why the space theme? Someone once said I should be called Ana-star-sia! Since global astronomy year 2009, amateur observational astronomy has been one of my passions.</p>
           <span className="text-primary font-links font-bold text-lg mx-2">
-      &#125;
-          </span>
-      </div>
-      <div className="mx-auto mb-2 mt-5 flex flex-row items-center md:[50%] lg:w-[60%]">
-      <span className="text-primary font-links font-bold text-lg mx-2">
-      &#123;
-          </span>
-        <p className="text-white font-body text-sm">I'm truly aiming to promote sustainability and I'm planning to transform this website into a green one. I'm currently researching the best ways to do that.</p>
-        <span className="text-primary font-links font-bold text-lg mx-2">
       &#125;
           </span>
       </div>
