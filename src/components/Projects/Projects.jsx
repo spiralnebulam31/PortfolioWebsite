@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { styles } from '../../styles.js';
 import { projects, ongoingProjects } from '../../constants/projects.js';
@@ -16,9 +16,6 @@ const Projects = () => {
     );
   };
 
-  const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
-
   return (
     <section id="projects" className="overflow-hidden">
       <div className='bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-10 pb-[120px]'>
@@ -31,7 +28,7 @@ const Projects = () => {
             </h2>
 
           <motion.div className="flex flex-wrap px-5 space-x-6 justify-center text-center mx-auto"
-         variants={floatFromRightVariant} initial="initial" ref={ref} animate="animate"
+         variants={floatFromRightVariant} initial="initial" whileInView="animate"
           >
             <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10">
               {projects.map((project, index) => (
@@ -51,7 +48,7 @@ const Projects = () => {
           </div>
 
             <motion.div className="flex flex-wrap px-5 space-x-6 justify-center"
-         variants={floatFromRightVariant} initial="initial" ref={ref} animate="animate"
+         variants={floatFromRightVariant} initial="initial" whileInView="animate"
           >
             <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10">
               {ongoingProjects.map((ongoingProject, index) => (
