@@ -35,7 +35,7 @@ const Hero = ({
       <div
         className={
           styles.paddingX +
-          " absolute inset-0 top-[180px] max-w-7xl mx-auto flex flex-row items-start gap-5"
+          " absolute inset-0 top-[20%] md:top-[30%] max-w-7xl mx-auto flex flex-row items-start gap-5"
         }
       >
         {/* Hero text */}
@@ -142,7 +142,7 @@ const Hero = ({
         variants={heroStarVariant}
         initial="initial"
         animate="animate"
-        className="absolute bottom-5 md:bottom-70 w-full flex justify-center items-center z-40"
+        className="absolute bottom-[5%] w-full flex justify-center items-center z-40"
       >
         <a href="#about">
           <motion.div

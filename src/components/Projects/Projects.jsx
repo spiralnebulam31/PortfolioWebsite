@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { styles } from '../../styles.js';
 import { projects, ongoingProjects } from '../../constants/projects.js';
 import { floatFromRightVariant } from '../../utils/motion.js';

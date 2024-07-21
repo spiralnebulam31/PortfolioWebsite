@@ -134,7 +134,7 @@ const Contact = ({
               <div className="mb-1 =">
                 <button
                   type="submit"
-                  className="bg-secondary hover:bg-primary mt-1 font-links font-bold uppercase text-md md:text-xl text-background1 py-2 px-4 rounded-md items-center mx-auto"
+                  className="bg-secondary hover:bg-primary mt-1 font-links font-bold uppercase text-md md:text-xl text-background1 py-2 px-4 rounded-lg items-center mx-auto"
                 >
                   Send
                 </button>
@@ -157,7 +157,7 @@ const ContactLink = ({ href, onMouseEnter, onMouseLeave, icon, text }) => (
       onMouseLeave={onMouseLeave}
       target="_blank"
       rel="noreferrer"
-      className="text-secondary hover:text-primary flex items-center whitespace-nowrap text-md lg:text-lg lg:text-xl"
+      className="text-secondary hover:text-primary flex items-center whitespace-nowrap text-md lg:text-lg"
     >
       <img src={icon} alt={`${text} icon`} className="w-[20px] h-[20px] object-contain" />
       <p className="ml-2">{text}</p>

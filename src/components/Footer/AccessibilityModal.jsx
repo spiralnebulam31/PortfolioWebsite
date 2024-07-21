@@ -24,7 +24,7 @@ const PrivacyModal = ({ isOpen, onClose }) => {
       overlay: 'customOverlay',
       modal: 'customModal',
     }}
-    aria-labelledby="privacy-policy-modal"
+    aria-labelledby="web-accessibility-modal"
     >
       <div className="flex flex-col items-center justify-center mx-auto p-4">
         <h2 className="text-background1 text-2xl font-bold mb-4 font-subtitle">Privacy Policy</h2>

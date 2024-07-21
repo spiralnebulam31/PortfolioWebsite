@@ -1,3 +1,5 @@
+import { delay } from "framer-motion";
+
 export const textVariant = (delay) => {
     return {
       hidden: {
@@ -218,3 +220,20 @@ export const textVariant = (delay) => {
         },
       },
       }
+
+      export const floatFromRightDelayedVariant = {
+        initial: {
+          x: +200,
+          y: 100,
+          opacity: 0,
+        },
+        animate: {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 1,
+            delay: 0.5,
+          },
+        },
+        }

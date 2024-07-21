@@ -12,7 +12,7 @@ const timelineItems = [
     {
       title: "October 2008",
       cardTitle: "First Object Oriented Programming class",
-      cardDetailedText: "I had a brief taste of Java and C++, and realised that it's fun to learn. Studying Mathematics at the University of Ioannina, I struggled with some of my classes, but I always looked forward to the computer science and programming ones.",
+      cardDetailedText: "I had a brief taste of Java and C++, and realised that it's fun to learn. Studying Mathematics at the University of Ioannina, I struggled with some of my classes, but I always looked forward to computer science and programming.",
     },
     {
       title: "November 2009",
@@ -62,7 +62,7 @@ const timelineItems = [
     {
       title: "December 2022",
       cardTitle: "Accepted to School of Code",
-      cardDetailedText: "I found out I was in! I had to work very long hours for a couple of months, to ensure I was going to be alright until the end of the course, and the wait until we started felt so long. I couldn't believe I was finally weeks away from the beginning of the realisation of my dream.",
+      cardDetailedText: "I found out I was in! I had to work very long hours for a couple of months, to ensure I was going to be alright until the end of the course, and the wait until we started felt so long. I couldn't believe I was finally weeks away from the continuation of my dream journey. I was so excited and I couldn't wait to start learning and working with my new classmates.",
     },
     {
       title: "March 2023",
@@ -97,7 +97,7 @@ const timelineItems = [
     {
       title: "October 2023",
       cardTitle: "First freelance volunteer project",
-      cardDetailedText: "I had the opportunity to create a website for an upcoming retreat, a project of a person who means a lot to me and who is starting something new. The timing was right as it was the perfect opportunity to put my skills to the test and help someone I care about."
+      cardDetailedText: "I had the opportunity to create a website for an upcoming retreat. The project was a great opportunity for me to apply my skills and knowledge in a real-world setting. It was such a rewarding experience to see the website come to life and to know that my work had helped a positive cause.",
     },
     {
       title: "February 2024",

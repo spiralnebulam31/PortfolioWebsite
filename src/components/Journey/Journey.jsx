@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { styles } from "../../styles.js";
-import { fadeIn, textVariant, floatFromLeftVariant } from "../../utils/motion.js";
+import { floatFromLeftVariant } from "../../utils/motion.js";
 import { Chrono } from "react-chrono";
 import { timelineItems } from "../../constants/timeline.js";
 
