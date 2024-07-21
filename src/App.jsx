@@ -14,6 +14,19 @@ import {
 } from "./components";
 
 const App = () => {
+
+  
+  const [modalState, setModalState] = useState({
+    privacyOpen: false,
+    accessibilityOpen: false,
+  });
+
+  const closeModal = () => {
+    setModalState({
+      privacyOpen: false,
+      accessibilityOpen: false,
+    });
+  };
   
   const [githubIsHovered, setGithubIsHovered] = useState(false);
   const [linkedinIsHovered, setLinkedinIsHovered] = useState(false);
@@ -86,7 +99,11 @@ const App = () => {
         handleEmailMouseEnter={handleEmailMouseEnter}
         handleEmailMouseLeave={handleEmailMouseLeave}
       />
-      <Footer />
+      <Footer 
+        modalState={modalState}
+        setModalState={setModalState}
+        closeModal={closeModal}
+      />
     </BrowserRouter>
   );
 };

@@ -1,0 +1,10 @@
+.customOverlay {
+    background: rgba(38, 4, 69, 0.8);
+    }
+  
+  .customModal {
+      background-image: linear-gradient(#CCB2FF,#83F8F5);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
