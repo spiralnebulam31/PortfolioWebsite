@@ -50,11 +50,7 @@ const AboutModal = ({ isOpen, onClose }) => {
             development bootcamp School of Code and for a few months my everyday
             routine consisted of teamwork on projects and learning by building.
             The dots were connected and once again, it felt natural, like I was
-            finally doing what I was supposed to be doing all along. But it’s
-            the journey that matters, so here I am now, with experiences that
-            have shaped my personality and my way of thinking, currently working
-            on freelance projects and helping people and businesses establish
-            their online mark.
+            finally doing what I was supposed to be doing all along.
           </p>
           <br />
           <p>
@@ -63,7 +59,7 @@ const AboutModal = ({ isOpen, onClose }) => {
               href="#journey"
               className="text-cyan-800 hover:text-purple-800 underline cursor-pointer"
             >
-              web development journey
+              <strong>web development journey</strong>
             </a>{" "}
             has been an exciting and rewarding one. My other experiences -
             studying mathematics, working at customer service and volunteering -
@@ -76,26 +72,26 @@ const AboutModal = ({ isOpen, onClose }) => {
           <br />
           <p>
             Outside of work, I enjoy singing in a choir and going to yoga
-            classes, finding the community aspect and the mutual goal all the
-            participants have inspiring. Hiking and gardening help me connect
-            with nature and find balance in my life. Last but not least,
-            exploring local history and architecture, as well as the universe,
-            feels exciting and meaningful as it helps me understand the world
-            around me.
+            classes, inspired by communities gathering with a common goal.
+            Hiking and gardening help me connect with nature and find balance in
+            my life. Exploring local history and architecture feels exciting and
+            meaningful as it helps me understand the world around me.
           </p>
           <br />
           <p>
-            As a web developer, I work with React.js, as well as building server
+            As a freelance web developer, I work with React.js, as well as building server
             functionalities with Node.js, Express.js and MongoDB. I appreciate
             and use the core of frontend development - HTML, CSS and JavaScript
-            - and I'm curious and eager to learn new technologies. Feel free to{" "}
+            - and I'm curious and eager to use different technologies as well.
+            Feel free to{" "}
             <a
               href="#contact"
               className="text-cyan-800 hover:text-purple-800 underline cursor-pointer"
             >
-              contact
+              <strong>contact</strong>
             </a>{" "}
-            me if you have any web ideas that you’d like to bring to life!
+            me if you'd like to collaborate or if you have any web ideas you
+            want to bring to life!
           </p>
         </div>
       </div>

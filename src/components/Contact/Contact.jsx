@@ -68,7 +68,7 @@ const Contact = ({
           {/* Contact Information */}
           <motion.div
           className="mb-6 text-center w-[95%] md:w-[75%] xl:w-[70%] mx-auto"
-          variants={floatFromLeftVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
+          variants={floatFromLeftVariant} initial="initial" ref={ref} whileInView="animate"
           >
             <div className="text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-5 leading-[30px]">
               <p>Feel free to reach out to me:</p>
@@ -118,7 +118,7 @@ const Contact = ({
           {/* Contact Form */}
           <motion.div
           className="text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto pt-8 mb-5"
-          variants={floatFromRightVariant} initial="initial" ref={ref} animate={isInView ? "animate" : "initial"}
+          variants={floatFromRightVariant} initial="initial" ref={ref} whileInView="animate"
           >
             <p className="text-white font-body text-lg max-w-lg xl:max-w-6xl pb-5 mx-auto">
               Or send me a message below:

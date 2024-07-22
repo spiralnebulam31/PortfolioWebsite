@@ -9,6 +9,7 @@ import {
   floatFromRightDelayedVariant,
 } from "../../utils/motion.js";
 import AboutModal from "./AboutModal.jsx";
+import { Link } from "react-router-dom";
 
 const About = ({ image, alt }) => {
   const [aboutState, setAboutState] = useState(false);
@@ -56,13 +57,13 @@ const About = ({ image, alt }) => {
                 whileInView="animate"
               >
                 <p>
-                  As a <span className="text-secondary"><strong>frontend developer</strong></span>,
+                  As a <span className="text-primary"><strong>frontend developer</strong></span>,
                   I create{" "}
                   <span className="underline">
                     personal or business websites
                   </span>{" "}
-                  to help you <span className="text-primary"><strong>showcase your brand{" "}</strong></span> and{" "}
-                  <span className="text-primary"><strong>establish your online mark</strong></span>.
+                  to help you <span className="text-secondary"><strong>showcase your brand{" "}</strong></span> and{" "}
+                  <span className="text-secondary"><strong>establish your online mark</strong></span>.
                 </p>
                 <br />
                 <p>The websites I build are:</p>
@@ -76,8 +77,12 @@ const About = ({ image, alt }) => {
                   <li>✩ Tailored to my client's needs</li>
                 </ul>
                 <br />
+                <p>
+                  If you think I can help you with your project, feel free to{" "}
+                  <Link to="/#contact" className="text-primary hover:text-secondary cursor-pointer underline"><strong>contact me</strong></Link>.
+                </p>
                 <button
-                  className="bg-secondary hover:bg-primary text-background1 p-2 w-auto h-auto rounded-lg no-underline font-bold text-[18px] cursor-pointer mt-2 lg:mt-0"
+                  className="bg-secondary hover:bg-primary text-background1 p-2 w-auto h-auto rounded-lg no-underline font-bold text-[18px] cursor-pointer mt-8"
                   onClick={toggleAboutModal}
                   alt="click to read more"
                 >
@@ -85,9 +90,10 @@ const About = ({ image, alt }) => {
                 </button>
 
                 <AboutModal isOpen={aboutState} onClose={toggleAboutModal} />
-              </motion.div>
-            </motion.div>
-          </motion.div>
+                </motion.div>
+                </motion.div>
+                </motion.div>
+
         </div>
       </div>
     </section>

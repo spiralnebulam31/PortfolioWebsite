@@ -49,19 +49,21 @@ const AstroPic = () => {
             variants={floatFromRightVariant}
             initial="initial"
             ref={ref}
-            animate={isInView ? "animate" : "initial"}
+            // animate={isInView ? "animate" : "initial"}
+            whileInView="animate"
           >
-            <p className="text-center text-secondary"><span className="underline">Note:</span> If you can't see the astro pic of the day, please give it a minute to complete its stellar journey to your screen!</p>
+            {/* <p className="text-center text-secondary"><span className="underline">Note:</span> If you can't see the astro pic of the day, please give it a minute to complete its stellar journey to your screen!</p> */}
             {loading ? (
-              <div className="flex justify-center items-center h-96">
+              <div className="flex justify-center items-center mx-auto h-96">
                 <div className="w-16 h-16 border-4 border-t-4 border-t-primary border-tertiary rounded-full animate-spin"></div>
               </div>
             ) : (
               astroPicData && (
                 <div className="flex flex-col items-center text-center justify-center mx-auto">
-                  <h2 className="text-primary text-2xl font-bold p-5  uppercase text-center">
+                  <h2 className="text-primary text-2xl font-bold p-5 uppercase text-center">
                     {astroPicData.title}
                   </h2>
+                  <div className="w-full flex justify-center text-center mx-auto">
                   <a
                     href={astroPicData.hdurl}
                     target="_blank"
@@ -72,9 +74,10 @@ const AstroPic = () => {
                     <img
                       src={astroPicData.url}
                       alt={astroPicData.title}
-                      className="rounded-xl"
+                      className="rounded-xl text-center w-full h-auto"
                     />
                   </a>
+                  </div>
                   <div className="w-full md:w-[60%] mx-auto text-white p-2">
                     <p className="pt-5 px-2 pb-2">{astroPicData.explanation}</p>
                     <p className="p-2">
