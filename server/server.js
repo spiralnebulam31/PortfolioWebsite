@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;  // Set a default port if not provided
 const mongoUri = process.env.MONGO_URI;
 
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use(cors());
 
 // MongoDB connection
 mongoose
-  .connect(mongoUri)
+  .connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("MongoDB connected successfully");
   })
@@ -32,6 +32,7 @@ const AstroPicSchema = new mongoose.Schema({
   hdurl: String,
   explanation: String,
   copyright: String,
+  date: { type: Date, unique: true }  // Add the date field and make it unique
 });
 
 const AstroPic = mongoose.model("AstroPic", AstroPicSchema);
@@ -45,40 +46,31 @@ const fetchLatestAstroPic = async () => {
     );
 
     const data = response.data;
-    const astroPic = new AstroPic({
+    const astroPic = {
       title: data.title,
       url: data.url,
       hdurl: data.hdurl,
       explanation: data.explanation,
       copyright: data.copyright,
-    });
+      date: new Date(data.date)  // Ensure date is in the correct format
+    };
 
     // Check if there is already a picture for today, if yes, update it, else save new one
     const existingPic = await AstroPic.findOne({ date: astroPic.date });
     if (existingPic) {
-      await AstroPic.findOneAndUpdate(
+      await AstroPic.updateOne(
         { _id: existingPic._id },
         {
-          $set: {
-            title: astroPic.title,
-            url: astroPic.url,
-            hdurl: astroPic.hdurl,
-            explanation: astroPic.explanation,
-            copyright: astroPic.copyright,
-          },
-        },
-        { new: true }
+          $set: astroPic
+        }
       );
       console.log("Updated Astronomy Picture of the Day:", astroPic);
     } else {
-      await astroPic.save();
+      await new AstroPic(astroPic).save();
       console.log("Astronomy Picture of the Day saved:", astroPic);
     }
   } catch (error) {
-    console.error(
-      "Error fetching and saving Astronomy Picture of the Day:",
-      error
-    );
+    console.error("Error fetching and saving Astronomy Picture of the Day:", error);
   }
 };
 
