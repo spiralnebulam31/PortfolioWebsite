@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { styles } from "../../styles.js";
 import { profilePhotos } from "../../constants/constants.js";
 import {
   fadeIn,
   floatFromRightVariant,
   floatFromLeftVariant,
-  floatFromRightDelayedVariant,
 } from "../../utils/motion.js";
 import AboutModal from "./AboutModal.jsx";
 import { Link } from "react-router-dom";
 
-const About = ({ image, alt }) => {
+const About = () => {
+
   const [aboutState, setAboutState] = useState(false);
 
   const toggleAboutModal = () => {
@@ -89,7 +89,7 @@ const About = ({ image, alt }) => {
                   Read more about me
                 </button>
 
-                <AboutModal isOpen={aboutState} onClose={toggleAboutModal} />
+                <AboutModal isOpen={aboutState} onClose={toggleAboutModal} profilePhotos={profilePhotos} />
                 </motion.div>
                 </motion.div>
                 </motion.div>

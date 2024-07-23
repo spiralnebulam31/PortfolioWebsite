@@ -22,6 +22,11 @@ import planet1 from "./planet1.png";
 import planet2 from "./planet2.png";
 
 import profilePhoto from "./photos/profilePhoto.svg";
+import profilePhoto1 from "./photos/profilePhoto1.png";
+import profilePhoto2 from "./photos/profilePhoto2.svg";
+import photo1 from "./photos/photo1.png";
+import photo2 from "./photos/photo2.png";
+import photo3 from "./photos/photo3.png";
 
 import typescript from "./tech/typescript.svg";
 import javascript from "./tech/javascript.png";
@@ -79,6 +84,11 @@ export {
   planet1,
   planet2,
   profilePhoto,
+  profilePhoto1,
+  profilePhoto2,
+  photo1,
+  photo2,
+  photo3,
   typescript,
   javascript,
   react,

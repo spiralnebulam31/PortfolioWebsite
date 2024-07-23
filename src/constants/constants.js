@@ -1,5 +1,10 @@
 import {
   profilePhoto,
+  profilePhoto1,
+  profilePhoto2,
+  photo1,
+  photo2,
+  photo3,
   typescript,
   javascript,
   react,
@@ -56,7 +61,32 @@ const profilePhotos = [
     index: 1,
     alt: "profile photo",
     src: profilePhoto,
-  }
+  },
+  {
+    index: 2,
+    alt: "profile photo 1",
+    src: profilePhoto1,
+  },
+  {
+    index: 3,
+    alt: "profile photo 2",
+    src: profilePhoto2,
+  },
+  {
+    index: 4,
+    alt: "photo 1",
+    src: photo1,
+  },
+  {
+    index: 5,
+    alt: "photo 2",
+    src: photo2,
+  },
+  {
+    index: 6,
+    alt: "photo 3",
+    src: photo3,
+  },
 ];
 
 const techStack = [
