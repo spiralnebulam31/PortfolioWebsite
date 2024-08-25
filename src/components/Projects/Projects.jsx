@@ -4,8 +4,8 @@ import { styles } from '../../styles.js';
 import { projects, ongoingProjects } from '../../constants/projects.js';
 import { floatFromRightVariant } from '../../utils/motion.js';
 import ProjectCard from './ProjectCard.jsx';
-import OngoingProjectCard from './OngoingProjectCard.jsx';
-import FlashingText from './FlashingText.jsx';
+// import OngoingProjectCard from './OngoingProjectCard.jsx';
+// import FlashingText from './FlashingText.jsx';
 
 const Projects = () => {
 
@@ -43,7 +43,7 @@ const Projects = () => {
             </div>
           </motion.div>
 
-          <div className="h-[100px]">
+          {/* <div className="h-[100px]">
           <FlashingText />
           </div>
 
@@ -61,7 +61,7 @@ const Projects = () => {
                 />
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

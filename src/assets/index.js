@@ -33,6 +33,7 @@ import javascript from "./tech/javascript.png";
 import html from "./tech/html.svg";
 import css from "./tech/css.svg";
 import react from "./tech/react.png";
+import next from "./tech/next.svg";
 import reactRouter from "./tech/reactRouter.svg";
 import tailwind from "./tech/tailwind.svg";
 import bootstrap from "./tech/bootstrap.svg";
@@ -40,6 +41,8 @@ import mui from "./tech/mui.png";
 import framerMotion from "./tech/framerMotion.svg";
 import vite from "./tech/vite.svg";
 import node from "./tech/node.svg";
+import wordpress from "./tech/wordpress.png";
+import php from "./tech/php.png";
 import express from "./tech/express.svg";
 import mongodb from "./tech/mongodb.svg";
 import postgresql from "./tech/postgresql.png";
@@ -55,8 +58,7 @@ import photoshop from "./tech/photoshop.png";
 import lifeGoats from "./projects/LifeGoats.png";
 import portfolio from "./projects/portfolio.png";
 import onni from "./projects/onni.png";
-import gardenGenie from "./projects/GardenGenie.png";
-import bootcampersTreasureChest from "./projects/BootcampersTreasureChest.png";
+import gardenGenie from "./projects/gardenGenie.png";
 import lightABeacon from "./projects/LightABeacon.png";
 import goldenKeys from "./projects/GoldenKeys.png";
 import compassOfCare from "./projects/CompassOfCare.png";
@@ -92,6 +94,7 @@ export {
   typescript,
   javascript,
   react,
+  next,
   reactRouter,
   html,
   css,
@@ -101,6 +104,8 @@ export {
   framerMotion,
   vite,
   node,
+  wordpress,
+  php,
   express,
   mongodb,
   postgresql,
@@ -116,7 +121,6 @@ export {
   portfolio,
   onni,
   gardenGenie,
-  bootcampersTreasureChest,
   goldenKeys,
   lightABeacon,
   compassOfCare,

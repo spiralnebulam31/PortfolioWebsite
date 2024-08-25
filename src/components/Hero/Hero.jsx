@@ -99,8 +99,8 @@ const Hero = ({
             </a>
 
             <a
-              href="/AnastasiaAdamoudiCV_FrontendDeveloper.pdf"
-              download="AnastasiaAdamoudiCV_FrontendDeveloper.pdf"
+              href="/AnastasiaAdamoudiCV_WebDeveloper.pdf"
+              download="AnastasiaAdamoudiCV_WebDeveloper.pdf"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={handleResumeMouseEnter}

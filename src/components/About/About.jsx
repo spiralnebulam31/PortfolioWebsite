@@ -51,12 +51,12 @@ const About = () => {
               variants={fadeIn("right", "spring", 0.5, 1.25)}
             >
               <motion.div
-                className="items-center justify-center w-full mx-auto font-medium text-lg lg:text-2xl"
+                className="items-center justify-center w-full mx-auto my-auto font-medium text-lg sm:text-xl lg:text-2xl"
                 variants={floatFromRightVariant}
                 initial="initial"
                 whileInView="animate"
               >
-                <p>
+                {/* <p>
                   As a <span className="text-primary"><strong>frontend developer</strong></span>,
                   I create{" "}
                   <span className="underline">
@@ -80,7 +80,21 @@ const About = () => {
                 <p>
                   If you think I can help you with your project, feel free to{" "}
                   <Link to="/#contact" className="text-primary hover:text-secondary cursor-pointer underline"><strong>contact me</strong></Link>.
+                </p> */}
+
+                <p>
+                  I'm a <span className="text-primary"><strong>web developer</strong></span> with a passion for{" "}
+                  <span className="text-secondary"><strong>creating meaningful projects</strong></span> and{" "}
+                  <span className="text-secondary"><strong>helping people</strong></span>. I work as a Junior WordPress Developer at{" "}
+                  <a
+                    href="https://www.linkedin.com/company/pie-web-ltd/posts/?feedView=all"
+                          className="text-primary hover:text-secondary cursor-pointer underline"
+                    ><strong>PIE Code</strong></a>{" "}and I enjoy building{" "}
+                  <span className="text-primary"><strong>websites</strong></span> and{" "}
+                  <span className="text-primary"><strong>web applications</strong></span> that{" "}
+                  <span className="text-secondary"><strong>make a difference</strong></span>.              
                 </p>
+
                 <button
                   className="bg-secondary hover:bg-primary text-background1 p-2 w-auto h-auto rounded-lg no-underline font-bold text-[18px] cursor-pointer mt-8"
                   onClick={toggleAboutModal}

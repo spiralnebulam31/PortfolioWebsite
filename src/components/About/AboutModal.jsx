@@ -117,7 +117,7 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
             </div>
           </div>
           <br />
-          <p>
+          {/* <p>
             As a freelance web developer, I work with React.js, as well as
             building server functionalities with Node.js, Express.js and
             MongoDB. I appreciate and use the core of frontend development -
@@ -131,6 +131,9 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
             </a>{" "}
             me if you'd like to collaborate or if you have any web ideas you
             want to bring to life!
+          </p> */}
+          <p>
+          As a Junior WordPress Developer at PIE Code, I work with WordPress, HTML, CSS, Typescript, React.js, Next.js and PHP, and I'm curious and eager to learn and use different technologies as well!
           </p>
         </div>
       </div>
