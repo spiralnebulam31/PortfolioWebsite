@@ -12,13 +12,10 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@jdion/tilt-react": "^1.0.0",
-    "@react-three/drei": "^9.80.5",
-    "@react-three/fiber": "^8.13.7",
     "axios": "^1.6.8",
     "dotenv": "^16.3.1",
     "emailjs": "^4.0.3",
     "framer-motion": "^10.16.4",
-    "maath": "^0.7.0",
     "react": "^18.2.0",
     "react-card-slider-component": "^1.0.9",
     "react-chrono": "^2.3.1",
@@ -28,8 +25,7 @@
     "react-router-dom": "^6.15.0",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
-    "reactjs-popup": "^2.0.6",
-    "three": "^0.156.1"
+    "reactjs-popup": "^2.0.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

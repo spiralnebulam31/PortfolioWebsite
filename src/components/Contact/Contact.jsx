@@ -88,13 +88,13 @@ const Contact = ({
                     text="anastasiaadamoudi@gmail.com"
                   />
                   <ContactLink
-                    href="https://github.com/AnastasiaAdamoudi"
+                    href="https://github.com/spiralnebulam31"
                     target="_blank"
                     rel="noreferrer"
                     onMouseEnter={handleGithubMouseEnter}
                     onMouseLeave={handleGithubMouseLeave}
                     icon={githubIsHovered ? github2 : github}
-                    text="github.com/AnastasiaAdamoudi"
+                    text="github.com/spiralnebulam31"
                   />
                   <ContactLink
                     href="https://www.linkedin.com/in/anastasiaadamoudi89/"

@@ -1,4 +1,4 @@
-import {
+\import {
     lifeGoats,
     onni,
     portfolio,
@@ -6,7 +6,7 @@ import {
     // bootcampersTreasureChest,
     goldenKeys,
     lightABeacon,
-    compassOfCare,
+    // compassOfCare,
 } from "../assets/index.js";
 
 export const projects = [
@@ -49,7 +49,7 @@ export const projects = [
         "GitHub",
         "Canva",
       ],
-      repoLink: "https://github.com/AnastasiaAdamoudi/LifeGoats",
+      repoLink: "https://github.com/spiralnebulam31/LifeGoats",
       websiteLink: "https://www.lifegoats.com/",
       status: "Complete, roadmap for future updates in progress",
     },
@@ -93,7 +93,7 @@ export const projects = [
         "Figma",
         "Canva",
       ],
-      repoLink: "https://github.com/AnastasiaAdamoudi/onni.-PeriodAppForTeens",
+      repoLink: "https://github.com/spiralnebulam31/onni.-PeriodAppForTeens",
       websiteLink: "https://onni.vercel.app/",
       status: "Complete",
     },
@@ -133,8 +133,8 @@ export const projects = [
         "MongoDB",
         "NASA API",
       ],
-      repoLink: "https://github.com/AnastasiaAdamoudi/PortfolioWebsite",
-      websiteLink: "https://www.anastasiaadamoudi.com/",
+      repoLink: "https://github.com/spiralnebulam31/PortfolioWebsite",
+      websiteLink: "https://www.spiralnebulam31.com/",
       status: "Always in progress",
     },
     {
@@ -169,8 +169,8 @@ export const projects = [
         "Figma",
         "Canva",
       ],
-      repoLink: "https://github.com/AnastasiaAdamoudi/M.A.S.H.E.D_Garden_Genie",
-      repoLink2: "https://github.com/AnastasiaAdamoudi/GardenGenieBackend",
+      repoLink: "https://github.com/spiralnebulam31/M.A.S.H.E.D_Garden_Genie",
+      repoLink2: "https://github.com/spiralnebulam31/GardenGenieBackend",
       websiteLink: "https://garden-genie.netlify.app/",
       status: "Complete",
     },
@@ -191,8 +191,8 @@ export const projects = [
     //   },
     //   date: "April 2023",
     //   techStack: ["React.js", "MaterialUI", "CSS", "GitHub", "Figma"],
-    //   repoLink: "https://github.com/AnastasiaAdamoudi/BootcampersTreasureChest",
-    //   websiteLink: "https://anastasiaadamoudi.github.io/BootcampersTreasureChest/",
+    //   repoLink: "https://github.com/spiralnebulam31/BootcampersTreasureChest",
+    //   websiteLink: "https://spiralnebulam31.github.io/BootcampersTreasureChest/",
     //   status: "Complete",
     // },
   ];

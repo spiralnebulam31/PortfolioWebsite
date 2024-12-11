@@ -71,7 +71,7 @@ const Hero = ({
             className="flex flex-row justify-center items-center gap-5 z-40 mt-5"
           >
             <a
-              href="https://github.com/AnastasiaAdamoudi"
+              href="https://github.com/spiralnebulam31"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={handleGithubMouseEnter}
