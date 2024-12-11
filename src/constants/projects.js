@@ -1,4 +1,4 @@
-\import {
+import {
     lifeGoats,
     onni,
     portfolio,
