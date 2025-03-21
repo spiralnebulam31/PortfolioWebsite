@@ -28,7 +28,7 @@ const Footer = ({ modalState, setModalState, closeModal }) => {
       <span className="text-primary font-links text-2xl mx-2">
       &#123;
           </span>
-      <p className="text-white font-body text-sm">Created with React.js, TailwindCSS, Framer Motion and love.</p>
+      <p className="text-white font-body text-sm">Created with Vite, React.js, TailwindCSS, Framer Motion and love.</p>
       <span className="text-primary font-links text-2xl mx-2">
       &#125;
           </span>
@@ -51,7 +51,7 @@ const Footer = ({ modalState, setModalState, closeModal }) => {
             <span className="text-secondary font-links font-bold text-sm md:text-md mx-2">
             ©
           </span>
-          2023-2024 Anastasia Adamoudi
+          2023-2025 Anastasia Adamoudi
           </p>
         </div>
 
