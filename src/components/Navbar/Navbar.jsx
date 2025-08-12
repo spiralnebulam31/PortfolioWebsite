@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { navLinks } from "../../constants/constants.js";
 import { logoBracketsLight, menu, close } from "../../assets/index.js";
-import { mobileMenuVariants, staggerContainer, mobileItemVariants } from "../../utils/motion.js";
+import {
+  mobileMenuVariants,
+  staggerContainer,
+  mobileItemVariants,
+} from "../../utils/motion.js";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -11,8 +15,12 @@ const Navbar = () => {
 
   return (
     <nav className={"fixed w-full top-0 z-50 bg-background1 shadow-xl"}>
-      <div className="flex w-full mx-auto"> {/* beginning of flex div */}
-        <div className="mr-auto ml-5"> {/* beginning of left side div */}
+      <div className="flex w-full mx-auto">
+        {" "}
+        {/* beginning of flex div */}
+        <div className="mr-auto ml-5">
+          {" "}
+          {/* beginning of left side div */}
           <Link
             to="/"
             className="flex items-center gap-2"
@@ -27,18 +35,23 @@ const Navbar = () => {
               className="w-20 lg:w-[70px] h-auto"
             />
             <p className="text-primary text-[18px] font-bold cursor-pointer lg:block hidden">
-              Anastasia Adamoudi <span className="text-secondary my-2"> | </span> Web Developer
+              Anastasia Adamoudi{" "}
+              <span className="text-secondary my-2"> | </span> Web Developer
             </p>
           </Link>
-        </div> {/* end of left side div */}
-
-        <div className="flex items-center ml-auto mr-5"> {/* beginning of right side div */}
+        </div>{" "}
+        {/* end of left side div */}
+        <div className="flex items-center ml-auto mr-5">
+          {" "}
+          {/* beginning of right side div */}
           <ul className="list-none hidden lg:flex flex-row gap-10">
             {navLinks.map((link) => (
               <li
                 key={link.id}
                 className={`${
-                  active === link.id ? "text-primary underline" : "text-secondary"
+                  active === link.id
+                    ? "text-primary underline"
+                    : "text-secondary"
                 } hover:text-primary text-[18px] font-bold cursor-pointer`}
                 onClick={() => {
                   setActive(link.id);
@@ -48,15 +61,7 @@ const Navbar = () => {
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
-            <li
-              className={`${
-                "text-secondary"
-              } hover:text-primary text-[18px] font-bold cursor-pointer`}
-            >
-              <a href={"https://www.lifegoats.com/"} target="_blank" rel="noreferrer">Life Goats</a>
-            </li>
           </ul>
-
           {/* mobile menu button */}
           <div className="lg:hidden flex flex-1 justify-end items-center gap-2">
             <img
@@ -65,7 +70,6 @@ const Navbar = () => {
               className="w-10 h-auto cursor-pointer object-contain"
               onClick={() => setMobile(!mobile)}
             />
-
             {/* mobile menu */}
             <motion.div
               className={`${!mobile ? "hidden" : "flex"}
@@ -97,24 +101,16 @@ const Navbar = () => {
                       </li>
                     </motion.div>
                   ))}
-                  <motion.div variants={mobileItemVariants}>
-                    <li
-                      className={`${
-                        "text-secondary"
-                      } hover:text-purple-300 text-[20px] hover:text-[24px] font-medium cursor-pointer leading-7 w-[100px]`}
-                    >
-                      <a href={"https://www.lifegoats.com/"} target="_blank" rel="noreferrer">Life Goats</a>
-                    </li>
-                  </motion.div>
                 </ul>
               </motion.div>
-            </motion.div> {/* end of mobile menu */}
-
-          </div> {/* end of mobile menu button */}
-        </div> {/* end of right side */}
-
-      </div> {/* end of flex div */}
-
+            </motion.div>{" "}
+            {/* end of mobile menu */}
+          </div>{" "}
+          {/* end of mobile menu button */}
+        </div>{" "}
+        {/* end of right side */}
+      </div>{" "}
+      {/* end of flex div */}
     </nav>
   );
 };

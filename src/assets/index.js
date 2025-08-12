@@ -63,6 +63,10 @@ import lightABeacon from "./projects/LightABeacon.png";
 import goldenKeys from "./projects/GoldenKeys.png";
 import compassOfCare from "./projects/CompassOfCare.png";
 
+import lifeGoats1 from "./life-goats/life-goats-1.webp";
+import lifeGoats2 from "./life-goats/life-goats-2.JPG";
+import lifeGoats3 from "./life-goats/life-goats-3.jpeg";
+
 export {
   logo,
   logoBracketsLight,
@@ -124,4 +128,7 @@ export {
   goldenKeys,
   lightABeacon,
   compassOfCare,
+  lifeGoats1,
+  lifeGoats2,
+  lifeGoats3,
 };
