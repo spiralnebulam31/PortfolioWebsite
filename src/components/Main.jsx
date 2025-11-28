@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles.js';
 import { GalaxyCanvas } from './canvas';
-import { sideStar, singleStarPurple } from '../assets';
+// import { sideStar, singleStarPurple } from '../assets';
 
 const Main = () => {
   return (
     <section className='relative w-full h-screen mx-auto'>
       <div className={styles.paddingX + " absolute inset-0 top-[100px] max-w-7xl mx-40 flex flex-row items-start gap-5"}>
-        <div className="h-[300px] w-auto flex justify-center items-center">
+        {/* <div className="h-[300px] w-auto flex justify-center items-center">
           <img src={sideStar} alt="side star" className="h-[300px] w-auto" />
-        </div>
+        </div> */}
         <div>
           <h1 className={styles.mainHeadText + "text-white"}>
             Hi, I'm <span className="text-secondary">Anastasia</span>
@@ -36,8 +36,8 @@ const Main = () => {
                 }
               }}
              >
-            <img src={singleStarPurple} alt="arrow star" className="w-[60px] h-[60px] object-contain" />
-          </motion.div>
+            {/* <img src={singleStarPurple} alt="arrow star" className="w-[60px] h-[60px] object-contain" />*/}
+          </motion.div> 
           </div>
         </a>
       </div>
