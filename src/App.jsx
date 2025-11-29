@@ -12,14 +12,17 @@ import {
   Contact,
   Footer,
 } from "./components";
+import LifeGoatsButton from "./components/LifeGoats/LifeGoatsButton";
+import LifeGoatsSidebar from "./components/LifeGoats/LifeGoatsSidebar";
 
 const App = () => {
-
-  
   const [modalState, setModalState] = useState({
     privacyOpen: false,
     accessibilityOpen: false,
   });
+
+  // Life Goats sidebar state
+  const [lifeGoatsSidebarOpen, setLifeGoatsSidebarOpen] = useState(false);
 
   const closeModal = () => {
     setModalState({
@@ -27,7 +30,7 @@ const App = () => {
       accessibilityOpen: false,
     });
   };
-  
+
   const [githubIsHovered, setGithubIsHovered] = useState(false);
   const [linkedinIsHovered, setLinkedinIsHovered] = useState(false);
   const [resumeIsHovered, setResumeIsHovered] = useState(false);
@@ -67,9 +70,16 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      {/* <div className='relative z-0 bg-background1'> */}
       <div className="bg-cover bg-n-repeat bg-center overflow-x-hidden">
         <Navbar />
+
+        {/* Life Goats Components */}
+        <LifeGoatsButton onClick={() => setLifeGoatsSidebarOpen(true)} />
+        <LifeGoatsSidebar
+          isOpen={lifeGoatsSidebarOpen}
+          onClose={() => setLifeGoatsSidebarOpen(false)}
+        />
+
         <Hero
           githubIsHovered={githubIsHovered}
           handleGithubMouseEnter={handleGithubMouseEnter}
@@ -99,7 +109,7 @@ const App = () => {
         handleEmailMouseEnter={handleEmailMouseEnter}
         handleEmailMouseLeave={handleEmailMouseLeave}
       />
-      <Footer 
+      <Footer
         modalState={modalState}
         setModalState={setModalState}
         closeModal={closeModal}
