@@ -5,7 +5,7 @@ extend({ OrbitControls, Preload });
 import CanvasLoader from '../Loader'
 
 const Galaxy = ({ isMobile }) => {
-  const galaxy = useGLTF('./galaxy/scene.gltf')
+  const galaxy = useGLTF('./space/scene.gltf')
 
   return (
     <mesh>
