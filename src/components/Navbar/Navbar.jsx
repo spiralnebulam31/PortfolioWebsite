@@ -1,4 +1,6 @@
 import { useState } from "react";
+import LifeGoatsButton from "../LifeGoats/LifeGoatsButton";
+import LifeGoatsSidebar from "../LifeGoats/LifeGoatsSidebar";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { navLinks } from "../../constants/constants.js";
@@ -12,10 +14,15 @@ import {
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [mobile, setMobile] = useState(false);
+  const [showGoatsSidebar, setShowGoatsSidebar] = useState(false);
 
   return (
-    <nav className={"fixed w-full top-0 z-50 bg-background1 shadow-xl"}>
-      <div className="flex w-full mx-auto">
+    <>
+      {/* Hide floating LifeGoatsButton on mobile, show on desktop */}
+      {/* Floating LifeGoatsButton only on desktop */}
+      <LifeGoatsButton onClick={() => setShowGoatsSidebar(true)} className="hidden lg:block fixed top-24 right-0 z-40" />
+      <nav className={"fixed w-full top-0 z-50 bg-background1 shadow-xl"}>
+        <div className="flex w-full mx-auto">
         {" "}
         {/* beginning of flex div */}
         <div className="mr-auto ml-5">
@@ -70,27 +77,33 @@ const Navbar = () => {
               className="w-10 h-auto cursor-pointer object-contain"
               onClick={() => setMobile(!mobile)}
             />
-            {/* mobile menu */}
+            {/* mobile menu - fullscreen overlay */}
             <motion.div
               className={`${!mobile ? "hidden" : "flex"}
-                absolute right-0 top-20 p-2 w-[260px] mx-0 my-0
-                z-10 rounded-xl flex-col justify-center
-                items-center gap-10 bg-gradient-to-b from-cyan-500 to-purple-300 shadow-lg`}
+                fixed inset-0 w-full h-full z-50 flex-col justify-center items-center bg-purple-700 bg-gradient-to-b from-cyan-500 to-purple-700 transition-all`}
               variants={mobileMenuVariants}
               initial={mobile ? "open" : "closed"}
               animate={mobile ? "open" : "closed"}
             >
-              <motion.div variants={staggerContainer}>
-                <ul className="list-none flex flex-col justify-end items-start gap-4 bg-background1 px-16 py-12 mx-1 my-2 rounded-xl">
+              {/* Close X button for mobile menu */}
+              <button
+                className="absolute top-6 right-6 text-white text-3xl font-bold z-50"
+                aria-label="Close menu"
+                onClick={() => setMobile(false)}
+              >
+                ×
+              </button>
+              <motion.div variants={staggerContainer} className="w-full flex flex-col items-center justify-center h-full">
+                <ul className="list-none flex flex-col justify-center items-center gap-8 w-full">
                   {navLinks.map((link) => (
                     <motion.div key={link.id} variants={mobileItemVariants}>
                       <li
                         key={link.id}
-                        className={`${
+                        className={`$${
                           active === link.title
                             ? "text-primary underline"
                             : "text-secondary"
-                        } hover:text-purple-300 text-[20px] hover:text-[24px] font-medium cursor-pointer leading-7 w-[100px]`}
+                        } hover:text-purple-300 text-[24px] font-bold cursor-pointer leading-7 text-center`}
                         onClick={() => {
                           setMobile(!mobile);
                           setActive(link.title);
@@ -101,17 +114,24 @@ const Navbar = () => {
                       </li>
                     </motion.div>
                   ))}
+                  {/* LifeGoatsButton at the end of mobile menu */}
+                  <div className="w-full flex justify-center mt-0">
+                    <LifeGoatsButton onClick={() => setShowGoatsSidebar(true)} className="w-auto static" />
+                  </div>
                 </ul>
               </motion.div>
-            </motion.div>{" "}
+            </motion.div>
             {/* end of mobile menu */}
-          </div>{" "}
+          </div>
           {/* end of mobile menu button */}
         </div>{" "}
         {/* end of right side */}
       </div>{" "}
       {/* end of flex div */}
-    </nav>
+      </nav>
+      {/* LifeGoatsSidebar modal, always available */}
+      <LifeGoatsSidebar isOpen={showGoatsSidebar} onClose={() => setShowGoatsSidebar(false)} />
+    </>
   );
 };
 
