@@ -85,7 +85,7 @@ const About = () => {
                 <p>
                   I'm a <span className="text-primary"><strong>web developer</strong></span> with a passion for{" "}
                   <span className="text-secondary"><strong>creating meaningful projects</strong></span> and{" "}
-                  <span className="text-secondary"><strong>helping people</strong></span>. I work as a Junior WordPress Developer at{" "}
+                  <span className="text-secondary"><strong>helping people</strong></span>. I work as a WordPress Developer at{" "}
                   <a
                     href="https://www.linkedin.com/company/pie-web-ltd/posts/?feedView=all"
                           className="text-primary hover:text-secondary cursor-pointer underline"

@@ -133,7 +133,7 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
             want to bring to life!
           </p> */}
           <p>
-          As a Junior WordPress Developer at PIE Code, I work with WordPress, HTML, CSS, Typescript, React.js, Next.js and PHP, and I'm curious and eager to learn and use different technologies as well!
+          As a WordPress Developer at PIE Code, I work with WordPress, HTML, CSS, JavaScript, Next.js and PHP. My primary focus is on building block themes while ensuring a seamless user experience and accessibiity.
           </p>
         </div>
       </div>
