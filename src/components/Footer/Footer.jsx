@@ -51,7 +51,7 @@ const Footer = ({ modalState, setModalState, closeModal }) => {
             <span className="text-secondary font-links font-bold text-sm md:text-md mx-2">
             ©
           </span>
-          2023-2025 Anastasia Adamoudi
+          2026 Anastasia Adamoudi
           </p>
         </div>
 
