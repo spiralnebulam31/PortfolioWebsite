@@ -97,13 +97,13 @@ const Contact = ({
                     text="github.com/spiralnebulam31"
                   />
                   <ContactLink
-                    href="https://www.linkedin.com/in/anastasiaadamoudi89/"
+                    href="https://www.linkedin.com/in/anastasiaadamoudi-webdev/"
                     target="_blank"
                     rel="noreferrer"
                     onMouseEnter={handleLinkedinMouseEnter}
                     onMouseLeave={handleLinkedinMouseLeave}
                     icon={linkedinIsHovered ? linkedin2 : linkedin}
-                    text="linkedin.com/in/anastasiaadamoudi89"
+                    text="linkedin.com/in/anastasiaadamoudi-webdev"
                   />
                 </div>
                 {/* End of Contact Links */}
