@@ -85,7 +85,7 @@ const Hero = ({
             </a>
 
             <a
-              href="https://www.linkedin.com/in/anastasiaadamoudi89/"
+              href="https://www.linkedin.com/in/anastasiaadamoudi-webdev/"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={handleLinkedinMouseEnter}
