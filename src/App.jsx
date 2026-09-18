@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import {
   Hero,
   Navbar,
   About,
   Skills,
   Projects,
+  Journey,
   Parallax,
   Contact,
   Footer,
@@ -15,15 +15,6 @@ import {
 import LifeGoatsButton from "./components/LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "./components/LifeGoats/LifeGoatsSidebar";
 import "./App.scss";
-
-// react-chrono (used inside Journey for the timeline) touches `window`
-// outside of an effect/handler, which crashes Next's server-render pass for
-// Client Components. `ssr: false` skips that pass and renders it purely
-// client-side after hydration, which is fine since it's timeline UI, not
-// content that needs to be in the initial HTML.
-const Journey = dynamic(() => import("./components/Journey/Journey"), {
-  ssr: false,
-});
 
 // `astroPic` is a Server Component element instantiated by app/page.jsx and
 // passed down here — see the note there for why it can't be imported directly.

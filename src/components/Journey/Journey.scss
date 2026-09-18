@@ -54,13 +54,8 @@
     }
   }
 
-  &__timeline-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 85vh;
-    border-radius: vars.radius(xl);
-    box-shadow: vars.shadow(card);
-    background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-300));
+  &__timeline-wrap {
+    width: 100%;
+    padding-block: vars.rem(24);
   }
 }

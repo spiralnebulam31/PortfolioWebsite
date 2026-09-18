@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { floatFromLeftVariant } from "../../utils/motion.js";
-import { Chrono } from "react-chrono";
 import { timelineItems } from "../../constants/timeline.js";
+import Timeline from "./Timeline.jsx";
 import "./Journey.scss";
 
 const Journey = () => {
@@ -19,29 +19,9 @@ const Journey = () => {
 
           <div className="journey__content">
 
-<motion.div className="journey__timeline-card"
+<motion.div className="journey__timeline-wrap"
 variants={floatFromLeftVariant} initial="initial" whileInView="animate">
-            <Chrono
-              items={timelineItems}
-              mode="VERTICAL_ALTERNATING"
-              showSingleMode
-              itemWidth={400}
-              itemHeight={500}
-              cardWidth={550}
-              cardHeight={200}
-              focusActiveItemOnLoad
-              scrollable
-              theme={{
-                primary: "#3b0764",
-                secondary: "#a855f7",
-                cardBgColor: "#CCB2FF",
-                cardTitleColor: "#3b0764",
-                cardDetailsColor: "#3b0764",
-                iconBackgroundColor: "#CCB2FF",
-                titleColorActive: "#83F8F5",
-                titleColor: "#3b0764",
-              }}
-            />
+            <Timeline items={timelineItems} />
           </motion.div>
 
           </div>
