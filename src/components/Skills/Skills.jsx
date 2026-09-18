@@ -1,3 +1,5 @@
+"use client";
+
 import { textVariant } from '../../utils/motion.js';
 import { techStack } from '../../constants/constants.js';
 import SkillCard from './SkillCard.jsx';

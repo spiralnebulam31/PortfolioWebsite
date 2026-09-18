@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { lifeGoats1, lifeGoats2, lifeGoats3 } from "../../assets/index.js";

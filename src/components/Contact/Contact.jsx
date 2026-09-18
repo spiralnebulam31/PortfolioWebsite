@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../../utils/motion.js";
@@ -22,9 +24,9 @@ const Contact = ({
     alert("Email Sent! I will reply to you as soon as possible.");
   };
 
-  const templateCode = import.meta.env.VITE_EMAILJS_TEMPLATE_CODE;
-  const serviceCode = import.meta.env.VITE_EMAILJS_SERVICE_CODE;
-  const userID = import.meta.env.VITE_EMAILJS_USER_ID;
+  const templateCode = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CODE;
+  const serviceCode = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_CODE;
+  const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
 
   const sendEmail = (e) => {

@@ -1,13 +1,13 @@
-import { BrowserRouter } from "react-router-dom";
+"use client";
+
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import {
   Hero,
   Navbar,
   About,
   Skills,
   Projects,
-  Journey,
-  AstroPic,
   Parallax,
   Contact,
   Footer,
@@ -16,7 +16,18 @@ import LifeGoatsButton from "./components/LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "./components/LifeGoats/LifeGoatsSidebar";
 import "./App.scss";
 
-const App = () => {
+// react-chrono (used inside Journey for the timeline) touches `window`
+// outside of an effect/handler, which crashes Next's server-render pass for
+// Client Components. `ssr: false` skips that pass and renders it purely
+// client-side after hydration, which is fine since it's timeline UI, not
+// content that needs to be in the initial HTML.
+const Journey = dynamic(() => import("./components/Journey/Journey"), {
+  ssr: false,
+});
+
+// `astroPic` is a Server Component element instantiated by app/page.jsx and
+// passed down here — see the note there for why it can't be imported directly.
+const App = ({ astroPic }) => {
   const [modalState, setModalState] = useState({
     privacyOpen: false,
     accessibilityOpen: false,
@@ -70,7 +81,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <>
       <div className="app__hero-wrap">
         <Navbar />
 
@@ -97,7 +108,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Journey />
-      <AstroPic />
+      {astroPic}
       <Parallax />
       <Contact
         githubIsHovered={githubIsHovered}
@@ -115,7 +126,7 @@ const App = () => {
         setModalState={setModalState}
         closeModal={closeModal}
       />
-    </BrowserRouter>
+    </>
   );
 };
 
