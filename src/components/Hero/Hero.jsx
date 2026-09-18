@@ -6,7 +6,6 @@ import {
   starryHeroVariant2,
   starSliderVariant,
 } from "../../utils/motion.js";
-import { styles } from "../../styles.js";
 import {
   singleStarLilac,
   starrySky1,
@@ -18,6 +17,7 @@ import {
   resume,
   resume2,
 } from "../../assets/index.js";
+import "./Hero.scss";
 
 const Hero = ({
   githubIsHovered,
@@ -31,35 +31,24 @@ const Hero = ({
   handleResumeMouseLeave,
 }) => {
   return (
-    <section className="bg-gradient-to-b from-background1 via-cyan-900 to-background1 relative w-full h-screen mx-auto overflow-hidden">
-      <div
-        className={
-          styles.paddingX +
-          " absolute inset-0 top-[20%] md:top-[30%] max-w-7xl mx-auto flex flex-row items-start gap-5"
-        }
-      >
+    <section className="hero">
+      <div className="hero__content">
         {/* Hero text */}
         <motion.div
-          className="flex flex-col justify-center items-center mx-auto"
+          className="hero__intro"
           variants={heroVariant}
           initial="initial"
           animate="animate"
         >
           <motion.h1
             variants={heroVariant}
-            className={
-              styles.mainHeadText +
-              "text-white z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] flex flex-wrap justify-center items-center gap-1 md:gap-4"
-            }
+            className="hero__heading"
           >
-            Hi, I'm <span className="text-secondary">Anastasia</span>
+            Hi, I'm <span className="hero__name">Anastasia</span>
           </motion.h1>
           <motion.p
             variants={heroVariant}
-            className={
-              styles.mainSubText +
-              "text-white-100 max-w-md md:max-w-2xl z-40 [text-shadow:_0_2px_0_rgb(0_0_0_/_40%)] text-center"
-            }
+            className="hero__subheading"
           >
             I create websites with a blend of creativity, compassion
             and an analytical mindset.
@@ -68,7 +57,7 @@ const Hero = ({
           {/* Hero links */}
           <motion.div
             variants={heroVariant}
-            className="flex flex-row justify-center items-center gap-5 z-40 mt-5"
+            className="hero__links"
           >
             <a
               href="https://github.com/spiralnebulam31"
@@ -80,7 +69,7 @@ const Hero = ({
               <img
                 src={githubIsHovered ? github2 : github}
                 alt="clickable GitHub logo"
-                className="w-[40px] h-[40px] object-contain mt-4"
+                className="hero__link-icon"
               />
             </a>
 
@@ -94,7 +83,7 @@ const Hero = ({
               <img
                 src={linkedinIsHovered ? linkedin2 : linkedin}
                 alt="clickable LinkedIn logo"
-                className="w-[40px] h-[40px] object-contain mt-4"
+                className="hero__link-icon"
               />
             </a>
 
@@ -109,7 +98,7 @@ const Hero = ({
               <img
                 src={resumeIsHovered ? resume2 : resume}
                 alt="resume"
-                className="w-[40px] h-[40px] object-contain shadow-lg mt-4"
+                className="hero__link-icon hero__link-icon--resume"
               />
             </a>
           </motion.div>
@@ -117,11 +106,11 @@ const Hero = ({
       </div>
 
       {/* Starry background */}
-      <motion.div className="absolute inset-0 w-full h-full flex justify-center items-center">
+      <motion.div className="hero__starfield">
         <motion.img
           src={starrySky1}
           alt="Starry background"
-          className="absolute left-0 w-2/4 h-full object-cover pointer-events-none z-0 opacity-40"
+          className="hero__starry-sky hero__starry-sky--left"
           variants={starryHeroVariant1}
           initial="initial"
           animate="animate"
@@ -130,7 +119,7 @@ const Hero = ({
         <motion.img
           src={starrySky2}
           alt="Starry background"
-          className="absolute right-0 w-2/4 h-full object-cover pointer-events-none z-1 opacity-40"
+          className="hero__starry-sky hero__starry-sky--right"
           variants={starryHeroVariant2}
           initial="initial"
           animate="animate"
@@ -142,18 +131,18 @@ const Hero = ({
         variants={heroStarVariant}
         initial="initial"
         animate="animate"
-        className="absolute bottom-[5%] w-full flex justify-center items-center z-40"
+        className="hero__star-slider"
       >
         <a href="#about">
           <motion.div
             variants={heroStarVariant}
-            className="w-[35px] h-[75px] rounded-3xl border-4 border-secondary flex justify-center items-start z-40"
+            className="hero__star-track"
           >
             <motion.div variants={starSliderVariant}>
               <img
                 src={singleStarLilac}
                 alt="arrow star"
-                className="w-[60px] h-[60px] object-contain z-50"
+                className="hero__star-icon"
               />
             </motion.div>
           </motion.div>

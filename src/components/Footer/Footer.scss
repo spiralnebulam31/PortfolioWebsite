@@ -1,0 +1,139 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: vars.rem(20);
+  background: vars.color(background-1);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: vars.rem(12);
+    width: 90%;
+  }
+
+  // The original `md:[50%]` here is a malformed Tailwind arbitrary-variant
+  // (missing a property prefix) and was already a no-op — only the valid
+  // `lg:w-[60%]` applies, so no width is set below the lg breakpoint.
+  &__note {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    margin-bottom: vars.rem(8);
+    margin-top: vars.rem(24);
+    text-align: center;
+
+    @include mix.respond-to(lg) {
+      width: 60%;
+    }
+
+    &--spaced {
+      margin-bottom: vars.rem(16);
+      margin-top: vars.rem(20);
+    }
+  }
+
+  &__brace {
+    margin-inline: vars.rem(8);
+    color: vars.color(primary);
+    font-size: vars.rem(24);
+  }
+
+  // `font-body` was an undefined Tailwind class (no-op) — omitted, inherits Poppins.
+  &__note-text {
+    color: vars.color(white);
+    font-size: vars.rem(14);
+  }
+
+  &__divider {
+    margin-top: vars.rem(8);
+    margin-bottom: vars.rem(16);
+    width: 66.6667%;
+    border-width: 2px;
+    border-color: vars.color(secondary);
+
+    @include mix.respond-to(lg) {
+      width: 97%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // `text-background`/`font-body`/`text-md` were all undefined Tailwind
+  // classes (no-ops) — only `font-bold` was real, so this line has no
+  // explicit color/size, just the bold weight.
+  &__copyright {
+    font-weight: 700;
+  }
+
+  &__copyright-mark {
+    margin-inline: vars.rem(8);
+    color: vars.color(secondary);
+    font-weight: 700;
+    font-size: vars.rem(14);
+  }
+
+  // `text-background`/`font-body`/`text-md` no-ops again — only `text-sm` was real.
+  &__credit {
+    font-size: vars.rem(14);
+  }
+
+  &__credit-link {
+    margin-inline: vars.rem(8);
+    color: vars.color(secondary);
+    text-decoration: underline;
+    font-size: vars.rem(14);
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(primary);
+    }
+  }
+
+  &__legal {
+    display: flex;
+    flex-direction: row;
+    gap: vars.rem(8);
+  }
+
+  &__legal-link {
+    color: vars.color(primary);
+    font-size: vars.rem(14);
+    text-decoration: none;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(secondary);
+    }
+  }
+
+  &__legal-divider {
+    margin-inline: vars.rem(8);
+    color: vars.color(secondary);
+    font-weight: 700;
+  }
+}

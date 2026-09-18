@@ -1,0 +1,67 @@
+/**
+ * _themes.scss — --spiral-nebula-color-* custom property declarations.
+ *
+ * This is the ONLY file that declares these custom properties. It is @used
+ * exactly once, from the global entry point (styles.scss), so the values
+ * aren't duplicated into every component's compiled CSS output.
+ *
+ * Two themes share the same token names, switched via a `data-theme`
+ * attribute on <html>:
+ *   :root                        → dark (default, today's palette)
+ *   :root[data-theme="light"]    → light (white background, darker accents)
+ *
+ * Light values are a first-pass derivation of the dark palette — expect to
+ * refine these once running. No theme-switcher UI exists yet; this is
+ * groundwork only, set data-theme manually via devtools to preview.
+ */
+
+:root {
+  // ── Brand colors (from the old tailwind.config.js theme.colors) ──────────
+  --spiral-nebula-color-background-1: #3b0764;
+  --spiral-nebula-color-background-2: #260445; // only used as the modal overlay tint (Modal.css)
+  --spiral-nebula-color-primary:      #ccb2ff;
+  --spiral-nebula-color-secondary:    #83f8f5;
+  --spiral-nebula-color-tertiary:     #2b96b1;
+  --spiral-nebula-color-white-100:    #f3f3f3;
+
+  // ── Default Tailwind palette colors referenced directly in components ────
+  --spiral-nebula-color-cyan-400:     #22d3ee;
+  --spiral-nebula-color-cyan-500:     #06b6d4;
+  --spiral-nebula-color-cyan-800:     #155e75;
+  --spiral-nebula-color-cyan-900:     #164e63;
+  --spiral-nebula-color-purple-300:   #d8b4fe;
+  --spiral-nebula-color-purple-400:   #c084fc;
+  --spiral-nebula-color-purple-700:   #7e22ce;
+  --spiral-nebula-color-purple-800:   #6b21a8;
+  --spiral-nebula-color-purple-950:   #3b0764;
+  --spiral-nebula-color-orange-700:   #c2410c;
+
+  // ── Plain + one-off literal colors ────────────────────────────────────────
+  --spiral-nebula-color-white:        #ffffff;
+  --spiral-nebula-color-black:        #000000;
+  --spiral-nebula-color-lilac-white:  #dfd9ff; // styles.js mainSubText hardcoded hex
+}
+
+:root[data-theme="light"] {
+  --spiral-nebula-color-background-1: #f3edff;
+  --spiral-nebula-color-background-2: #e5d9f5;
+  --spiral-nebula-color-primary:      #6b1fa3;
+  --spiral-nebula-color-secondary:    #0e7c86;
+  --spiral-nebula-color-tertiary:     #206478;
+  --spiral-nebula-color-white-100:    #1a1a2e;
+
+  --spiral-nebula-color-cyan-400:     #0e7490;
+  --spiral-nebula-color-cyan-500:     #0891b2;
+  --spiral-nebula-color-cyan-800:     #164e63;
+  --spiral-nebula-color-cyan-900:     #0c4a6e;
+  --spiral-nebula-color-purple-300:   #a855f7;
+  --spiral-nebula-color-purple-400:   #9333ea;
+  --spiral-nebula-color-purple-700:   #6b21a8;
+  --spiral-nebula-color-purple-800:   #581c87;
+  --spiral-nebula-color-purple-950:   #f3edff;
+  --spiral-nebula-color-orange-700:   #9a3412;
+
+  --spiral-nebula-color-white:        #ffffff;
+  --spiral-nebula-color-black:        #000000;
+  --spiral-nebula-color-lilac-white:  #4b3b6b;
+}

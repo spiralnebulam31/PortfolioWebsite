@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { styles } from "../../styles.js";
 import { fadeIn, textVariant, floatFromLeftVariant, floatFromRightVariant } from "../../utils/motion.js";
 import emailjs from "@emailjs/browser";
 import { linkedin, linkedin2, github, github2, email, email2 } from "../../assets/index.js";
+import "./Contact.scss";
 
 const Contact = ({
   linkedinIsHovered,
@@ -25,7 +25,7 @@ const Contact = ({
   const templateCode = import.meta.env.VITE_EMAILJS_TEMPLATE_CODE;
   const serviceCode = import.meta.env.VITE_EMAILJS_SERVICE_CODE;
   const userID = import.meta.env.VITE_EMAILJS_USER_ID;
-  
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -53,33 +53,33 @@ const Contact = ({
   const isInView = useInView(ref, { margin: "-100px" });
 
   return (
-    <section id="contact" className="overflow-hidden">
-      <div className="bg-gradient-to-b from-orange-700 to-purple-800 relative bg-cover w-full left-0 right-0 bottom-0 top-0 pb-10 pt-14">
+    <section id="contact" className="contact">
+      <div className="contact__section">
         {/* Title */}
-        <div className="mx-auto px-5">
+        <div className="contact__title-row">
           <div>
-            <p className={styles.sectionSubText + styles.paddingX}>Ways to</p>
-            <h2 className={styles.sectionHeadText + styles.paddingX}>Contact Me</h2>
+            <p className="contact__eyebrow">Ways to</p>
+            <h2 className="contact__heading">Contact Me</h2>
           </div>
         </div>
         {/* End of title */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-1">
+        <div className="contact__grid">
           {/* Contact Information */}
           <motion.div
-          className="mb-6 text-center w-[95%] md:w-[75%] xl:w-[70%] mx-auto"
+          className="contact__info-column"
           variants={floatFromLeftVariant} initial="initial" ref={ref} whileInView="animate"
           >
-            <div className="text-white font-body text-lg max-w-full sm:px-16 px-6 pt-8 mb-5 leading-[30px]">
+            <div className="contact__intro">
               <p>Feel free to reach out to me:</p>
             </div>
 
             {/* Contact Info Container */}
-            <div className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-lg shadow-card text-center">
-              <div className="bg-background1 w-full rounded-lg border pb-3 pt-3">
+            <div className="contact__info-border">
+              <div className="contact__info-panel">
 
                 {/* Contact Links */}
-                <div className="flex flex-col gap-5 py-3">
+                <div className="contact__links">
                   <ContactLink
                     href="mailto:anastasiaadamoudi@gmail.com"
                     onMouseEnter={handleEmailMouseEnter}
@@ -117,10 +117,10 @@ const Contact = ({
 
           {/* Contact Form */}
           <motion.div
-          className="text-center w-[80%] md:w-[75%] xl:w-[70%] mx-auto pt-8 mb-5"
+          className="contact__form-column"
           variants={floatFromRightVariant} initial="initial" ref={ref} whileInView="animate"
           >
-            <p className="text-white font-body text-lg max-w-lg xl:max-w-6xl pb-5 mx-auto">
+            <p className="contact__form-intro">
               Or send me a message below:
             </p>
 
@@ -131,10 +131,10 @@ const Contact = ({
               <ContactInput type="textarea" placeholder="Your message" name="message" />
 
               {/* Submit Button */}
-              <div className="mb-1 =">
+              <div className="contact__submit-row">
                 <button
                   type="submit"
-                  className="bg-secondary hover:bg-primary mt-1 font-links font-bold uppercase text-md md:text-xl text-background1 py-2 px-4 rounded-lg items-center mx-auto"
+                  className="contact__submit"
                 >
                   Send
                 </button>
@@ -150,35 +150,35 @@ const Contact = ({
 
 // Additional components (helper components)
 const ContactLink = ({ href, onMouseEnter, onMouseLeave, icon, text }) => (
-  <div className="flex justify-center items-center gap-5 pb-3">
+  <div className="contact-link">
     <a
       href={href}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       target="_blank"
       rel="noreferrer"
-      className="text-secondary hover:text-primary flex items-center whitespace-nowrap text-md lg:text-lg"
+      className="contact-link__anchor"
     >
-      <img src={icon} alt={`${text} icon`} className="w-[20px] h-[20px] object-contain" />
-      <p className="ml-2">{text}</p>
+      <img src={icon} alt={`${text} icon`} className="contact-link__icon" />
+      <p className="contact-link__text">{text}</p>
     </a>
   </div>
 );
 
 const ContactInput = ({ type, placeholder, name }) => (
-  <div className="mb-4 flex items-center bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-lg shadow-card">
+  <div className="contact-input">
     {type === 'textarea' ? (
       <textarea
         name={name}
         placeholder={placeholder}
-        className="border py-2 px-3 text-body bg-background1 w-full md:w-full rounded-lg text-white text-body"
+        className="contact-input__field"
       />
     ) : (
       <input
         type={type}
         placeholder={placeholder}
         name={name}
-        className="border py-2 px-3 text-body bg-background1 w-full md:w-full rounded-lg text-white text-body"
+        className="contact-input__field"
       />
     )}
   </div>

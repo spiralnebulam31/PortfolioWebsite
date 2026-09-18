@@ -1,0 +1,16 @@
+@use "../../scss/globals/variables" as vars;
+
+.flashing-text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-inline: auto;
+  padding-top: vars.rem(64);
+
+  &__heading {
+    color: vars.color(secondary);
+    font-size: vars.rem(36);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

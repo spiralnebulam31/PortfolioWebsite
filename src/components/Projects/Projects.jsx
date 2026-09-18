@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { styles } from '../../styles.js';
 import { projects, ongoingProjects } from '../../constants/projects.js';
 import { floatFromRightVariant } from '../../utils/motion.js';
 import ProjectCard from './ProjectCard.jsx';
+import "./Projects.scss";
 // import OngoingProjectCard from './OngoingProjectCard.jsx';
 // import FlashingText from './FlashingText.jsx';
 
@@ -17,20 +17,20 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="overflow-hidden">
-      <div className='bg-background1 relative bg-cover w-full top-0 left-0 right-0 bottom-0 pt-10 pb-[120px]'>
-        <div className="mx-auto px-5">
-            <p className={styles.sectionSubText + styles.paddingX}>
+    <section id="projects" className="projects">
+      <div className="projects__section">
+        <div className="projects__container">
+            <p className="projects__eyebrow">
               A look at
             </p>
-            <h2 className={styles.sectionHeadText + styles.paddingX}>
+            <h2 className="projects__heading">
               My Projects
             </h2>
 
-          <motion.div className="flex flex-wrap px-5 space-x-6 justify-center text-center mx-auto"
+          <motion.div className="projects__grid-wrap"
          variants={floatFromRightVariant} initial="initial" whileInView="animate"
           >
-            <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10">
+            <div className="projects__grid">
               {projects.map((project, index) => (
                 <ProjectCard
                   key={index}

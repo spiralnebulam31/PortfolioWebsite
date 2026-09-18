@@ -1,6 +1,7 @@
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
-import "./Modal.css";
+import "../shared/Modal.scss";
+import "./AboutModal.scss";
 
 const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
   const closeIcon = (
@@ -22,23 +23,23 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
       center
       closeIcon={closeIcon}
       classNames={{
-        overlay: "customOverlay",
-        modal: "customModal",
+        overlay: "modal__overlay",
+        modal: "modal__panel",
       }}
       aria-labelledby="about-modal"
     >
-      <div className="flex flex-col items-center justify-center mx-auto p-4">
-        <h2 className="text-background1 text-xl md:text-2xl font-bold mb-4 font-subtitle">
+      <div className="about-modal__body">
+        <h2 className="about-modal__title">
           Meet Anastasia
         </h2>
-        <div className="text-background1 text-sm md:text-lg mb-4 font-body">
-          <div className="flex flex-col-reverse md:flex-row px-5 pt-2 md:pt-8 gap-2 md:gap-6 justify-center mx-auto w-full">
+        <div className="about-modal__content">
+          <div className="about-modal__row">
             <div>
               <p>
                 Enthusiastic traveler, STEM ambassador, co-founder of the{" "}
                 <a
                   href="https://www.lifegoats.com"
-                  className="text-cyan-800 hover:text-purple-800 underline cursor-pointer"
+                  className="about-modal__link"
                 >
                   <strong>Life Goats</strong>
                 </a>{" "}
@@ -52,12 +53,11 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
                 problem-solving tasks.
               </p>
             </div>
-            <div className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-2xl w-auto h-auto mb-4 md:mb-0">
+            <div className="about-modal__photo-border">
               <img
                 src={profilePhotos[3].src}
                 alt={profilePhotos[3].alt}
-                className="max-w-full h-auto rounded-2xl"
-                style={{ width: '300px', maxWidth: '850px' }}
+                className="about-modal__photo"
               />
             </div>
           </div>
@@ -83,7 +83,7 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
             My{" "}
             <a
               href="#journey"
-              className="text-cyan-800 hover:text-purple-800 underline cursor-pointer"
+              className="about-modal__link"
             >
               <strong>web development journey</strong>
             </a>{" "}
@@ -96,13 +96,12 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
             approach on my web development projects.
           </p>
           <br />
-          <div className="flex flex-col md:flex-row px-5 gap-2 md:gap-6 justify-center mx-auto w-full">
-            <div className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-2xl w-auto h-auto mb-4 md:mb-0">
+          <div className="about-modal__row">
+            <div className="about-modal__photo-border">
               <img
                 src={profilePhotos[5].src}
                 alt={profilePhotos[5].alt}
-                className="max-w-full h-auto rounded-2xl"
-                style={{ width: '300px', maxWidth: '850px' }}
+                className="about-modal__photo"
               />
             </div>
             <div>

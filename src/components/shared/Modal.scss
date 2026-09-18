@@ -1,0 +1,29 @@
+/**
+ * Shared react-responsive-modal styling, consumed via the library's
+ * `classNames={{ overlay: 'modal__overlay', modal: 'modal__panel' }}` prop
+ * from AboutModal, PrivacyModal, and AccessibilityModal.
+ *
+ * Merges the two near-duplicate Modal.css files that previously lived at
+ * About/Modal.css and Footer/Modal.css (Footer's copy was missing the
+ * 768px padding rule that About's had) into one source of truth.
+ */
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.modal {
+  &__overlay {
+    background: color-mix(in srgb, vars.color(background-2) 80%, transparent);
+  }
+
+  &__panel {
+    background-image: linear-gradient(vars.color(primary), vars.color(secondary));
+    border-radius: vars.radius(base);
+    box-shadow: 0 vars.rem(2) vars.rem(10) rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: vars.rem(10);
+
+    @include mix.respond-to(md) {
+      padding: vars.rem(20);
+    }
+  }
+}

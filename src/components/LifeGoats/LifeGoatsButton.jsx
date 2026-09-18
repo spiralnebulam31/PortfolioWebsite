@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import "./LifeGoatsButton.scss";
 
 
 const LifeGoatsButton = ({ onClick, className = "" }) => {
   return (
     <motion.div
-      className={`bg-gradient-to-l from-cyan-500 to-purple-300 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-lg cursor-pointer ${className}`}
+      className={`life-goats-button ${className}`}
       onClick={onClick}
       whileHover={{ x: -5 }}
       whileTap={{ scale: 0.95 }}
@@ -13,8 +14,8 @@ const LifeGoatsButton = ({ onClick, className = "" }) => {
       animate={{ x: 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
-      <div className="px-4 py-2 bg-background1 m-1 rounded-lg lg:rounded-l-lg lg:rounded-r-none">
-        <span className="text-primary font-bold text-sm whitespace-nowrap">
+      <div className="life-goats-button__inner">
+        <span className="life-goats-button__label">
           Life Goats
         </span>
       </div>

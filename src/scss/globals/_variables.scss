@@ -1,0 +1,110 @@
+/**
+ * _variables.scss — Sass-only constants & accessor functions.
+ *
+ * Pure Sass: no CSS is emitted from this file. It is @use'd from every
+ * component's own .scss file for the functions below, and also from
+ * _themes.scss (the only file that actually declares --spiral-nebula-*
+ * custom properties on :root).
+ *
+ * Colors are NOT declared here as Sass values — they live as CSS custom
+ * properties (see _themes.scss) so they can change per data-theme without
+ * a rebuild. color() below just returns var(--spiral-nebula-color-*).
+ */
+@use "sass:map";
+@use "sass:math";
+
+// =============================================================================
+// REM CONVERSION
+// =============================================================================
+// Converts a pixel value to rem, assuming a 16px root font size.
+// Usage: vars.rem(14) → 0.875rem
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// =============================================================================
+// BREAKPOINTS
+// =============================================================================
+// Exact overrides from the old tailwind.config.js `theme.extend.screens` —
+// NOT Tailwind's stock breakpoints (its default `sm` is 640px, here 540px).
+$spiral-nebula-breakpoints: (
+  xs: 390px,
+  sm: 540px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+@function breakpoint($name) {
+  @if not map.has-key($spiral-nebula-breakpoints, $name) {
+    @error "breakpoint: unknown breakpoint '#{$name}'. Valid: #{map.keys($spiral-nebula-breakpoints)}.";
+  }
+  @return map.get($spiral-nebula-breakpoints, $name);
+}
+
+// =============================================================================
+// Z-INDEX
+// =============================================================================
+// Only the values actually used across the site today.
+$spiral-nebula-z-indexes: (
+  base:     0,
+  raised:   10,
+  header:   40,
+  overlay:  40,
+  modal:    50,
+);
+
+@function z-index($layer) {
+  @if not map.has-key($spiral-nebula-z-indexes, $layer) {
+    @error "z-index: unknown layer '#{$layer}'. Valid: #{map.keys($spiral-nebula-z-indexes)}.";
+  }
+  @return map.get($spiral-nebula-z-indexes, $layer);
+}
+
+// =============================================================================
+// BORDER RADIUS
+// =============================================================================
+// Tailwind's default radius scale (only the sizes referenced in components).
+$spiral-nebula-radii: (
+  base: rem(4),
+  lg:   rem(8),
+  xl:   rem(12),
+  2xl:  rem(16),
+  3xl:  rem(24),
+  full: 9999px,
+);
+
+@function radius($size) {
+  @if not map.has-key($spiral-nebula-radii, $size) {
+    @error "radius: unknown size '#{$size}'. Valid: #{map.keys($spiral-nebula-radii)}.";
+  }
+  @return map.get($spiral-nebula-radii, $size);
+}
+
+// =============================================================================
+// SHADOWS
+// =============================================================================
+// Tailwind's default shadow scale (sizes actually used) + the custom "card" shadow.
+$spiral-nebula-shadows: (
+  lg:   (0 rem(10) rem(15) rem(-3) rgba(0, 0, 0, 0.1), 0 rem(4) rem(6) rem(-4) rgba(0, 0, 0, 0.1)),
+  xl:   (0 rem(20) rem(25) rem(-5) rgba(0, 0, 0, 0.1), 0 rem(8) rem(10) rem(-6) rgba(0, 0, 0, 0.1)),
+  2xl:  (0 rem(25) rem(50) rem(-12) rgba(0, 0, 0, 0.25)),
+  card: (0 rem(35) rem(120) rem(-15) #211e35),
+);
+
+@function shadow($size) {
+  @if not map.has-key($spiral-nebula-shadows, $size) {
+    @error "shadow: unknown size '#{$size}'. Valid: #{map.keys($spiral-nebula-shadows)}.";
+  }
+  @return map.get($spiral-nebula-shadows, $size);
+}
+
+// =============================================================================
+// COLOR ACCESSOR
+// =============================================================================
+// Maps to the --spiral-nebula-color-* custom properties declared in
+// _themes.scss, so color values can change per data-theme at runtime.
+// Usage: vars.color(primary), vars.color(cyan-500), vars.color(white)
+@function color($name) {
+  @return var(--spiral-nebula-color-#{$name});
+}

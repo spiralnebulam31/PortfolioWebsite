@@ -1,0 +1,10 @@
+/**
+ * mixins/_index.scss — Mixin barrel file.
+ *
+ * @forward every mixin file so callers can do:
+ *   @use "../../scss/globals/mixins" as mix;
+ * and access all mixins via the mix namespace.
+ */
+@forward "./breakpoints";
+@forward "./gradients";
+@forward "./typography";

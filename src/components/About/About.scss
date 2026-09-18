@@ -1,0 +1,154 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.about {
+  overflow: hidden;
+
+  &__section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: vars.rem(20);
+    padding-bottom: vars.rem(40);
+    background: vars.color(background-1);
+    background-size: cover;
+  }
+
+  &__container {
+    margin-inline: auto;
+    padding-inline: vars.rem(20);
+  }
+
+  // NOTE: styles.js's `sectionSubText + paddingX` / `sectionHeadText + paddingX`
+  // concatenate two Tailwind strings with no separating space, so paddingX
+  // never actually applied here — ported without horizontal padding to match.
+  &__eyebrow {
+    @include mix.section-subheading-text;
+  }
+
+  &__heading {
+    @include mix.section-heading-text;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-inline: vars.rem(20);
+    padding-top: vars.rem(8);
+    gap: vars.rem(8);
+    justify-content: center;
+    margin-inline: auto;
+    width: 100%;
+
+    @include mix.respond-to(lg) {
+      flex-direction: row;
+      padding-top: vars.rem(56);
+      gap: vars.rem(40);
+      width: 70%;
+    }
+  }
+
+  &__photo-wrap {
+    margin-inline: auto;
+    padding-bottom: vars.rem(40);
+    padding-top: vars.rem(40);
+
+    @include mix.respond-to(sm) {
+      padding-top: vars.rem(8);
+    }
+
+    @include mix.respond-to(lg) {
+      padding-top: 0;
+    }
+  }
+
+  &__photo-border {
+    @include mix.gradient-border-card;
+    border-radius: vars.radius(2xl);
+    box-shadow: vars.shadow(2xl);
+    width: auto;
+    height: auto;
+  }
+
+  &__photo {
+    width: vars.rem(250);
+    height: auto;
+    border-radius: vars.radius(2xl);
+
+    @include mix.respond-to(md) {
+      width: vars.rem(350);
+    }
+  }
+
+  &__text-wrap {
+    display: flex;
+    text-align: center;
+    margin-inline: auto;
+    width: 100%;
+
+    @include mix.respond-to(lg) {
+      text-align: left;
+      margin-left: vars.rem(40);
+      width: 70%;
+    }
+  }
+
+  // `items-center justify-center` on the original element had no `flex`/`grid`
+  // display alongside them, so they were already no-ops — omitted here too.
+  &__text-inner {
+    width: 100%;
+    margin-inline: auto;
+    font-weight: 500;
+    font-size: vars.rem(18);
+
+    @include mix.respond-to(sm) {
+      font-size: vars.rem(20);
+    }
+
+    @include mix.respond-to(lg) {
+      font-size: vars.rem(24);
+    }
+  }
+
+  &__highlight {
+    &--primary {
+      color: vars.color(primary);
+    }
+
+    &--secondary {
+      color: vars.color(secondary);
+    }
+  }
+
+  &__link {
+    color: vars.color(primary);
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.color(secondary);
+    }
+  }
+
+  &__cta {
+    margin-top: vars.rem(32);
+    padding: vars.rem(8);
+    width: auto;
+    height: auto;
+    border-radius: vars.radius(lg);
+    background: vars.color(secondary);
+    color: vars.color(background-1);
+    font-weight: 700;
+    font-size: vars.rem(18);
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background: vars.color(primary);
+    }
+  }
+}

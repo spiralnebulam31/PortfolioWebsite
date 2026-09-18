@@ -1,12 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { styles } from "../../styles.js";
 import {
-  fadeIn,
-  textVariant,
   floatFromRightVariant,
 } from "../../utils/motion.js";
 import Axios from "axios";
+import "./AstroPic.scss";
 
 const AstroPic = () => {
   const ref = useRef();
@@ -36,16 +34,16 @@ const AstroPic = () => {
   }, []);
 
   return (
-    <section id="astro-pic" className="overflow-hidden">
-      <div className="bg-background1 relative z-1 bg-cover w-full top-0 left-0 right-0 bottom-0 pt-5 pb-24 sm:pb-20">
-        <div className="mx-auto px-5">
-          <p className={styles.sectionSubText + styles.paddingX}>Daily NASA</p>
-          <h2 className={styles.sectionHeadText + styles.paddingX}>
+    <section id="astro-pic" className="astro-pic">
+      <div className="astro-pic__section">
+        <div className="astro-pic__container">
+          <p className="astro-pic__eyebrow">Daily NASA</p>
+          <h2 className="astro-pic__heading">
             Astronomy Picture
           </h2>
 
           <motion.div
-            className="flex flex-col justify-center w-[90%] md:w-full mx-auto mt-10 sm:mt-0"
+            className="astro-pic__content"
             variants={floatFromRightVariant}
             initial="initial"
             ref={ref}
@@ -54,45 +52,45 @@ const AstroPic = () => {
           >
             {/* <p className="text-center text-secondary"><span className="underline">Note:</span> If you can't see the astro pic of the day, please give it a minute to complete its stellar journey to your screen!</p> */}
             {loading ? (
-              <div className="flex justify-center items-center mx-auto h-96">
-                <div className="w-16 h-16 border-4 border-t-4 border-t-primary border-tertiary rounded-full animate-spin"></div>
+              <div className="astro-pic__loading">
+                <div className="astro-pic__spinner"></div>
               </div>
             ) : (
               astroPicData && (
-                <div className="flex flex-col items-center text-center justify-center mx-auto">
-                  <h2 className="text-primary text-2xl font-bold p-5 uppercase text-center">
+                <div className="astro-pic__result">
+                  <h2 className="astro-pic__title">
                     {astroPicData.title}
                   </h2>
-                  <div className="w-full flex justify-center text-center mx-auto">
+                  <div className="astro-pic__image-row">
                   <a
                     href={astroPicData.hdurl}
                     target="_blank"
                     rel="noreferrer"
                     alt="Astronomy Picture of the Day Link"
-                    className="w-full md:w-[60%] h-auto"
+                    className="astro-pic__image-link"
                   >
                     <img
                       src={astroPicData.url}
                       alt={astroPicData.title}
-                      className="rounded-xl text-center w-full h-auto"
+                      className="astro-pic__image"
                     />
                   </a>
                   </div>
-                  <div className="w-full md:w-[60%] mx-auto text-white p-2">
-                    <p className="pt-5 px-2 pb-2">{astroPicData.explanation}</p>
-                    <p className="p-2">
-                      <span className="font-bold">Copyright:</span>{" "}
+                  <div className="astro-pic__details">
+                    <p className="astro-pic__explanation">{astroPicData.explanation}</p>
+                    <p className="astro-pic__meta">
+                      <span className="astro-pic__meta-label">Copyright:</span>{" "}
                       {astroPicData.copyright}
                     </p>
-                    <p className="p-2">
-                      <span className="font-bold">
+                    <p className="astro-pic__meta">
+                      <span className="astro-pic__meta-label">
                         NASA "Astronomy Picture of the day" source:{" "}
                       </span>{" "}
                       <a
                         href="https://apod.nasa.gov/apod/astropix.html"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-secondary hover:text-primary cursor-pointer underline"
+                        className="astro-pic__source-link"
                       >
                         click here
                       </a>

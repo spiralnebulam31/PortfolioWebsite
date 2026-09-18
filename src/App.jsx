@@ -14,6 +14,7 @@ import {
 } from "./components";
 import LifeGoatsButton from "./components/LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "./components/LifeGoats/LifeGoatsSidebar";
+import "./App.scss";
 
 const App = () => {
   const [modalState, setModalState] = useState({
@@ -70,7 +71,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="bg-cover bg-n-repeat bg-center overflow-x-hidden">
+      <div className="app__hero-wrap">
         <Navbar />
 
         {/* Life Goats Components */}

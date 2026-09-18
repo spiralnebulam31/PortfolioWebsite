@@ -1,12 +1,13 @@
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../utils/motion';
+import "./SkillCard.scss";
 
 const SkillCard = ({ name, icon, alt, url }) => {
 
     return (
       <Tilt
-       className="w-[250px]"
+       className="skill-card__tilt"
        style={{
             transformStyle: 'preserve-3d',
           }}
@@ -14,7 +15,7 @@ const SkillCard = ({ name, icon, alt, url }) => {
         <a href={url} target="_blank" rel="noreferrer">
         <motion.div
           variants={fadeIn('left', 'spring', 0.5, 1.25)}
-          className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] m-3 w-[100px] rounded-2xl shadow-card"
+          className="skill-card__border"
           style={{
             transform: 'translateZ(60px)',
           }}
@@ -25,14 +26,14 @@ const SkillCard = ({ name, icon, alt, url }) => {
               scale: 1,
               speed: 450
             }}
-            className="bg-background1 rounded-2xl flex justify-evenly items-center flex-col p-3"
+            className="skill-card__inner"
           >
             <img
               src={icon}
               alt={alt}
-              className="w-full object-contain rounded-2xl max-h-20"
+              className="skill-card__icon"
             />
-            <p className="text-primary text-center text-[14px] font-bold max-w-6xl pt-2">{name}</p>
+            <p className="skill-card__name">{name}</p>
           </motion.div>
         </motion.div>
         </a>

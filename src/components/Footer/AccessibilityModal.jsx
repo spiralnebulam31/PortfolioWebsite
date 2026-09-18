@@ -1,6 +1,7 @@
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import "./Modal.css"
+import "../shared/Modal.scss";
+import "./AccessibilityModal.scss";
 
 const PrivacyModal = ({ isOpen, onClose }) => {
 
@@ -21,14 +22,14 @@ const PrivacyModal = ({ isOpen, onClose }) => {
     center
     closeIcon={closeIcon}
     classNames={{
-      overlay: 'customOverlay',
-      modal: 'customModal',
+      overlay: 'modal__overlay',
+      modal: 'modal__panel',
     }}
     aria-labelledby="web-accessibility-modal"
     >
-      <div className="flex flex-col items-center justify-center mx-auto p-4">
-        <h2 className="text-background1 text-2xl font-bold mb-4 font-subtitle">Privacy Policy</h2>
-        <p className="text-background1 text-lg mb-4 font-body">
+      <div className="accessibility-modal__body">
+        <h2 className="accessibility-modal__title">Privacy Policy</h2>
+        <p className="accessibility-modal__text">
         This website is built to be accessible to as many people as
                     possible. If you have any accessibility requirements, please
                     contact me and I will do my best to accommodate them.

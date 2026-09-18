@@ -1,0 +1,66 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.journey {
+  overflow: hidden;
+
+  &__section {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: vars.rem(20);
+    padding-bottom: vars.rem(96);
+    background: vars.color(background-1);
+    background-size: cover;
+    // NOTE: the original also had `z-1`, not a real Tailwind utility —
+    // there was never an explicit z-index here. Kept that way.
+
+    @include mix.respond-to(sm) {
+      padding-bottom: vars.rem(80);
+    }
+  }
+
+  &__container {
+    margin-inline: auto;
+    padding-inline: vars.rem(20);
+  }
+
+  // NOTE: same styles.js concatenation bug as About.scss — paddingX never applied.
+  &__eyebrow {
+    @include mix.section-subheading-text;
+  }
+
+  &__heading {
+    @include mix.section-heading-text;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-inline: auto;
+    margin-top: vars.rem(40);
+
+    @include mix.respond-to(md) {
+      width: 100%;
+    }
+
+    @include mix.respond-to(sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__timeline-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 85vh;
+    border-radius: vars.radius(xl);
+    box-shadow: vars.shadow(card);
+    background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-300));
+  }
+}

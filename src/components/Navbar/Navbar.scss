@@ -1,0 +1,184 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: vars.z-index(modal);
+  background: vars.color(background-1);
+  box-shadow: vars.shadow(xl);
+
+  &__row {
+    display: flex;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__brand {
+    margin-right: auto;
+    margin-left: vars.rem(20);
+  }
+
+  &__brand-link {
+    display: flex;
+    align-items: center;
+    gap: vars.rem(8);
+  }
+
+  &__logo {
+    width: vars.rem(80);
+    height: auto;
+
+    @include mix.respond-to(lg) {
+      width: vars.rem(70);
+    }
+  }
+
+  &__brand-text {
+    display: none;
+    color: vars.color(primary);
+    font-size: vars.rem(18);
+    font-weight: 700;
+    cursor: pointer;
+
+    @include mix.respond-to(lg) {
+      display: block;
+    }
+  }
+
+  &__brand-divider {
+    margin-block: vars.rem(8);
+    color: vars.color(secondary);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: vars.rem(20);
+  }
+
+  // ── Desktop links ────────────────────────────────────────────────────────
+  &__links {
+    display: none;
+    list-style: none;
+    flex-direction: row;
+    gap: vars.rem(40);
+
+    @include mix.respond-to(lg) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: vars.color(secondary);
+    font-size: vars.rem(18);
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(primary);
+    }
+
+    &--active {
+      color: vars.color(primary);
+      text-decoration: underline;
+    }
+  }
+
+  // ── Mobile trigger + menu ────────────────────────────────────────────────
+  &__mobile-trigger {
+    display: flex;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: vars.rem(8);
+
+    @include mix.respond-to(lg) {
+      display: none;
+    }
+  }
+
+  &__mobile-icon {
+    width: vars.rem(40);
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+  &__mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: vars.z-index(modal);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-700));
+    transition: all 150ms ease-in-out;
+
+    &--open {
+      display: flex;
+    }
+  }
+
+  &__mobile-close {
+    position: absolute;
+    top: vars.rem(24);
+    right: vars.rem(24);
+    z-index: vars.z-index(modal);
+    color: vars.color(white);
+    font-size: vars.rem(30);
+    font-weight: 700;
+  }
+
+  &__mobile-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__mobile-links {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: vars.rem(32);
+    width: 100%;
+  }
+
+  // NOTE: in the original Tailwind markup this link's active/inactive color
+  // ternary was glued to a stray leading "$" in the template literal
+  // (`` `$${active === link.title ? ... }` ``), producing an invalid class
+  // token that never matched anything — so today NEITHER color ever applies,
+  // only the hover/size/weight styles below it. Ported as-is (no base color,
+  // no --active modifier) to keep behavior identical; flagged separately as
+  // a bug worth fixing.
+  &__mobile-link {
+    font-size: vars.rem(24);
+    font-weight: 700;
+    line-height: vars.rem(28);
+    text-align: center;
+    cursor: pointer;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(purple-300);
+    }
+  }
+
+  &__mobile-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    width: 100%;
+  }
+}
