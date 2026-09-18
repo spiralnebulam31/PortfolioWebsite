@@ -1,0 +1,9 @@
+/**
+ * Global entry point. Imported once from src/main.jsx.
+ *
+ * Declares --spiral-nebula-* custom properties (via _themes) exactly once,
+ * plus the site-wide reset. Component-level styles live colocated with
+ * each component and are imported directly from their .jsx files.
+ */
+@use "./globals/themes";
+@use "./globals/reset";

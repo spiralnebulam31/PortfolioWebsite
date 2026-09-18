@@ -1,0 +1,203 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.parallax {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100vh;
+  min-height: 100vh;
+  padding-block: vars.rem(40);
+  overflow: hidden;
+  background: linear-gradient(to bottom, vars.color(background-1), vars.color(orange-700));
+  background-size: cover;
+
+  &__intro-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: vars.rem(8);
+    width: 100%;
+    margin-inline: auto;
+
+    @include mix.respond-to(sm) {
+      max-width: 80%;
+    }
+
+    @include mix.respond-to(md) {
+      max-width: 70%;
+    }
+
+    @include mix.respond-to(lg) {
+      max-width: 50%;
+    }
+
+    @include mix.respond-to(xl) {
+      max-width: 40%;
+    }
+  }
+
+  // `font-body` was an undefined Tailwind class (no-op) — omitted, inherits Poppins.
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-inline: auto;
+    color: vars.color(white);
+    font-size: vars.rem(20);
+    max-width: 50%;
+    padding-inline: vars.rem(24);
+    margin-bottom: vars.rem(4);
+    margin-top: 10%;
+    line-height: vars.rem(30);
+    overflow: hidden;
+
+    @include mix.respond-to(sm) {
+      max-width: 70%;
+    }
+
+    @include mix.respond-to(md) {
+      padding-inline: vars.rem(64);
+    }
+
+    @include mix.respond-to(lg) {
+      font-size: vars.rem(24);
+      max-width: 85%;
+    }
+
+    @include mix.respond-to(xl) {
+      max-width: 100%;
+    }
+  }
+
+  &__starfield {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__starry-sky {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: vars.z-index(base);
+    opacity: 0.4;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  // The original class list included the invalid `top-100%` (should have
+  // been `top-[100%]`) — a no-op today, so no `top` is set here either;
+  // the image is anchored purely by `bottom: 0`.
+  &__mountain {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: vars.z-index(header);
+  }
+
+  &__planets {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__planet-slot {
+    display: flex;
+    align-items: center;
+
+    &--left {
+      justify-content: flex-start;
+      margin-left: 5%;
+
+      @include mix.respond-to(md) {
+        margin-left: 20%;
+      }
+
+      @include mix.respond-to(lg) {
+        margin-left: 40%;
+      }
+    }
+
+    &--right {
+      justify-content: flex-end;
+      margin-right: 18%;
+
+      @include mix.respond-to(md) {
+        margin-right: 30%;
+      }
+
+      @include mix.respond-to(lg) {
+        margin-right: 50%;
+      }
+    }
+  }
+
+  // NOTE: the original also had `lx:h-[180px]` — not a real breakpoint
+  // (typo for `xl:`) — so height never gets an xl override and stays at
+  // its lg value (170px) from that point on. Kept as-is.
+  &__planet {
+    position: absolute;
+    object-fit: contain;
+    z-index: vars.z-index(raised);
+
+    &--1 {
+      width: vars.rem(100);
+      height: vars.rem(120);
+
+      @include mix.respond-to(md) {
+        width: vars.rem(150);
+        height: vars.rem(150);
+      }
+
+      @include mix.respond-to(lg) {
+        width: vars.rem(170);
+        height: vars.rem(170);
+      }
+
+      @include mix.respond-to(xl) {
+        width: vars.rem(180);
+      }
+    }
+
+    &--2 {
+      width: vars.rem(40);
+      height: vars.rem(55);
+
+      @include mix.respond-to(md) {
+        width: vars.rem(70);
+        height: vars.rem(70);
+      }
+
+      @include mix.respond-to(lg) {
+        width: vars.rem(75);
+        height: vars.rem(75);
+      }
+
+      @include mix.respond-to(xl) {
+        width: vars.rem(80);
+        height: vars.rem(80);
+      }
+    }
+  }
+}

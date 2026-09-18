@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { lifeGoats1, lifeGoats2, lifeGoats3 } from "../../assets/index.js";
+import "./LifeGoatsSidebar.scss";
 
 const LifeGoatsSidebar = ({ isOpen, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -43,7 +44,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
         <>
           {/* Overlay */}
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            className="life-goats-sidebar__overlay"
             variants={overlayVariants}
             initial="closed"
             animate="open"
@@ -53,7 +54,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
 
           {/* Sidebar with gradient border on desktop, sliding together */}
           <motion.div
-            className="fixed right-0 top-0 h-full w-full z-50 flex justify-end"
+            className="life-goats-sidebar__container"
             variants={sidebarVariants}
             initial="closed"
             animate="open"
@@ -61,25 +62,25 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {/* Desktop: gradient border wrapper */}
-            <div className="hidden lg:flex h-full items-stretch pr-0">
-              <div className="relative h-full flex items-stretch">
+            <div className="life-goats-sidebar__desktop">
+              <div className="life-goats-sidebar__desktop-inner">
                 {/* Gradient border on left, top, and bottom (not right) */}
-                <div className="h-full flex items-stretch">
-                  <div className="h-full w-[410px] bg-gradient-to-tl from-cyan-500 to-purple-300 rounded-l-2xl p-[2px] flex items-stretch">
+                <div className="life-goats-sidebar__desktop-track">
+                  <div className="life-goats-sidebar__border">
                     {/* Sidebar content flush right, rounded left only, with border effect */}
-                    <div className="h-full w-full bg-background1 shadow-2xl overflow-y-auto rounded-tl-2xl rounded-bl-2xl flex flex-col p-6" style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0, borderTopRight: 'none', borderBottomRight: 'none' }}>
+                    <div className="life-goats-sidebar__panel">
                     {/* Close button */}
                     <button
                       onClick={onClose}
-                      className="absolute top-4 right-4 p-2 text-secondary hover:text-primary transition-colors text-xl font-bold"
+                      className="life-goats-sidebar__close"
                     >
                       ×
                     </button>
                     {/* Content */}
-                    <div className="mt-8">
+                    <div className="life-goats-sidebar__content">
                       {/* Title */}
                       <motion.h2
-                        className="text-2xl font-bold text-primary mb-6 cursor-pointer hover:text-cyan-500 transition-colors"
+                        className="life-goats-sidebar__title"
                         onClick={() =>
                           window.open("https://www.lifegoats.com/", "_blank")
                         }
@@ -90,7 +91,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                       </motion.h2>
                       {/* Image slideshow */}
                       <motion.div
-                        className="relative w-full h-48 rounded-lg mb-2 overflow-hidden"
+                        className="life-goats-sidebar__slideshow"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -100,7 +101,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                             key={currentImageIndex}
                             src={images[currentImageIndex]}
                             alt={`Life Goats adventure ${currentImageIndex + 1}`}
-                            className="w-full h-full object-cover"
+                            className="life-goats-sidebar__slide"
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
@@ -109,14 +110,14 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                         </AnimatePresence>
                       </motion.div>
                       {/* Image indicators below the image */}
-                      <div className="flex justify-center space-x-2 mb-6">
+                      <div className="life-goats-sidebar__dots">
                         {images.map((_, index) => (
                           <button
                             key={index}
-                            className={`w-2 h-2 mt-2 rounded-full transition-all duration-300 ${
+                            className={`life-goats-sidebar__dot ${
                               index === currentImageIndex
-                                ? "bg-cyan-400 shadow-lg"
-                                : "bg-purple-300 hover:bg-purple-400"
+                                ? "life-goats-sidebar__dot--active"
+                                : ""
                             }`}
                             onClick={() => setCurrentImageIndex(index)}
                           />
@@ -124,7 +125,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                       </div>
                       {/* Description */}
                       <motion.div
-                        className="text-secondary leading-relaxed space-y-4"
+                        className="life-goats-sidebar__description"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
@@ -141,7 +142,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                         </p>
                         {/* Call to action */}
                         <motion.button
-                          className="mt-6 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-300 text-purple-950 font-bold rounded-lg hover:shadow-lg transition-all duration-300"
+                          className="life-goats-sidebar__cta"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={() =>
@@ -158,20 +159,20 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
               </div>
             </div>
             {/* Mobile: sidebar full width, no border */}
-            <div className="flex lg:hidden h-full w-full">
-              <div className="h-full w-full bg-background1 shadow-2xl overflow-y-auto p-6 flex flex-col">
+            <div className="life-goats-sidebar__mobile">
+              <div className="life-goats-sidebar__mobile-panel">
                 {/* Close button */}
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2 text-secondary hover:text-primary transition-colors text-xl font-bold"
+                  className="life-goats-sidebar__close"
                 >
                   ×
                 </button>
                 {/* Content */}
-                <div className="mt-8">
+                <div className="life-goats-sidebar__content">
                   {/* Title */}
                   <motion.h2
-                    className="text-2xl font-bold text-primary mb-6 cursor-pointer hover:text-cyan-500 transition-colors"
+                    className="life-goats-sidebar__title"
                     onClick={() =>
                       window.open("https://www.lifegoats.com/", "_blank")
                     }
@@ -182,7 +183,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                   </motion.h2>
                   {/* Image slideshow */}
                   <motion.div
-                    className="relative w-full h-48 rounded-lg mb-2 overflow-hidden"
+                    className="life-goats-sidebar__slideshow"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
@@ -192,7 +193,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                         key={currentImageIndex}
                         src={images[currentImageIndex]}
                         alt={`Life Goats adventure ${currentImageIndex + 1}`}
-                        className="w-full h-full object-cover"
+                        className="life-goats-sidebar__slide"
                         initial={{ opacity: 0, scale: 1.1 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
@@ -201,14 +202,14 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                     </AnimatePresence>
                   </motion.div>
                   {/* Image indicators below the image */}
-                  <div className="flex justify-center space-x-2 mb-6">
+                  <div className="life-goats-sidebar__dots">
                     {images.map((_, index) => (
                       <button
                         key={index}
-                        className={`w-2 h-2 mt-2 rounded-full transition-all duration-300 ${
+                        className={`life-goats-sidebar__dot ${
                           index === currentImageIndex
-                            ? "bg-cyan-400 shadow-lg"
-                            : "bg-purple-300 hover:bg-purple-400"
+                            ? "life-goats-sidebar__dot--active"
+                            : ""
                         }`}
                         onClick={() => setCurrentImageIndex(index)}
                       />
@@ -216,7 +217,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                   </div>
                   {/* Description */}
                   <motion.div
-                    className="text-secondary leading-relaxed space-y-4"
+                    className="life-goats-sidebar__description"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
@@ -233,7 +234,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                     </p>
                     {/* Call to action */}
                     <motion.button
-                      className="mt-6 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-300 text-purple-950 font-bold rounded-lg hover:shadow-lg transition-all duration-300"
+                      className="life-goats-sidebar__cta"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() =>

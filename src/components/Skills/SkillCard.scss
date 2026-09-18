@@ -1,0 +1,41 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.skill-card {
+  &__tilt {
+    width: vars.rem(250);
+  }
+
+  &__border {
+    @include mix.gradient-border-card;
+    margin: vars.rem(12);
+    width: vars.rem(100);
+    border-radius: vars.radius(2xl);
+    box-shadow: vars.shadow(card);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: vars.rem(12);
+    background: vars.color(background-1);
+    border-radius: vars.radius(2xl);
+  }
+
+  &__icon {
+    width: 100%;
+    max-height: vars.rem(80);
+    object-fit: contain;
+    border-radius: vars.radius(2xl);
+  }
+
+  &__name {
+    padding-top: vars.rem(8);
+    color: vars.color(primary);
+    text-align: center;
+    font-size: vars.rem(14);
+    font-weight: 700;
+  }
+}

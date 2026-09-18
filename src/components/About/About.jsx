@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { styles } from "../../styles.js";
 import { profilePhotos } from "../../constants/constants.js";
 import {
   fadeIn,
@@ -8,7 +7,7 @@ import {
   floatFromLeftVariant,
 } from "../../utils/motion.js";
 import AboutModal from "./AboutModal.jsx";
-import { Link } from "react-router-dom";
+import "./About.scss";
 
 const About = () => {
 
@@ -19,39 +18,39 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="overflow-hidden">
-      <div className="bg-background1 relative bg-cover w-full h-auto top-0 left-0 right-0 bottom-0 pt-5 pb-10">
-        <div className="mx-auto px-5">
-          <p className={styles.sectionSubText + styles.paddingX}>
+    <section id="about" className="about">
+      <div className="about__section">
+        <div className="about__container">
+          <p className="about__eyebrow">
             Introduction
           </p>
-          <h2 className={styles.sectionHeadText + styles.paddingX}>About Me</h2>
+          <h2 className="about__heading">About Me</h2>
 
-          <motion.div className="flex flex-col lg:flex-row px-5 pt-2 lg:pt-14 gap-2 lg:gap-10 justify-center mx-auto w-full sm:w-full md:w-full lg:w-[70%]">
+          <motion.div className="about__content">
             <motion.div
-              className="mx-auto pb-10 pt-10 sm:pt-2 lg:pt-0"
+              className="about__photo-wrap"
               variants={floatFromLeftVariant}
               initial="initial"
               whileInView="animate"
             >
               <motion.div
                 variants={fadeIn("right", "spring", 0.5, 1.25)}
-                className="bg-gradient-to-b from-cyan-500 to-purple-300 p-[2px] rounded-2xl shadow-2xl w-auto h-auto"
+                className="about__photo-border"
               >
                 <img
                   src={profilePhotos[0].src}
                   alt={profilePhotos[0].alt}
-                  className="w-[250px] md:w-[350px] h-auto rounded-2xl"
+                  className="about__photo"
                 />
               </motion.div>
             </motion.div>
 
             <motion.div
-              className="flex text-center lg:text-start lg:ml-10 mx-auto w-full lg:w-[70%]"
+              className="about__text-wrap"
               variants={fadeIn("right", "spring", 0.5, 1.25)}
             >
               <motion.div
-                className="items-center justify-center w-full mx-auto my-auto font-medium text-lg sm:text-xl lg:text-2xl"
+                className="about__text-inner"
                 variants={floatFromRightVariant}
                 initial="initial"
                 whileInView="animate"
@@ -83,20 +82,20 @@ const About = () => {
                 </p> */}
 
                 <p>
-                  I'm a <span className="text-primary"><strong>web developer</strong></span> with a passion for{" "}
-                  <span className="text-secondary"><strong>creating meaningful projects</strong></span> and{" "}
-                  <span className="text-secondary"><strong>helping people</strong></span>. I work as a WordPress Developer at{" "}
+                  I'm a <span className="about__highlight--primary"><strong>web developer</strong></span> with a passion for{" "}
+                  <span className="about__highlight--secondary"><strong>creating meaningful projects</strong></span> and{" "}
+                  <span className="about__highlight--secondary"><strong>helping people</strong></span>. I work as a WordPress Developer at{" "}
                   <a
                     href="https://www.linkedin.com/company/pie-web-ltd/posts/?feedView=all"
-                          className="text-primary hover:text-secondary cursor-pointer underline"
+                          className="about__link"
                     ><strong>PIE Code</strong></a>{" "}and I enjoy building{" "}
-                  <span className="text-primary"><strong>websites</strong></span> and{" "}
-                  <span className="text-primary"><strong>web applications</strong></span> that{" "}
-                  <span className="text-secondary"><strong>make a difference</strong></span>.              
+                  <span className="about__highlight--primary"><strong>websites</strong></span> and{" "}
+                  <span className="about__highlight--primary"><strong>web applications</strong></span> that{" "}
+                  <span className="about__highlight--secondary"><strong>make a difference</strong></span>.
                 </p>
 
                 <button
-                  className="bg-secondary hover:bg-primary text-background1 p-2 w-auto h-auto rounded-lg no-underline font-bold text-[18px] cursor-pointer mt-8"
+                  className="about__cta"
                   onClick={toggleAboutModal}
                   alt="click to read more"
                 >

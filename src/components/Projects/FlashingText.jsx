@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import "./FlashingText.scss";
 
 const FlashingText = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -21,9 +22,9 @@ const FlashingText = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="flex justify-center text-center mx-auto pt-16"
+          className="flashing-text"
         >
-          <h2 className="text-4xl font-bold text-secondary uppercase">coming soon...</h2>
+          <h2 className="flashing-text__heading">coming soon...</h2>
         </motion.div>
       )}
     </AnimatePresence>

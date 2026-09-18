@@ -1,0 +1,108 @@
+/**
+ * Shared by ProjectCard.jsx (live) and OngoingProjectCard.jsx (currently
+ * unused, commented out in Projects.jsx) — both use the same visual card
+ * design, only differing in the content/props they render.
+ */
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.project-card {
+  @include mix.respond-to(xs) {
+    width: vars.rem(350);
+  }
+
+  @include mix.respond-to(md) {
+    width: vars.rem(450);
+  }
+
+  &__card {
+    cursor: pointer;
+    width: 100%;
+    border-radius: vars.radius(2xl);
+    box-shadow: vars.shadow(card);
+    @include mix.gradient-border-card;
+
+    @include mix.respond-to(xs) {
+      width: vars.rem(350);
+    }
+
+    @include mix.respond-to(md) {
+      width: vars.rem(450);
+    }
+  }
+
+  // NOTE: the original used the undefined class `bg-background` (likely
+  // meant `bg-background1`) — a no-op today, so no background is set here.
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: vars.radius(2xl);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: vars.radius(2xl);
+  }
+
+  &__name {
+    color: vars.color(background-1);
+    text-align: center;
+    font-size: vars.rem(20);
+    max-width: vars.rem(350);
+    line-height: vars.rem(30);
+    font-weight: 700;
+  }
+
+  &__toggle {
+    padding-top: vars.rem(4);
+    color: vars.color(background-1);
+    text-align: center;
+    font-size: vars.rem(14);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: vars.rem(8);
+    color: vars.color(background-1);
+    text-align: center;
+    font-size: vars.rem(14);
+    max-width: vars.rem(350);
+    line-height: vars.rem(30);
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+
+  &__info {
+    color: vars.color(background-1);
+    text-align: center;
+    font-size: vars.rem(14);
+    max-width: vars.rem(350);
+    line-height: vars.rem(30);
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: vars.rem(20);
+    color: vars.color(background-1);
+    font-size: vars.rem(14);
+    max-width: vars.rem(350);
+    line-height: vars.rem(30);
+  }
+}

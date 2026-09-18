@@ -1,0 +1,13 @@
+/**
+ * _breakpoints.scss — Responsive mixins.
+ */
+@use "../variables" as vars;
+
+// Respond to a min-width breakpoint (mobile-first, same behavior as
+// Tailwind's sm:/md:/lg:/xl: prefixes).
+// Usage: @include mix.respond-to(lg) { ... }
+@mixin respond-to($breakpoint) {
+  @media (min-width: vars.breakpoint($breakpoint)) {
+    @content;
+  }
+}

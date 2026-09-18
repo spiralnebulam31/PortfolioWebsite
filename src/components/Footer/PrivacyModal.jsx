@@ -1,6 +1,7 @@
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import "./Modal.css"
+import "../shared/Modal.scss";
+import "./PrivacyModal.scss";
 
 const PrivacyModal = ({ isOpen, onClose }) => {
 
@@ -21,14 +22,14 @@ const PrivacyModal = ({ isOpen, onClose }) => {
     center
     closeIcon={closeIcon}
     classNames={{
-      overlay: 'customOverlay',
-      modal: 'customModal',
+      overlay: 'modal__overlay',
+      modal: 'modal__panel',
     }}
     aria-labelledby="privacy-policy-modal"
     >
-      <div className="flex flex-col items-center justify-center mx-auto p-4">
-        <h2 className="text-background1 text-2xl font-bold mb-4 font-subtitle">Privacy Policy</h2>
-        <p className="text-background1 text-lg mb-4 font-body">
+      <div className="privacy-modal__body">
+        <h2 className="privacy-modal__title">Privacy Policy</h2>
+        <p className="privacy-modal__text">
         If you contact me via the contact form, I will only use
                     your email address to reply to your message. I will not
                     share your name or email address with any third parties.

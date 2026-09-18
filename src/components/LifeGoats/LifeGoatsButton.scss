@@ -1,0 +1,49 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.life-goats-button {
+  display: block;
+  cursor: pointer;
+  border-radius: vars.radius(lg);
+  background: linear-gradient(to left, vars.color(cyan-500), vars.color(purple-300));
+  box-shadow: vars.shadow(lg);
+
+  @include mix.respond-to(lg) {
+    border-radius: vars.radius(lg) 0 0 vars.radius(lg);
+  }
+
+  &--floating {
+    display: none;
+    position: fixed;
+    top: vars.rem(96);
+    right: 0;
+    z-index: vars.z-index(header);
+
+    @include mix.respond-to(lg) {
+      display: block;
+    }
+  }
+
+  &--inline {
+    width: auto;
+    position: static;
+  }
+
+  &__inner {
+    margin: vars.rem(4);
+    padding: vars.rem(8) vars.rem(16);
+    background: vars.color(background-1);
+    border-radius: vars.radius(lg);
+
+    @include mix.respond-to(lg) {
+      border-radius: vars.radius(lg) 0 0 vars.radius(lg);
+    }
+  }
+
+  &__label {
+    color: vars.color(primary);
+    font-weight: 700;
+    font-size: vars.rem(14);
+    white-space: nowrap;
+  }
+}

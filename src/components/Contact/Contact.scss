@@ -1,0 +1,204 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.contact {
+  overflow: hidden;
+
+  &__section {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding-bottom: vars.rem(40);
+    padding-top: vars.rem(56);
+    background: linear-gradient(to bottom, vars.color(orange-700), vars.color(purple-800));
+    background-size: cover;
+  }
+
+  &__title-row {
+    margin-inline: auto;
+    padding-inline: vars.rem(20);
+  }
+
+  // NOTE: same styles.js concatenation bug as About.scss — paddingX never applied.
+  &__eyebrow {
+    @include mix.section-subheading-text;
+  }
+
+  &__heading {
+    @include mix.section-heading-text;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: vars.rem(16);
+    margin-top: vars.rem(4);
+
+    @include mix.respond-to(lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__info-column {
+    margin-bottom: vars.rem(24);
+    text-align: center;
+    width: 95%;
+    margin-inline: auto;
+
+    @include mix.respond-to(md) {
+      width: 75%;
+    }
+
+    @include mix.respond-to(xl) {
+      width: 70%;
+    }
+  }
+
+  // `font-body` was an undefined Tailwind class (no-op) — omitted, inherits Poppins.
+  &__intro {
+    color: vars.color(white);
+    font-size: vars.rem(18);
+    max-width: 100%;
+    padding-inline: vars.rem(24);
+    padding-top: vars.rem(32);
+    margin-bottom: vars.rem(20);
+    line-height: vars.rem(30);
+
+    @include mix.respond-to(sm) {
+      padding-inline: vars.rem(64);
+    }
+  }
+
+  &__info-border {
+    @include mix.gradient-border-card;
+    border-radius: vars.radius(lg);
+    box-shadow: vars.shadow(card);
+    text-align: center;
+  }
+
+  // Tailwind's plain `border` utility defaults to a light gray (#e5e7eb) in
+  // v3, not currentColor — kept as-is, a subtle border on the dark background.
+  &__info-panel {
+    width: 100%;
+    padding-top: vars.rem(12);
+    padding-bottom: vars.rem(12);
+    border-radius: vars.radius(lg);
+    border: 1px solid #e5e7eb;
+    background: vars.color(background-1);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: vars.rem(20);
+    padding-block: vars.rem(12);
+  }
+
+  &__form-column {
+    text-align: center;
+    width: 80%;
+    margin-inline: auto;
+    padding-top: vars.rem(32);
+    margin-bottom: vars.rem(20);
+
+    @include mix.respond-to(md) {
+      width: 75%;
+    }
+
+    @include mix.respond-to(xl) {
+      width: 70%;
+    }
+  }
+
+  &__form-intro {
+    color: vars.color(white);
+    font-size: vars.rem(18);
+    max-width: vars.rem(512);
+    padding-bottom: vars.rem(20);
+    margin-inline: auto;
+
+    @include mix.respond-to(xl) {
+      max-width: vars.rem(1152);
+    }
+  }
+
+  &__submit-row {
+    margin-bottom: vars.rem(4);
+  }
+
+  // `font-links`/`text-md` were undefined/invalid Tailwind classes (no-ops)
+  // — omitted; `items-center` was also a no-op here (no flex display set).
+  &__submit {
+    margin-top: vars.rem(4);
+    padding: vars.rem(8) vars.rem(16);
+    border-radius: vars.radius(lg);
+    background: vars.color(secondary);
+    color: vars.color(background-1);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: vars.rem(20);
+    margin-inline: auto;
+
+    &:hover {
+      background: vars.color(primary);
+    }
+  }
+}
+
+.contact-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: vars.rem(20);
+  padding-bottom: vars.rem(12);
+
+  &__anchor {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: vars.color(secondary);
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(primary);
+    }
+
+    @include mix.respond-to(lg) {
+      font-size: vars.rem(18);
+    }
+  }
+
+  &__icon {
+    width: vars.rem(20);
+    height: vars.rem(20);
+    object-fit: contain;
+  }
+
+  &__text {
+    margin-left: vars.rem(8);
+  }
+}
+
+.contact-input {
+  margin-bottom: vars.rem(16);
+  display: flex;
+  align-items: center;
+  border-radius: vars.radius(lg);
+  box-shadow: vars.shadow(card);
+  background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-300));
+  padding: vars.rem(2);
+
+  // `text-body` (×2, duplicated in the original) was an undefined Tailwind
+  // class (no-op) — omitted, inherits Poppins.
+  &__field {
+    width: 100%;
+    padding: vars.rem(8) vars.rem(12);
+    border-radius: vars.radius(lg);
+    border: 1px solid #e5e7eb;
+    background: vars.color(background-1);
+    color: vars.color(white);
+  }
+}

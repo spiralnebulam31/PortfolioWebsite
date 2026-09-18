@@ -1,0 +1,17 @@
+/**
+ * _gradients.scss — Shared gradient patterns.
+ */
+@use "../variables" as vars;
+
+// The repeated "gradient border card" effect: a gradient background peeking
+// out from behind a small padding, with a solid color filling the rest of
+// the card set separately by the caller (e.g. background: vars.color(background-1)).
+// Used by About's photo, AboutModal images, Journey's timeline card,
+// LifeGoatsButton, LifeGoatsSidebar's border + CTA, Contact's input/button
+// borders, SkillCard, and ProjectCard/OngoingProjectCard.
+// Usage: @include mix.gradient-border-card();
+//        @include mix.gradient-border-card($direction: to top left, $from: cyan-500, $to: purple-300);
+@mixin gradient-border-card($direction: to bottom, $from: cyan-500, $to: purple-300, $padding: vars.rem(2)) {
+  background: linear-gradient(#{$direction}, vars.color($from), vars.color($to));
+  padding: $padding;
+}

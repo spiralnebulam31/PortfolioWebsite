@@ -1,0 +1,7 @@
+// The original class list included `bg-n-repeat`, a typo for `bg-no-repeat`
+// — a no-op today, so no `background-repeat` is set here either.
+.app__hero-wrap {
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}

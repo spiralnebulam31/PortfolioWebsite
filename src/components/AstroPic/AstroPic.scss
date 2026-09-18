@@ -1,0 +1,153 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+@keyframes astro-pic-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.astro-pic {
+  overflow: hidden;
+
+  &__section {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: vars.rem(20);
+    padding-bottom: vars.rem(96);
+    background: vars.color(background-1);
+    background-size: cover;
+    // NOTE: the original also had `z-1`, not a real Tailwind utility —
+    // there was never an explicit z-index here. Kept that way.
+
+    @include mix.respond-to(sm) {
+      padding-bottom: vars.rem(80);
+    }
+  }
+
+  &__container {
+    margin-inline: auto;
+    padding-inline: vars.rem(20);
+  }
+
+  // NOTE: same styles.js concatenation bug as About.scss — paddingX never applied.
+  &__eyebrow {
+    @include mix.section-subheading-text;
+  }
+
+  &__heading {
+    @include mix.section-heading-text;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin-inline: auto;
+    margin-top: vars.rem(40);
+
+    @include mix.respond-to(md) {
+      width: 100%;
+    }
+
+    @include mix.respond-to(sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    height: vars.rem(384);
+  }
+
+  &__spinner {
+    width: vars.rem(64);
+    height: vars.rem(64);
+    border-radius: vars.radius(full);
+    border: 4px solid vars.color(tertiary);
+    border-top-color: vars.color(primary);
+    animation: astro-pic-spin 1s linear infinite;
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &__title {
+    padding: vars.rem(20);
+    color: vars.color(primary);
+    font-size: vars.rem(24);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__image-row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__image-link {
+    width: 100%;
+    height: auto;
+
+    @include mix.respond-to(md) {
+      width: 60%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: vars.radius(xl);
+  }
+
+  &__details {
+    width: 100%;
+    margin-inline: auto;
+    padding: vars.rem(8);
+    color: vars.color(white);
+
+    @include mix.respond-to(md) {
+      width: 60%;
+    }
+  }
+
+  &__explanation {
+    padding: vars.rem(20) vars.rem(8) vars.rem(8);
+  }
+
+  &__meta {
+    padding: vars.rem(8);
+  }
+
+  &__meta-label {
+    font-weight: 700;
+  }
+
+  &__source-link {
+    color: vars.color(secondary);
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: vars.color(primary);
+    }
+  }
+}

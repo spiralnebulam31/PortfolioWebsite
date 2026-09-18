@@ -1,0 +1,153 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-inline: auto;
+  overflow: hidden;
+  background: linear-gradient(to bottom, vars.color(background-1), vars.color(cyan-900), vars.color(background-1));
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    top: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: vars.rem(20);
+    max-width: vars.rem(1280);
+    margin-inline: auto;
+    // NOTE: styles.js's `paddingX` mixin is applied here with a genuine
+    // separating space in the original (unlike the other call sites where
+    // a missing space made it inert), so it's the one place this actually renders.
+    @include mix.responsive-padding-x;
+
+    @include mix.respond-to(md) {
+      top: 30%;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+  }
+
+  &__heading {
+    @include mix.hero-heading-text;
+    position: relative;
+    z-index: vars.z-index(header);
+    color: vars.color(white);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: vars.rem(4);
+
+    @include mix.respond-to(md) {
+      gap: vars.rem(16);
+    }
+  }
+
+  &__name {
+    color: vars.color(secondary);
+  }
+
+  &__subheading {
+    @include mix.hero-subheading-text;
+    position: relative;
+    z-index: vars.z-index(header);
+    color: vars.color(white-100);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: vars.rem(448);
+
+    @include mix.respond-to(md) {
+      max-width: vars.rem(672);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: vars.rem(20);
+    z-index: vars.z-index(header);
+    margin-top: vars.rem(20);
+  }
+
+  &__link-icon {
+    width: vars.rem(40);
+    height: vars.rem(40);
+    object-fit: contain;
+    margin-top: vars.rem(16);
+
+    &--resume {
+      box-shadow: vars.shadow(lg);
+    }
+  }
+
+  &__starfield {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__starry-sky {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0.4;
+
+    &--left {
+      left: 0;
+      z-index: vars.z-index(base);
+    }
+
+    // The original right-hand image used `z-1`, not a real Tailwind
+    // utility — it currently has no explicit z-index (auto). Kept that way.
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__star-slider {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: vars.z-index(header);
+  }
+
+  &__star-track {
+    width: vars.rem(35);
+    height: vars.rem(75);
+    border-radius: vars.radius(3xl);
+    border: 4px solid vars.color(secondary);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: vars.z-index(header);
+  }
+
+  &__star-icon {
+    width: vars.rem(60);
+    height: vars.rem(60);
+    object-fit: contain;
+    z-index: vars.z-index(modal);
+  }
+}
