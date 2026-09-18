@@ -1,3 +1,5 @@
+"use client";
+
 import PrivacyModal from "./PrivacyModal";
 import AccessibilityModal from "./AccessibilityModal";
 import "./Footer.scss";

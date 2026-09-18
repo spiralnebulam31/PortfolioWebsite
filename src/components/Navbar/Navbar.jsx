@@ -1,7 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import LifeGoatsButton from "../LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "../LifeGoats/LifeGoatsSidebar";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { navLinks } from "../../constants/constants.js";
 import { logoBracketsLight, menu, close } from "../../assets/index.js";
@@ -34,7 +36,7 @@ const Navbar = () => {
           {" "}
           {/* beginning of left side div */}
           <Link
-            to="/"
+            href="/"
             className="navbar__brand-link"
             onClick={() => {
               setActive("");

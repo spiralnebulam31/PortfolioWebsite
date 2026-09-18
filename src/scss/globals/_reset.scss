@@ -1,15 +1,18 @@
 /**
- * _reset.scss — Global font import & reset, ported from index.css.
+ * _reset.scss — Global reset, ported from index.css.
+ *
+ * The Poppins font itself now loads via next/font/google in app/layout.jsx
+ * (self-hosted, no render-blocking external @import) — it exposes the
+ * resolved font as the --font-poppins custom property on <html>, referenced
+ * here instead of the literal family name.
  */
 @use "./variables" as vars;
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-poppins), sans-serif;
   scroll-behavior: smooth;
 }
 

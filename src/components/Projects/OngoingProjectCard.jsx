@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn } from '../../utils/motion.js';
 import "./ProjectCard.scss";

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { floatFromLeftVariant } from "../../utils/motion.js";
 import { Chrono } from "react-chrono";

@@ -1,134 +1,137 @@
-import logo from "./logo.svg";
-import logoBracketsLight from "./logoBracketsLight.png";
-import github from "./github.svg";
-import github2 from "./github2.svg";
-import linkedin from "./linkedin.svg";
-import linkedin2 from "./linkedin2.svg";
-import resume from "./resume.svg";
-import resume2 from "./resume2.svg";
-import email from "./email.svg";
-import email2 from "./email2.svg";
-import menu from "./menu.svg";
-import close from "./close.svg";
+// Each asset is imported under a `Raw` name and unwrapped to its `.src`
+// string below, matching Vite's import behavior (a plain URL string) instead
+// of Next.js's default StaticImageData object ({ src, width, height }). This
+// is the one place that fix needs to happen — every component and constants
+// file downstream still just receives a plain string exactly as before.
+import logoRaw from "./logo.svg";
+import logoBracketsLightRaw from "./logoBracketsLight.png";
+import githubRaw from "./github.svg";
+import github2Raw from "./github2.svg";
+import linkedinRaw from "./linkedin.svg";
+import linkedin2Raw from "./linkedin2.svg";
+import resumeRaw from "./resume.svg";
+import resume2Raw from "./resume2.svg";
+import emailRaw from "./email.svg";
+import email2Raw from "./email2.svg";
+import menuRaw from "./menu.svg";
+import closeRaw from "./close.svg";
 
-import singleStarPurple from "./singleStarPurple.png";
-import singleStarLightTeal from "./singleStarLightTeal.png";
-import singleStarLilac from "./singleStarLilac.png";
-import threeStars from "./threeStars.png";
-import starrySky1 from "./starrySky1.svg";
-import starrySky2 from "./starrySky2.svg";
-import mountain from "./mountain.svg";
-import planet1 from "./planet1.png";
-import planet2 from "./planet2.png";
+import singleStarPurpleRaw from "./singleStarPurple.png";
+import singleStarLightTealRaw from "./singleStarLightTeal.png";
+import singleStarLilacRaw from "./singleStarLilac.png";
+import threeStarsRaw from "./threeStars.png";
+import starrySky1Raw from "./starrySky1.svg";
+import starrySky2Raw from "./starrySky2.svg";
+import mountainRaw from "./mountain.svg";
+import planet1Raw from "./planet1.png";
+import planet2Raw from "./planet2.png";
 
-import profilePhoto from "./photos/profilePhoto.svg";
-import profilePhoto1 from "./photos/profilePhoto1.png";
-import profilePhoto2 from "./photos/profilePhoto2.svg";
-import photo1 from "./photos/photo1.png";
-import photo2 from "./photos/photo2.png";
-import photo3 from "./photos/photo3.png";
+import profilePhotoRaw from "./photos/profilePhoto.svg";
+import profilePhoto1Raw from "./photos/profilePhoto1.png";
+import profilePhoto2Raw from "./photos/profilePhoto2.svg";
+import photo1Raw from "./photos/photo1.png";
+import photo2Raw from "./photos/photo2.png";
+import photo3Raw from "./photos/photo3.png";
 
-import typescript from "./tech/typescript.svg";
-import javascript from "./tech/javascript.png";
-import html from "./tech/html.svg";
-import css from "./tech/css.svg";
-import react from "./tech/react.png";
-import next from "./tech/next.svg";
-import reactRouter from "./tech/reactRouter.svg";
-import tailwind from "./tech/tailwind.svg";
-import bootstrap from "./tech/bootstrap.svg";
-import mui from "./tech/mui.png";
-import framerMotion from "./tech/framerMotion.svg";
-import vite from "./tech/vite.svg";
-import node from "./tech/node.svg";
-import wordpress from "./tech/wordpress.png";
-import php from "./tech/php.png";
-import express from "./tech/express.svg";
-import mongodb from "./tech/mongodb.svg";
-import postgresql from "./tech/postgresql.png";
-import supabase from "./tech/supabase.svg";
-import jest from "./tech/jest.svg";
-import playwright from "./tech/playwright.svg";
-import testingLibrary from "./tech/testingLibrary.svg";
-import git from "./tech/git.svg";
-import figma from "./tech/figma.png";
-import canva from "./tech/canva.png";
-import photoshop from "./tech/photoshop.png";
+import typescriptRaw from "./tech/typescript.svg";
+import javascriptRaw from "./tech/javascript.png";
+import htmlRaw from "./tech/html.svg";
+import cssRaw from "./tech/css.svg";
+import reactRaw from "./tech/react.png";
+import nextRaw from "./tech/next.svg";
+import reactRouterRaw from "./tech/reactRouter.svg";
+import tailwindRaw from "./tech/tailwind.svg";
+import bootstrapRaw from "./tech/bootstrap.svg";
+import muiRaw from "./tech/mui.png";
+import framerMotionRaw from "./tech/framerMotion.svg";
+import viteRaw from "./tech/vite.svg";
+import nodeRaw from "./tech/node.svg";
+import wordpressRaw from "./tech/wordpress.png";
+import phpRaw from "./tech/php.png";
+import expressRaw from "./tech/express.svg";
+import mongodbRaw from "./tech/mongodb.svg";
+import postgresqlRaw from "./tech/postgresql.png";
+import supabaseRaw from "./tech/supabase.svg";
+import jestRaw from "./tech/jest.svg";
+import playwrightRaw from "./tech/playwright.svg";
+import testingLibraryRaw from "./tech/testingLibrary.svg";
+import gitRaw from "./tech/git.svg";
+import figmaRaw from "./tech/figma.png";
+import canvaRaw from "./tech/canva.png";
+import photoshopRaw from "./tech/photoshop.png";
 
-import lifeGoats from "./projects/LifeGoats.png";
-import portfolio from "./projects/portfolio.png";
-import onni from "./projects/onni.png";
-import gardenGenie from "./projects/gardenGenie.png";
-import lightABeacon from "./projects/LightABeacon.png";
-import goldenKeys from "./projects/GoldenKeys.png";
-import compassOfCare from "./projects/CompassOfCare.png";
+import lifeGoatsRaw from "./projects/LifeGoats.png";
+import portfolioRaw from "./projects/portfolio.png";
+import onniRaw from "./projects/onni.png";
+import gardenGenieRaw from "./projects/gardenGenie.png";
+import lightABeaconRaw from "./projects/LightABeacon.png";
+import goldenKeysRaw from "./projects/GoldenKeys.png";
+import compassOfCareRaw from "./projects/CompassOfCare.png";
 
-import lifeGoats1 from "./life-goats/life-goats-1.webp";
-import lifeGoats2 from "./life-goats/life-goats-2.JPG";
-import lifeGoats3 from "./life-goats/life-goats-3.jpeg";
+import lifeGoats1Raw from "./life-goats/life-goats-1.webp";
+import lifeGoats2Raw from "./life-goats/life-goats-2.jpg";
+import lifeGoats3Raw from "./life-goats/life-goats-3.jpeg";
 
-export {
-  logo,
-  logoBracketsLight,
-  github,
-  github2,
-  linkedin,
-  linkedin2,
-  resume,
-  resume2,
-  email,
-  email2,
-  menu,
-  close,
-  singleStarPurple,
-  singleStarLightTeal,
-  singleStarLilac,
-  threeStars,
-  starrySky1,
-  starrySky2,
-  mountain,
-  planet1,
-  planet2,
-  profilePhoto,
-  profilePhoto1,
-  profilePhoto2,
-  photo1,
-  photo2,
-  photo3,
-  typescript,
-  javascript,
-  react,
-  next,
-  reactRouter,
-  html,
-  css,
-  tailwind,
-  bootstrap,
-  mui,
-  framerMotion,
-  vite,
-  node,
-  wordpress,
-  php,
-  express,
-  mongodb,
-  postgresql,
-  supabase,
-  jest,
-  playwright,
-  testingLibrary,
-  git,
-  figma,
-  canva,
-  photoshop,
-  lifeGoats,
-  portfolio,
-  onni,
-  gardenGenie,
-  goldenKeys,
-  lightABeacon,
-  compassOfCare,
-  lifeGoats1,
-  lifeGoats2,
-  lifeGoats3,
-};
+export const logo = logoRaw.src;
+export const logoBracketsLight = logoBracketsLightRaw.src;
+export const github = githubRaw.src;
+export const github2 = github2Raw.src;
+export const linkedin = linkedinRaw.src;
+export const linkedin2 = linkedin2Raw.src;
+export const resume = resumeRaw.src;
+export const resume2 = resume2Raw.src;
+export const email = emailRaw.src;
+export const email2 = email2Raw.src;
+export const menu = menuRaw.src;
+export const close = closeRaw.src;
+export const singleStarPurple = singleStarPurpleRaw.src;
+export const singleStarLightTeal = singleStarLightTealRaw.src;
+export const singleStarLilac = singleStarLilacRaw.src;
+export const threeStars = threeStarsRaw.src;
+export const starrySky1 = starrySky1Raw.src;
+export const starrySky2 = starrySky2Raw.src;
+export const mountain = mountainRaw.src;
+export const planet1 = planet1Raw.src;
+export const planet2 = planet2Raw.src;
+export const profilePhoto = profilePhotoRaw.src;
+export const profilePhoto1 = profilePhoto1Raw.src;
+export const profilePhoto2 = profilePhoto2Raw.src;
+export const photo1 = photo1Raw.src;
+export const photo2 = photo2Raw.src;
+export const photo3 = photo3Raw.src;
+export const typescript = typescriptRaw.src;
+export const javascript = javascriptRaw.src;
+export const html = htmlRaw.src;
+export const css = cssRaw.src;
+export const react = reactRaw.src;
+export const next = nextRaw.src;
+export const reactRouter = reactRouterRaw.src;
+export const tailwind = tailwindRaw.src;
+export const bootstrap = bootstrapRaw.src;
+export const mui = muiRaw.src;
+export const framerMotion = framerMotionRaw.src;
+export const vite = viteRaw.src;
+export const node = nodeRaw.src;
+export const wordpress = wordpressRaw.src;
+export const php = phpRaw.src;
+export const express = expressRaw.src;
+export const mongodb = mongodbRaw.src;
+export const postgresql = postgresqlRaw.src;
+export const supabase = supabaseRaw.src;
+export const jest = jestRaw.src;
+export const playwright = playwrightRaw.src;
+export const testingLibrary = testingLibraryRaw.src;
+export const git = gitRaw.src;
+export const figma = figmaRaw.src;
+export const canva = canvaRaw.src;
+export const photoshop = photoshopRaw.src;
+export const lifeGoats = lifeGoatsRaw.src;
+export const portfolio = portfolioRaw.src;
+export const onni = onniRaw.src;
+export const gardenGenie = gardenGenieRaw.src;
+export const lightABeacon = lightABeaconRaw.src;
+export const goldenKeys = goldenKeysRaw.src;
+export const compassOfCare = compassOfCareRaw.src;
+export const lifeGoats1 = lifeGoats1Raw.src;
+export const lifeGoats2 = lifeGoats2Raw.src;
+export const lifeGoats3 = lifeGoats3Raw.src;

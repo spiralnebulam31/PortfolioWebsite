@@ -1,3 +1,5 @@
+"use client";
+
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import "../shared/Modal.scss";
