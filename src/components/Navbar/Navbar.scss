@@ -88,6 +88,68 @@
     }
   }
 
+  // ── Theme toggle ─────────────────────────────────────────────────────────
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &--desktop {
+      display: none;
+
+      @include mix.respond-to(lg) {
+        display: flex;
+      }
+    }
+  }
+
+  &__theme-toggle-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: vars.rem(44);
+    height: vars.rem(24);
+    padding: vars.rem(2);
+    border-radius: vars.radius(full);
+    background: rgba(255, 255, 255, 0.15);
+    transition: background-color 150ms ease-in-out;
+  }
+
+  &__theme-toggle:hover &__theme-toggle-track {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  &__theme-toggle-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vars.rem(20);
+    height: vars.rem(20);
+    border-radius: vars.radius(full);
+    background: vars.color(secondary);
+    color: vars.color(background-1);
+    transform: translateX(0);
+    transition: transform 200ms ease-in-out;
+
+    &--light {
+      transform: translateX(vars.rem(20));
+    }
+  }
+
+  &__theme-icon {
+    width: vars.rem(12);
+    height: vars.rem(12);
+  }
+
+  &__mobile-theme-toggle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   // ── Mobile trigger + menu ────────────────────────────────────────────────
   &__mobile-trigger {
     display: flex;

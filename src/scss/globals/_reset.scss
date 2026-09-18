@@ -1,6 +1,8 @@
 /**
- * _reset.scss — Global font import & reset, ported verbatim from index.css.
+ * _reset.scss — Global font import & reset, ported from index.css.
  */
+@use "./variables" as vars;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -9,5 +11,14 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
+}
+
+// Explicit default text/background color, rather than leaning on
+// `color-scheme`'s browser-default text color (which resolves to literal
+// black in a light color scheme) — every plain-text element that never sets
+// its own `color` (e.g. About's intro paragraph, Footer's copyright line)
+// inherits this instead, so it correctly follows the active theme.
+body {
+  color: vars.color(white);
+  background: vars.color(background-1);
 }

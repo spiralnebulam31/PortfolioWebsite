@@ -10,12 +10,16 @@ import {
   staggerContainer,
   mobileItemVariants,
 } from "../../utils/motion.js";
+import useTheme from "../../hooks/useTheme.js";
+import { SunIcon, MoonIcon } from "./ThemeIcons.jsx";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [mobile, setMobile] = useState(false);
   const [showGoatsSidebar, setShowGoatsSidebar] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const themeToggleLabel = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
 
   return (
     <>
@@ -68,6 +72,28 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={theme === "light"}
+            className="navbar__theme-toggle navbar__theme-toggle--desktop"
+            onClick={toggleTheme}
+            aria-label={themeToggleLabel}
+          >
+            <span className="navbar__theme-toggle-track">
+              <span
+                className={`navbar__theme-toggle-thumb ${
+                  theme === "light" ? "navbar__theme-toggle-thumb--light" : ""
+                }`}
+              >
+                {theme === "dark" ? (
+                  <MoonIcon className="navbar__theme-icon" />
+                ) : (
+                  <SunIcon className="navbar__theme-icon" />
+                )}
+              </span>
+            </span>
+          </button>
           {/* mobile menu button */}
           <div className="navbar__mobile-trigger">
             <img
@@ -111,6 +137,30 @@ const Navbar = () => {
                   {/* LifeGoatsButton at the end of mobile menu */}
                   <div className="navbar__mobile-cta">
                     <LifeGoatsButton onClick={() => setShowGoatsSidebar(true)} className="life-goats-button--inline" />
+                  </div>
+                  <div className="navbar__mobile-theme-toggle">
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={theme === "light"}
+                      className="navbar__theme-toggle navbar__theme-toggle--mobile"
+                      onClick={toggleTheme}
+                      aria-label={themeToggleLabel}
+                    >
+                      <span className="navbar__theme-toggle-track">
+                        <span
+                          className={`navbar__theme-toggle-thumb ${
+                            theme === "light" ? "navbar__theme-toggle-thumb--light" : ""
+                          }`}
+                        >
+                          {theme === "dark" ? (
+                            <MoonIcon className="navbar__theme-icon" />
+                          ) : (
+                            <SunIcon className="navbar__theme-icon" />
+                          )}
+                        </span>
+                      </span>
+                    </button>
                   </div>
                 </ul>
               </motion.div>

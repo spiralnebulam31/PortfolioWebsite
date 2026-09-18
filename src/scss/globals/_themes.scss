@@ -16,6 +16,8 @@
  */
 
 :root {
+  color-scheme: dark;
+
   // ── Brand colors (from the old tailwind.config.js theme.colors) ──────────
   --spiral-nebula-color-background-1: #3b0764;
   --spiral-nebula-color-background-2: #260445; // only used as the modal overlay tint (Modal.css)
@@ -43,6 +45,8 @@
 }
 
 :root[data-theme="light"] {
+  color-scheme: light;
+
   --spiral-nebula-color-background-1: #f3edff;
   --spiral-nebula-color-background-2: #e5d9f5;
   --spiral-nebula-color-primary:      #6b1fa3;
@@ -61,7 +65,11 @@
   --spiral-nebula-color-purple-950:   #f3edff;
   --spiral-nebula-color-orange-700:   #9a3412;
 
-  --spiral-nebula-color-white:        #ffffff;
+  // `white` is used exclusively as a text color across components (Hero,
+  // Contact, Footer, AstroPic, Navbar, Parallax) — never a background or
+  // border — so it's safe to retint it as a very dark grey here instead of
+  // literal white, which would be unreadable on this theme's light backgrounds.
+  --spiral-nebula-color-white:        #262626;
   --spiral-nebula-color-black:        #000000;
   --spiral-nebula-color-lilac-white:  #4b3b6b;
 }
