@@ -1,0 +1,151 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: vars.rem(12);
+  width: 100%;
+
+  &__nav {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vars.rem(40);
+    height: vars.rem(40);
+    border-radius: vars.radius(full);
+    color: vars.color(secondary);
+    background: rgba(255, 255, 255, 0.08);
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(background-1);
+      background: vars.color(secondary);
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.color(primary);
+      outline-offset: 2px;
+    }
+  }
+
+  &__nav-icon {
+    width: vars.rem(20);
+    height: vars.rem(20);
+  }
+
+  &__viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    // Soft fade at the scroll edges, echoing the per-item scroll fade —
+    // purely visual (mask-image), so it never affects the accessibility tree.
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black vars.rem(24),
+      black calc(100% - #{vars.rem(24)}),
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black vars.rem(24),
+      black calc(100% - #{vars.rem(24)}),
+      transparent
+    );
+  }
+
+  &__track {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    gap: vars.rem(48);
+    padding: vars.rem(48) vars.rem(24) vars.rem(24);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.color(primary);
+      outline-offset: 4px;
+    }
+
+    @include mix.respond-to(md) {
+      gap: vars.rem(64);
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: vars.rem(53);
+    left: vars.rem(24);
+    right: vars.rem(24);
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &__line-progress {
+    display: block;
+    height: 100%;
+    width: calc(var(--timeline-progress, 0) * 100%);
+    background: vars.color(secondary);
+  }
+
+  &__item {
+    --proximity: 1;
+    flex: none;
+    width: vars.rem(260);
+    scroll-snap-align: center;
+    opacity: calc(0.3 + var(--proximity) * 0.7);
+    transition: opacity 100ms linear;
+
+    @include mix.respond-to(sm) {
+      width: vars.rem(300);
+    }
+
+    @include mix.respond-to(md) {
+      width: vars.rem(340);
+    }
+  }
+
+  &__dot {
+    display: block;
+    margin-bottom: vars.rem(16);
+    width: vars.rem(12);
+    height: vars.rem(12);
+    border-radius: vars.radius(full);
+    background: vars.color(secondary);
+    box-shadow: 0 0 calc(var(--proximity) * #{vars.rem(14)}) vars.color(secondary);
+    transform: scale(calc(0.7 + var(--proximity) * 0.5));
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: vars.rem(8);
+    color: vars.color(secondary);
+    font-weight: 700;
+    font-size: vars.rem(14);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__event-title {
+    margin-bottom: vars.rem(8);
+    color: vars.color(primary);
+    font-size: vars.rem(18);
+    font-weight: 700;
+  }
+
+  &__event-text {
+    color: vars.color(white);
+    font-size: vars.rem(14);
+    line-height: vars.rem(22);
+  }
+}
