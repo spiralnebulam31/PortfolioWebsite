@@ -6,6 +6,7 @@ import {
   heroStarVariant,
   starryHeroVariant1,
   starryHeroVariant2,
+  heroShineVariant,
   starSliderVariant,
 } from "../../utils/motion.js";
 import {
@@ -19,7 +20,19 @@ import {
   resume,
   resume2,
 } from "../../assets/index.js";
+import useTheme from "../../contexts/ThemeContext.jsx";
 import "./Hero.scss";
+
+// The starry sky texture is dark-theme only (see Hero.scss for why the
+// section's background/colors are pinned regardless of theme); the light
+// theme relies on the shine glow alone. Its blend mode switches to `normal`
+// on light theme (see Hero.scss), which reads more solid at a given opacity
+// than `screen` does, so it gets a lower peak/settle to stay glow-like
+// rather than looking like an opaque colored disk.
+const SHINE_INTENSITY = {
+  dark: { peak: 0.6, settle: 0.2 },
+  light: { peak: 0.75, settle: 0.4 },
+};
 
 const Hero = ({
   githubIsHovered,
@@ -32,6 +45,9 @@ const Hero = ({
   handleResumeMouseEnter,
   handleResumeMouseLeave,
 }) => {
+  const { theme } = useTheme();
+  const shineIntensity = SHINE_INTENSITY[theme] ?? SHINE_INTENSITY.dark;
+
   return (
     <section className="hero">
       <div className="hero__content">
@@ -107,24 +123,44 @@ const Hero = ({
         </motion.div>
       </div>
 
-      {/* Starry background */}
+      {/* Starry background — dark theme only, see SHINE_INTENSITY note above */}
       <motion.div className="hero__starfield">
-        <motion.img
-          src={starrySky1}
-          alt="Starry background"
-          className="hero__starry-sky hero__starry-sky--left"
-          variants={starryHeroVariant1}
-          initial="initial"
-          animate="animate"
-        />
+        {theme === "dark" && (
+          <>
+            <motion.img
+              src={starrySky1}
+              alt="Starry background"
+              className="hero__starry-sky hero__starry-sky--left"
+              variants={starryHeroVariant1}
+              initial="initial"
+              animate="animate"
+            />
 
-        <motion.img
-          src={starrySky2}
-          alt="Starry background"
-          className="hero__starry-sky hero__starry-sky--right"
-          variants={starryHeroVariant2}
+            <motion.img
+              src={starrySky2}
+              alt="Starry background"
+              className="hero__starry-sky hero__starry-sky--right"
+              variants={starryHeroVariant2}
+              initial="initial"
+              animate="animate"
+            />
+          </>
+        )}
+
+        {/* Shine glows converging toward the center */}
+        <motion.div
+          className="hero__shine hero__shine--left"
+          variants={heroShineVariant("left", shineIntensity)}
           initial="initial"
           animate="animate"
+          aria-hidden="true"
+        />
+        <motion.div
+          className="hero__shine hero__shine--right"
+          variants={heroShineVariant("right", shineIntensity)}
+          initial="initial"
+          animate="animate"
+          aria-hidden="true"
         />
       </motion.div>
 

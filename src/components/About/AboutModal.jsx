@@ -57,8 +57,8 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
             </div>
             <div className="about-modal__photo-border">
               <img
-                src={profilePhotos[3].src}
-                alt={profilePhotos[3].alt}
+                src={profilePhotos[1].src}
+                alt={profilePhotos[1].alt}
                 className="about-modal__photo"
               />
             </div>
@@ -101,8 +101,8 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
           <div className="about-modal__row">
             <div className="about-modal__photo-border">
               <img
-                src={profilePhotos[5].src}
-                alt={profilePhotos[5].alt}
+                src={profilePhotos[2].src}
+                alt={profilePhotos[2].alt}
                 className="about-modal__photo"
               />
             </div>
@@ -136,6 +136,15 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
           <p>
           As a WordPress Developer at PIE Code, I work with WordPress, HTML, CSS, JavaScript, Next.js and PHP. My primary focus is on building block themes while ensuring a seamless user experience and accessibiity.
           </p>
+          <br />
+          {/* TODO: caption still to be written */}
+          <div className="about-modal__photo-border about-modal__photo-border--solo">
+            <img
+              src={profilePhotos[3].src}
+              alt={profilePhotos[3].alt}
+              className="about-modal__photo"
+            />
+          </div>
         </div>
       </div>
     </Modal>

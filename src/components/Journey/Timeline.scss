@@ -2,13 +2,24 @@
 @use "../../scss/globals/mixins" as mix;
 
 .timeline {
-  display: flex;
-  align-items: center;
-  gap: vars.rem(12);
+  position: relative;
   width: 100%;
 
+  // Overlaid on top of the viewport's edges instead of sitting beside it in
+  // a flex row — that used to eat ~100px+ of width on narrow phones (two
+  // 40px buttons + gaps), leaving less room than the item's own width, so
+  // no scroll position could ever show a full item without both edges
+  // clipping. Overlaying reclaims that width for the viewport itself.
   &__nav {
-    flex: none;
+    position: absolute;
+    // Anchored to where the description text begins — track's 16px top
+    // padding + the 64px marker zone + its 16px margin-bottom, i.e. right
+    // where .timeline__date starts — rather than vertically centered
+    // against the whole row. The row's height is set by whichever item has
+    // the longest text, so centering against it pushed the arrows down and
+    // out of easy reach whenever a nearby item ran long.
+    top: calc(#{vars.rem(16)} + #{vars.rem(64)} + #{vars.rem(16)} - #{vars.rem(20)});
+    z-index: vars.z-index(header);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,8 +27,17 @@
     height: vars.rem(40);
     border-radius: vars.radius(full);
     color: vars.color(secondary);
-    background: rgba(255, 255, 255, 0.08);
-    transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out, opacity 150ms ease-in-out;
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
 
     &:hover {
       color: vars.color(background-1);
@@ -28,6 +48,16 @@
       outline: 2px solid vars.color(primary);
       outline-offset: 2px;
     }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+
+      &:hover {
+        color: vars.color(secondary);
+        background: rgba(255, 255, 255, 0.12);
+      }
+    }
   }
 
   &__nav-icon {
@@ -36,23 +66,24 @@
   }
 
   &__viewport {
-    flex: 1 1 auto;
-    min-width: 0;
+    width: 100%;
     overflow: hidden;
     // Soft fade at the scroll edges, echoing the per-item scroll fade —
     // purely visual (mask-image), so it never affects the accessibility tree.
+    // Wide enough that content finishes fading out roughly where the
+    // overlaid nav buttons sit, rather than fading oddly behind them.
     mask-image: linear-gradient(
       to right,
       transparent,
-      black vars.rem(24),
-      black calc(100% - #{vars.rem(24)}),
+      black vars.rem(44),
+      black calc(100% - #{vars.rem(44)}),
       transparent
     );
     -webkit-mask-image: linear-gradient(
       to right,
       transparent,
-      black vars.rem(24),
-      black calc(100% - #{vars.rem(24)}),
+      black vars.rem(44),
+      black calc(100% - #{vars.rem(44)}),
       transparent
     );
   }
@@ -63,10 +94,19 @@
     align-items: flex-start;
     list-style: none;
     gap: vars.rem(48);
-    padding: vars.rem(48) vars.rem(24) vars.rem(24);
+    padding-top: vars.rem(16);
+    padding-bottom: vars.rem(24);
     overflow-x: auto;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
+    cursor: grab;
+    // Enough empty space before the first item / after the last item that
+    // they too can reach the visual center of the viewport when scrolled —
+    // without this, the edge items physically can't scroll past their own
+    // half-width, so they'd never be able to center themselves or reach
+    // full proximity/highlight. The 50% resolves against .timeline__viewport
+    // (this element's containing block), i.e. the visible viewport width.
+    padding-inline: calc(50% - #{vars.rem(105)});
 
     &::-webkit-scrollbar {
       display: none;
@@ -77,31 +117,86 @@
       outline-offset: 4px;
     }
 
+    // While actively mouse-dragging: disable snapping (so it doesn't fight
+    // the drag mid-gesture — it re-enables and settles once released) and
+    // text selection (dragging across item text would otherwise highlight it).
+    &--dragging {
+      cursor: grabbing;
+      scroll-snap-type: none;
+      user-select: none;
+    }
+
+    @include mix.respond-to(sm) {
+      padding-inline: calc(50% - #{vars.rem(150)});
+    }
+
     @include mix.respond-to(md) {
       gap: vars.rem(64);
+      padding-inline: calc(50% - #{vars.rem(170)});
     }
   }
 
-  &__line {
+  // The decorative curved line + rocket, absolutely positioned so it
+  // doesn't take up a flex slot among the real <li> items, spanning the
+  // same content width (set via JS, since it must match the scrollable
+  // content's actual pixel width, not just the visible viewport).
+  //
+  // z-index matters here: .timeline__item has opacity < 1 almost always
+  // (the proximity fade), and any element with opacity < 1 establishes its
+  // own stacking context treated as z-index:0 — so without an explicit,
+  // higher z-index here, the items (painted later in DOM order, same
+  // z-index level) would stack on top of this path/rocket layer instead of
+  // behind it.
+  &__path-item {
     position: absolute;
-    top: vars.rem(53);
-    left: vars.rem(24);
-    right: vars.rem(24);
-    height: 2px;
-    background: rgba(255, 255, 255, 0.15);
+    top: vars.rem(16);
+    left: 0;
+    height: vars.rem(64);
+    z-index: vars.z-index(raised);
+    pointer-events: none;
   }
 
-  &__line-progress {
+  &__path-svg {
     display: block;
     height: 100%;
-    width: calc(var(--timeline-progress, 0) * 100%);
-    background: vars.color(secondary);
+    overflow: visible;
+  }
+
+  &__path-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 2;
+  }
+
+  &__path-progress {
+    fill: none;
+    stroke: vars.color(secondary);
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  // Position (translate, set every scroll frame) lives on the wrapper, with
+  // no transition — it has to track scroll 1:1, instantly. Rotation lives on
+  // the image itself, with a transition, so reversing direction turns
+  // smoothly instead of snapping.
+  &__rocket-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
+
+  &__rocket {
+    display: block;
+    width: vars.rem(32);
+    height: auto;
+    transition: transform 200ms ease-out;
   }
 
   &__item {
     --proximity: 1;
     flex: none;
-    width: vars.rem(260);
+    width: vars.rem(210);
     scroll-snap-align: center;
     opacity: calc(0.3 + var(--proximity) * 0.7);
     transition: opacity 100ms linear;
@@ -115,15 +210,28 @@
     }
   }
 
-  &__dot {
-    display: block;
+  // Fixed-height zone so the dot can move up/down along the wave (via
+  // --wave-y, set in Timeline.jsx) without shifting the date/title/text
+  // that follows — those always start right after this zone, regardless of
+  // where the dot currently sits within it.
+  &__marker {
+    --wave-y: 0px;
+    position: relative;
+    height: vars.rem(64);
     margin-bottom: vars.rem(16);
+  }
+
+  &__dot {
+    position: absolute;
+    top: calc(50% + var(--wave-y));
+    left: 50%;
+    display: block;
     width: vars.rem(12);
     height: vars.rem(12);
     border-radius: vars.radius(full);
     background: vars.color(secondary);
     box-shadow: 0 0 calc(var(--proximity) * #{vars.rem(14)}) vars.color(secondary);
-    transform: scale(calc(0.7 + var(--proximity) * 0.5));
+    transform: translate(-50%, -50%) scale(calc(0.7 + var(--proximity) * 0.5));
   }
 
   &__date {

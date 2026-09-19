@@ -14,6 +14,7 @@ import {
 } from "./components";
 import LifeGoatsButton from "./components/LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "./components/LifeGoats/LifeGoatsSidebar";
+import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import "./App.scss";
 
 // `astroPic` is a Server Component element instantiated by app/page.jsx and
@@ -72,7 +73,7 @@ const App = ({ astroPic }) => {
   };
 
   return (
-    <>
+    <ThemeProvider>
       <div className="app__hero-wrap">
         <Navbar />
 
@@ -117,7 +118,7 @@ const App = ({ astroPic }) => {
         setModalState={setModalState}
         closeModal={closeModal}
       />
-    </>
+    </ThemeProvider>
   );
 };
 

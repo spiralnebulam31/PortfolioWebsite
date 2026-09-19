@@ -72,6 +72,11 @@
     @include mix.respond-to(md) {
       margin-bottom: 0;
     }
+
+    &--solo {
+      margin-inline: auto;
+      margin-bottom: 0;
+    }
   }
 
   // Original had a conflicting inline style (width:300px, max-width:850px)

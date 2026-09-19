@@ -1,0 +1,96 @@
+@use "../../scss/globals/variables" as vars;
+@use "../../scss/globals/mixins" as mix;
+
+.project-modal {
+  display: flex;
+  flex-direction: column;
+  gap: vars.rem(16);
+  padding: vars.rem(8);
+  text-align: left;
+
+  &__image-border {
+    @include mix.gradient-border-card;
+    align-self: center;
+    border-radius: vars.radius(2xl);
+    box-shadow: vars.shadow(2xl);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: vars.rem(500);
+    height: auto;
+    border-radius: vars.radius(2xl);
+  }
+
+  &__name {
+    color: vars.color(background-1);
+    font-size: vars.rem(24);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__date {
+    color: vars.color(cyan-800);
+    font-size: vars.rem(14);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__summary {
+    color: vars.color(background-1);
+    font-size: vars.rem(16);
+    line-height: vars.rem(26);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: vars.rem(4);
+  }
+
+  &__section-title {
+    color: vars.color(background-1);
+    font-size: vars.rem(16);
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: vars.rem(4);
+    color: vars.color(background-1);
+    font-size: vars.rem(14);
+    line-height: vars.rem(22);
+
+    &--inline {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: vars.rem(4) vars.rem(12);
+    }
+  }
+
+  &__status {
+    color: vars.color(background-1);
+    font-size: vars.rem(14);
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: vars.rem(16);
+    margin-top: vars.rem(8);
+  }
+
+  &__link {
+    color: vars.color(cyan-800);
+    font-weight: 700;
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.color(purple-800);
+    }
+  }
+}

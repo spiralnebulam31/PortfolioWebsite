@@ -1,15 +1,56 @@
 import {
     lifeGoats,
-    onni,
-    portfolio,
+    // portfolio,
     gardenGenie,
-    // bootcampersTreasureChest,
     goldenKeys,
     lightABeacon,
-    // compassOfCare,
+    greekArtMap,
 } from "../assets/index.js";
 
+// A single unified list, in display order. Every entry has at least
+// `name`/`image`/`description.summary`; the richer fields (challenge,
+// solution, learnings, roadmap, techStack, date, repoLink(s), websiteLink,
+// status) are optional — ProjectModal only renders the sections that exist,
+// so a lighter entry (e.g. Golden Keys) just gets a shorter popup instead of
+// needing invented detail.
 export const projects = [
+    {
+      name: "Garden Genie",
+      image: {
+        src: gardenGenie,
+        alt: "Garden Genie",
+      },
+      description: {
+        summary:
+          "During our final full stack project at the School of Code, my team of six and I had the opportunity to address a real-world problem and plan, design and develop a full-stack web app.",
+        challenge:
+          "Simplify gardening for individuals, addressing the common barriers that often deter people from starting their gardening journey.",
+        solution:
+          "An app that delivers personalised plant recommendations based on user preferences. On the frontend, we harnessed the power of React for its code reusability, state management, and seamless deployment, to create a high-functionint frontend. For the backend, we efficiently managed plant data using Node, Express, and MongoDB in a non-relational database.",
+        learnings: [
+          "This project allowed me to recognize the immense value of diverse viewpoints within our team. The mosaic of perspectives fostered mutual learning, creating an environment of open dialogue and collaboration. This dynamic synergy was instrumental in shaping my approach to planning, managing, and successfully delivering a Minimum Viable Product (MVP) within a team.",
+          "I contributed to the project by participating in the entire planning and design journey, then worked on the structure and functionality of the React frontend. I also made sure the team followed web accessibility standards throughout the app development.",
+        ],
+      },
+      date: "June 2023 - July 2023",
+      techStack: [
+        "React.js",
+        "React Router",
+        "CSS",
+        "Bootstrap",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "GitHub",
+        "Testing Library",
+        "Figma",
+        "Canva",
+      ],
+      repoLink: "https://github.com/spiralnebulam31/M.A.S.H.E.D_Garden_Genie",
+      repoLink2: "https://github.com/spiralnebulam31/GardenGenieBackend",
+      websiteLink: "https://garden-genie.netlify.app/",
+      status: "Complete",
+    },
     {
       name: "Life Goats",
       image: {
@@ -54,175 +95,86 @@ export const projects = [
       status: "Complete, roadmap for future updates in progress",
     },
     {
-      name: "onni.",
-      image: {
-        src: onni,
-        alt: "onni. Period App for Teens",
-      },
-      description: {
-        summary:
-          "I had the privilege of participating in an amazing hackathon by Women Who Code. For nine days, my fantastic team of designers, developers and content creators, took the challenge to plan and create a project for the Hackathon for Social Good 2023!",
-        challenge:
-          "Conventional period tracking apps are often saturated with medical jargon, creating an overwhelming experience for young girls.",
-        solution:
-          "A friendly, easily understood and engaging web app, designed specifically for pre-teens and teenagers to educate themselves about their periods in a straightforward and enjoyable manner.",
-        learnings: [
-          "When I joined the team, the initial planning had already taken place. The team was in need of a backend developer, so I eagerly took the role.",
-          "My first step was to familiarize myself with EJS, a technology I hadn't previously explored. It brilliantly combines HTML with embedded JavaScript templates and I quickly recognized the practicality of this choice for the frontend developers of the team.",
-          "My next step was implementing Passage into our app, a passwordless authentication solution that simplifies the registration and login process. Embracing new tools always comes with a learning curve, and I found this experience both interesting and beneficial.",
-          "Once the backend functionality had been added by one of my team members and me, I ensured that our server's code was organized and transparent. This was crucial to make it easily comprehensible for every team member, enabling effective collaboration and progress.",
-          "Last but not least, I helped the team adhere to web accessibility standards. We wanted to ensure that our app was not only informative but also inclusive and user-friendly for everyone.",
-        ],
-        roadmap: [
-          "Revisit authentication options, aiming to introduce enhanced flexibility and a broader array of choices for members.",
-          "Implement a feature that tracks users' learning progress and enable saving of articles to favorites for a more personalized experience."
-        ],
-      },
-      date: "October 2023",
-      techStack: [
-        "HTML",
-        "EJS",
-        "JavaScript",
-        "CSS",
-        "Bootstrap",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Passage",
-        "GitHub",
-        "Figma",
-        "Canva",
-      ],
-      repoLink: "https://github.com/spiralnebulam31/onni.-PeriodAppForTeens",
-      websiteLink: "https://onni.vercel.app/",
-      status: "Complete",
-    },
-    {
-      name: "Portfolio Website",
-      image: {
-        src: portfolio,
-        alt: "Portfolio Website",
-      },
-      description: {
-        summary:
-          "This website is my portfolio, where you can find information about me, my skills and my projects.",
-        challenge:
-          "Create a digital space that reflects my personality and showcases my skills and projects.",
-        solution:
-          "A responsive and accessible website that offers a smooth user experience.",
-        learnings: [
-          "I wanted to make sure that my personal website was a true reflection of my personality and skills. Along the way, I learned how to use React Chrono, Framer Motion and React Tilt. I also gained a deeper understanding of TailwindCSS.",
-          "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it.",
-        ],
-        roadmap: [
-          "Turn the project section into pop up cards, allowing users to delve deeper into each project's details more smoothly.",
-        ],
-      },
-      date: "Started August 2023",
-      techStack: [
-        "React.js",
-        "React Chrono",
-        "Email.js",
-        "TailwindCSS",
-        "Framer Motion",
-        "React Tilt",
-        "GitHub",
-        "Canva",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "NASA API",
-      ],
-      repoLink: "https://github.com/spiralnebulam31/PortfolioWebsite",
-      websiteLink: "https://www.spiralnebulam31.com/",
-      status: "Always in progress",
-    },
-    {
-      name: "Garden Genie",
-      image: {
-        src: gardenGenie,
-        alt: "Garden Genie",
-      },
-      description: {
-        summary:
-          "During our final full stack project at the School of Code, my team of six and I had the opportunity to address a real-world problem and plan, design and develop a full-stack web app.",
-        challenge:
-          "Simplify gardening for individuals, addressing the common barriers that often deter people from starting their gardening journey.",
-        solution:
-          "An app that delivers personalised plant recommendations based on user preferences. On the frontend, we harnessed the power of React for its code reusability, state management, and seamless deployment, to create a high-functionint frontend. For the backend, we efficiently managed plant data using Node, Express, and MongoDB in a non-relational database.",
-        learnings: [
-          "This project allowed me to recognize the immense value of diverse viewpoints within our team. The mosaic of perspectives fostered mutual learning, creating an environment of open dialogue and collaboration. This dynamic synergy was instrumental in shaping my approach to planning, managing, and successfully delivering a Minimum Viable Product (MVP) within a team.",
-          "I contributed to the project by participating in the entire planning and design journey, then worked on the structure and functionality of the React frontend. I also made sure the team followed web accessibility standards throughout the app development.",
-        ],
-      },
-      date: "June 2023 - July 2023",
-      techStack: [
-        "React.js",
-        "React Router",
-        "CSS",
-        "Bootstrap",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "GitHub",
-        "Testing Library",
-        "Figma",
-        "Canva",
-      ],
-      repoLink: "https://github.com/spiralnebulam31/M.A.S.H.E.D_Garden_Genie",
-      repoLink2: "https://github.com/spiralnebulam31/GardenGenieBackend",
-      websiteLink: "https://garden-genie.netlify.app/",
-      status: "Complete",
-    },
-    // {
-    //   name: "Bootcampers Treasure Chest",
-    //   image: {
-    //     src: bootcampersTreasureChest,
-    //     alt: "Bootcampers Treasure Chest"
-    //   },
-    //   description: {
-    //     summary: "During my time at the School of Code bootcamp, I had the opportunity to address a common challenge faced by bootcampers and, in collaboration with my team, we came up with an innovative solution.",
-    //     challenge: "Bootcampers often found it challenging to access and categorize the plethora of learning and tech resources available to them.",
-    //     solution: "An app that streamlines these resources, categorizing them for easy access. We chose React to ensure code maintainability and reusability, while delving into MaterialUI to enhance the user experience and learn the application of a new library. Importantly, we prioritized web accessibility standards to ensure inclusivity.",
-    //     learnings: [
-    //       "This project marked my first experience in team web development, teaching me essential skills in collaboration, project planning and Agile methodology.",
-    //       "I contributed by creating React components and helping the team develop the app's functionality. I made sure we prioritised web accessibility, ensuring inclusivity in our app."
-    //   ]
-    //   },
-    //   date: "April 2023",
-    //   techStack: ["React.js", "MaterialUI", "CSS", "GitHub", "Figma"],
-    //   repoLink: "https://github.com/spiralnebulam31/BootcampersTreasureChest",
-    //   websiteLink: "https://spiralnebulam31.github.io/BootcampersTreasureChest/",
-    //   status: "Complete",
-    // },
-  ];
-
-  export const ongoingProjects = [
-    // {
-    //   id: 1,
-    //   name: "Compass Of Care",
-    //   image: {
-    //     src: compassOfCare,
-    //     alt: "Compass of Care",
-    //   },
-    //   description: "Creating a web app to help a new care manager keep track of their clients, their employees and their documentation."
-    // },
-    {
-      id: 1,
-      name: "The Golden Keys",
-      image: {
-        src: goldenKeys,
-        alt: "The Golden Keys",
-      },
-      description: "Frontend development of a website that showcases the work, services, location and contact details of a locksmith business in Greece."
-    },
-    {
-      id: 2,
       name: "Light A Beacon",
       image: {
         src: lightABeacon,
         alt: "Light a Beacon",
       },
-      description: "A full-stack interactive map app that allows the users to create and join local communities. Being created for Campfire Convention."
-    }
+      description: {
+        summary:
+          "A full-stack interactive map app that allows users to create and join local communities. Being created for Campfire Convention.",
+      },
+    },
+    {
+      name: "Greek Art Map",
+      image: {
+        src: greekArtMap,
+        alt: "Greek Art Map",
+      },
+      description: {
+        summary:
+          "A bilingual (English/Greek) mobile app for discovering the locations where significant Greek artists, writers, and cultural figures lived or worked, focused on the city of Athens.",
+        challenge:
+          "Make Greek art and cultural history tangible and explorable in person, for both English and Greek speakers, rather than something only read about in a book.",
+        solution:
+          "An interactive map built with Expo and React Native where tapping a building surfaces the artists connected to it and links through to full illustrated biographies, alongside curated, story-driven walking routes with stop-by-stop navigation and a confetti celebration on completion.",
+        learnings: [
+          "Working with React Native and Expo for the first time, including native modules like react-native-maps and expo-location that go beyond what Expo Go supports, requiring proper development builds.",
+          "Building a CSV-to-TypeScript data pipeline so building and artist content can be authored in spreadsheets and regenerated into strongly-typed data files, keeping content edits out of hand-written code.",
+          "Implementing full bilingual support (English/Greek) end-to-end, including persisted language and theme preferences via AsyncStorage and React Context.",
+          "Designing themed, light/dark-aware styles per screen and component to keep visual parity across both modes.",
+        ],
+        roadmap: [
+          "Expand beyond Athens/Kolonaki to other cities and neighborhoods — the data model and city menu are already generic per-city/per-area.",
+          "Wire up per-location audio narration into the map info panel.",
+          "Flesh out remaining neighborhoods within Athens beyond Kolonaki.",
+        ],
+      },
+      date: "November 2024 - Present",
+      techStack: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Expo Router",
+        "React Native Maps",
+        "React Context",
+        "React Native Reanimated",
+        "GitHub",
+      ],
+      repoLink: "https://github.com/spiralnebulam31/greek-art-map",
+      status: "In progress",
+    },
+    {
+      name: "The Golden Keys",
+      image: {
+        src: goldenKeys,
+        alt: "The Golden Keys",
+      },
+      description: {
+        summary:
+          "Frontend development of a website that showcases the work, services, location and contact details of a locksmith business in Greece.",
+      },
+    },
   ];
+
+  // Commented out (image asset removed) — see conversation history if this
+  // ever needs to come back.
+  // {
+  //   name: "Portfolio Website",
+  //   image: { src: portfolio, alt: "Portfolio Website" },
+  //   description: {
+  //     summary: "This website is my portfolio, where you can find information about me, my skills and my projects.",
+  //     challenge: "Create a digital space that reflects my personality and showcases my skills and projects.",
+  //     solution: "A responsive and accessible website that offers a smooth user experience.",
+  //     learnings: [
+  //       "I wanted to make sure that my personal website was a true reflection of my personality and skills. Along the way, I learned how to use React Chrono, Framer Motion and React Tilt. I also gained a deeper understanding of TailwindCSS.",
+  //       "A portfolio website is never really complete. It's a dynamic space that evolves with the developer/artist and I'm excited to continue adding new features and functionalities to it.",
+  //     ],
+  //     roadmap: ["Turn the project section into pop up cards, allowing users to delve deeper into each project's details more smoothly."],
+  //   },
+  //   date: "Started August 2023",
+  //   techStack: ["React.js", "React Chrono", "Email.js", "TailwindCSS", "Framer Motion", "React Tilt", "GitHub", "Canva", "Node.js", "Express.js", "MongoDB", "NASA API"],
+  //   repoLink: "https://github.com/spiralnebulam31/PortfolioWebsite",
+  //   websiteLink: "https://www.spiralnebulam31.com/",
+  //   status: "Always in progress",
+  // },

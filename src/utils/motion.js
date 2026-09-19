@@ -68,33 +68,51 @@ export const textVariant = (delay) => {
 
   export const starryHeroVariant1 = {
     initial: {
-      x: -500,
       opacity: 0,
     },
   animate: {
-        x: 0,
         opacity : 0.4,
     transition: {
       duration: 2.5,
       delay: 0.5,
-      type: "spring",
     },
   }}
 
   export const starryHeroVariant2 = {
     initial: {
-      x: 500,
       opacity: 0,
     },
   animate: {
-        x: 0,
         opacity : 0.4,
     transition: {
       duration: 2.5,
       delay: 0.5,
-      type: "spring",
     },
   }}
+
+  // A soft glow bloom that drifts in from the left/right edge and converges
+  // toward the center, brightening as it arrives before settling into a low,
+  // ambient glow behind the hero text. `peak`/`settle` let callers dial the
+  // intensity per theme (e.g. dimmer on the dark theme).
+  export const heroShineVariant = (side, { peak = 0.9, settle = 0.35 } = {}) => {
+    return {
+      initial: {
+        x: side === "left" ? -400 : 400,
+        opacity: 0,
+        scale: 0.6,
+      },
+      animate: {
+        x: 0,
+        opacity: [0, peak, settle],
+        scale: 1,
+        transition: {
+          duration: 2.5,
+          delay: 0.3,
+          ease: "easeOut",
+        },
+      },
+    };
+  }
 
 
   export const starSliderVariant = {

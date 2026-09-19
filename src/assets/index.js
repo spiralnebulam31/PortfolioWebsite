@@ -25,13 +25,12 @@ import starrySky2Raw from "./starrySky2.svg";
 import mountainRaw from "./mountain.svg";
 import planet1Raw from "./planet1.png";
 import planet2Raw from "./planet2.png";
+import rocketRaw from "./rocket.png";
 
-import profilePhotoRaw from "./photos/profilePhoto.svg";
-import profilePhoto1Raw from "./photos/profilePhoto1.png";
-import profilePhoto2Raw from "./photos/profilePhoto2.svg";
 import photo1Raw from "./photos/photo1.png";
-import photo2Raw from "./photos/photo2.png";
-import photo3Raw from "./photos/photo3.png";
+import photo2Raw from "./photos/photo2.jpeg";
+import photo3Raw from "./photos/photo3.jpeg";
+import photo4Raw from "./photos/photo4.jpeg";
 
 import typescriptRaw from "./tech/typescript.svg";
 import javascriptRaw from "./tech/javascript.png";
@@ -60,13 +59,15 @@ import figmaRaw from "./tech/figma.png";
 import canvaRaw from "./tech/canva.png";
 import photoshopRaw from "./tech/photoshop.png";
 
-import lifeGoatsRaw from "./projects/LifeGoats.png";
-import portfolioRaw from "./projects/portfolio.png";
-import onniRaw from "./projects/onni.png";
+import lifeGoatsRaw from "./projects/lifeGoats.png";
+// portfolio.png was removed when the Portfolio Website project was commented
+// out in constants/projects.js — keep this commented alongside it, not
+// deleted, since the project entry may come back.
+// import portfolioRaw from "./projects/portfolio.png";
 import gardenGenieRaw from "./projects/gardenGenie.png";
-import lightABeaconRaw from "./projects/LightABeacon.png";
+import lightABeaconRaw from "./projects/lightABeacon.png";
 import goldenKeysRaw from "./projects/GoldenKeys.png";
-import compassOfCareRaw from "./projects/CompassOfCare.png";
+import greekArtMapRaw from "./projects/greekArtMap.png";
 
 import lifeGoats1Raw from "./life-goats/life-goats-1.webp";
 import lifeGoats2Raw from "./life-goats/life-goats-2.jpg";
@@ -93,12 +94,11 @@ export const starrySky2 = starrySky2Raw.src;
 export const mountain = mountainRaw.src;
 export const planet1 = planet1Raw.src;
 export const planet2 = planet2Raw.src;
-export const profilePhoto = profilePhotoRaw.src;
-export const profilePhoto1 = profilePhoto1Raw.src;
-export const profilePhoto2 = profilePhoto2Raw.src;
+export const rocket = rocketRaw.src;
 export const photo1 = photo1Raw.src;
 export const photo2 = photo2Raw.src;
 export const photo3 = photo3Raw.src;
+export const photo4 = photo4Raw.src;
 export const typescript = typescriptRaw.src;
 export const javascript = javascriptRaw.src;
 export const html = htmlRaw.src;
@@ -126,12 +126,11 @@ export const figma = figmaRaw.src;
 export const canva = canvaRaw.src;
 export const photoshop = photoshopRaw.src;
 export const lifeGoats = lifeGoatsRaw.src;
-export const portfolio = portfolioRaw.src;
-export const onni = onniRaw.src;
+// export const portfolio = portfolioRaw.src;
 export const gardenGenie = gardenGenieRaw.src;
 export const lightABeacon = lightABeaconRaw.src;
 export const goldenKeys = goldenKeysRaw.src;
-export const compassOfCare = compassOfCareRaw.src;
+export const greekArtMap = greekArtMapRaw.src;
 export const lifeGoats1 = lifeGoats1Raw.src;
 export const lifeGoats2 = lifeGoats2Raw.src;
 export const lifeGoats3 = lifeGoats3Raw.src;

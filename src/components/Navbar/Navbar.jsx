@@ -12,7 +12,7 @@ import {
   staggerContainer,
   mobileItemVariants,
 } from "../../utils/motion.js";
-import useTheme from "../../hooks/useTheme.js";
+import useTheme from "../../contexts/ThemeContext.jsx";
 import { SunIcon, MoonIcon } from "./ThemeIcons.jsx";
 import "./Navbar.scss";
 
