@@ -1,10 +1,8 @@
 import {
-  profilePhoto,
-  profilePhoto1,
-  profilePhoto2,
   photo1,
   photo2,
   photo3,
+  photo4,
   typescript,
   javascript,
   react,
@@ -62,33 +60,23 @@ export const navLinks = [
 const profilePhotos = [
   {
     index: 1,
-    alt: "profile photo",
-    src: profilePhoto,
-  },
-  {
-    index: 2,
-    alt: "profile photo 1",
-    src: profilePhoto1,
-  },
-  {
-    index: 3,
-    alt: "profile photo 2",
-    src: profilePhoto2,
-  },
-  {
-    index: 4,
     alt: "photo 1",
     src: photo1,
   },
   {
-    index: 5,
+    index: 2,
     alt: "photo 2",
     src: photo2,
   },
   {
-    index: 6,
+    index: 3,
     alt: "photo 3",
     src: photo3,
+  },
+  {
+    index: 4,
+    alt: "photo 4",
+    src: photo4,
   },
 ];
 

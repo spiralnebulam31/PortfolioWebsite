@@ -1,108 +1,97 @@
-/**
- * Shared by ProjectCard.jsx (live) and OngoingProjectCard.jsx (currently
- * unused, commented out in Projects.jsx) — both use the same visual card
- * design, only differing in the content/props they render.
- */
 @use "../../scss/globals/variables" as vars;
 @use "../../scss/globals/mixins" as mix;
 
 .project-card {
-  @include mix.respond-to(xs) {
-    width: vars.rem(350);
+  cursor: pointer;
+  width: 100%;
+  border-radius: vars.radius(2xl);
+  box-shadow: vars.shadow(card);
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  @include mix.gradient-border-card;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(#{vars.rem(-6)});
+    box-shadow: vars.shadow(2xl);
   }
 
-  @include mix.respond-to(md) {
-    width: vars.rem(450);
+  &:focus-visible {
+    outline: 2px solid vars.color(secondary);
+    outline-offset: 4px;
   }
 
-  &__card {
-    cursor: pointer;
-    width: 100%;
-    border-radius: vars.radius(2xl);
-    box-shadow: vars.shadow(card);
-    @include mix.gradient-border-card;
-
-    @include mix.respond-to(xs) {
-      width: vars.rem(350);
-    }
-
-    @include mix.respond-to(md) {
-      width: vars.rem(450);
-    }
-  }
-
-  // NOTE: the original used the undefined class `bg-background` (likely
-  // meant `bg-background1`) — a no-op today, so no background is set here.
   &__inner {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    height: 100%;
     border-radius: vars.radius(2xl);
+    background: vars.color(background-1);
+    overflow: hidden;
+  }
+
+  &__image-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
   }
 
   &__image {
     width: 100%;
     height: 100%;
-    border-radius: vars.radius(2xl);
+    object-fit: cover;
+    transition: transform 300ms ease-in-out;
+
+    .project-card:hover &,
+    .project-card:focus-visible & {
+      transform: scale(1.06);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: vars.rem(8);
+    padding: vars.rem(20);
+    text-align: left;
   }
 
   &__name {
-    color: vars.color(background-1);
-    text-align: center;
+    color: vars.color(primary);
     font-size: vars.rem(20);
-    max-width: vars.rem(350);
-    line-height: vars.rem(30);
     font-weight: 700;
+    line-height: vars.rem(26);
   }
 
-  &__toggle {
-    padding-top: vars.rem(4);
-    color: vars.color(background-1);
-    text-align: center;
+  &__date {
+    color: vars.color(secondary);
+    font-size: vars.rem(12);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__teaser {
+    color: vars.color(white-100);
     font-size: vars.rem(14);
-    text-decoration: underline;
-    cursor: pointer;
+    line-height: vars.rem(22);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  &__details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  &__links {
-    display: flex;
-    justify-content: space-evenly;
-    gap: vars.rem(8);
-    color: vars.color(background-1);
-    text-align: center;
+  &__cta {
+    margin-top: auto;
+    padding-top: vars.rem(8);
+    color: vars.color(secondary);
     font-size: vars.rem(14);
-    max-width: vars.rem(350);
-    line-height: vars.rem(30);
-  }
+    font-weight: 700;
+    transition: color 150ms ease-in-out;
 
-  &__link {
-    text-decoration: underline;
-  }
-
-  &__info {
-    color: vars.color(background-1);
-    text-align: center;
-    font-size: vars.rem(14);
-    max-width: vars.rem(350);
-    line-height: vars.rem(30);
-  }
-
-  &__description {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: vars.rem(20);
-    color: vars.color(background-1);
-    font-size: vars.rem(14);
-    max-width: vars.rem(350);
-    line-height: vars.rem(30);
+    .project-card:hover &,
+    .project-card:focus-visible & {
+      color: vars.color(primary);
+    }
   }
 }

@@ -1,13 +1,30 @@
 @use "../../scss/globals/variables" as vars;
 @use "../../scss/globals/mixins" as mix;
 
+// The background is pinned dark-theme-shaped regardless of site theme (see
+// below), but text/UI-accent colors track the theme normally via
+// vars.color() — the light theme's middle section (where the text sits) is
+// actually light, so text needs to invert to the dark theme.colors there.
+// Only the shine blobs stay pinned to fixed bright colors (see .hero__shine).
+$hero-secondary: #83f8f5;
+$hero-primary: #ccb2ff;
+
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   margin-inline: auto;
   overflow: hidden;
+  // Dark theme: same two tokens as always (both dark, so this reads as one
+  // continuous dark gradient). Light theme reverses which token sits where —
+  // dark (cyan-900) at the top/bottom, light (background-1) in the middle —
+  // rather than letting the light theme's own light background-1 wash out
+  // the top/bottom the way it would if this just followed the tokens directly.
   background: linear-gradient(to bottom, vars.color(background-1), vars.color(cyan-900), vars.color(background-1));
+
+  [data-theme="light"] & {
+    background: linear-gradient(to bottom, vars.color(cyan-900), vars.color(background-1), vars.color(cyan-900));
+  }
 
   &__content {
     position: absolute;
@@ -120,6 +137,40 @@
     // utility — it currently has no explicit z-index (auto). Kept that way.
     &--right {
       right: 0;
+    }
+  }
+
+  // Soft glow blooms that drift in from the edges and converge toward the
+  // center (see heroShineVariantLeft/Right in utils/motion.js). Positioned
+  // via left/top rather than a CSS transform, since Framer Motion owns the
+  // element's transform (for its own x/scale animation) and would otherwise
+  // conflict with a hand-written translate().
+  &__shine {
+    position: absolute;
+    top: calc(50% - #{vars.rem(300)});
+    left: calc(50% - #{vars.rem(300)});
+    width: vars.rem(600);
+    height: vars.rem(600);
+    border-radius: vars.radius(full);
+    filter: blur(#{vars.rem(80)});
+    pointer-events: none;
+    // `screen` only produces a visible glow against a dark backdrop — it
+    // brightens by blending with what's behind it, so against the light
+    // theme's light middle section (see the background override above) it's
+    // screening a bright color over near-white, which is essentially
+    // invisible. Light theme falls back to a plain soft-colored blob instead.
+    mix-blend-mode: screen;
+
+    [data-theme="light"] & {
+      mix-blend-mode: normal;
+    }
+
+    &--left {
+      background: radial-gradient(circle, $hero-secondary, transparent 70%);
+    }
+
+    &--right {
+      background: radial-gradient(circle, $hero-primary, transparent 70%);
     }
   }
 
