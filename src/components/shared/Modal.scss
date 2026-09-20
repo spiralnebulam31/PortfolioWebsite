@@ -8,22 +8,31 @@
  * 768px padding rule that About's had) into one source of truth.
  */
 @use "../../scss/globals/variables" as vars;
-@use "../../scss/globals/mixins" as mix;
 
 .modal {
   &__overlay {
     background: color-mix(in srgb, vars.color(background-2) 80%, transparent);
   }
 
+  // The gradient lives on the outer panel; &__panel's own padding is what
+  // reveals it as a thin border once &__body's solid fill sits on top of it —
+  // dark in dark theme, light in light theme, matching every other surface.
+  // Padding and radius match the same gradient-border-card treatment used on
+  // the images inside these modals (e.g. &__photo-border/&__image-border).
   &__panel {
     background-image: linear-gradient(vars.color(primary), vars.color(secondary));
-    border-radius: vars.radius(base);
+    border-radius: vars.radius(2xl);
     box-shadow: 0 vars.rem(2) vars.rem(10) rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: vars.rem(10);
+    padding: vars.rem(2);
+  }
 
-    @include mix.respond-to(md) {
-      padding: vars.rem(20);
-    }
+  &__body {
+    background: vars.color(background-1);
+    border-radius: vars.radius(2xl);
+  }
+
+  &__close-icon {
+    color: vars.color(tertiary);
   }
 }

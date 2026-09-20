@@ -14,7 +14,7 @@
   // `font-subtitle`/`font-body` in the original classes were undefined
   // Tailwind classes (no-ops) — omitted here, inherits the global Poppins font.
   &__title {
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(20);
     font-weight: 700;
     margin-bottom: vars.rem(16);
@@ -25,7 +25,7 @@
   }
 
   &__content {
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(14);
     margin-bottom: vars.rem(16);
 
@@ -52,12 +52,11 @@
   }
 
   &__link {
-    color: vars.color(cyan-800);
+    color: vars.color(secondary);
     text-decoration: underline;
-    cursor: pointer;
 
     &:hover {
-      color: vars.color(purple-800);
+      color: vars.color(primary);
     }
   }
 

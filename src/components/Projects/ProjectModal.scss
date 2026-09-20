@@ -24,14 +24,14 @@
   }
 
   &__name {
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(24);
     font-weight: 700;
     text-align: center;
   }
 
   &__date {
-    color: vars.color(cyan-800);
+    color: vars.color(secondary);
     font-size: vars.rem(14);
     text-align: center;
     text-transform: uppercase;
@@ -39,7 +39,7 @@
   }
 
   &__summary {
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(16);
     line-height: vars.rem(26);
   }
@@ -51,7 +51,7 @@
   }
 
   &__section-title {
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(16);
     font-weight: 700;
   }
@@ -60,7 +60,7 @@
     display: flex;
     flex-direction: column;
     gap: vars.rem(4);
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(14);
     line-height: vars.rem(22);
 
@@ -72,7 +72,7 @@
   }
 
   &__status {
-    color: vars.color(background-1);
+    color: vars.color(white);
     font-size: vars.rem(14);
   }
 
@@ -85,12 +85,12 @@
   }
 
   &__link {
-    color: vars.color(cyan-800);
+    color: vars.color(secondary);
     font-weight: 700;
     text-decoration: underline;
 
     &:hover {
-      color: vars.color(purple-800);
+      color: vars.color(primary);
     }
   }
 }

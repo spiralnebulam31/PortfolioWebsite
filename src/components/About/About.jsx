@@ -34,6 +34,7 @@ const About = () => {
               variants={floatFromLeftVariant}
               initial="initial"
               whileInView="animate"
+              viewport={{ once: true }}
             >
               <motion.div
                 variants={fadeIn("right", "spring", 0.5, 1.25)}
@@ -56,6 +57,7 @@ const About = () => {
                 variants={floatFromRightVariant}
                 initial="initial"
                 whileInView="animate"
+                viewport={{ once: true }}
               >
                 {/* <p>
                   As a <span className="text-primary"><strong>frontend developer</strong></span>,

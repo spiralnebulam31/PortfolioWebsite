@@ -17,13 +17,17 @@ $hero-primary: #ccb2ff;
   overflow: hidden;
   // Dark theme: same two tokens as always (both dark, so this reads as one
   // continuous dark gradient). Light theme reverses which token sits where —
-  // dark (cyan-900) at the top/bottom, light (background-1) in the middle —
-  // rather than letting the light theme's own light background-1 wash out
-  // the top/bottom the way it would if this just followed the tokens directly.
+  // dark (cyan-900) at the top/bottom, rather than letting the light theme's
+  // own light background-1 wash out the top/bottom the way it would if this
+  // just followed the tokens directly.
   background: linear-gradient(to bottom, vars.color(background-1), vars.color(cyan-900), vars.color(background-1));
 
+  // Light lilac (background-1) top/bottom — not plain white — so the Hero
+  // hands off seamlessly into About's background (which is also
+  // background-1), with a darker teal middle where the blobs sit and need
+  // real color depth behind them to read against.
   [data-theme="light"] & {
-    background: linear-gradient(to bottom, vars.color(cyan-900), vars.color(background-1), vars.color(cyan-900));
+    background: linear-gradient(to bottom, vars.color(background-1), vars.color(secondary), vars.color(background-1));
   }
 
   &__content {
@@ -34,8 +38,7 @@ $hero-primary: #ccb2ff;
     flex-direction: row;
     align-items: flex-start;
     gap: vars.rem(20);
-    max-width: vars.rem(1280);
-    margin-inline: auto;
+    @include mix.content-container;
     // NOTE: styles.js's `paddingX` mixin is applied here with a genuine
     // separating space in the original (unlike the other call sites where
     // a missing space made it inert), so it's the one place this actually renders.
@@ -73,6 +76,12 @@ $hero-primary: #ccb2ff;
 
   &__name {
     color: vars.color(secondary);
+
+    // Dark teal (secondary in this theme) reads too flat against the
+    // Hero's own light-teal middle band — dark purple stands out better.
+    [data-theme="light"] & {
+      color: vars.color(primary);
+    }
   }
 
   &__subheading {
@@ -99,14 +108,44 @@ $hero-primary: #ccb2ff;
     margin-top: vars.rem(20);
   }
 
+  // A single teal-independent icon shape (see the assets) masked to a solid
+  // color instead of two hardcoded-color SVGs — the mask's source URL is set
+  // per-icon via the --icon-src custom property in Hero.jsx's inline style,
+  // since it's a build-time-hashed asset path the SCSS side can't know.
+  // Colors come from vars.color(), so they're already theme-reactive for
+  // free; hover no longer needs JS state, just the sibling-hover rule below.
   &__link-icon {
+    display: inline-block;
     width: vars.rem(40);
     height: vars.rem(40);
-    object-fit: contain;
     margin-top: vars.rem(16);
+    background-color: vars.color(secondary);
+    mask-image: var(--icon-src);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: var(--icon-src);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    transition: background-color 150ms ease-in-out;
+
+    // Same swap as &__name — dark purple default, dark teal on hover, the
+    // reverse of the dark theme's teal-default/purple-hover pairing.
+    [data-theme="light"] & {
+      background-color: vars.color(primary);
+    }
 
     &--resume {
       box-shadow: vars.shadow(lg);
+    }
+  }
+
+  &__link:hover &__link-icon {
+    background-color: vars.color(primary);
+
+    [data-theme="light"] & {
+      background-color: vars.color(secondary);
     }
   }
 

@@ -25,6 +25,13 @@
 
   &__container {
     margin-inline: auto;
+  }
+
+  // Capped/centered the same as every other section's title so headings line
+  // up down the page — kept separate from &__content (the timeline itself),
+  // which deliberately stays uncapped for its full-width scroll experience.
+  &__title-row {
+    @include mix.content-container;
     padding-inline: vars.rem(20);
   }
 

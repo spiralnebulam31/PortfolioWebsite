@@ -29,14 +29,15 @@
     color: vars.color(secondary);
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(4px);
+    cursor: pointer;
     transition: color 150ms ease-in-out, background-color 150ms ease-in-out, opacity 150ms ease-in-out;
 
     &--prev {
-      left: 0;
+      left: vars.rem(16);
     }
 
     &--next {
-      right: 0;
+      right: vars.rem(16);
     }
 
     &:hover {
@@ -162,10 +163,35 @@
     overflow: visible;
   }
 
+  // vars.color(white) is already retinted per theme for exactly this
+  // problem (legible on both a dark and a light background) — mixing it
+  // down to 15% keeps the same faint look in both themes instead of a
+  // literal white that disappears against the light theme's background.
   &__path-bg {
     fill: none;
-    stroke: rgba(255, 255, 255, 0.15);
+    stroke: color-mix(in srgb, vars.color(white) 15%, transparent);
     stroke-width: 2;
+  }
+
+  // Dashed continuation before the first dot / after the last, out to the
+  // edges of the scrollable content — dashed to read as "beyond the
+  // timeline" rather than part of the drawn curve itself.
+  &__path-lead {
+    fill: none;
+    stroke-width: 2;
+    stroke-dasharray: 6 6;
+
+    // Before the first item: already-active on load, so it reads as
+    // travelled — same color as &__path-progress.
+    &--before {
+      stroke: vars.color(secondary);
+    }
+
+    // After the last item: not yet reached, so it stays the same faint
+    // untraced treatment as &__path-bg.
+    &--after {
+      stroke: color-mix(in srgb, vars.color(white) 15%, transparent);
+    }
   }
 
   &__path-progress {
@@ -188,7 +214,8 @@
 
   &__rocket {
     display: block;
-    width: vars.rem(32);
+    // Slightly bigger on mobile, scaling up a bit further on wider screens.
+    width: clamp(#{vars.rem(40)}, 4vw, #{vars.rem(56)});
     height: auto;
     transition: transform 200ms ease-out;
   }

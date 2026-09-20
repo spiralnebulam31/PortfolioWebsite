@@ -14,11 +14,8 @@ import {
   starrySky1,
   starrySky2,
   github,
-  github2,
   linkedin,
-  linkedin2,
   resume,
-  resume2,
 } from "../../assets/index.js";
 import useTheme from "../../contexts/ThemeContext.jsx";
 import "./Hero.scss";
@@ -31,20 +28,10 @@ import "./Hero.scss";
 // rather than looking like an opaque colored disk.
 const SHINE_INTENSITY = {
   dark: { peak: 0.6, settle: 0.2 },
-  light: { peak: 0.75, settle: 0.4 },
+  light: { peak: 1, settle: 0.8 },
 };
 
-const Hero = ({
-  githubIsHovered,
-  handleGithubMouseEnter,
-  handleGithubMouseLeave,
-  linkedinIsHovered,
-  handleLinkedinMouseEnter,
-  handleLinkedinMouseLeave,
-  resumeIsHovered,
-  handleResumeMouseEnter,
-  handleResumeMouseLeave,
-}) => {
+const Hero = () => {
   const { theme } = useTheme();
   const shineIntensity = SHINE_INTENSITY[theme] ?? SHINE_INTENSITY.dark;
 
@@ -81,13 +68,13 @@ const Hero = ({
               href="https://github.com/spiralnebulam31"
               target="_blank"
               rel="noreferrer"
-              onMouseEnter={handleGithubMouseEnter}
-              onMouseLeave={handleGithubMouseLeave}
+              aria-label="GitHub profile"
+              className="hero__link"
             >
-              <img
-                src={githubIsHovered ? github2 : github}
-                alt="clickable GitHub logo"
+              <span
                 className="hero__link-icon"
+                style={{ "--icon-src": `url(${github})` }}
+                aria-hidden="true"
               />
             </a>
 
@@ -95,13 +82,13 @@ const Hero = ({
               href="https://www.linkedin.com/in/anastasiaadamoudi-webdev/"
               target="_blank"
               rel="noreferrer"
-              onMouseEnter={handleLinkedinMouseEnter}
-              onMouseLeave={handleLinkedinMouseLeave}
+              aria-label="LinkedIn profile"
+              className="hero__link"
             >
-              <img
-                src={linkedinIsHovered ? linkedin2 : linkedin}
-                alt="clickable LinkedIn logo"
+              <span
                 className="hero__link-icon"
+                style={{ "--icon-src": `url(${linkedin})` }}
+                aria-hidden="true"
               />
             </a>
 
@@ -110,13 +97,13 @@ const Hero = ({
               download="Anastasia_Adamoudi_Resume_2026-04-29.pdf"
               target="_blank"
               rel="noreferrer"
-              onMouseEnter={handleResumeMouseEnter}
-              onMouseLeave={handleResumeMouseLeave}
+              aria-label="Download resume"
+              className="hero__link"
             >
-              <img
-                src={resumeIsHovered ? resume2 : resume}
-                alt="resume"
+              <span
                 className="hero__link-icon hero__link-icon--resume"
+                style={{ "--icon-src": `url(${resume})` }}
+                aria-hidden="true"
               />
             </a>
           </motion.div>
@@ -164,7 +151,7 @@ const Hero = ({
         />
       </motion.div>
 
-      {/* Star slider */}
+      {/* Star slider
       <motion.div
         variants={heroStarVariant}
         initial="initial"
@@ -186,6 +173,7 @@ const Hero = ({
           </motion.div>
         </a>
       </motion.div>
+      */}
     </section>
   );
 };

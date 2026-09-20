@@ -18,7 +18,7 @@
   }
 
   &__container {
-    margin-inline: auto;
+    @include mix.content-container;
     padding-inline: vars.rem(20);
   }
 
@@ -54,5 +54,13 @@
     @include mix.respond-to(lg) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
+
+  // The grid item itself (the per-card motion.div) stretches to the row's
+  // height by the grid's own default alignment; making it a flex container
+  // in turn stretches .project-card to match, so cards stay equal-height
+  // across a row exactly as when ProjectCard was the direct grid item.
+  &__grid-item {
+    display: flex;
   }
 }

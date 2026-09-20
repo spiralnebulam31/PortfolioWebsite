@@ -18,7 +18,7 @@
   }
 
   &__container {
-    margin-inline: auto;
+    @include mix.content-container;
     padding-inline: vars.rem(20);
   }
 
@@ -37,11 +37,7 @@
     justify-content: center;
     width: 100%;
     margin-inline: auto;
-    padding-inline: vars.rem(36);
-
-    @include mix.respond-to(lg) {
-      width: 80%;
-    }
+    padding-inline: vars.rem(20);
   }
 
   &__grid {

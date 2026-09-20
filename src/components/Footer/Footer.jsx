@@ -27,27 +27,6 @@ const Footer = ({ modalState, setModalState, closeModal }) => {
 
       <div className="footer__body">
 
-      <div className="footer__note">
-      <span className="footer__brace">
-      &#123;
-          </span>
-      <p className="footer__note-text">Created with Vite, React.js, TailwindCSS, Framer Motion and love.</p>
-      <span className="footer__brace">
-      &#125;
-          </span>
-      </div>
-      <div className="footer__note footer__note--spaced">
-        <span className="footer__brace">
-      &#123;
-          </span>
-          <p className="footer__note-text">Why the space theme? Someone once said I should be called Ana-star-sia! Since global astronomy year 2009, amateur observational astronomy has been one of my favourite hobbies.</p>
-          <span className="footer__brace">
-      &#125;
-          </span>
-      </div>
-
-        <hr className="footer__divider" />
-
         {/*Copyright & Developer*/}
         <div className="footer__row">
           <p className="footer__copyright">
@@ -60,15 +39,7 @@ const Footer = ({ modalState, setModalState, closeModal }) => {
 
         <div className="footer__row">
           <p className="footer__credit">
-            Designed & developed by
-            <a
-              href="https://anastasiaadamoudi.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="footer__credit-link"
-            >
-            Anastasia Adamoudi
-            </a>
+            Created with Next.js, Framer Motion and Sass
           </p>
         </div>
 
