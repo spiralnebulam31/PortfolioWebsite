@@ -8,10 +8,10 @@ import "./PrivacyModal.scss";
 const PrivacyModal = ({ isOpen, onClose }) => {
 
   const closeIcon = (
-    <svg fill="#2B96B1" viewBox="0 0 20 20" width={28} height={28}>
+    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
       <path
         fillRule="evenodd"
-        d="M4,4 L16,16 M4,16 L16,4" stroke="#2B96B1" strokeWidth="3"
+        d="M4,4 L16,16 M4,16 L16,4" stroke="currentColor" strokeWidth="3"
         clipRule="evenodd"
       ></path>
     </svg>
@@ -29,7 +29,7 @@ const PrivacyModal = ({ isOpen, onClose }) => {
     }}
     aria-labelledby="privacy-policy-modal"
     >
-      <div className="privacy-modal__body">
+      <div className="modal__body privacy-modal__body">
         <h2 className="privacy-modal__title">Privacy Policy</h2>
         <p className="privacy-modal__text">
         If you contact me via the contact form, I will only use

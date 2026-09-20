@@ -24,7 +24,7 @@
   }
 
   &__container {
-    margin-inline: auto;
+    @include mix.content-container;
     padding-inline: vars.rem(20);
   }
 

@@ -7,11 +7,11 @@ import "./AboutModal.scss";
 
 const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
   const closeIcon = (
-    <svg fill="#2B96B1" viewBox="0 0 20 20" width={28} height={28}>
+    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
       <path
         fillRule="evenodd"
         d="M4,4 L16,16 M4,16 L16,4"
-        stroke="#2B96B1"
+        stroke="currentColor"
         strokeWidth="3"
         clipRule="evenodd"
       ></path>
@@ -30,7 +30,7 @@ const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
       }}
       aria-labelledby="about-modal"
     >
-      <div className="about-modal__body">
+      <div className="modal__body about-modal__body">
         <h2 className="about-modal__title">
           Meet Anastasia
         </h2>

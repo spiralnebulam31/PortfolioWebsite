@@ -11,11 +11,11 @@ import "./ProjectModal.scss";
 // challenge/solution/learnings/techStack breakdown.
 const ProjectModal = ({ project, onClose }) => {
   const closeIcon = (
-    <svg fill="#2B96B1" viewBox="0 0 20 20" width={28} height={28}>
+    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
       <path
         fillRule="evenodd"
         d="M4,4 L16,16 M4,16 L16,4"
-        stroke="#2B96B1"
+        stroke="currentColor"
         strokeWidth="3"
         clipRule="evenodd"
       ></path>
@@ -38,7 +38,7 @@ const ProjectModal = ({ project, onClose }) => {
       aria-labelledby="project-modal-title"
     >
       {project && (
-        <div className="project-modal">
+        <div className="modal__body project-modal">
           <div className="project-modal__image-border">
             <img
               src={project.image.src}

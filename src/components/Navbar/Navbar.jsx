@@ -60,17 +60,19 @@ const Navbar = () => {
           {/* beginning of right side div */}
           <ul className="navbar__links">
             {navLinks.map((link) => (
-              <li
-                key={link.id}
-                className={`navbar__link ${
-                  active === link.id ? "navbar__link--active" : ""
-                }`}
-                onClick={() => {
-                  setActive(link.id);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                <a href={`#${link.id}`}>{link.title}</a>
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={`navbar__link ${
+                    active === link.id ? "navbar__link--active" : ""
+                  }`}
+                  onClick={() => {
+                    setActive(link.id);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  {link.title}
+                </a>
               </li>
             ))}
           </ul>
@@ -123,16 +125,20 @@ const Navbar = () => {
                 <ul className="navbar__mobile-links">
                   {navLinks.map((link) => (
                     <motion.div key={link.id} variants={mobileItemVariants}>
-                      <li
-                        key={link.id}
-                        className="navbar__mobile-link"
-                        onClick={() => {
-                          setMobile(!mobile);
-                          setActive(link.title);
-                          window.scrollTo(0, 0);
-                        }}
-                      >
-                        <a href={`#${link.id}`}>{link.title}</a>
+                      <li key={link.id}>
+                        <a
+                          href={`#${link.id}`}
+                          className={`navbar__mobile-link ${
+                            active === link.title ? "navbar__mobile-link--active" : ""
+                          }`}
+                          onClick={() => {
+                            setMobile(!mobile);
+                            setActive(link.title);
+                            window.scrollTo(0, 0);
+                          }}
+                        >
+                          {link.title}
+                        </a>
                       </li>
                     </motion.div>
                   ))}

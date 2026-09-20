@@ -89,7 +89,12 @@ $spiral-nebula-shadows: (
   lg:   (0 rem(10) rem(15) rem(-3) rgba(0, 0, 0, 0.1), 0 rem(4) rem(6) rem(-4) rgba(0, 0, 0, 0.1)),
   xl:   (0 rem(20) rem(25) rem(-5) rgba(0, 0, 0, 0.1), 0 rem(8) rem(10) rem(-6) rgba(0, 0, 0, 0.1)),
   2xl:  (0 rem(25) rem(50) rem(-12) rgba(0, 0, 0, 0.25)),
-  card: (0 rem(35) rem(120) rem(-15) #211e35),
+  // Was 0 35px 120px -15px — that huge a blur radius bleeds noticeably below
+  // whatever it's attached to, and in a grid of cards (Projects, Skills) the
+  // overlapping bleed from several cards visibly darkened the section's
+  // lower edge, making it look like a different (darker) color than the
+  // section after it even though the actual background was identical.
+  card: (0 rem(20) rem(40) rem(-10) #211e35),
 );
 
 @function shadow($size) {

@@ -8,10 +8,10 @@ import "./AccessibilityModal.scss";
 const PrivacyModal = ({ isOpen, onClose }) => {
 
   const closeIcon = (
-    <svg fill="#2B96B1" viewBox="0 0 20 20" width={28} height={28}>
+    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
       <path
         fillRule="evenodd"
-        d="M4,4 L16,16 M4,16 L16,4" stroke="#2B96B1" strokeWidth="3"
+        d="M4,4 L16,16 M4,16 L16,4" stroke="currentColor" strokeWidth="3"
         clipRule="evenodd"
       ></path>
     </svg>
@@ -29,7 +29,7 @@ const PrivacyModal = ({ isOpen, onClose }) => {
     }}
     aria-labelledby="web-accessibility-modal"
     >
-      <div className="accessibility-modal__body">
+      <div className="modal__body accessibility-modal__body">
         <h2 className="accessibility-modal__title">Privacy Policy</h2>
         <p className="accessibility-modal__text">
         This website is built to be accessible to as many people as

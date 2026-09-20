@@ -25,3 +25,19 @@ body {
   color: vars.color(white);
   background: vars.color(background-1);
 }
+
+// One consistent keyboard-focus treatment for every link on the site,
+// instead of each component needing to remember to add its own. Deliberately
+// `:focus-visible`, not `:focus` — browsers only apply `:focus-visible`
+// when they judge the focus came from keyboard/switch navigation rather
+// than a mouse click, so this ring only ever shows up for keyboard users,
+// never as a lingering box after a click.
+a {
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid vars.color(primary);
+    outline-offset: 2px;
+    border-radius: vars.radius(base);
+  }
+}

@@ -59,6 +59,8 @@ const Timeline = ({ items }) => {
   const itemRefs = useRef([]);
   const markerRefs = useRef([]);
   const svgRef = useRef(null);
+  const pathLeadBeforeRef = useRef(null);
+  const pathLeadAfterRef = useRef(null);
   const pathBgRef = useRef(null);
   const pathProgressRef = useRef(null);
   const pathLengthRef = useRef(0);
@@ -95,6 +97,25 @@ const Timeline = ({ items }) => {
       svg.setAttribute("viewBox", `0 0 ${contentWidth} ${MARKER_ZONE_HEIGHT}`);
       svg.style.width = `${contentWidth}px`;
 
+      // Purely decorative dashed continuation from the first/last dot out to
+      // the edges of the scrollable content — flat (same Y as the dot it
+      // extends from), since there's no real item out there to wave toward.
+      // Separate from the curve the rocket actually tracks, so it doesn't
+      // affect any of the scroll/position math above. The "before" segment
+      // reads as already-travelled (active color, like &__path-progress) —
+      // the timeline starts active on load — while "after" the last item
+      // reads as untravelled (same faint color as &__path-bg) until reached.
+      if (points.length > 0) {
+        const [firstX, firstY] = points[0];
+        const [lastX, lastY] = points[points.length - 1];
+        if (pathLeadBeforeRef.current) {
+          pathLeadBeforeRef.current.setAttribute("d", `M 0,${firstY} L ${firstX},${firstY}`);
+        }
+        if (pathLeadAfterRef.current) {
+          pathLeadAfterRef.current.setAttribute("d", `M ${lastX},${lastY} L ${contentWidth},${lastY}`);
+        }
+      }
+
       const d = smoothPathFromPoints(points);
       if (pathBgRef.current) pathBgRef.current.setAttribute("d", d);
       if (pathProgressRef.current) {
@@ -124,6 +145,7 @@ const Timeline = ({ items }) => {
       const trackRect = track.getBoundingClientRect();
       const centerX = trackRect.left + trackRect.width / 2;
       const maxDistance = trackRect.width / 2 || 1;
+      const maxScroll = track.scrollWidth - track.clientWidth;
 
       itemRefs.current.forEach((el) => {
         if (!el) return;
@@ -133,8 +155,6 @@ const Timeline = ({ items }) => {
         const proximity = 1 - Math.min(distance / maxDistance, 1);
         el.style.setProperty("--proximity", proximity.toFixed(3));
       });
-
-      const maxScroll = track.scrollWidth - track.clientWidth;
 
       const path = pathProgressRef.current;
       const pathLength = pathLengthRef.current;
@@ -265,7 +285,12 @@ const Timeline = ({ items }) => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    const step = firstItem.getBoundingClientRect().width + 64;
+    // Read the actual gap instead of hardcoding it — &__track's gap changes
+    // per breakpoint (48px base, 64px from md), so a fixed value only
+    // matched one of them and overshot at the others, landing short of a
+    // full one-item step and compounding with every click.
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const step = firstItem.getBoundingClientRect().width + gap;
 
     track.scrollBy({
       left: direction * step,
@@ -293,6 +318,8 @@ const Timeline = ({ items }) => {
         <ol className="timeline__track" ref={trackRef} tabIndex={0}>
           <li className="timeline__path-item" aria-hidden="true">
             <svg ref={svgRef} className="timeline__path-svg" preserveAspectRatio="none">
+              <path ref={pathLeadBeforeRef} className="timeline__path-lead timeline__path-lead--before" />
+              <path ref={pathLeadAfterRef} className="timeline__path-lead timeline__path-lead--after" />
               <path ref={pathBgRef} className="timeline__path-bg" />
               <path ref={pathProgressRef} className="timeline__path-progress" />
             </svg>

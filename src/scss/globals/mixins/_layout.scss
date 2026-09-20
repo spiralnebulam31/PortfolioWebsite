@@ -1,0 +1,15 @@
+/**
+ * _layout.scss — Shared page-layout mixins.
+ */
+@use "../variables" as vars;
+
+// The site's shared content max-width. Every section's inner content wrapper
+// caps out here so section content reads as one consistent width down the
+// page, rather than each section stretching to whatever the viewport is —
+// only the Navbar (full-bleed by design) and the Journey timeline (its own
+// scroll-based layout) are exempt.
+@mixin content-container {
+  width: 100%;
+  max-width: vars.rem(1280);
+  margin-inline: auto;
+}

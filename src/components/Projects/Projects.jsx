@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../../constants/projects.js';
-import { floatFromRightVariant } from '../../utils/motion.js';
 import ProjectCard from './ProjectCard.jsx';
 import ProjectModal from './ProjectModal.jsx';
 import "./Projects.scss";
@@ -22,19 +21,36 @@ const Projects = () => {
               My Projects
             </h2>
 
-          <motion.div className="projects__grid-wrap"
-         variants={floatFromRightVariant} initial="initial" whileInView="animate"
-          >
+          <div className="projects__grid-wrap">
             <div className="projects__grid">
               {projects.map((project, index) => (
-                <ProjectCard
+                <motion.div
                   key={index}
-                  {...project}
-                  onOpen={() => setSelectedProject(project)}
-                />
+                  className="projects__grid-item"
+                  initial={{
+                    opacity: 0,
+                    translateX: index % 2 === 0 ? -100 : 100,
+                    translateY: -100,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    translateX: 0,
+                    translateY: 0,
+                    transition: {
+                      duration: 0.8,
+                      delay: index * 0.2,
+                    },
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <ProjectCard
+                    {...project}
+                    onOpen={() => setSelectedProject(project)}
+                  />
+                </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

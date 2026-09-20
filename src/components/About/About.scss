@@ -19,7 +19,7 @@
   }
 
   &__container {
-    margin-inline: auto;
+    @include mix.content-container;
     padding-inline: vars.rem(20);
   }
 
@@ -125,12 +125,11 @@
   }
 
   &__link {
-    color: vars.color(primary);
-    cursor: pointer;
+    color: vars.color(secondary);
     text-decoration: underline;
 
     &:hover {
-      color: vars.color(secondary);
+      color: vars.color(primary);
     }
   }
 

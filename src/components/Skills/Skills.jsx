@@ -41,6 +41,7 @@ const Skills = () => {
                       delay: index * 0.2,
                     },
                   }}
+                  viewport={{ once: true }}
                 >
                   <SkillCard
                     key={index}

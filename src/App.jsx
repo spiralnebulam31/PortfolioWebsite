@@ -35,43 +35,6 @@ const App = ({ astroPic }) => {
     });
   };
 
-  const [githubIsHovered, setGithubIsHovered] = useState(false);
-  const [linkedinIsHovered, setLinkedinIsHovered] = useState(false);
-  const [resumeIsHovered, setResumeIsHovered] = useState(false);
-  const [emailIsHovered, setEmailIsHovered] = useState(false);
-
-  const handleGithubMouseEnter = () => {
-    setGithubIsHovered(true);
-  };
-
-  const handleGithubMouseLeave = () => {
-    setGithubIsHovered(false);
-  };
-
-  const handleLinkedinMouseEnter = () => {
-    setLinkedinIsHovered(true);
-  };
-
-  const handleLinkedinMouseLeave = () => {
-    setLinkedinIsHovered(false);
-  };
-
-  const handleResumeMouseEnter = () => {
-    setResumeIsHovered(true);
-  };
-
-  const handleResumeMouseLeave = () => {
-    setResumeIsHovered(false);
-  };
-
-  const handleEmailMouseEnter = () => {
-    setEmailIsHovered(true);
-  };
-
-  const handleEmailMouseLeave = () => {
-    setEmailIsHovered(false);
-  };
-
   return (
     <ThemeProvider>
       <div className="app__hero-wrap">
@@ -84,17 +47,7 @@ const App = ({ astroPic }) => {
           onClose={() => setLifeGoatsSidebarOpen(false)}
         />
 
-        <Hero
-          githubIsHovered={githubIsHovered}
-          handleGithubMouseEnter={handleGithubMouseEnter}
-          handleGithubMouseLeave={handleGithubMouseLeave}
-          linkedinIsHovered={linkedinIsHovered}
-          handleLinkedinMouseEnter={handleLinkedinMouseEnter}
-          handleLinkedinMouseLeave={handleLinkedinMouseLeave}
-          resumeIsHovered={resumeIsHovered}
-          handleResumeMouseEnter={handleResumeMouseEnter}
-          handleResumeMouseLeave={handleResumeMouseLeave}
-        />
+        <Hero />
       </div>
       <About />
       <Skills />
@@ -102,17 +55,7 @@ const App = ({ astroPic }) => {
       <Journey />
       {astroPic}
       <Parallax />
-      <Contact
-        githubIsHovered={githubIsHovered}
-        handleGithubMouseEnter={handleGithubMouseEnter}
-        handleGithubMouseLeave={handleGithubMouseLeave}
-        linkedinIsHovered={linkedinIsHovered}
-        handleLinkedinMouseEnter={handleLinkedinMouseEnter}
-        handleLinkedinMouseLeave={handleLinkedinMouseLeave}
-        emailIsHovered={emailIsHovered}
-        handleEmailMouseEnter={handleEmailMouseEnter}
-        handleEmailMouseLeave={handleEmailMouseLeave}
-      />
+      <Contact />
       <Footer
         modalState={modalState}
         setModalState={setModalState}

@@ -55,6 +55,11 @@
   &__actions {
     display: flex;
     align-items: center;
+    // Matches .navbar__links' own gap, so the theme toggle sits as far from
+    // the last link as the links sit from each other — this only affects
+    // desktop, since at mobile widths only one child (.navbar__mobile-trigger)
+    // is ever visible here and gap has nothing to space.
+    gap: vars.rem(40);
     margin-left: auto;
     margin-right: vars.rem(20);
   }
@@ -75,7 +80,7 @@
     color: vars.color(secondary);
     font-size: vars.rem(18);
     font-weight: 700;
-    cursor: pointer;
+    text-decoration: none;
     transition: color 150ms ease-in-out;
 
     &:hover {
@@ -116,10 +121,21 @@
     border-radius: vars.radius(full);
     background: rgba(255, 255, 255, 0.15);
     transition: background-color 150ms ease-in-out;
+
+    // A white-on-transparent wash is nearly invisible against the light
+    // theme's own light background — a light teal tint instead, mixing the
+    // theme's secondary color with white so it stays pale, not a dark smudge.
+    [data-theme="light"] & {
+      background: color-mix(in srgb, vars.color(secondary) 35%, white);
+    }
   }
 
   &__theme-toggle:hover &__theme-toggle-track {
     background: rgba(255, 255, 255, 0.25);
+
+    [data-theme="light"] & {
+      background: color-mix(in srgb, vars.color(secondary) 50%, white);
+    }
   }
 
   &__theme-toggle-thumb {
@@ -217,23 +233,26 @@
     width: 100%;
   }
 
-  // NOTE: in the original Tailwind markup this link's active/inactive color
-  // ternary was glued to a stray leading "$" in the template literal
-  // (`` `$${active === link.title ? ... }` ``), producing an invalid class
-  // token that never matched anything — so today NEITHER color ever applies,
-  // only the hover/size/weight styles below it. Ported as-is (no base color,
-  // no --active modifier) to keep behavior identical; flagged separately as
-  // a bug worth fixing.
+  // The original Tailwind markup's active/inactive color ternary was glued
+  // to a stray leading "$" in the template literal, so neither color ever
+  // applied — fixed now that link styling consistency matters site-wide;
+  // matches .navbar__link's secondary/primary/underline pattern.
   &__mobile-link {
+    color: vars.color(secondary);
     font-size: vars.rem(24);
     font-weight: 700;
     line-height: vars.rem(28);
     text-align: center;
-    cursor: pointer;
+    text-decoration: none;
     transition: color 150ms ease-in-out;
 
     &:hover {
-      color: vars.color(purple-300);
+      color: vars.color(primary);
+    }
+
+    &--active {
+      color: vars.color(primary);
+      text-decoration: underline;
     }
   }
 

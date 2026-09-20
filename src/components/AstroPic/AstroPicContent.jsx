@@ -21,6 +21,7 @@ const AstroPicContent = ({ data }) => {
             variants={floatFromRightVariant}
             initial="initial"
             whileInView="animate"
+            viewport={{ once: true }}
           >
             {data && (
               <div className="astro-pic__result">
