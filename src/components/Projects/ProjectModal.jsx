@@ -7,7 +7,7 @@ import "./ProjectModal.scss";
 
 // A single shared modal, reused for whichever project is currently selected
 // (see Projects.jsx) — only renders the sections a given project actually
-// has data for, since lighter entries (e.g. Golden Keys) don't have a full
+// has data for, since lighter entries may not have a full
 // challenge/solution/learnings/techStack breakdown.
 const ProjectModal = ({ project, onClose }) => {
   const closeIcon = (
@@ -23,7 +23,9 @@ const ProjectModal = ({ project, onClose }) => {
   );
 
   const description = project?.description ?? {};
-  const hasLinks = project && (project.repoLink || project.repoLink2 || project.websiteLink);
+  const hasLinks =
+    project &&
+    (project.repoLink || project.repoLink2 || project.websiteLink || project.articleLink || project.videoLink);
 
   return (
     <Modal
@@ -117,12 +119,22 @@ const ProjectModal = ({ project, onClose }) => {
               )}
               {project.repoLink2 && (
                 <a href={project.repoLink2} target="_blank" rel="noopener noreferrer" className="project-modal__link">
-                  More Code
+                  {project.repoLink2Label ?? "More Code"}
                 </a>
               )}
               {project.websiteLink && (
                 <a href={project.websiteLink} target="_blank" rel="noopener noreferrer" className="project-modal__link">
                   Website
+                </a>
+              )}
+              {project.articleLink && (
+                <a href={project.articleLink} target="_blank" rel="noopener noreferrer" className="project-modal__link">
+                  Article
+                </a>
+              )}
+              {project.videoLink && (
+                <a href={project.videoLink} target="_blank" rel="noopener noreferrer" className="project-modal__link">
+                  Video
                 </a>
               )}
             </div>
