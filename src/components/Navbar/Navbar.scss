@@ -13,7 +13,11 @@
     display: flex;
     width: 100%;
     margin-inline: auto;
-    padding-block: vars.rem(8);
+    padding-block: vars.rem(6);
+
+    @include mix.respond-to(lg) {
+      padding-block: vars.rem(8);
+    }
   }
 
   &__brand {
@@ -28,7 +32,7 @@
   }
 
   &__logo {
-    width: vars.rem(80);
+    width: vars.rem(64);
     height: auto;
 
     @include mix.respond-to(lg) {
@@ -252,6 +256,16 @@
     overscroll-behavior: contain;
     background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-700));
     transition: all 150ms ease-in-out;
+
+    // Light theme: the same cyan → purple character, mixed with white so the
+    // overlay reads as a light surface behind the teal links and dark "×".
+    [data-theme="light"] & {
+      background: linear-gradient(
+        to bottom,
+        color-mix(in srgb, vars.color(cyan-500) 25%, white),
+        color-mix(in srgb, vars.color(purple-700) 25%, white)
+      );
+    }
 
     &--open {
       display: flex;

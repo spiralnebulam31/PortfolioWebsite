@@ -2,35 +2,25 @@
 
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import CloseIcon from "../shared/CloseIcon.jsx";
 import "../shared/Modal.scss";
 import "./AccessibilityModal.scss";
 
 const PrivacyModal = ({ isOpen, onClose }) => {
-
-  const closeIcon = (
-    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
-      <path
-        fillRule="evenodd"
-        d="M4,4 L16,16 M4,16 L16,4" stroke="currentColor" strokeWidth="3"
-        clipRule="evenodd"
-      ></path>
-    </svg>
-  );
-
   return (
     <Modal
     open={isOpen}
     onClose={onClose}
     center
-    closeIcon={closeIcon}
+    closeIcon={<CloseIcon label="Close accessibility statement" />}
     classNames={{
       overlay: 'modal__overlay',
       modal: 'modal__panel',
     }}
-    aria-labelledby="web-accessibility-modal"
+    ariaLabelledby="footer-dialog-heading-a11y"
     >
       <div className="modal__body accessibility-modal__body">
-        <h2 className="accessibility-modal__title">Privacy Policy</h2>
+        <h2 id="footer-dialog-heading-a11y" className="accessibility-modal__title">Web Accessibility Statement</h2>
         <p className="accessibility-modal__text">
         This website is built to be accessible to as many people as
                     possible. If you have any accessibility requirements, please

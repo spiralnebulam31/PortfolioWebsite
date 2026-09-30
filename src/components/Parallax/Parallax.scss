@@ -61,8 +61,8 @@
     text-align: center;
     margin-inline: auto;
     color: vars.color(white);
-    font-size: vars.rem(20);
-    max-width: 50%;
+    font-size: vars.rem(18);
+    max-width: 90%;
     padding-inline: vars.rem(24);
     margin-bottom: vars.rem(4);
     margin-top: 10%;
@@ -130,9 +130,22 @@
     z-index: vars.z-index(header);
   }
 
+  // Below `md` the planets sit in their own band below the text, in the
+  // open sky above the mountains (the text's parallax offset would
+  // otherwise slide it right over them, squeezing it into a thin column
+  // between the two); as they drift down on scroll they sink behind the
+  // mountains. From `md` up there's room for them to flank the text.
   &__planets {
+    position: absolute;
+    top: 58%;
+    left: 0;
+    right: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include mix.respond-to(md) {
+      position: static;
+    }
   }
 
   &__planet-slot {
