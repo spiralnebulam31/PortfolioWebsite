@@ -2,6 +2,7 @@
 
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
+import CloseIcon from "../shared/CloseIcon.jsx";
 import "../shared/Modal.scss";
 import { linkify } from "../../utils/linkify.jsx";
 import "./ProjectModal.scss";
@@ -11,18 +12,6 @@ import "./ProjectModal.scss";
 // has data for, since lighter entries may not have a full
 // challenge/solution/learnings/techStack breakdown.
 const ProjectModal = ({ project, onClose }) => {
-  const closeIcon = (
-    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
-      <path
-        fillRule="evenodd"
-        d="M4,4 L16,16 M4,16 L16,4"
-        stroke="currentColor"
-        strokeWidth="3"
-        clipRule="evenodd"
-      ></path>
-    </svg>
-  );
-
   const description = project?.description ?? {};
   const hasLinks =
     project &&
@@ -33,12 +22,12 @@ const ProjectModal = ({ project, onClose }) => {
       open={!!project}
       onClose={onClose}
       center
-      closeIcon={closeIcon}
+      closeIcon={<CloseIcon label="Close project details" />}
       classNames={{
         overlay: "modal__overlay",
         modal: "modal__panel",
       }}
-      aria-labelledby="project-modal-title"
+      ariaLabelledby="project-modal-title"
     >
       {project && (
         <div className="modal__body project-modal">

@@ -2,35 +2,27 @@
 
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import CloseIcon from "../shared/CloseIcon.jsx";
 import "../shared/Modal.scss";
 import "./PrivacyModal.scss";
 
 const PrivacyModal = ({ isOpen, onClose }) => {
-
-  const closeIcon = (
-    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
-      <path
-        fillRule="evenodd"
-        d="M4,4 L16,16 M4,16 L16,4" stroke="currentColor" strokeWidth="3"
-        clipRule="evenodd"
-      ></path>
-    </svg>
-  );
-
   return (
     <Modal
     open={isOpen}
     onClose={onClose}
     center
-    closeIcon={closeIcon}
+    closeIcon={<CloseIcon label="Close privacy policy" />}
     classNames={{
       overlay: 'modal__overlay',
       modal: 'modal__panel',
     }}
-    aria-labelledby="privacy-policy-modal"
+    // Deliberately neutral ID: ad blockers' cookie-banner filters hide
+    // elements with IDs like "privacy-policy-modal", which hid this heading.
+    ariaLabelledby="footer-dialog-heading-data"
     >
       <div className="modal__body privacy-modal__body">
-        <h2 className="privacy-modal__title">Privacy Policy</h2>
+        <h2 id="footer-dialog-heading-data" className="privacy-modal__title">Privacy Policy</h2>
         <p className="privacy-modal__text">
         If you contact me via the contact form, I will only use
                     your email address to reply to your message. I will not

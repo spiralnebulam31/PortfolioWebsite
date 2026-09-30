@@ -91,15 +91,19 @@ $section-bottom-padding: vars.rem(40);
   // floating out toward the wider container's edge. Offset down by the
   // section's own bottom padding so its feet reach the true bottom edge —
   // the seam with the Footer — instead of stopping short.
+  // Below `lg`: left-aligned under the form, pulled down by the section's
+  // bottom padding so its feet touch the Footer too.
   &__image-column {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-bottom: -#{$section-bottom-padding};
 
     @include mix.respond-to(lg) {
       position: absolute;
       right: 0;
       bottom: -#{$section-bottom-padding};
       justify-content: flex-end;
+      margin-bottom: 0;
     }
   }
 

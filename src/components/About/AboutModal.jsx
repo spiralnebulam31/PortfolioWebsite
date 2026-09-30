@@ -2,36 +2,25 @@
 
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
+import CloseIcon from "../shared/CloseIcon.jsx";
 import "../shared/Modal.scss";
 import "./AboutModal.scss";
 
 const AboutModal = ({ isOpen, onClose, profilePhotos }) => {
-  const closeIcon = (
-    <svg className="modal__close-icon" fill="currentColor" viewBox="0 0 20 20" width={28} height={28}>
-      <path
-        fillRule="evenodd"
-        d="M4,4 L16,16 M4,16 L16,4"
-        stroke="currentColor"
-        strokeWidth="3"
-        clipRule="evenodd"
-      ></path>
-    </svg>
-  );
-
   return (
     <Modal
       open={isOpen}
       onClose={onClose}
       center
-      closeIcon={closeIcon}
+      closeIcon={<CloseIcon label="Close About Anastasia" />}
       classNames={{
         overlay: "modal__overlay",
         modal: "modal__panel",
       }}
-      aria-labelledby="about-modal"
+      ariaLabelledby="about-modal"
     >
       <div className="modal__body about-modal__body">
-        <h2 className="about-modal__title">
+        <h2 id="about-modal" className="about-modal__title">
           Meet Anastasia
         </h2>
         <div className="about-modal__content">
