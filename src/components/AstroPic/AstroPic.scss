@@ -72,6 +72,16 @@
     text-transform: uppercase;
   }
 
+  &__date {
+    margin-top: vars.rem(-12);
+    margin-bottom: vars.rem(16);
+    color: vars.color(secondary);
+    font-size: vars.rem(14);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
   &__image-row {
     display: flex;
     justify-content: center;

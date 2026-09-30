@@ -30,7 +30,12 @@ import {
   photoshop,
 } from "../assets";
 
-export const navLinks = [
+// Shows the astronomy picture section (and its navbar link). It now uses
+// ESA/Webb's Picture of the Month — see components/AstroPic/AstroPic.jsx for
+// why NASA's APOD was switched off. Set to false to hide it again.
+export const showAstroPic = true;
+
+const allNavLinks = [
   {
     id: "about",
     title: "About",
@@ -56,6 +61,10 @@ export const navLinks = [
     title: "Contact",
   },
 ];
+
+export const navLinks = allNavLinks.filter(
+  (link) => showAstroPic || "astro-pic" !== link.id
+);
 
 const profilePhotos = [
   {
