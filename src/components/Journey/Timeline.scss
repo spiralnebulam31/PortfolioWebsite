@@ -284,10 +284,39 @@
     font-weight: 700;
   }
 
+  // Capped height (20 lines on phones, 14 from sm up, where columns are
+  // wider) so a few very long entries (e.g. June 2023) scroll on their own
+  // instead of stretching the whole timeline row and leaving a big gap
+  // below every other entry. Timeline.jsx marks the ones that overflow.
   &__event-text {
+    max-height: vars.rem(440);
+    overflow-y: auto;
+    padding-right: vars.rem(8);
     color: vars.color(white);
     font-size: vars.rem(14);
     line-height: vars.rem(22);
+    scrollbar-width: thin;
+    scrollbar-color: vars.color(secondary) transparent;
+
+    @include mix.respond-to(sm) {
+      max-height: vars.rem(308);
+    }
+
+    // Soft fade at the bottom hints there's more to read; gone once the
+    // reader reaches the end.
+    &--scrollable {
+      mask-image: linear-gradient(to bottom, black calc(100% - #{vars.rem(48)}), transparent);
+    }
+
+    &--at-end {
+      mask-image: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.color(primary);
+      outline-offset: 4px;
+      border-radius: vars.radius(base);
+    }
   }
 
   &__event-link {

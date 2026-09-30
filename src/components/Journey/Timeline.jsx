@@ -246,6 +246,11 @@ const Timeline = ({ items }) => {
     let startScrollLeft = 0;
 
     const onMouseDown = (event) => {
+      // Leave clicks on a long entry's own scrollbar alone, so it can still
+      // be dragged (the scrollbar sits past the text's clientWidth).
+      const text = event.target.closest?.(".timeline__event-text");
+      if (text && event.offsetX > text.clientWidth) return;
+
       isDragging = true;
       startX = event.pageX;
       startScrollLeft = track.scrollLeft;
@@ -277,6 +282,50 @@ const Timeline = ({ items }) => {
       window.removeEventListener("mouseup", stopDragging);
     };
   }, []);
+
+  // Long entries scroll within a capped height (see &__event-text). Mark the
+  // ones that actually overflow so they get a bottom fade (removed once
+  // scrolled to the end) and a tab stop, so keyboard users can scroll them
+  // with the arrow keys too.
+  useEffect(() => {
+    const texts = itemRefs.current
+      .map((item) => item?.querySelector(".timeline__event-text"))
+      .filter(Boolean);
+
+    const updateEnd = (text) => {
+      const atEnd = text.scrollTop + text.clientHeight >= text.scrollHeight - 2;
+      text.classList.toggle("timeline__event-text--at-end", atEnd);
+    };
+
+    const measure = () => {
+      texts.forEach((text) => {
+        const scrollable = text.scrollHeight > text.clientHeight + 1;
+        text.classList.toggle("timeline__event-text--scrollable", scrollable);
+
+        if (scrollable) {
+          text.tabIndex = 0;
+          updateEnd(text);
+        } else {
+          text.removeAttribute("tabindex");
+        }
+      });
+    };
+
+    const onTextScroll = (event) => updateEnd(event.currentTarget);
+
+    // Re-measure whenever an entry's size changes (breakpoints, the web
+    // font finishing loading), not just on window resize.
+    const observer = new ResizeObserver(measure);
+    texts.forEach((text) => {
+      observer.observe(text);
+      text.addEventListener("scroll", onTextScroll, { passive: true });
+    });
+
+    return () => {
+      observer.disconnect();
+      texts.forEach((text) => text.removeEventListener("scroll", onTextScroll));
+    };
+  }, [items]);
 
   const scrollByDirection = (direction) => {
     const track = trackRef.current;
