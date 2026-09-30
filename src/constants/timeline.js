@@ -109,6 +109,26 @@ const timelineItems = [
       cardTitle: "Beginning a new web development role",
       cardDetailedText: "Following a few weeks of freelance work for PIE Code, I was offered a full-time position as a Junior WordPress Developer. I was excited to join a friendly team of developers and have the opportunity to learn from them and work in a variety of projects. Expanding my skills while doing what I love was a dream come true."
     },
+    {
+      title: "October 2024",
+      cardTitle: "Creating the Greek Art Map app for x.art.es",
+      cardDetailedText: "I answered an open call from Amalia Kavali, whose project x.art.es maps the lives and work of Greek artists onto the city of Athens, with every pin marking a place where an artist once lived or worked. Her vision was to turn it into an app with walking routes, audio-guided tours and full artist biographies, so people could actually walk through the city and experience its art history firsthand. Alongside the fantastic Anastasia (Natassa) Tsapanidou Kornilaki, I spent hours listening to Amalia and piecing her vision together into Greek Art Map, a React Native and Expo app with an interactive map, curated routes and bilingual Greek/English artist profiles, built to be simple, intuitive and accessible. Inspired by Nimisha Priya's initial designs, this was the beginning of a journey that lasted well beyond that autumn, and the result is a prototype Amalia can keep building on. Seeing her passion up close was inspiring, but the most valuable thing I gained wasn't technical - it was a wonderful friend."
+    },
+    {
+      title: "August 2025",
+      cardTitle: "Promoted to WordPress Developer",
+      cardDetailedText: "A year after joining PIE Code, I was promoted from Junior WordPress Developer to WordPress Developer. It filled me with a deep sense of fulfilment and joy, a reminder of how far I had come since those days of learning on my own, and I felt genuinely excited about everything that was still to come."
+    },
+    {
+      title: "November 2025",
+      cardTitle: "Speaking at WordCamp Athens",
+      cardDetailedText: "I gave my talk \"Building complex navigation menus in block themes\" at WordCamp Athens, exploring whether a custom block or extending the core blocks offers the better user experience, flexibility and performance, and which solution fits each case. It was an honour to be there, and a big thank you goes to the organising team for making it happen. The entire day was amazing, filled with remarkable people and interesting talks, and I'm already looking forward to the next WordCamp!"
+    },
+    {
+      title: "April 2026",
+      cardTitle: "Building a block theme framework",
+      cardDetailedText: "By then I had been using the block theme framework I created for PIE Code in my role as a WordPress Developer, a reusable foundation for our projects. Figuring out how block themes really work under the hood and turning that knowledge into an entire framework for the team to build on was an awesome and truly rewarding experience."
+    },
   ];
 
 export { timelineItems };
