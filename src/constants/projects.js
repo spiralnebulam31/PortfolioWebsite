@@ -9,10 +9,10 @@ import {
 
 // A single unified list, in display order. Every entry has at least
 // `name`/`image`/`description.summary`; the richer fields (challenge,
-// solution, learnings, roadmap, techStack, date, repoLink(s), websiteLink,
-// status) are optional — ProjectModal only renders the sections that exist,
-// so a lighter entry (e.g. Golden Keys) just gets a shorter popup instead of
-// needing invented detail.
+// solution, learnings, roadmap, techStack, date, repoLink(s), repoLink2Label,
+// websiteLink, articleLink, videoLink, status) are optional — ProjectModal
+// only renders the sections that exist, so a lighter entry just gets a
+// shorter popup instead of needing invented detail.
 export const projects = [
     {
       name: "Garden Genie",
@@ -102,8 +102,42 @@ export const projects = [
       },
       description: {
         summary:
-          "A full-stack interactive map app that allows users to create and join local communities. Being created for Campfire Convention.",
+          "A full-stack interactive world map where communities can light their own local 'beacons' — gatherings held on meaningful dates like solstices and equinoxes. Created for the Campfire Network, in collaboration with Natassa Tsapanidou Kornilaki.",
+        challenge:
+          "Give the Campfire Network a simple, welcoming way for people anywhere in the world to announce a local beacon gathering and see everyone else's on a shared map, supporting the network's vision of beacons as signals of connection, peace and unity.",
+        solution:
+          "I first built the app as a React (Vite) frontend with vanilla CSS and a separate Node.js/Express server connected to MongoDB. Together with Natassa, we then migrated it to a single Next.js and TypeScript app, moving the server into Next.js API routes with Mongoose, refreshing the design with Tailwind CSS, and adding new ways to choose a beacon's location: using the browser's geolocation or clicking directly on the map.",
+        learnings: [
+          "Migrating a working React/Express app to Next.js App Router and TypeScript, including replacing a standalone Express server with API routes and a cached Mongoose connection suited to serverless deployment.",
+          "Building a validated multi-field form with React Hook Form and Zod on the client, mirrored by Mongoose schema validation on the server, so invalid data is caught at both ends.",
+          "Working with React Leaflet to render custom beacon markers and popups, handle a 'select on map' mode that preserves the form draft, and offset beacons that share identical coordinates so none are hidden.",
+          "Collaborating on a shared codebase through branches and pull requests, and working closely with the Campfire Network's events organiser to shape the content and user experience around real community needs — a really rewarding experience.",
+        ],
       },
+      date: "December 2023 - December 2025",
+      techStack: [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "CSS",
+        "React Leaflet",
+        "React Hook Form",
+        "Zod",
+        "Framer Motion",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Vite",
+        "GitHub",
+        "Canva",
+      ],
+      repoLink: "https://github.com/spiralnebulam31/light-a-beacon",
+      repoLink2: "https://github.com/spiralnebulam31/InteractiveMap",
+      repoLink2Label: "Original Code",
+      websiteLink: "https://www.lightabeacon.com/",
+      status: "Complete, live",
     },
     {
       name: "Greek Art Map",
@@ -130,7 +164,7 @@ export const projects = [
           "Flesh out remaining neighborhoods within Athens beyond Kolonaki.",
         ],
       },
-      date: "November 2024 - Present",
+      date: "October 2024 - December 2025",
       techStack: [
         "React Native",
         "Expo",
@@ -142,7 +176,9 @@ export const projects = [
         "GitHub",
       ],
       repoLink: "https://github.com/spiralnebulam31/greek-art-map",
-      status: "In progress",
+      articleLink: "https://www.linkedin.com/pulse/xartes-project-greek-art-map-app-turning-vision-anastasia-adamoudi-0sgpe/",
+      videoLink: "https://www.youtube.com/shorts/V2piOLJYb0E",
+      status: "MVP complete, roadmap for future updates",
     },
     {
       name: "The Golden Keys",
@@ -152,8 +188,32 @@ export const projects = [
       },
       description: {
         summary:
-          "Frontend development of a website that showcases the work, services, location and contact details of a locksmith business in Greece.",
+          "A multi-page, Greek-language website for Τα Χρυσά Κλειδιά (The Golden Keys), a small locksmith business in Thessaloniki, Greece, showcasing its services, service areas, work gallery and contact details.",
+        challenge:
+          "Give a small local business a professional online presence that makes it quick for customers — often in an urgent situation like a lockout — to see what the business offers, check that it covers their area, and get in touch.",
+        solution:
+          "A responsive React website with a landing page summarising every section, plus dedicated Services, Areas, Gallery and Contact pages. Floating contact icons keep phone, mobile, email and Facebook one tap away on every page, while an interactive map outlines the neighbourhoods the business serves.",
+        learnings: [
+          "Using React Leaflet polygons to draw the service areas (Ampelokipoi, Stavroupoli, Evosmos, Polichni) on a map, alongside a custom marker for the shop's location.",
+          "Building a paginated photo gallery with a full-screen lightbox using PrimeReact's Galleria and Paginator, and a video carousel with PrimeReact's Carousel.",
+          "Organising Framer Motion animation variants in their own modules so animated section titles and cards stay consistent across pages.",
+          "Keeping content (services, areas, reviews, opening times, contact links) in separate data files, making it easy to update without touching components.",
+        ],
       },
+      date: "June 2024 - July 2024",
+      techStack: [
+        "React.js",
+        "React Router",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Leaflet",
+        "PrimeReact",
+        "GitHub",
+      ],
+      repoLink: "https://github.com/spiralnebulam31/TheGoldenKeys",
+      websiteLink: "https://www.taxrysakleidia.gr/",
+      status: "Complete, live",
     },
   ];
 
