@@ -105,6 +105,11 @@ const timelineItems = [
       cardDetailedText: "My local tech group Southend Tech participated in the Basildon Creative Tech Fest 2024 with the Social Impact Hackathon event run by me with the support of the group. It was an interesting experience to organise an event and see it through, and it was a great opportunity to meet new people and learn from them."
     },
     {
+      title: "July 2024",
+      cardTitle: "Taking over my choir's website",
+      cardDetailedText: "I started managing the website of my choir, the Southend Bach Choir, an existing WordPress site. It was a very interesting experience, as I was only just starting to learn WordPress, and I had to figure out how to manage a project I had taken over from someone else: getting to know a site I hadn't built, understanding how it had been put together and keeping it running smoothly for the choir."
+    },
+    {
       title: "August 2024",
       cardTitle: "Beginning a new web development role",
       cardDetailedText: "Following a few weeks of freelance work for PIE Code, I was offered a full-time position as a Junior WordPress Developer. I was excited to join a friendly team of developers and have the opportunity to learn from them and work in a variety of projects. Expanding my skills while doing what I love was a dream come true."
