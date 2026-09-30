@@ -14,6 +14,19 @@
   background: linear-gradient(to bottom, vars.color(background-1), vars.color(orange-700));
   background-size: cover;
 
+  // Light theme starts from the page background (so it blends out of the
+  // Astro Pic section above), deepens to orange behind the mountains, then
+  // eases into the exact peach Contact's light background starts with, so
+  // both edges meet their neighbours without a visible seam.
+  [data-theme="light"] & {
+    background: linear-gradient(
+      to bottom,
+      vars.color(background-1),
+      vars.color(orange-700) 65%,
+      color-mix(in srgb, vars.color(orange-700) 35%, white)
+    );
+  }
+
   &__intro-wrap {
     display: flex;
     flex-direction: column;

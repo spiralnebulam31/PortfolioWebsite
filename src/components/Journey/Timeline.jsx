@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { rocket } from "../../assets/index.js";
+import { linkify } from "../../utils/linkify.jsx";
 import "./Timeline.scss";
 
 const ChevronIcon = ({ direction, className }) => (
@@ -345,7 +346,7 @@ const Timeline = ({ items }) => {
               </div>
               <time className="timeline__date">{item.title}</time>
               <h3 className="timeline__event-title">{item.cardTitle}</h3>
-              <p className="timeline__event-text">{item.cardDetailedText}</p>
+              <p className="timeline__event-text">{linkify(item.cardDetailedText, "timeline__event-link")}</p>
             </li>
           ))}
         </ol>

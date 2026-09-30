@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LifeGoatsButton from "../LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "../LifeGoats/LifeGoatsSidebar";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { navLinks } from "../../constants/constants.js";
-import { logoBracketsLight, menu, close } from "../../assets/index.js";
 import {
   mobileMenuVariants,
   staggerContainer,
@@ -22,6 +21,28 @@ const Navbar = () => {
   const [showGoatsSidebar, setShowGoatsSidebar] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const themeToggleLabel = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
+
+  // While the mobile menu is open, the page behind it can't scroll, and
+  // Escape closes it.
+  useEffect(() => {
+    if (!mobile) return;
+
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+
+    const handleKeyDown = (event) => {
+      if ("Escape" === event.key) {
+        setMobile(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      root.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobile]);
 
   return (
     <>
@@ -44,8 +65,8 @@ const Navbar = () => {
             }}
           >
             <img
-              src={logoBracketsLight}
-              alt="logo"
+              src="/logo.svg"
+              alt=""
               className="navbar__logo"
             />
             <p className="navbar__brand-text">
@@ -100,32 +121,32 @@ const Navbar = () => {
           </button>
           {/* mobile menu button */}
           <div className="navbar__mobile-trigger">
-            <img
-              src={mobile ? close : menu}
-              alt="menu"
-              className="navbar__mobile-icon"
+            {/* Three CSS bars that animate into an X while the menu is open —
+                it stays above the overlay, so it doubles as the close button. */}
+            <button
+              type="button"
+              className={`navbar__mobile-toggle ${mobile ? "navbar__mobile-toggle--open" : ""}`}
+              aria-label={mobile ? "Close menu" : "Open menu"}
+              aria-expanded={mobile}
+              aria-controls="mobile-menu"
               onClick={() => setMobile(!mobile)}
-            />
+            >
+              <span className="navbar__mobile-bar" aria-hidden="true" />
+              <span className="navbar__mobile-bar" aria-hidden="true" />
+              <span className="navbar__mobile-bar" aria-hidden="true" />
+            </button>
             {/* mobile menu - fullscreen overlay */}
             <motion.div
+              id="mobile-menu"
               className={`navbar__mobile-menu ${mobile ? "navbar__mobile-menu--open" : ""}`}
               variants={mobileMenuVariants}
               initial={mobile ? "open" : "closed"}
               animate={mobile ? "open" : "closed"}
             >
-              {/* Close X button for mobile menu */}
-              <button
-                className="navbar__mobile-close"
-                aria-label="Close menu"
-                onClick={() => setMobile(false)}
-              >
-                ×
-              </button>
               <motion.div variants={staggerContainer} className="navbar__mobile-inner">
                 <ul className="navbar__mobile-links">
                   {navLinks.map((link) => (
-                    <motion.div key={link.id} variants={mobileItemVariants}>
-                      <li key={link.id}>
+                    <motion.li key={link.id} variants={mobileItemVariants}>
                         <a
                           href={`#${link.id}`}
                           className={`navbar__mobile-link ${
@@ -139,14 +160,13 @@ const Navbar = () => {
                         >
                           {link.title}
                         </a>
-                      </li>
-                    </motion.div>
+                    </motion.li>
                   ))}
                   {/* LifeGoatsButton at the end of mobile menu */}
-                  <div className="navbar__mobile-cta">
+                  <li className="navbar__mobile-cta">
                     <LifeGoatsButton onClick={() => setShowGoatsSidebar(true)} className="life-goats-button--inline" />
-                  </div>
-                  <div className="navbar__mobile-theme-toggle">
+                  </li>
+                  <li className="navbar__mobile-theme-toggle">
                     <button
                       type="button"
                       role="switch"
@@ -169,7 +189,7 @@ const Navbar = () => {
                         </span>
                       </span>
                     </button>
-                  </div>
+                  </li>
                 </ul>
               </motion.div>
             </motion.div>

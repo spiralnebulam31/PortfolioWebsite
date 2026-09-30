@@ -34,5 +34,10 @@
 
   &__close-icon {
     color: vars.color(tertiary);
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(secondary);
+    }
   }
 }

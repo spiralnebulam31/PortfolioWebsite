@@ -3,15 +3,11 @@
 // of Next.js's default StaticImageData object ({ src, width, height }). This
 // is the one place that fix needs to happen — every component and constants
 // file downstream still just receives a plain string exactly as before.
-import logoRaw from "./logo.svg";
-import logoBracketsLightRaw from "./logoBracketsLight.png";
 import githubRaw from "./github.svg";
 import linkedinRaw from "./linkedin.svg";
 import resumeRaw from "./resume.svg";
 import emailRaw from "./email.svg";
 import email2Raw from "./email2.svg";
-import menuRaw from "./menu.svg";
-import closeRaw from "./close.svg";
 
 import singleStarPurpleRaw from "./singleStarPurple.png";
 import singleStarLightTealRaw from "./singleStarLightTeal.png";
@@ -71,15 +67,11 @@ import lifeGoats1Raw from "./life-goats/life-goats-1.webp";
 import lifeGoats2Raw from "./life-goats/life-goats-2.jpg";
 import lifeGoats3Raw from "./life-goats/life-goats-3.jpeg";
 
-export const logo = logoRaw.src;
-export const logoBracketsLight = logoBracketsLightRaw.src;
 export const github = githubRaw.src;
 export const linkedin = linkedinRaw.src;
 export const resume = resumeRaw.src;
 export const email = emailRaw.src;
 export const email2 = email2Raw.src;
-export const menu = menuRaw.src;
-export const close = closeRaw.src;
 export const singleStarPurple = singleStarPurpleRaw.src;
 export const singleStarLightTeal = singleStarLightTealRaw.src;
 export const singleStarLilac = singleStarLilacRaw.src;

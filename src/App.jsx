@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MotionConfig } from "framer-motion";
 import {
   Hero,
   Navbar,
@@ -12,8 +13,6 @@ import {
   Contact,
   Footer,
 } from "./components";
-import LifeGoatsButton from "./components/LifeGoats/LifeGoatsButton";
-import LifeGoatsSidebar from "./components/LifeGoats/LifeGoatsSidebar";
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import "./App.scss";
 
@@ -25,9 +24,6 @@ const App = ({ astroPic }) => {
     accessibilityOpen: false,
   });
 
-  // Life Goats sidebar state
-  const [lifeGoatsSidebarOpen, setLifeGoatsSidebarOpen] = useState(false);
-
   const closeModal = () => {
     setModalState({
       privacyOpen: false,
@@ -37,30 +33,38 @@ const App = ({ astroPic }) => {
 
   return (
     <ThemeProvider>
-      <div className="app__hero-wrap">
+      {/* reducedMotion="user": when the visitor's OS asks for reduced
+          motion, every Framer Motion animation on the site skips its
+          movement (transforms/layout) and keeps only opacity fades. */}
+      <MotionConfig reducedMotion="user">
+        <a href="#main" className="app__skip-link">
+          Skip to main content
+        </a>
+
+        {/* Navbar also renders the Life Goats buttons (floating on desktop,
+            inside the mobile menu) and their sidebar. It's position: fixed,
+            so it sits outside <main> without affecting the layout. */}
         <Navbar />
 
-        {/* Life Goats Components */}
-        <LifeGoatsButton onClick={() => setLifeGoatsSidebarOpen(true)} />
-        <LifeGoatsSidebar
-          isOpen={lifeGoatsSidebarOpen}
-          onClose={() => setLifeGoatsSidebarOpen(false)}
-        />
+        <main id="main" tabIndex={-1} className="app__main">
+          <div className="app__hero-wrap">
+            <Hero />
+          </div>
+          <About />
+          <Skills />
+          <Projects />
+          <Journey />
+          {astroPic}
+          <Parallax />
+          <Contact />
+        </main>
 
-        <Hero />
-      </div>
-      <About />
-      <Skills />
-      <Projects />
-      <Journey />
-      {astroPic}
-      <Parallax />
-      <Contact />
-      <Footer
-        modalState={modalState}
-        setModalState={setModalState}
-        closeModal={closeModal}
-      />
+        <Footer
+          modalState={modalState}
+          setModalState={setModalState}
+          closeModal={closeModal}
+        />
+      </MotionConfig>
     </ThemeProvider>
   );
 };

@@ -7,7 +7,9 @@ import "./LifeGoatsButton.scss";
 
 const LifeGoatsButton = ({ onClick, className = "" }) => {
   return (
-    <motion.div
+    <motion.button
+      type="button"
+      aria-haspopup="dialog"
       className={`life-goats-button ${className}`}
       onClick={onClick}
       whileHover={{ x: -5 }}
@@ -21,7 +23,7 @@ const LifeGoatsButton = ({ onClick, className = "" }) => {
           Life Goats
         </span>
       </div>
-    </motion.div>
+    </motion.button>
   );
 };
 

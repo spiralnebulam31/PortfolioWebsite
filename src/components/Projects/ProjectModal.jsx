@@ -3,6 +3,7 @@
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import "../shared/Modal.scss";
+import { linkify } from "../../utils/linkify.jsx";
 import "./ProjectModal.scss";
 
 // A single shared modal, reused for whichever project is currently selected
@@ -55,19 +56,19 @@ const ProjectModal = ({ project, onClose }) => {
 
           {project.date && <p className="project-modal__date">{project.date}</p>}
 
-          <p className="project-modal__summary">{description.summary}</p>
+          <p className="project-modal__summary">{linkify(description.summary, "project-modal__text-link")}</p>
 
           {description.challenge && (
             <div className="project-modal__section">
               <h3 className="project-modal__section-title">The challenge</h3>
-              <p>{description.challenge}</p>
+              <p>{linkify(description.challenge, "project-modal__text-link")}</p>
             </div>
           )}
 
           {description.solution && (
             <div className="project-modal__section">
               <h3 className="project-modal__section-title">The solution</h3>
-              <p>{description.solution}</p>
+              <p>{linkify(description.solution, "project-modal__text-link")}</p>
             </div>
           )}
 
@@ -76,7 +77,7 @@ const ProjectModal = ({ project, onClose }) => {
               <h3 className="project-modal__section-title">Key takeaways</h3>
               <ul className="project-modal__list">
                 {description.learnings.map((learning, idx) => (
-                  <li key={idx}>★ {learning}</li>
+                  <li key={idx}>★ {linkify(learning, "project-modal__text-link")}</li>
                 ))}
               </ul>
             </div>
@@ -87,7 +88,7 @@ const ProjectModal = ({ project, onClose }) => {
               <h3 className="project-modal__section-title">Roadmap</h3>
               <ul className="project-modal__list">
                 {description.roadmap.map((item, idx) => (
-                  <li key={idx}>★ {item}</li>
+                  <li key={idx}>★ {linkify(item, "project-modal__text-link")}</li>
                 ))}
               </ul>
             </div>
