@@ -77,7 +77,7 @@ const About = () => {
                   <li>✩ Responsive</li>
                   <li>✩ User-friendly</li>
                   <li>✩ Visually appealing</li>
-                  <li>✩ Tailored to my client's needs</li>
+                  <li>✩ Tailored to my client’s needs</li>
                 </ul>
                 <br />
                 <p>
@@ -86,22 +86,18 @@ const About = () => {
                 </p> */}
 
                 <p>
-                  I'm a <span className="about__highlight--primary"><strong>web developer</strong></span> with a passion for{" "}
-                  <span className="about__highlight--secondary"><strong>creating meaningful projects</strong></span> and{" "}
-                  <span className="about__highlight--secondary"><strong>helping people</strong></span>. I work as a WordPress Developer at{" "}
-                  <a
-                    href="https://www.linkedin.com/company/pie-web-ltd/posts/?feedView=all"
-                          className="about__link"
-                    ><strong>PIE Code</strong></a>{" "}and I enjoy building{" "}
+                  I’m a <span className="about__highlight--primary"><strong>web developer</strong></span> who loves creating{" "}
                   <span className="about__highlight--primary"><strong>websites</strong></span> and{" "}
-                  <span className="about__highlight--primary"><strong>web applications</strong></span> that{" "}
-                  <span className="about__highlight--secondary"><strong>make a difference</strong></span>.
+                  <span className="about__highlight--primary"><strong>experiences</strong></span> with{" "}
+                  <span className="about__highlight--secondary"><strong>meaning</strong></span>. I build things that{" "}
+                  <span className="about__highlight--secondary"><strong>help people achieve their goals</strong></span>, whether
+                  that’s growing a business or bringing a personal vision to life.
                 </p>
 
                 <button
                   className="about__cta"
                   onClick={toggleAboutModal}
-                  alt="click to read more"
+                  aria-haspopup="dialog"
                 >
                   Read more about me
                 </button>

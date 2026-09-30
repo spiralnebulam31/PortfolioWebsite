@@ -159,5 +159,13 @@ $section-bottom-padding: vars.rem(40);
     border: 1px solid #e5e7eb;
     background: vars.color(background-1);
     color: vars.color(white);
+
+    // Explicit placeholder color instead of each browser's own (Firefox
+    // fades it to ~50% opacity), mixed from the theme's text and background
+    // colors so it clears WCAG AA 4.5:1 contrast in both themes.
+    &::placeholder {
+      color: color-mix(in srgb, vars.color(white) 75%, vars.color(background-1));
+      opacity: 1;
+    }
   }
 }

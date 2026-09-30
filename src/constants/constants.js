@@ -60,22 +60,22 @@ export const navLinks = [
 const profilePhotos = [
   {
     index: 1,
-    alt: "photo 1",
+    alt: "Anastasia smiling, with the sea behind her",
     src: photo1,
   },
   {
     index: 2,
-    alt: "photo 2",
+    alt: "Anastasia standing next to the opening slide of her talk \"Building Websites with WordPress\" at Chelmsford Tech Meetup",
     src: photo2,
   },
   {
     index: 3,
-    alt: "photo 3",
+    alt: "Anastasia doing the wheel yoga pose on a beach at low tide",
     src: photo3,
   },
   {
     index: 4,
-    alt: "photo 4",
+    alt: "Anastasia sitting on a rock by a waterfall and a clear mountain pool during a hiking trip",
     src: photo4,
   },
 ];
@@ -234,4 +234,15 @@ const techStack = [
 ];
 
 
-export { profilePhotos, techStack };
+// Names that get linked automatically wherever they appear in project and
+// journey text (see utils/linkify.jsx).
+const natassaPortfolio = "https://www.chaptersbyanastasia.dev/";
+
+const peopleLinks = {
+  "Anastasia (Natassa) Tsapanidou Kornilaki": natassaPortfolio,
+  "Natassa Tsapanidou Kornilaki": natassaPortfolio,
+  Natassa: natassaPortfolio,
+  Maria: "https://www.mariatelikiozoglou.com/",
+};
+
+export { profilePhotos, techStack, peopleLinks };

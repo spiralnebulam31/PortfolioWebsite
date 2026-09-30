@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { planet1, planet2, starrySky1, starrySky2, mountain } from "../../assets";
 import "./Parallax.scss";
@@ -9,15 +9,34 @@ const Parallax = () => {
 
   const ref = useRef();
 
+  // Progress runs from the moment the section's top enters the bottom of
+  // the viewport (0) to when its bottom leaves the top (1) — 0.5 is the
+  // point where the section fills the screen.
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"]
+    offset: ["start end", "end start"],
   });
 
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const yPlanet1 = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
-  const yPlanet2 = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "600%"]);
+  // Scroll-linked values aren't covered by MotionConfig's reducedMotion
+  // (they aren't animations), so with reduced motion every layer holds a
+  // single position instead of moving with the scroll.
+  const shouldReduceMotion = useReducedMotion();
+
+  // Background layers only move once the section fills the screen (0.5 → 1),
+  // as before.
+  const yBg = useTransform(scrollYProgress, [0.5, 1], shouldReduceMotion ? ["0%", "0%"] : ["0%", "100%"]);
+  const yPlanet1 = useTransform(scrollYProgress, [0.5, 1], shouldReduceMotion ? ["0%", "0%"] : ["0%", "150%"]);
+  const yPlanet2 = useTransform(scrollYProgress, [0.5, 1], shouldReduceMotion ? ["0%", "0%"] : ["0%", "300%"]);
+
+  // The text starts moving as soon as the section enters, rising at ~60% of
+  // the scroll speed so it stays lower on screen for longer: about a third
+  // of the way down once the section fills the screen, then drifting out
+  // slowly. With reduced motion it simply rests at that "third" position.
+  const yText = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    shouldReduceMotion ? ["20vh", "20vh", "20vh"] : ["0vh", "20vh", "80vh"]
+  );
 
   return (
     <section
@@ -29,7 +48,7 @@ const Parallax = () => {
         <motion.p
           style={{ y: yText }}
           className="parallax__intro"
-        >Let's embark on a journey through the ever-evolving universe of technology,
+        >Let’s embark on a journey through the ever-evolving universe of technology,
           mapping a path for innovation and growth through the stars!
         </motion.p>
       </div>
@@ -37,14 +56,14 @@ const Parallax = () => {
       <motion.div className="parallax__starfield">
         <motion.img
           src={starrySky1}
-          alt="Starry background"
+          alt=""
           style={{ x: yBg }}
           className="parallax__starry-sky parallax__starry-sky--left"
         />
 
         <motion.img
           src={starrySky2}
-          alt="Starry background"
+          alt=""
           style={{ x: yBg }}
           className="parallax__starry-sky parallax__starry-sky--right"
         />
@@ -52,7 +71,7 @@ const Parallax = () => {
 
       <motion.img
         src={mountain}
-        alt="mountains"
+        alt=""
         className="parallax__mountain"
       />
 
@@ -60,7 +79,7 @@ const Parallax = () => {
         <motion.div className="parallax__planet-slot parallax__planet-slot--left">
           <motion.img
             src={planet1}
-            alt="planet1"
+            alt=""
             style={{ y: yPlanet1 }}
             className="parallax__planet parallax__planet--1"
           />
@@ -69,7 +88,7 @@ const Parallax = () => {
         <motion.div className="parallax__planet-slot parallax__planet-slot--right">
           <motion.img
             src={planet2}
-            alt="planet2"
+            alt=""
             style={{ y: yPlanet2 }}
             className="parallax__planet parallax__planet--2"
           />

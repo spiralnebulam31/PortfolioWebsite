@@ -32,6 +32,12 @@
     cursor: pointer;
     transition: color 150ms ease-in-out, background-color 150ms ease-in-out, opacity 150ms ease-in-out;
 
+    // The translucent white background disappears against the light
+    // theme's pale background, so light mode adds a teal outline.
+    [data-theme="light"] & {
+      border: 2px solid vars.color(secondary);
+    }
+
     &--prev {
       left: vars.rem(16);
     }
@@ -282,5 +288,14 @@
     color: vars.color(white);
     font-size: vars.rem(14);
     line-height: vars.rem(22);
+  }
+
+  &__event-link {
+    color: vars.color(secondary);
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.color(primary);
+    }
   }
 }

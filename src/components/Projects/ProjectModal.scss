@@ -60,6 +60,8 @@
     display: flex;
     flex-direction: column;
     gap: vars.rem(4);
+    list-style: none;
+    padding: 0;
     color: vars.color(white);
     font-size: vars.rem(14);
     line-height: vars.rem(22);
@@ -82,6 +84,15 @@
     flex-wrap: wrap;
     gap: vars.rem(16);
     margin-top: vars.rem(8);
+  }
+
+  &__text-link {
+    color: vars.color(secondary);
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.color(primary);
+    }
   }
 
   &__link {

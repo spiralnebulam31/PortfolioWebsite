@@ -65,9 +65,9 @@ const Contact = () => {
             >
               <form ref={form} onSubmit={sendEmail}>
                 {/* Form Inputs */}
-                <ContactInput type="text" placeholder="Your name" name="from_name" />
-                <ContactInput type="email" placeholder="Your email address" name="user_email" />
-                <ContactInput type="textarea" placeholder="Your message" name="message" />
+                <ContactInput type="text" label="Your name" name="from_name" autoComplete="name" />
+                <ContactInput type="email" label="Your email address" name="user_email" autoComplete="email" />
+                <ContactInput type="textarea" label="Your message" name="message" />
 
                 {/* Submit Button */}
                 <div className="contact__submit-row">
@@ -97,23 +97,38 @@ const Contact = () => {
   );
 };
 
-const ContactInput = ({ type, placeholder, name }) => (
-  <div className="contact-input">
-    {type === 'textarea' ? (
-      <textarea
-        name={name}
-        placeholder={placeholder}
-        className="contact-input__field"
-      />
-    ) : (
-      <input
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        className="contact-input__field"
-      />
-    )}
-  </div>
-);
+// The label is visually hidden (the placeholder shows the same text), but
+// stays available to screen readers after the placeholder disappears on
+// typing.
+const ContactInput = ({ type, label, name, autoComplete }) => {
+  const id = `contact-${name}`;
+
+  return (
+    <div className="contact-input">
+      <label htmlFor={id} className="visually-hidden">
+        {label}
+      </label>
+      {'textarea' === type ? (
+        <textarea
+          id={id}
+          name={name}
+          placeholder={label}
+          required
+          className="contact-input__field"
+        />
+      ) : (
+        <input
+          id={id}
+          type={type}
+          placeholder={label}
+          name={name}
+          autoComplete={autoComplete}
+          required
+          className="contact-input__field"
+        />
+      )}
+    </div>
+  );
+};
 
 export default Contact;

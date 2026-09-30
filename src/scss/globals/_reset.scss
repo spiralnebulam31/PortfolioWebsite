@@ -32,7 +32,14 @@ body {
 // when they judge the focus came from keyboard/switch navigation rather
 // than a mouse click, so this ring only ever shows up for keyboard users,
 // never as a lingering box after a click.
+//
+// Links inherit their color and have no underline unless a component asks
+// for one — the same baseline Tailwind's preflight gave the site before the
+// SCSS migration (links wrapping cards, e.g. SkillCard, otherwise picked up
+// the browser's default underline).
 a {
+  color: inherit;
+  text-decoration: inherit;
   cursor: pointer;
 
   &:focus-visible {
@@ -40,4 +47,74 @@ a {
     outline-offset: 2px;
     border-radius: vars.radius(base);
   }
+}
+
+// Also lost with Tailwind's preflight: without these, every button falls
+// back to the browser's grey background, outset border and default cursor
+// wherever its component doesn't override them (e.g. the Life Goats
+// sidebar's close button).
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid vars.color(primary);
+    outline-offset: 2px;
+    border-radius: vars.radius(base);
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+// Hides content visually while keeping it available to screen readers
+// (e.g. the Contact form's field labels).
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Visitors whose OS asks for reduced motion get no CSS transitions,
+// animations or smooth scrolling. Framer Motion animations are handled
+// separately by <MotionConfig reducedMotion="user"> in App.jsx.
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Block-level images, so they sit flush inside their gradient borders
+// instead of leaving an inline baseline gap underneath.
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

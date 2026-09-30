@@ -13,6 +13,7 @@
     display: flex;
     width: 100%;
     margin-inline: auto;
+    padding-block: vars.rem(8);
   }
 
   &__brand {
@@ -179,11 +180,60 @@
     }
   }
 
-  &__mobile-icon {
+  // Burger → X toggle. Stays above the fullscreen menu overlay so the same
+  // button closes it.
+  &__mobile-toggle {
+    position: relative;
+    z-index: calc(#{vars.z-index(modal)} + 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: vars.rem(6);
     width: vars.rem(40);
-    height: auto;
-    object-fit: contain;
-    cursor: pointer;
+    height: vars.rem(40);
+    padding: vars.rem(6) vars.rem(4);
+    color: vars.color(secondary);
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: vars.color(primary);
+    }
+
+    // Over the cyan → purple overlay, the same color the old "×" used.
+    &--open {
+      color: vars.color(white);
+
+      &:hover {
+        color: vars.color(white);
+      }
+    }
+  }
+
+  &__mobile-bar {
+    display: block;
+    width: 100%;
+    height: vars.rem(4);
+    border-radius: vars.radius(full);
+    background: currentColor;
+    transform-origin: center;
+    transition: transform 300ms ease-in-out, opacity 200ms ease-in-out;
+
+    // Outer bars meet in the middle (4px bar + 6px gap = 10px) and rotate
+    // into an X; the middle bar fades out.
+    .navbar__mobile-toggle--open & {
+      &:nth-child(1) {
+        transform: translateY(vars.rem(10)) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(vars.rem(-10)) rotate(-45deg);
+      }
+    }
   }
 
   &__mobile-menu {
@@ -196,22 +246,16 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    // `dvh` follows the visible viewport, so the overlay still covers the
+    // whole screen while mobile browser toolbars collapse or expand.
+    height: 100dvh;
+    overscroll-behavior: contain;
     background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-700));
     transition: all 150ms ease-in-out;
 
     &--open {
       display: flex;
     }
-  }
-
-  &__mobile-close {
-    position: absolute;
-    top: vars.rem(24);
-    right: vars.rem(24);
-    z-index: vars.z-index(modal);
-    color: vars.color(white);
-    font-size: vars.rem(30);
-    font-weight: 700;
   }
 
   &__mobile-inner {

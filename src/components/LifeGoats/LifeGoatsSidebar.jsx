@@ -1,16 +1,42 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { lifeGoats1, lifeGoats2, lifeGoats3 } from "../../assets/index.js";
+import { linkify } from "../../utils/linkify.jsx";
 import "./LifeGoatsSidebar.scss";
 
 const LifeGoatsSidebar = ({ isOpen, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [lifeGoats1, lifeGoats2, lifeGoats3];
 
+  const shouldReduceMotion = useReducedMotion();
+  const containerRef = useRef(null);
+
+  // Escape closes the sidebar, and focus moves to its (visible) close button
+  // on open, so keyboard and screen reader users land inside it.
   useEffect(() => {
     if (!isOpen) return;
+
+    const handleKeyDown = (event) => {
+      if ("Escape" === event.key) {
+        onClose();
+      }
+    };
+
+    const visibleClose = [
+      ...(containerRef.current?.querySelectorAll(".life-goats-sidebar__close") ?? []),
+    ].find((button) => null !== button.offsetParent);
+    visibleClose?.focus();
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
+  // No auto-advancing slideshow for visitors who prefer reduced motion —
+  // they can still switch photos with the dots.
+  useEffect(() => {
+    if (!isOpen || shouldReduceMotion) return;
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
@@ -19,7 +45,7 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isOpen, images.length]);
+  }, [isOpen, shouldReduceMotion, images.length]);
   const sidebarVariants = {
     closed: {
       x: "100%",
@@ -56,6 +82,10 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
 
           {/* Sidebar with gradient border on desktop, sliding together */}
           <motion.div
+            ref={containerRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Life Goats"
             className="life-goats-sidebar__container"
             variants={sidebarVariants}
             initial="closed"
@@ -73,8 +103,10 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                     <div className="life-goats-sidebar__panel">
                     {/* Close button */}
                     <button
+                      type="button"
                       onClick={onClose}
                       className="life-goats-sidebar__close"
+                      aria-label="Close Life Goats panel"
                     >
                       ×
                     </button>
@@ -83,13 +115,12 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                       {/* Title */}
                       <motion.h2
                         className="life-goats-sidebar__title"
-                        onClick={() =>
-                          window.open("https://www.lifegoats.com/", "_blank")
-                        }
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        Life Goats
+                        <a href="https://www.lifegoats.com/" target="_blank" rel="noopener noreferrer">
+                          Life Goats
+                        </a>
                       </motion.h2>
                       {/* Image slideshow */}
                       <motion.div
@@ -121,6 +152,9 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                                 ? "life-goats-sidebar__dot--active"
                                 : ""
                             }`}
+                            type="button"
+                            aria-label={`Show photo ${index + 1} of ${images.length}`}
+                            aria-current={index === currentImageIndex ? "true" : undefined}
                             onClick={() => setCurrentImageIndex(index)}
                           />
                         ))}
@@ -133,9 +167,10 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                         transition={{ delay: 0.3 }}
                       >
                         <p>
-                          A community that I co-founded, created for people who value
-                          relationship building and spending quality time together in
-                          the great outdoors.
+                          {linkify(
+                            "A community that I founded with my friend Maria, created for people who value relationship building and spending quality time together in the great outdoors.",
+                            "life-goats-sidebar__link"
+                          )}
                         </p>
                         <p>
                           Our mission is to create meaningful connections through
@@ -143,16 +178,16 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                           welcoming and open.
                         </p>
                         {/* Call to action */}
-                        <motion.button
+                        <motion.a
+                          href="https://www.lifegoats.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="life-goats-sidebar__cta"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() =>
-                            window.open("https://www.lifegoats.com/", "_blank")
-                          }
                         >
                           Find out more
-                        </motion.button>
+                        </motion.a>
                       </motion.div>
                     </div>
                     </div>
@@ -165,8 +200,10 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
               <div className="life-goats-sidebar__mobile-panel">
                 {/* Close button */}
                 <button
+                  type="button"
                   onClick={onClose}
                   className="life-goats-sidebar__close"
+                  aria-label="Close Life Goats panel"
                 >
                   ×
                 </button>
@@ -175,13 +212,12 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                   {/* Title */}
                   <motion.h2
                     className="life-goats-sidebar__title"
-                    onClick={() =>
-                      window.open("https://www.lifegoats.com/", "_blank")
-                    }
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Life Goats
+                    <a href="https://www.lifegoats.com/" target="_blank" rel="noopener noreferrer">
+                      Life Goats
+                    </a>
                   </motion.h2>
                   {/* Image slideshow */}
                   <motion.div
@@ -213,6 +249,9 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                             ? "life-goats-sidebar__dot--active"
                             : ""
                         }`}
+                        type="button"
+                        aria-label={`Show photo ${index + 1} of ${images.length}`}
+                        aria-current={index === currentImageIndex ? "true" : undefined}
                         onClick={() => setCurrentImageIndex(index)}
                       />
                     ))}
@@ -225,9 +264,10 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                     transition={{ delay: 0.3 }}
                   >
                     <p>
-                      A community that I co-founded, created for people who value
-                      relationship building and spending quality time together in
-                      the great outdoors.
+                      {linkify(
+                        "A community that I founded with my friend Maria, created for people who value relationship building and spending quality time together in the great outdoors.",
+                        "life-goats-sidebar__link"
+                      )}
                     </p>
                     <p>
                       Our mission is to create meaningful connections through
@@ -235,16 +275,16 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                       welcoming and open.
                     </p>
                     {/* Call to action */}
-                    <motion.button
+                    <motion.a
+                      href="https://www.lifegoats.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="life-goats-sidebar__cta"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() =>
-                        window.open("https://www.lifegoats.com/", "_blank")
-                      }
                     >
                       Find out more
-                    </motion.button>
+                    </motion.a>
                   </motion.div>
                 </div>
               </div>

@@ -49,7 +49,7 @@ const Hero = () => {
             variants={heroVariant}
             className="hero__heading"
           >
-            Hi, I'm <span className="hero__name">Anastasia</span>
+            Hi, I’m <span className="hero__name">Anastasia</span>
           </motion.h1>
           <motion.p
             variants={heroVariant}
@@ -116,7 +116,7 @@ const Hero = () => {
           <>
             <motion.img
               src={starrySky1}
-              alt="Starry background"
+              alt=""
               className="hero__starry-sky hero__starry-sky--left"
               variants={starryHeroVariant1}
               initial="initial"
@@ -125,7 +125,7 @@ const Hero = () => {
 
             <motion.img
               src={starrySky2}
-              alt="Starry background"
+              alt=""
               className="hero__starry-sky hero__starry-sky--right"
               variants={starryHeroVariant2}
               initial="initial"

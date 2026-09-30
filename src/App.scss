@@ -1,3 +1,32 @@
+@use "./scss/globals/variables" as vars;
+
+// Hidden off-screen until a keyboard user tabs to it, then shown above the
+// fixed navbar so they can jump straight past the navigation.
+.app__skip-link {
+  position: fixed;
+  top: vars.rem(8);
+  left: vars.rem(8);
+  z-index: calc(#{vars.z-index(modal)} + 1);
+  padding: vars.rem(8) vars.rem(16);
+  border-radius: vars.radius(lg);
+  background: vars.color(secondary);
+  color: vars.color(background-1);
+  font-weight: 700;
+  transform: translateY(-200%);
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
+
+// Focused programmatically by the skip link — no ring needed on the whole
+// page region itself.
+.app__main {
+  &:focus {
+    outline: none;
+  }
+}
+
 // The original class list included `bg-n-repeat`, a typo for `bg-no-repeat`
 // — a no-op today, so no `background-repeat` is set here either.
 .app__hero-wrap {
