@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { planet1, planet2, starrySky1, starrySky2, mountain } from "../../assets";
 import "./Parallax.scss";
 
@@ -22,6 +22,17 @@ const Parallax = () => {
   // single position instead of moving with the scroll.
   const shouldReduceMotion = useReducedMotion();
 
+  // Below `md` the planets sit under the text (see &__planets), so the text
+  // drifts less there — otherwise it overtakes and slides over them.
+  const [isNarrow, setIsNarrow] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsNarrow(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
   // Background layers only move once the section fills the screen (0.5 → 1),
   // as before.
   const yBg = useTransform(scrollYProgress, [0.5, 1], shouldReduceMotion ? ["0%", "0%"] : ["0%", "100%"]);
@@ -35,7 +46,9 @@ const Parallax = () => {
   const yText = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    shouldReduceMotion ? ["20vh", "20vh", "20vh"] : ["0vh", "20vh", "80vh"]
+    shouldReduceMotion
+      ? ["20vh", "20vh", "20vh"]
+      : ["0vh", "20vh", isNarrow ? "45vh" : "80vh"]
   );
 
   return (

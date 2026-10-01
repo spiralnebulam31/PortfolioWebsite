@@ -22,7 +22,9 @@
     background: linear-gradient(
       to bottom,
       vars.color(background-1),
-      vars.color(orange-700) 65%,
+      // A softened orange (not the full orange-700), so the dark text keeps
+      // WCAG contrast wherever its parallax drift takes it.
+      color-mix(in srgb, vars.color(orange-700) 55%, white) 65%,
       color-mix(in srgb, vars.color(orange-700) 35%, white)
     );
   }

@@ -254,7 +254,10 @@
     // whole screen while mobile browser toolbars collapse or expand.
     height: 100dvh;
     overscroll-behavior: contain;
-    background: linear-gradient(to bottom, vars.color(cyan-500), vars.color(purple-700));
+    // Deeper teal → purple than cyan-500 → purple-700, so the light cyan
+    // links and white "×" keep WCAG AA contrast from top to bottom
+    // (link contrast at the top went from 1.9:1 to 5.8:1).
+    background: linear-gradient(to bottom, vars.color(cyan-800), vars.color(purple-800));
     transition: all 150ms ease-in-out;
 
     // Light theme: the same cyan → purple character, mixed with white so the

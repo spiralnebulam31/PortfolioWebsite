@@ -1,25 +1,71 @@
 @use "../../scss/globals/variables" as vars;
 
+// Longer, structured content than the other popups, so it's left-aligned
+// (centred multi-line text is harder to read) within a comfortable width.
 .accessibility-modal {
   &__body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: vars.rem(720);
     margin-inline: auto;
-    padding: vars.rem(16);
+    padding: vars.rem(24) vars.rem(20) vars.rem(20);
+    text-align: left;
   }
 
   &__title {
     color: vars.color(white);
     font-size: vars.rem(24);
     font-weight: 700;
+    text-align: center;
     margin-bottom: vars.rem(16);
+    padding-inline: vars.rem(24);
+  }
+
+  &__heading {
+    color: vars.color(primary);
+    font-size: vars.rem(18);
+    font-weight: 700;
+    margin-top: vars.rem(16);
+    margin-bottom: vars.rem(8);
   }
 
   &__text {
     color: vars.color(white);
-    font-size: vars.rem(18);
-    margin-bottom: vars.rem(16);
+    font-size: vars.rem(16);
+    line-height: 1.6;
+    margin-bottom: vars.rem(8);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: vars.rem(6);
+    margin-bottom: vars.rem(8);
+    padding-left: vars.rem(20);
+    list-style: disc;
+    color: vars.color(white);
+    font-size: vars.rem(16);
+    line-height: 1.6;
+
+    li::marker {
+      color: vars.color(secondary);
+    }
+  }
+
+  &__link {
+    color: vars.color(secondary);
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.color(primary);
+    }
+  }
+
+  &__meta {
+    margin-top: vars.rem(12);
+    color: vars.color(white);
+    font-size: vars.rem(14);
+    font-style: italic;
+    opacity: 0.85;
   }
 }
