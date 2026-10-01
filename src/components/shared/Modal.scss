@@ -31,41 +31,4 @@
     background: vars.color(background-1);
     border-radius: vars.radius(2xl);
   }
-
-  &__close-icon {
-    color: vars.color(tertiary);
-    transition: color 150ms ease-in-out;
-
-    &:hover {
-      color: vars.color(secondary);
-    }
-
-    // CSS-bar version (shared/CloseIcon.jsx), matching the navbar's mobile
-    // menu toggle: a box the SVG icon's size, with two bars crossed inside.
-    &--bars {
-      position: relative;
-      display: block;
-      width: vars.rem(28);
-      height: vars.rem(28);
-    }
-  }
-
-  &__close-bar {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: vars.rem(4);
-    margin-top: vars.rem(-2);
-    border-radius: vars.radius(full);
-    background: currentColor;
-
-    &:nth-child(1) {
-      transform: rotate(45deg);
-    }
-
-    &:nth-child(2) {
-      transform: rotate(-45deg);
-    }
-  }
 }

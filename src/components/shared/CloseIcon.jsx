@@ -1,3 +1,5 @@
+import "./CloseIcon.scss";
+
 // Close "×" for react-responsive-modal's `closeIcon` prop — two CSS bars
 // crossed into an X, matching the navbar's mobile menu toggle. The library
 // wraps this in its own <button> without an accessible name, so the hidden

@@ -52,7 +52,8 @@
     align-items: stretch;
     padding: vars.rem(2);
     border-radius: vars.radius(2xl) 0 0 vars.radius(2xl);
-    background: linear-gradient(to top left, vars.color(cyan-500), vars.color(purple-300));
+    // Same gradient as the other modals' border (shared/Modal.scss's &__panel).
+    background-image: linear-gradient(vars.color(primary), vars.color(secondary));
   }
 
   &__panel {
@@ -94,7 +95,7 @@
     position: absolute;
     top: vars.rem(16);
     right: vars.rem(16);
-    // Color/hover come from the shared CloseIcon (shared/Modal.scss), so it
+    // Color/hover come from the shared CloseIcon (shared/CloseIcon.scss), so it
     // matches the other modals' close buttons.
     display: flex;
     padding: vars.rem(8);

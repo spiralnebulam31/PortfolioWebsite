@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react";
 import { lifeGoats1, lifeGoats2, lifeGoats3 } from "../../assets/index.js";
 import { linkify } from "../../utils/linkify.jsx";
 import CloseIcon from "../shared/CloseIcon.jsx";
-import "../shared/Modal.scss";
 import "./LifeGoatsSidebar.scss";
 
 const LifeGoatsSidebar = ({ isOpen, onClose }) => {
