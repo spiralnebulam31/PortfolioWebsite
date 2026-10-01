@@ -4,6 +4,8 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { lifeGoats1, lifeGoats2, lifeGoats3 } from "../../assets/index.js";
 import { linkify } from "../../utils/linkify.jsx";
+import CloseIcon from "../shared/CloseIcon.jsx";
+import "../shared/Modal.scss";
 import "./LifeGoatsSidebar.scss";
 
 const LifeGoatsSidebar = ({ isOpen, onClose }) => {
@@ -131,9 +133,8 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                       type="button"
                       onClick={onClose}
                       className="life-goats-sidebar__close"
-                      aria-label="Close Life Goats panel"
                     >
-                      ×
+                      <CloseIcon label="Close Life Goats panel" />
                     </button>
                     {/* Content */}
                     <div className="life-goats-sidebar__content">
@@ -228,9 +229,8 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
                   type="button"
                   onClick={onClose}
                   className="life-goats-sidebar__close"
-                  aria-label="Close Life Goats panel"
                 >
-                  ×
+                  <CloseIcon label="Close Life Goats panel" />
                 </button>
                 {/* Content */}
                 <div className="life-goats-sidebar__content">

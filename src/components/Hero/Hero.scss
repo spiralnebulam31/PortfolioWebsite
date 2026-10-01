@@ -70,6 +70,13 @@ $hero-primary: #ccb2ff;
     z-index: vars.z-index(header);
     color: vars.color(white);
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+
+    // The dark-theme drop shadow sits under light text; in light theme the
+    // text is dark, so a dark shadow just smudges it — a soft light highlight
+    // gives the same lift instead.
+    [data-theme="light"] & {
+      text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5);
+    }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -97,6 +104,13 @@ $hero-primary: #ccb2ff;
     z-index: vars.z-index(header);
     color: vars.color(white-100);
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+
+    // The dark-theme drop shadow sits under light text; in light theme the
+    // text is dark, so a dark shadow just smudges it — a soft light highlight
+    // gives the same lift instead.
+    [data-theme="light"] & {
+      text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5);
+    }
     text-align: center;
     max-width: vars.rem(448);
 

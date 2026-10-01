@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import LifeGoatsButton from "../LifeGoats/LifeGoatsButton";
 import LifeGoatsSidebar from "../LifeGoats/LifeGoatsSidebar";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "../../constants/constants.js";
 import {
   mobileMenuVariants,
@@ -136,13 +136,17 @@ const Navbar = () => {
               <span className="navbar__mobile-bar" aria-hidden="true" />
               <span className="navbar__mobile-bar" aria-hidden="true" />
             </button>
-            {/* mobile menu - fullscreen overlay */}
+            {/* mobile menu - fullscreen overlay. Mounted only while open, so
+                AnimatePresence can play the "closed" variant on the way out. */}
+            <AnimatePresence>
+            {mobile && (
             <motion.div
               id="mobile-menu"
-              className={`navbar__mobile-menu ${mobile ? "navbar__mobile-menu--open" : ""}`}
+              className="navbar__mobile-menu"
               variants={mobileMenuVariants}
-              initial={mobile ? "open" : "closed"}
-              animate={mobile ? "open" : "closed"}
+              initial="closed"
+              animate="open"
+              exit="closed"
             >
               <motion.div variants={staggerContainer} className="navbar__mobile-inner">
                 <ul className="navbar__mobile-links">
@@ -194,6 +198,8 @@ const Navbar = () => {
                 </ul>
               </motion.div>
             </motion.div>
+            )}
+            </AnimatePresence>
             {/* end of mobile menu */}
           </div>
           {/* end of mobile menu button */}

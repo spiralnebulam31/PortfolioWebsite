@@ -190,17 +190,18 @@ export const textVariant = (delay) => {
     open: {
       clipPath: "circle(1000px at 50px 50px)",
       transition: {
-        type: "spring", 
-        stiffness: 30,
+        duration: 0.5,
+        ease: "easeOut",
       },
     },
+    // Used as both the initial and the exit state (see Navbar.jsx's
+    // AnimatePresence) — the short delay lets the links stagger out first.
     closed: {
-      clipPath: "circle(30px at 50px 50px)",
+      clipPath: "circle(0px at 50px 50px)",
       transition: {
-        delay: 0.5, // delay the animation for 0.5 seconds
-        type: "spring", // spring animationm that will bounce back and forth when it reaches the end of its animation
-        stiffness: 700, // how stiff the spring is (higher number = stiffer spring)
-        damping: 40, // how much the spring will bounce back and forth (higher number = less bounce)
+        delay: 0.2,
+        duration: 0.35,
+        ease: "easeIn",
       },
     }
   }

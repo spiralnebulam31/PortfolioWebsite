@@ -94,16 +94,11 @@
     position: absolute;
     top: vars.rem(16);
     right: vars.rem(16);
+    // Color/hover come from the shared CloseIcon (shared/Modal.scss), so it
+    // matches the other modals' close buttons.
+    display: flex;
     padding: vars.rem(8);
-    color: vars.color(tertiary);
-    font-size: vars.rem(32);
-    font-weight: 700;
     line-height: 1;
-    transition: color 150ms ease-in-out;
-
-    &:hover {
-      color: vars.color(secondary);
-    }
   }
 
   &__content {

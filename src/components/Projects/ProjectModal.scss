@@ -6,6 +6,9 @@
   flex-direction: column;
   gap: vars.rem(16);
   padding: vars.rem(8);
+  // Clears the library's close button (absolute, 14px from the top, 28px
+  // tall), so it sits above the image rather than over it.
+  padding-top: vars.rem(48);
   text-align: left;
 
   &__image-border {

@@ -240,8 +240,11 @@
     }
   }
 
+  // Only mounted while open (see Navbar.jsx's AnimatePresence), and Framer
+  // Motion owns its clip-path animation, so no display toggle or CSS
+  // transition here.
   &__mobile-menu {
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
     z-index: vars.z-index(modal);
@@ -258,7 +261,6 @@
     // links and white "×" keep WCAG AA contrast from top to bottom
     // (link contrast at the top went from 1.9:1 to 5.8:1).
     background: linear-gradient(to bottom, vars.color(cyan-800), vars.color(purple-800));
-    transition: all 150ms ease-in-out;
 
     // Light theme: the same cyan → purple character, mixed with white so the
     // overlay reads as a light surface behind the teal links and dark "×".
@@ -268,10 +270,6 @@
         color-mix(in srgb, vars.color(cyan-500) 25%, white),
         color-mix(in srgb, vars.color(purple-700) 25%, white)
       );
-    }
-
-    &--open {
-      display: flex;
     }
   }
 
