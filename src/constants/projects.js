@@ -10,7 +10,7 @@ import {
 // A single unified list, in display order. Every entry has at least
 // `name`/`image`/`description.summary`; the richer fields (challenge,
 // solution, learnings, roadmap, techStack, date, repoLink(s), repoLink2Label,
-// websiteLink, articleLink, videoLink, status) are optional — ProjectModal
+// privateRepo, websiteLink, articleLink, videoLink, status) are optional — ProjectModal
 // only renders the sections that exist, so a lighter entry just gets a
 // shorter popup instead of needing invented detail.
 export const projects = [
@@ -175,7 +175,7 @@ export const projects = [
         "React Native Reanimated",
         "GitHub",
       ],
-      repoLink: "https://github.com/spiralnebulam31/greek-art-map",
+      privateRepo: true,
       articleLink: "https://www.linkedin.com/pulse/xartes-project-greek-art-map-app-turning-vision-anastasia-adamoudi-0sgpe/",
       videoLink: "https://www.youtube.com/shorts/V2piOLJYb0E",
       status: "MVP complete, roadmap for future updates",

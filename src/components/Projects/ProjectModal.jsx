@@ -15,7 +15,7 @@ const ProjectModal = ({ project, onClose }) => {
   const description = project?.description ?? {};
   const hasLinks =
     project &&
-    (project.repoLink || project.repoLink2 || project.websiteLink || project.articleLink || project.videoLink);
+    (project.repoLink || project.repoLink2 || project.privateRepo || project.websiteLink || project.articleLink || project.videoLink);
 
   return (
     <Modal
@@ -111,6 +111,11 @@ const ProjectModal = ({ project, onClose }) => {
                 <a href={project.repoLink2} target="_blank" rel="noopener noreferrer" className="project-modal__link">
                   {project.repoLink2Label ?? "More Code"}
                 </a>
+              )}
+              {project.privateRepo && (
+                <span className="project-modal__link project-modal__link--private">
+                  Code: private repo
+                </span>
               )}
               {project.websiteLink && (
                 <a href={project.websiteLink} target="_blank" rel="noopener noreferrer" className="project-modal__link">

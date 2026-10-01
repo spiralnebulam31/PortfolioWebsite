@@ -100,6 +100,15 @@
     font-weight: 700;
     text-decoration: underline;
 
+    &--private {
+      text-decoration: none;
+      cursor: default;
+
+      &:hover {
+        color: vars.color(secondary);
+      }
+    }
+
     &:hover {
       color: vars.color(primary);
     }
