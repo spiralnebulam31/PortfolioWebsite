@@ -59,6 +59,7 @@ const Navbar = () => {
           <Link
             href="/"
             className="navbar__brand-link"
+            aria-label="Anastasia Adamoudi, back to top"
             onClick={() => {
               setActive("");
               window.scrollTo(0, 0);

@@ -26,8 +26,15 @@ $hero-primary: #ccb2ff;
   // hands off seamlessly into About's background (which is also
   // background-1), with a darker teal middle where the blobs sit and need
   // real color depth behind them to read against.
+  // The middle is a pale mix of the teal rather than the full secondary, so
+  // the dark intro text and purple name keep WCAG contrast over it.
   [data-theme="light"] & {
-    background: linear-gradient(to bottom, vars.color(background-1), vars.color(secondary), vars.color(background-1));
+    background: linear-gradient(
+      to bottom,
+      vars.color(background-1),
+      color-mix(in srgb, vars.color(secondary) 45%, white),
+      vars.color(background-1)
+    );
   }
 
   &__content {

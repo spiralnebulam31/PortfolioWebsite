@@ -13,14 +13,39 @@ const LifeGoatsSidebar = ({ isOpen, onClose }) => {
   const shouldReduceMotion = useReducedMotion();
   const containerRef = useRef(null);
 
-  // Escape closes the sidebar, and focus moves to its (visible) close button
-  // on open, so keyboard and screen reader users land inside it.
+  // Escape closes the sidebar, focus moves to its (visible) close button on
+  // open and stays inside it, so keyboard and screen reader users land in
+  // it and can't tab out behind the overlay.
   useEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (event) => {
       if ("Escape" === event.key) {
         onClose();
+        return;
+      }
+
+      // Keep Tab / Shift+Tab cycling inside the sidebar while it's open,
+      // instead of moving focus to the page hidden behind the overlay.
+      if ("Tab" !== event.key || !containerRef.current) return;
+
+      const focusable = [
+        ...containerRef.current.querySelectorAll("a[href], button:not([disabled])"),
+      ].filter((element) => null !== element.offsetParent);
+      if (0 === focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      } else if (!containerRef.current.contains(document.activeElement)) {
+        event.preventDefault();
+        first.focus();
       }
     };
 

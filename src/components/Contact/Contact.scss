@@ -50,8 +50,11 @@ $section-bottom-padding: vars.rem(40);
   }
 
   // NOTE: same styles.js concatenation bug as About.scss — paddingX never applied.
+  // Same color as the heading below it: the teal used for eyebrows elsewhere
+  // falls under WCAG contrast on this section's orange/peach gradient.
   &__eyebrow {
     @include mix.section-subheading-text;
+    color: vars.color(white);
   }
 
   &__heading {

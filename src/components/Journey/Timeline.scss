@@ -231,8 +231,9 @@
     flex: none;
     width: vars.rem(210);
     scroll-snap-align: center;
-    opacity: calc(0.3 + var(--proximity) * 0.7);
-    transition: opacity 100ms linear;
+    // No opacity fade on entries away from the centre: faded text failed
+    // WCAG contrast (light-theme dates would need ~98% opacity to pass).
+    // The "focus" effect lives on the marker dot instead (see &__dot).
 
     @include mix.respond-to(sm) {
       width: vars.rem(300);
