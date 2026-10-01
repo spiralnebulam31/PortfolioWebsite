@@ -55,8 +55,9 @@ const Hero = () => {
             variants={heroVariant}
             className="hero__subheading"
           >
-            I create websites with a blend of creativity, compassion
-            and an analytical mindset.
+            Web developer with a focus on WordPress and Next.js, creating
+            meaningful websites and experiences that help people reach
+            their goals.
           </motion.p>
 
           {/* Hero links */}
@@ -93,8 +94,8 @@ const Hero = () => {
             </a>
 
             <a
-              href="/Anastasia_Adamoudi_Resume_2026-04-29.pdf"
-              download="Anastasia_Adamoudi_Resume_2026-04-29.pdf"
+              href="/Anastasia_Adamoudi_Resume_2026-10-01.pdf"
+              download="Anastasia_Adamoudi_Resume_2026-10-01.pdf"
               target="_blank"
               rel="noreferrer"
               aria-label="Download resume"

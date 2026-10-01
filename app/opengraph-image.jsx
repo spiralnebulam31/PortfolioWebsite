@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 // The preview image shown when the site is shared (LinkedIn, Slack, etc.).
 // Next.js also uses it for the Twitter card, since no twitter-image exists.
-export const alt = "Anastasia Adamoudi, WordPress and web developer";
+export const alt = "Anastasia Adamoudi, web developer with a focus on WordPress and Next.js";
 export const size = {
   width: 1200,
   height: 630,
@@ -52,7 +52,7 @@ export default async function Image() {
             Anastasia Adamoudi
           </div>
           <div style={{ fontSize: 40, color: "#83f8f5" }}>
-            WordPress &amp; Web Developer
+            Web Developer
           </div>
           <div style={{ fontSize: 28, color: "#ccb2ff", maxWidth: 560 }}>
             Creating meaningful websites and experiences that help people

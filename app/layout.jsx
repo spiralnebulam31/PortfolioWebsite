@@ -10,9 +10,9 @@ const poppins = Poppins({
 
 const siteUrl = "https://www.anastasiaadamoudi.com";
 const siteName = "Anastasia Adamoudi";
-const title = "Anastasia Adamoudi | WordPress & Web Developer";
+const title = "Anastasia Adamoudi | Web Developer";
 const description =
-  "Anastasia Adamoudi is a WordPress and web developer who creates meaningful websites and experiences that help people achieve their goals, from custom block themes to React and Next.js apps.";
+  "Anastasia Adamoudi is a web developer with a focus on WordPress and Next.js. She creates meaningful websites and experiences that help people achieve their goals, from custom block themes and Gutenberg blocks to React and React Native apps.";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
