@@ -50,7 +50,6 @@ const Contact = () => {
           {/* Title */}
           <div className="contact__title-row">
             <div>
-              <p className="contact__eyebrow">Ways to</p>
               <h2 className="contact__heading">Contact Me</h2>
             </div>
           </div>
